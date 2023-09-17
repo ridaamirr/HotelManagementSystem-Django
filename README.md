@@ -1,6 +1,6 @@
 # Hotel Management System Web App
 
-![Hotel Management System](https://github.com/ridaamir/HotelManagementSystem-Django/blob/main/frontend.jpg?raw=true)
+![Hotel Management System](frontend.jpg)
 
 ## Table of Contents
 
