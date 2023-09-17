@@ -47,12 +47,7 @@ Follow these steps to set up and run the Hotel Management System Web App:
 git clone https://github.com/yourusername/hotel-management-system.git
 ```
 
-2. Install Python dependencies:
-
-```bash
-cd hotel-management-system
-pip install -r requirements.txt
-```
+2. Install Python dependencies
 
 3. Create a MySQL database and update the database settings in the `settings.py` file with your database configuration.
 
