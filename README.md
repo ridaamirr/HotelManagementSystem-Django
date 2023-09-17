@@ -2,7 +2,6 @@
 
 ![Hotel Management System](https://raw.githubusercontent.com/ridaamir/HotelManagementSystem-Django/main/frontend.jpg)
 
-
 ## Table of Contents
 
 - [Introduction](#introduction)
