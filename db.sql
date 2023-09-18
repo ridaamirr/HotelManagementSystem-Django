@@ -27,7 +27,7 @@ CREATE TABLE RoomType (
     NumberOfBeds INT,
     Type TEXT,
     Price INT,
-    Image TEXT,
+    Image TEXT
 );
 
 CREATE TABLE Room (
@@ -44,7 +44,7 @@ CREATE TABLE Room (
 CREATE TABLE Billing (
     Billing_ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     User_ID VARCHAR(15),
-    Status TEXT,
+    Status TEXT
 );
 
 CREATE TABLE Booking (
