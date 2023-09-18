@@ -1,6 +1,6 @@
 # Hotel Management System Web App
 
-![Hotel Management System](frontend.jpg)
+![Hotel Management System](frontend.png)
 
 ## Table of Contents
 
