@@ -2,90 +2,104 @@
 <html lang="en">
   <head>
     {% block title %}
-      <title>Hotel Obsidian</title>
+    <title>Hotel Obsidian</title>
     {% endblock %}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous" />
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  </head>
-  <body>
-    <div class="header">
-        <div class="container" style="margin-top:0px;">
-            <div class="navbar-header" style="margin-top:0px;">
-                {% load static %}<img src="{% static 'obsidian.png' %}" style="width:120px; height:80px;margin-top:0px; margin-left:-400px" alt="Hotel Obsidian Logo">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                </button>
-                <a class="navbar-brand" style="color:white;margin-top:25px " runat="server" href="{% url 'default'%}">Hotel Obsidian</a>
-            </div> 
-            <div>  
-                <ul class="nav navbar-nav navbar-right" style="color:white">  
-                    <li><a  style="color:white;margin-top:25px " href="~/SignUp" id="signupheader"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a  style="color:white;margin-top:25px" href="{% url 'login' %}" id="loginheader"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> 
-                    <li><a  style="color:white;margin-top:25px" href="{% url 'login' %}" visible="false"  id="logoutheader"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
-                </ul>   
-            </div>
-            <div class="navbar-collapse collapse" style="color:white">
-                <ul class="nav navbar-nav"  style="color:white">
-                     <li><a  style="color:white;margin-top:25px" runat="server" href="~/Catalouge">Room Catalogue</a></li>  
-                     </ul>
-            </div>
-            
-        </div> 
-    </div> 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-KyZXEAg3QhqLMpG8r+ku8iDw6/Z7w7cAP5Wn0zxyD6J6C2r7+ELlxXRjz7bk1ikBmE/Dp+I/DFb/eydSbT+MnDg==" crossorigin="anonymous" />
 
-    <div class="col-sm-10 ">{% block content %}{% endblock %}</div> 
-
-    <footer class="footer">
-        <div class="waves">
-          <div class="wave" id="wave1"></div>
-          <div class="wave" id="wave2"></div>
-          <div class="wave" id="wave3"></div>
-          <div class="wave" id="wave4"></div>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'default' %}">Hotel Obsidian</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="" id="signupheader"><i class="fas fa-user"></i> Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" id="loginheader"><i class="fas fa-sign-in-alt"></i> Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" id="logoutheader" style="display: none;"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <ul class="social-icon">
-          <li class="social-icon__item"><a class="social-icon__link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a></li>
-        </ul>
-        <div class="menu">
+    </nav>
+</header>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-12">
+          {% block content %}
+          {% endblock %}
+      </div>
+  </div>
+</div>
+
+
+<footer class="footer">
+    <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+        <li class="social-icon__item"><a class="social-icon__link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        <li class="social-icon__item"><a class="social-icon__link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+        <li class="social-icon__item"><a class="social-icon__link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+    </ul>
+    <div class="menu">
         <p style="margin-right:10px">Phone: <a href="tel:042-123456 " style="color: #fff;"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 042-123456</a></p>
         <p style="margin-right:10px">Email: <a href="mailto:info@hotelobsidian.com" style="color: #fff;"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> info@hotelobsidian.com</a></p>
-     
-    
-        </div>
-        <p>&copy;2023 Hotel Obsidian | All Rights Reserved</p>
-      </footer>
-  </body> 
- 
-</html> 
+    </div>
+    <p>&copy;2023 Hotel Obsidian | All Rights Reserved</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+I0uP6sp5f5L5uA5z5F5w5f5y5y5y5y5y5g5" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
 
 
 <style>
 
-        .navbar-inverse .navbar-nav > li > a {
-        color: white;
-        margin-top:20px;
-    }
-        .navbar-nav > li > a.heading {
-        margin-top: 10px!important;
-    }
-    
-    .navbar-nav > li > a:hover {
-      color: blue !important;
-    }
+/* Set the default color and margin-top for navbar links */
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+    margin-top: 20px;
+}
+
+/* Adjust the margin-top for the specific class "heading" */
+.navbar-nav > li > a.heading {
+    margin-top: 10px !important;
+}
+
+/* Change the link color on hover */
+.navbar-nav > li > a:hover {
+    color: blue !important;
+}
+
+/* Increase the height of the header */
+.navbar-inverse {
+    min-height: 60px; /* Adjust this value as needed */
+}
+
+
     
     
     @import url(//fonts.googleapis.com/css?family=Lato:300:400);
@@ -208,7 +222,9 @@
       align-items: center;
       flex-direction: column;
       font-size:14px;
+      margin-top: 50px;
     }
+
     
     .social-icon,
     .menu {

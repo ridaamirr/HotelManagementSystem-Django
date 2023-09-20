@@ -3,94 +3,53 @@
 {% block content %} 
 <!DOCTYPE html>  
 <html lang="en">
-<div class="bg-image"></div> 
-<div class="container1" >
 
-    {% load static %}<img src="{% static 'img1.jpg' %}" style="width:115.3%;margin-left:-90px;margin-top:0px;height:80vh; filter: brightness(50%); "> 
-       
-   <div class="centered">
-        <h1 style="color:white; font-size:40px">Hotel</h1> 
-        <h1 style="color:white; font-size:40px">Obsidian</h1> 
-       <p> <p class="lead" style="font-family:'Felix Titling'; font-size:15px">Discover a new dimension of Luxury </p>  
-         <p><a id="switch1" runat="server" class="btn btn-outline-primary btn-lg my-link" href="{% url 'login' %}" role="button" style="border-color:white; color:white">Book Now</a></p>
-   <br /><br /><br />
-       </div>
-  
-
-   </div> 
-   <center> 
-    <div class="form-control">
-    <div class="box" style="margin-top:-50px;width:800px;height:100px; background-color:lightgray; border-radius:4px; cursor:auto; display:flex;flex-direction:row;justify-content:space-between" > 
- <div class="display-flex" id="loc" runat="server">
-  <label style="color:black;display:block;text-align:left;margin-left:20px">Select Location</label>
-                            
-                                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HotelManagementSystemConnectionString %>" SelectCommand="SELECT [Location] FROM [Hotel]"></asp:SqlDataSource>
-                                 <asp:DropDownList CssClass="form-control" DataSourceID="SqlDataSource1" DataTextField="Location" ID="DropDownList1"  Width="150px" runat="server" > </asp:DropDownList>
-                               <br /> 
-     
-
-     </div>
-<div class="display-flex" runat="server" id="type">
-  <label style="color:black;display:block;text-align:left;margin-left:15px">Select RoomType</label>
-     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HotelManagementSystemConnectionString %>" SelectCommand="SELECT DISTINCT [Type] FROM [RoomType]"></asp:SqlDataSource>
-       <asp:DropDownList CssClass="form-control" DataSourceID="SqlDataSource2" DataTextField="Type" ID="DropDownList2"  Width="150px" runat="server" > </asp:DropDownList>
-                               <br /> 
-     
-
-     </div>
-            <div class="display-flex" runat="server" id="bed">
-  <label style="color:black;display:block;text-align:left;">Enter Number of Beds</label> 
-   
-    <input type="text"  runat="server" ID="noofbeds" Width="150px" ></input> 
-               <!--  <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="noofbeds"
-                   ErrorMessage = "Number of Beds are Required"  ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator> 
-                             <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="noofbeds" 
-                               Type="Double" MinimumValue="1" MaximumValue="100" 
-                               ErrorMessage="Enter a Valid Number" ForeColor="Red" Display="Dynamic"></asp:RangeValidator> -->
-                               <br /> 
-     
+<div class="container1" style="position: relative;">
+    {% load static %}
+    <img src="{% static 'img1.jpg' %}" style="width: 110%;margin-left:-12px; height: auto; object-fit: cover;filter: brightness(60%);">
     
-    </div> 
-    <label visible="false" style="color:black;margin-left:320px; margin-top:15px; font-size:20px" runat="server" ID="status"></label> 
-        
-    <div>
-           
-                <button type="submit" ID="tryagain" class="btn btn-primary btn-lg" style="width: 100px; height:40px;" OnClick="" BackColor="#1E90FF" BorderColor="#1E90FF">Try Again</button>
-                <button type="submit" ID="checkavailabilty" class="btn btn-primary btn-lg" style="width: 100px; height:40px;" OnClick="" BackColor="#1E90FF" BorderColor="#1E90FF">Check Availability</button>
-       
-            </div>
-            </div> 
-        </div> 
-</center> 
+    <div class="centered" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+        <h1>Hotel</h1>
+        <h1>Obsidian</h1>
+        <p class="lead">Discover a new dimension of Luxury</p>
+        <p><a id="switch1" runat="server" class="btn btn-outline-primary btn-lg my-link custom-button" href="{% url 'login' %}" role="button">Book Now</a></p>
+    </div>
+</div>
 
-<br />
+<div class="container" style="margin-top: 20px;">
     <div class="row">
-        <center> 
-            <br />
         <div class="col-md-4">
-         <div class="box" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
-         <center>   <h2 id="roomheader"> Luxury Rooms </h2><p>  {% load static %}<img src="{% static 'bed.png' %}" width="80" height="80"></p> </center>
+            <div class="box" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
+                <h2 id="roomheader">Luxury Rooms</h2>
+                <p><img src="{% static 'bed.png' %}" width="80" height="80"></p>
+            </div>
         </div>
-          </div>
 
         <div class="col-md-4">
-         <div class="box" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
-         <center>   <h2 id="poolheader"> Infinity Pool </h2><p>{% load static %}<img src="{% static 'swimming-pool.png' %}" width="80" height="80"> </p> </center>
-        </div>
+            <div class="box" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
+                <h2 id="poolheader">Infinity Pool</h2>
+                <p><img src="{% static 'swimming-pool.png' %}" width="80" height="80"></p>
             </div>
+        </div>
 
-         <div class="col-md-4">
-         <div class="box" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
-         <center>   <h2 id="dineheader"> Dine-In </h2><p>{% load static %}<img src="{% static 'restaurant.png' %}"" width="80" height="80"> </p> </center>
-        </div>
+        <div class="col-md-4">
+            <div class="box" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
+                <h2 id="dineheader">Dine-In</h2>
+                <p><img src="{% static 'restaurant.png' %}" width="80" height="80"></p>
             </div>
-        </center> 
-        </html>    
+        </div>
+    </div>
+</div>
+</body>
+</html>
         <style>
-
-            body{
-                overflow-x:hidden;
+            /* Add custom CSS styles here */
+            body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
             }
+    
             .bg-image {
                 background-image: url('');
                 background-size: cover;
@@ -100,20 +59,34 @@
                 left: 0;
                 width: 100%;
                 z-index: -1;
-            }  
-            .container1 {
-              position: relative;
-              text-align: center;
-              color: white;
             }
+    
+            .container1 {
+                position: relative;
+                text-align: center;
+                color: white;
+                margin: 0;
+                padding: 0;
+            }
+            .custom-button:hover {
+        color: blue !important;
+        border-color: blue !important;
+        background-color: transparent;
+    }
+    .custom-button{
+        color: #ffffff;
+        border-color: #ffffff;
+    }
             .centered {
-                 position: absolute; 
-                 font-size:larger;
-                 top: 50%;
-                 left: 50%;
-                 transform: translate(-50%, -50%); 
-                  font-family:'Copperplate Gothic'
-            } 
+                position: absolute;
+                font-size: larger;
+                top: 30%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-family: 'Copperplate Gothic';
+                color: aliceblue;
+            }
+    
             .box {
                 background-color: lightgrey;
                 width: 250px;
@@ -127,11 +100,9 @@
                 z-index: 9999;
                 position: relative;
                 box-shadow: 0px 0px 10px black;
-    
-            /*    border: 1px solid #000000; */
             }
+    
             .box:hover {
-              /*  transform: translateY(-10px);*/
                 box-shadow: 0px 0px 10px #619ad9;
                 z-index: 1;
             }
@@ -142,36 +113,58 @@
                 box-shadow: 0px 0px 10px #ffffff;
                 z-index: 1;
             }
+    
             .slideshow {
-               position: relative;
-               width: 100%;
-               height: 400px;
-               overflow: hidden;
+                position: relative;
+                width: 100%;
+                max-width: 800px; /* Responsive max-width for the slideshow */
+                height: auto; /* Adjust height as needed */
+                overflow: hidden;
+                margin: 0 auto; /* Center the slideshow horizontally */
             }
     
             .slideshow img {
-               position: absolute;
-               top: 0;
-               left: 0;
-               width: 100%;
-               height: 100%;
-               opacity: 0;
-               transition: opacity 2s ease-in-out;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 2s ease-in-out;
             }
     
             .slideshow img:first-child {
-               opacity: 1;
+                opacity: 1;
             }
-    
     
             .slideshow img.active {
-               opacity: 1;
+                opacity: 1;
             }
-            
     
+            /* Media queries for responsiveness */
+            @media screen and (max-width: 768px) {
+                .centered {
+                    font-size: 24px;
+                }
+                .box {
+                    width: 100%;
+                }
+                .slideshow {
+                    max-width: 100%;
+                }
+            }
     
-             </style> 
+        </style>
  <script>
+    // Get the screen width
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    // Get the image element
+    var image = document.getElementById('responsive-image');
+
+    // Set the image width to fill the screen width
+    image.style.width = screenWidth + 'px';
+
     var slideIndex = 0;
     var slides = document.getElementsByClassName("slideshow")[0].getElementsByTagName("img");
 
