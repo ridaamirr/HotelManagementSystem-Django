@@ -30,7 +30,7 @@ The Hotel Management System Web App is a web-based application built using XAMPP
 
 ## Class Diagram
 
-![Hotel Management System](HotelObsidianCD.jpg)
+![Hotel Management System](HotelObsidainCD.jpg)
 
 ## Requirements
 
