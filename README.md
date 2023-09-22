@@ -6,6 +6,7 @@
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [Class Diagram](#classdiagram)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -26,6 +27,10 @@ The Hotel Management System Web App is a web-based application built using XAMPP
 - **Guest Profiles**: Maintain guest profiles with personal information and preferences.
 - **Staff Management**: Create and manage staff accounts with different roles and permissions.
 - **Reporting**: Generate various reports, including occupancy rates, revenue, and more.
+
+## Class Diagram
+
+![Hotel Management System](HotelObsidianCD.jpg)
 
 ## Requirements
 
