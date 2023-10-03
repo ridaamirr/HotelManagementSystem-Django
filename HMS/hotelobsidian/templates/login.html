@@ -1,8 +1,7 @@
 {% extends "base.html" %}
-
 {% block content %} 
 <!DOCTYPE html>  
-<html lang="en"> 
+<html lang="en">
 <div class="bg-image"></div> 
 <div style="overflow-x:hidden" class="container" > 
     <div class="container" >
@@ -22,37 +21,33 @@
                                 </div>                                  
                             </div>  
                         </div>
-
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    
-                                    <div class="form-group">
-                                        <input type="text" CssClass="form-control" ID="username" runat="server" placeholder="CNIC"></input>
-                                        <input type="text" CssClass="form-control" ID="adminusername" runat="server" placeholder="UserName"></input>
-                                    </div>
-                                    <div>
-                                         <asp:RegularExpressionValidator ID="regexCNIC" runat="server" ControlToValidate="username" ForeColor="Red" ErrorMessage="Invalid CNIC format" ValidationExpression="^\d{5}-\d{7}-\d{1}$" Display="Dynamic"></asp:RegularExpressionValidator>
-                                        <asp:RequiredFieldValidator ID="rfvCNIC2" runat="server" ControlToValidate="username"
-                             ErrorMessage = "Cnic is Required"  ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
-                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="adminusername"
-                             ErrorMessage = "Username is Required"  ForeColor="Red" Display="Dynamic" Visible="false"></asp:RequiredFieldValidator>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" CssClass="form-control" ID="password" runat="server" placeholder="Password" TextMode="Password"></input>
-                                    </div> 
-
-                                    <asp:RequiredFieldValidator ID="Invalid" ControlToValidate="password" runat="server" Visible="false"
-                               ErrorMessage="Invalid Credentials" ForeColor="Red"></asp:RequiredFieldValidator>   
-
-                                     <div class="form-group">
-                                        <button type="submit" ID="LoginButton" class="btn btn-primary btn-lg" style="width: 180px; height:40px;" OnClick="LoginButton_Click1" BackColor="#1E90FF" BorderColor="#1E90FF">Login</button>
-                                    </div>
-
+                                    <form action="{% url 'homepage' %}" method="get">
+                                        <div class="form-group">
+                                            <input type="text" ssClass="form-control" name="username" placeholder="CNIC">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" ssClass="form-control" name="adminusername" placeholder="UserName">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" ssClass="form-control" name="password" placeholder="Password" TextMode="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-lg" style="width: 180px; height: 40px; background-color: #1E90FF; border-color: #1E90FF;">Login</button>
+                                        </div>
+                                    </form>
+                                    {% if messages %}
+                                    <ul class="messages">
+                                        {% for message in messages %}
+                                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
                                     <a style="text-align:left" href="SignUp.aspx" id="register" runat="server">Register Now</a>  <br /> 
                                     <label>             </label> 
                                 </center>
-
                             </div>
                         </div>
                     </div>
