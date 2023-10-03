@@ -15,10 +15,10 @@
                                     <br />
                                     <h3 style=" color: aliceblue;  font-family:'Arial Unicode MS';font-weight:bold" id="LoginType" runat="server">User Login</h3> 
                                 </center> 
-                                <div class="radio" style="margin-left:80px">  
-                                    <asp:RadioButton ID="userradio" GroupName="logintyoe" runat="server" Checked="true" AutoPostBack="True" OnCheckedChanged="userradio_CheckedChanged"/><label style="color:aliceblue">User Login</label> <label></label><label></label>
-                                    <asp:RadioButton ID="adminradio" GroupName="logintyoe" runat="server" AutoPostBack="True" OnCheckedChanged="adminradio_CheckedChanged"/><label style="color:aliceblue">Admin Login</label>
-                                </div>                                  
+                                <div class="radio" style="margin-left: 80px">
+                                    <input type="radio" id="userradio" name="logintype" checked="true" onchange="userradioChanged()"/><label style="color: aliceblue">User Login</label>
+                                    <input type="radio" id="adminradio" name="logintype" onchange="adminradioChanged()"/><label style="color: aliceblue">Admin Login</label>
+                                </div>                                                          
                             </div>  
                         </div>
                         <div class="row">
