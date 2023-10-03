@@ -1,69 +1,80 @@
 {% extends "base.html" %}
-{% block content %} 
-<!DOCTYPE html>  
+{% block content %}
+<!DOCTYPE html>
 <html lang="en">
-<div class="bg-image"></div> 
-<div style="overflow-x:hidden" class="container" > 
-    <div class="container" >
-        <div class="row1">
-            <div class="col-md-6 mx-auto">
-                <div class="card1">
-                    <div class="card-body">
-                        <div class="row2">
-                            <div class="col">
-                                <center>   
-                                    <br />
-                                    <h3 style=" color: aliceblue;  font-family:'Arial Unicode MS';font-weight:bold" id="LoginType" runat="server">User Login</h3> 
-                                </center> 
-                                <div class="radio" style="margin-left: 80px">
-                                    <input type="radio" id="userradio" name="logintype" checked="true" onchange="userradioChanged()"/><label style="color: aliceblue">User Login</label>
-                                    <input type="radio" id="adminradio" name="logintype" onchange="adminradioChanged()"/><label style="color: aliceblue">Admin Login</label>
-                                </div>                                                          
-                            </div>  
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <center>
-                                    <form action="{% url 'homepage' %}" method="get">
-                                        <div class="form-group">
-                                            <input type="text" ssClass="form-control" name="username" placeholder="CNIC">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="/static/your_stylesheet.css"> <!-- Add the path to your custom stylesheet -->
+</head>
+<body>
+    <div class="bg-image"></div>
+    <div style="overflow-x: hidden;" class="container">
+        <div class="container">
+            <div class="row1">
+                <div class="col-md-6 mx-auto">
+                    <div class="card1">
+                        <div class="card-body">
+                            <form method="post" action="{% url 'homepage' %}">
+                                {% csrf_token %}
+                                <div class="row2">
+                                    <div class="col">
+                                        <center>
+                                            <br />
+                                            <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold" id="LoginType" runat="server">User Login</h3>
+                                        </center>
+                                        <div class="radio" style="margin-left: 80px">
+                                            <input type="radio" id="userradio" name="logintype" value="user" checked="true" /><label style="color: aliceblue">User Login</label>
+                                            <input type="radio" id="adminradio" name="logintype" value="admin" /><label style="color: aliceblue">Admin Login</label>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="text" ssClass="form-control" name="adminusername" placeholder="UserName">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" ssClass="form-control" name="password" placeholder="Password" TextMode="Password">
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-lg" style="width: 180px; height: 40px; background-color: #1E90FF; border-color: #1E90FF;">Login</button>
-                                        </div>
-                                    </form>
-                                    {% if messages %}
-                                    <ul class="messages">
-                                        {% for message in messages %}
-                                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                                        {% endfor %}
-                                    </ul>
-                                    {% endif %}
-                                    <a style="text-align:left" href="SignUp.aspx" id="register" runat="server">Register Now</a>  <br /> 
-                                    <label>             </label> 
-                                </center>
-                            </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <center>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" style="width: 250px" name="username" placeholder="CNIC">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" style="width: 250px" name="adminusername" placeholder="UserName">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" style="width: 250px" name="password" placeholder="Password">
+                                            </div>
+                                            {% if messages %}
+                                            <ul class="messages">
+                                                {% for message in messages %}
+                                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                            {% endif %}
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary btn-lg" style="width: 120px; height: 40px; background-color: #1E90FF; border-color: #1E90FF; border-radius: 5px">Login</button>
+                                            </div>
+                                            <a style="text-align: left" href="SignUp.aspx" id="register" runat="server">Register Now</a> <br />
+                                            <label> </label>
+                                        </center>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>    
+</body>
+</html>
+</html>
 </html>
 <style>
-    body { 
+    body {
         overflow-x: hidden;
-    }  
+    }
     .bg-image {
         background-image: url("/static/3660.jpg");
-        background-size:cover;
+        background-size: cover;
         height: 100%;
         position: fixed;
         top: 0;
@@ -71,25 +82,24 @@
         width: 100%;
         z-index: -1;
     }
-    .row1{
-        width:100%;
-        height:100%;
-        place-content:center;
-        margin-left:370px;
-        margin-top:100px;
-    }  
-.card1 {
-background-color: rgba(0, 0, 0, 0.7); /* light color with opacity */
-color: aliceblue;
-border-radius: 20px;
-width: 65%;
-height: 120%;
-backdrop-filter: blur(2px);
-}
-
-    .row2{
-        font-family:'Arial Unicode MS';
-        font-weight:bold;
-    } 
+    .row1 {
+        width: 100%;
+        height: 100%;
+        place-content: center;
+        margin-left: 370px;
+        margin-top: 100px;
+    }
+    .card1 {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: aliceblue;
+        border-radius: 20px;
+        width: 65%;
+        height: 120%;
+        backdrop-filter: blur(2px);
+    }
+    .row2 {
+        font-family: 'Arial Unicode MS';
+        font-weight: bold;
+    }
 </style>
 {% endblock %}
