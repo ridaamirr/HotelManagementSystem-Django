@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from .models import Customer, AdminLogin
 from django.contrib import messages
 from .forms import LoginForm
-import sys
 
 def user_dashboard(request):
     if request.method == 'POST':
@@ -29,7 +28,7 @@ def user_dashboard(request):
             except AdminLogin.DoesNotExist:
                 messages.error(request, "Invalid information entered")
                 return redirect('login')
-            return render(request, 'user/dashboard.html')
+            return render(request, 'default.html')
         else:
             messages.error(request, "Invalid information entered")
             return redirect('login')
