@@ -24,21 +24,27 @@
                                             <br />
                                             <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold" id="LoginType" runat="server">User Login</h3>
                                         </center>
-                                        <div class="radio" style="margin-left: 80px">
-                                            <input type="radio" id="userradio" name="logintype" value="user" checked="true" /><label style="color: aliceblue">User Login</label>
-                                            <input type="radio" id="adminradio" name="logintype" value="admin" /><label style="color: aliceblue">Admin Login</label>
+                                        <div class="radio">
+                                            <center>
+                                                <input type="radio" id="userradio" name="logintype" value="user" checked="true" /><label style="color: aliceblue">User Login</label>
+                                                &nbsp;
+                                                <input type="radio" id="adminradio" name="logintype" value="admin" /><label style="color: aliceblue">Admin Login</label>
+                                            </center>
                                         </div>
                                     </div>
                                 </div>
+                                <br/>
                                 <div class="row">
                                     <div class="col">
                                         <center>
                                             <div class="form-group">
                                                 <input type="text" class="form-control" style="width: 250px" name="username" placeholder="CNIC">
                                             </div>
+                                            <br/>
                                             <div class="form-group">
                                                 <input type="text" class="form-control" style="width: 250px" name="adminusername" placeholder="UserName">
                                             </div>
+                                            <br/>
                                             <div class="form-group">
                                                 <input type="password" class="form-control" style="width: 250px" name="password" placeholder="Password">
                                             </div>
@@ -50,10 +56,12 @@
                                                         </div>
                                                     {% endfor %}
                                                 </div>
-                                            {% endif %}                                        
+                                            {% endif %}
+                                            <br/>                                        
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-primary btn-lg" style="width: 120px; height: 40px; background-color: #1E90FF; border-color: #1E90FF; border-radius: 5px">Login</button>
                                             </div>
+                                            <br/>
                                             <a style="text-align: left" href="SignUp.aspx" id="register" runat="server">Register Now</a> <br />
                                             <label> </label>
                                         </center>
@@ -98,24 +106,18 @@
         width: 65%;
         height: 120%;
         backdrop-filter: blur(2px);
+        margin-left: -250px;
     }
     .row2 {
         font-family: 'Arial Unicode MS';
         font-weight: bold;
     }
     .message.success {
-        background-color: #4CAF50;
         color: white;
     }
     .message.error {
-        background-color: #f44336;
-        color: white;
+        color: red;
     }
-    .message {
-        padding: 10px;
-        margin: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
+
 </style>
 {% endblock %}
