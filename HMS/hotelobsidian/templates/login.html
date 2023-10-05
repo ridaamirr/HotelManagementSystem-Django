@@ -6,7 +6,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Page Title</title>
-    <link rel="stylesheet" href="/static/your_stylesheet.css"> <!-- Add the path to your custom stylesheet -->
+    <link rel="stylesheet" href="/static/your_stylesheet.css"> 
+    <script>
+        // Function to toggle the visibility of CNIC and admin username fields
+        function toggleFields() {
+            const userRadio = document.getElementById('userradio');
+            const adminRadio = document.getElementById('adminradio');
+            const cnicField = document.getElementById('cnic-field');
+            const adminUsernameField = document.getElementById('admin-username-field');
+
+            if (userRadio.checked) {
+                cnicField.style.display = 'block';
+                adminUsernameField.style.display = 'none';
+            } else if (adminRadio.checked) {
+                cnicField.style.display = 'none';
+                adminUsernameField.style.display = 'block';
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="bg-image"></div>
@@ -26,9 +43,9 @@
                                         </center>
                                         <div class="radio">
                                             <center>
-                                                <input type="radio" id="userradio" name="logintype" value="user" checked="true" /><label style="color: aliceblue">User Login</label>
+                                                <input type="radio" id="userradio" name="logintype" value="user" checked="true" onclick="toggleFields()" /><label style="color: aliceblue">User Login</label>
                                                 &nbsp;
-                                                <input type="radio" id="adminradio" name="logintype" value="admin" /><label style="color: aliceblue">Admin Login</label>
+                                                <input type="radio" id="adminradio" name="logintype" value="admin" onclick="toggleFields()" /><label style="color: aliceblue">Admin Login</label>
                                             </center>
                                         </div>
                                     </div>
@@ -37,14 +54,17 @@
                                 <div class="row">
                                     <div class="col">
                                         <center>
-                                            <div class="form-group">
+                                            
+                                            <div class="form-group" id="cnic-field">
                                                 <input type="text" class="form-control" style="width: 250px" name="username" placeholder="CNIC">
                                             </div>
                                             <br/>
-                                            <div class="form-group">
+                                          
+                                            <div class="form-group" id="admin-username-field" style="display: none;">
                                                 <input type="text" class="form-control" style="width: 250px" name="adminusername" placeholder="UserName">
                                             </div>
                                             <br/>
+                                            
                                             <div class="form-group">
                                                 <input type="password" class="form-control" style="width: 250px" name="password" placeholder="Password">
                                             </div>
