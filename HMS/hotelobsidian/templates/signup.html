@@ -16,7 +16,7 @@
                 <div class="col-md-6 mx-auto">
                     <div class="card1">
                         <div class="card-body">
-                            <form method="post" action="{% url 'homepage' %}"> <!-- Changed the action URL to 'signup' -->
+                            <form method="post" action="{% url 'signup' %}"> <!-- Changed the action URL to 'signup' -->
                                 {% csrf_token %}
                                 <div class="row2">
                                     <div class="col">
@@ -32,35 +32,35 @@
                                     <div class="col">
                                         <center>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" style="width: 250px" name="CNIC" placeholder="CNIC">
+                                                <input type="text" class="form-control" style="width: 250px" name="cnic" placeholder="CNIC">
                                             </div>
                                             <br/>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" style="width: 250px" name="FirstName" placeholder="First Name">
+                                                <input type="text" class="form-control" style="width: 250px" name="firstname" placeholder="First Name">
                                             </div>
                                             <br/>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" style="width: 250px" name="LastName" placeholder="Last Name">
+                                                <input type="text" class="form-control" style="width: 250px" name="lastname" placeholder="Last Name">
                                             </div>
                                             <br/>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" style="width: 250px" name="PhoneNumber" placeholder="Phone Number">
+                                                <input type="text" class="form-control" style="width: 250px" name="phonenumber" placeholder="Phone Number">
                                             </div>
                                             <br/>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" style="width: 250px" name="Email" placeholder="Email">
+                                                <input type="text" class="form-control" style="width: 250px" name="email" placeholder="Email">
                                             </div>
                                             <br/>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" style="width: 250px" name="Address" placeholder="Address">
+                                                <input type="text" class="form-control" style="width: 250px" name="address" placeholder="Address">
                                             </div>
                                             <br/>
                                             <div class="form-group">
-                                                <input type="date" class="form-control" style="width: 250px" name="DOB" placeholder="Date of Birth">
+                                                <input type="date" class="form-control" style="width: 250px" name="dob" placeholder="Date of Birth">
                                             </div>
                                             <br/>
                                             <div class="form-group">
-                                                <input type="password" class="form-control" style="width: 250px" name="Password" placeholder="Password">
+                                                <input type="password" class="form-control" style="width: 250px" name="password" placeholder="Password">
                                             </div>
                                             <br/>
                                             <div class="form-group">
