@@ -6,7 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
-
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
 class AdminLogin(models.Model):
     username = models.CharField(db_column='Username', primary_key=True, max_length=15)  # Field name made lowercase.
@@ -38,9 +38,8 @@ class Booking(models.Model):
         managed = False
         db_table = 'booking'
 
-
 class Customer(models.Model):
-    cnic = models.CharField(db_column='CNIC', primary_key=True, max_length=15)  # Field name made lowercase.
+    cnic = models.CharField(db_column='CNIC', unique=True, primary_key=True, max_length=15)  # Field name made lowercase.
     firstname = models.CharField(db_column='FirstName', max_length=50, blank=True, null=True)  # Field name made lowercase.
     lastname = models.CharField(db_column='LastName', max_length=50, blank=True, null=True)  # Field name made lowercase.
     phonenumber = models.CharField(db_column='PhoneNumber', max_length=13, blank=True, null=True)  # Field name made lowercase.
@@ -48,7 +47,7 @@ class Customer(models.Model):
     address = models.TextField(db_column='Address', blank=True, null=True)  # Field name made lowercase.
     dob = models.DateField(db_column='DOB', blank=True, null=True)  # Field name made lowercase.
     password = models.TextField(db_column='Password')  # Field name made lowercase.
-
+    
     class Meta:
         managed = False
         db_table = 'customer'

@@ -16,7 +16,7 @@
                 <div class="col-md-6 mx-auto">
                     <div class="card1">
                         <div class="card-body">
-                            <form method="post" action="{% url 'signup' %}"> <!-- Changed the action URL to 'signup' -->
+                            <form method="post" action="{% url 'homepage' %}"> <!-- Changed the action URL to 'signup' -->
                                 {% csrf_token %}
                                 <div class="row2">
                                     <div class="col">
@@ -88,7 +88,7 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </div>  
                 </div>
             </div>
         </div>
