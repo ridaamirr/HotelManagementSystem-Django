@@ -12,6 +12,9 @@ def default(request):
 def login(request):
     return render(request, 'login.html')
 
+def admin(request):
+    return render(request, 'admin.html')
+
 def signup(request): 
     if request.method == 'POST': 
         if request.POST.get('cnic') and request.POST.get('firstname') and request.POST.get('lastname') and request.POST.get('email') and request.POST.get('phonenumber') and request.POST.get('password') and request.POST.get('dob') and request.POST.get('address'):
