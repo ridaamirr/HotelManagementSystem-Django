@@ -16,7 +16,7 @@
                 <div class="col-md-6 mx-auto">
                     <div class="card1">
                         <div class="card-body">
-                            <form method="post" action="{% url 'signup' %}"> <!-- Changed the action URL to 'signup' -->
+                            <form method="post" action="{% url 'signup' %}" id="signupForm" onsubmit="return validateForm()"> <!-- Changed the action URL to 'signup' -->
                                 {% csrf_token %}
                                 <div class="row2">
                                     <div class="col">
@@ -24,7 +24,6 @@
                                             <br />
                                             <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold" id="LoginType" runat="server">User Signup</h3> <!-- Changed the title to 'User Signup' -->
                                         </center>
-                                        
                                     </div>
                                 </div>
                                 <br/>
@@ -32,39 +31,48 @@
                                     <div class="col">
                                         <center>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" style="width: 250px" name="cnic" placeholder="CNIC">
+                                                <input type="text" class="form-control" style="width: 250px" name="cnic" id="cnic" placeholder="CNIC">
+                                                <span id="cnicError" style="color: Red; display: none;">Invalid CNIC format</span>
                                             </div>
                                             <br/>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" style="width: 250px" name="firstname" placeholder="First Name">
+                                                <input type="text" class="form-control" style="width: 250px" name="firstname" id="firstname" placeholder="First Name">
+                                                <span id="firstnameError" style="color: Red; display: none;">First Name is required</span>
                                             </div>
                                             <br/>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" style="width: 250px" name="lastname" placeholder="Last Name">
+                                                <input type="text" class="form-control" style="width: 250px" name="lastname" id="lastname" placeholder="Last Name">
+                                                <span id="lastnameError" style="color: Red; display: none;">Last Name is required</span>
                                             </div>
                                             <br/>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" style="width: 250px" name="phonenumber" placeholder="Phone Number">
+                                                <input type="text" class="form-control" style="width: 250px" name="phonenumber" id="phonenumber" placeholder="Phone Number">
+                                                <span id="phoneError" style="color: Red; display: none;">Invalid phone number format</span>
                                             </div>
                                             <br/>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" style="width: 250px" name="email" placeholder="Email">
+                                                <input type="text" class="form-control" style="width: 250px" name="email" id="email" placeholder="Email">
+                                                <span id="emailError" style="color: Red; display: none;">Invalid email format</span>
                                             </div>
                                             <br/>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" style="width: 250px" name="address" placeholder="Address">
+                                                <input type="text" class="form-control" style="width: 250px" name="address" id="address" placeholder="Address">
+                                                <span id="addressError" style="color: Red; display: none;">Address is required</span>
                                             </div>
                                             <br/>
                                             <div class="form-group">
-                                                <input type="date" class="form-control" style="width: 250px" name="dob" placeholder="Date of Birth">
+                                                <input type="date" class="form-control" style="width: 250px" name="dob" id="dob" placeholder="Date of Birth">
+                                                <span id="dobError" style="color: Red; display: none;">You should be at least 16 years old</span>
                                             </div>
                                             <br/>
                                             <div class="form-group">
-                                                <input type="password" class="form-control" style="width: 250px" name="password" placeholder="Password">
+                                                <input type="password" class="form-control" style="width: 250px" name="password" id="password" placeholder="Password">
+                                                <span id="passwordError" style="color: Red; display: none;">Password should be at least 8 characters long</span>
                                             </div>
                                             <br/>
                                             <div class="form-group">
-                                                <input type="password" class="form-control" style="width: 250px" name="ConfirmPassword" placeholder="Confirm Password">
+                                                <input type="password" class="form-control" style="width: 250px" name="ConfirmPassword" id="ConfirmPassword" placeholder="Confirm Password">
+                                                <span id="confirmPasswordError" style="color: Red; display: none;">Passwords do not match</span>
                                             </div>
                                             <br/>
                                             {% if messages %}
@@ -76,7 +84,7 @@
                                                     {% endfor %}
                                                 </div>
                                             {% endif %}
-                                            <br/>                                        
+                                            <br/>
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-primary btn-lg" style="width: 120px; height: 40px; background-color: #1E90FF; border-color: #1E90FF; border-radius: 5px">Signup</button>
                                             </div>
@@ -93,7 +101,106 @@
             </div>
         </div>
     </div>
+
+
+
+    <script>
+        function validateForm() {
+            var cnicInput = document.getElementById("cnic").value;
+            var regexCNIC = /^\d{5}-\d{7}-\d{1}$/;
+    
+            var firstnameInput = document.getElementById("firstname").value;
+            var lastnameInput = document.getElementById("lastname").value;
+    
+            var phoneInput = document.getElementById("phonenumber").value;
+            var regexPhone = /^\+923\d{9}$/;
+    
+            var emailInput = document.getElementById("email").value;
+            var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    
+            var addressInput = document.getElementById("address").value;
+    
+            var dobInput = document.getElementById("dob").value;
+            var dobDate = new Date(dobInput);
+            var currentDate = new Date();
+            var minDOBDate = new Date();
+            minDOBDate.setFullYear(currentDate.getFullYear() - 16);
+    
+            var passwordInput = document.getElementById("password").value;
+            var confirmPasswordInput = document.getElementById("ConfirmPassword").value;
+    
+            var isValid = true;
+    
+            if (cnicInput === "") {
+                document.getElementById("cnicError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("cnicError").style.display = "none";
+            }
+    
+            if (firstnameInput === "") {
+                document.getElementById("firstnameError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("firstnameError").style.display = "none";
+            }
+    
+            if (lastnameInput === "") {
+                document.getElementById("lastnameError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("lastnameError").style.display = "none";
+            }
+    
+            if (!regexPhone.test(phoneInput)) {
+                document.getElementById("phoneError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("phoneError").style.display = "none";
+            }
+    
+            if (!regexEmail.test(emailInput)) {
+                document.getElementById("emailError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("emailError").style.display = "none";
+            }
+    
+            if (addressInput === "") {
+                document.getElementById("addressError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("addressError").style.display = "none";
+            }
+    
+            if (dobInput === "" || dobDate > minDOBDate) {
+                document.getElementById("dobError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("dobError").style.display = "none";
+            }
+    
+            if (passwordInput === "" || passwordInput.length < 8) {
+                document.getElementById("passwordError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("passwordError").style.display = "none";
+            }
+    
+            if (confirmPasswordInput !== passwordInput) {
+                document.getElementById("confirmPasswordError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("confirmPasswordError").style.display = "none";
+            }
+    
+            return isValid;
+        }
+    </script>
+    
+    
 </body>
+
 </html>
 <style>
     body {
