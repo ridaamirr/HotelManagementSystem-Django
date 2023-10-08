@@ -29,4 +29,4 @@ def signup(request):
             saverecord.phonenumber=request.POST.get('phonenumber') 
             saverecord.save()
             return render(request,'login.html')      
-        return render(request,'signup.html')
+    return render(request,'signup.html')
