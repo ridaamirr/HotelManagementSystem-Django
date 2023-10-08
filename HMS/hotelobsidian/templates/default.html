@@ -43,7 +43,7 @@
 
 
 </br>
-<div class="container" style="margin-top: 20px;">
+<div class="container" style="margin-top: 20px; margin-left:130px">
     <div class="row">
         <div class="col-md-4">
             <div class="box" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
@@ -68,120 +68,121 @@
     </div>
 </div>
 </body>
-</html>
-        <style>
-            /* Add custom CSS styles here */
-            body {
-                margin: 0;
-                padding: 0;
-                overflow-x: hidden;
-            }
-    
-            .bg-image {
-                background-image: url('');
-                background-size: cover;
-                height: 100%;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                z-index: -1;
-            }
-    
-            .container1 {
-                position: relative;
-                text-align: center;
-                color: white;
-                margin: 0;
-                padding: 0;
-            }
-            .custom-button:hover {
-        color: blue !important;
-        border-color: blue !important;
-        background-color: transparent;
-    }
-    .custom-button{
-        color: #ffffff;
-        border-color: #ffffff;
-    }
-            .centered {
-                position: absolute;
-                font-size: larger;
-                top: 30%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-family: 'Copperplate Gothic';
-                color: aliceblue;
-            }
-    
-            .box {
-                background-color: lightgrey;
-                width: 250px;
-                height: 200px;
-                margin: 10px;
-                text-align: center;
-                padding: 20px;
-                border-radius: 10px;
-                transition: all 0.3s ease;
-                cursor: pointer;
-                z-index: 9999;
-                position: relative;
-                box-shadow: 0px 0px 10px black;
-            }
-    
-            .box:hover {
-                box-shadow: 0px 0px 10px #619ad9;
-                z-index: 1;
-            }
-    
-            .highlighted {
-                background-color: lightgrey;
-                transform: translateY(-10px);
-                box-shadow: 0px 0px 10px #ffffff;
-                z-index: 1;
-            }
-    
-        </style>
- <script>
-    // Get the screen width
-    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-    // Get the image element
-    var image = document.getElementById('responsive-image');
-
-    // Set the image width to fill the screen width
-    image.style.width = screenWidth + 'px';
-
-    var slideIndex = 0;
-    var slides = document.getElementsByClassName("slideshow")[0].getElementsByTagName("img");
-
-    function showSlide(index) {
-        if (index >= slides.length) {
-            slideIndex = 0;
-        } else if (index < 0) {
-            slideIndex = slides.length - 1;
-        } else {
-            slideIndex = index;
-        }
-
-        for (var i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-        }
-
-        slides[slideIndex].classList.add("active");
+<style>
+    /* Add custom CSS styles here */
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
     }
 
-    function autoSlide() {
-        showSlide(slideIndex + 1);
-        setTimeout(autoSlide, 5000);
+    .bg-image {
+        background-image: url('');
+        background-size: cover;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
     }
 
-    showSlide(slideIndex);
+    .container1 {
+        position: relative;
+        text-align: center;
+        color: white;
+        margin: 0;
+        padding: 0;
+    }
+    .custom-button:hover {
+color: blue !important;
+border-color: blue !important;
+background-color: transparent;
+}
+.custom-button{
+color: #ffffff;
+border-color: #ffffff;
+}
+    .centered {
+        position: absolute;
+        font-size: larger;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Copperplate Gothic';
+        color: aliceblue;
+    }
 
-    setTimeout(autoSlide, 5000);
+    .box {
+        background-color: lightgrey;
+        width: 250px;
+        height: 200px;
+        margin: 10px;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        z-index: 9999;
+        position: relative;
+        box-shadow: 0px 0px 10px black;
+    }
+
+    .box:hover {
+        box-shadow: 0px 0px 10px #619ad9;
+        z-index: 1;
+    }
+
+    .highlighted {
+        background-color: lightgrey;
+        transform: translateY(-10px);
+        box-shadow: 0px 0px 10px #ffffff;
+        z-index: 1;
+    }
+
+</style>
+<script>
+// Get the screen width
+var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+// Get the image element
+var image = document.getElementById('responsive-image');
+
+// Set the image width to fill the screen width
+image.style.width = screenWidth + 'px';
+
+var slideIndex = 0;
+var slides = document.getElementsByClassName("slideshow")[0].getElementsByTagName("img");
+
+function showSlide(index) {
+if (index >= slides.length) {
+    slideIndex = 0;
+} else if (index < 0) {
+    slideIndex = slides.length - 1;
+} else {
+    slideIndex = index;
+}
+
+for (var i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+}
+
+slides[slideIndex].classList.add("active");
+}
+
+function autoSlide() {
+showSlide(slideIndex + 1);
+setTimeout(autoSlide, 5000);
+}
+
+showSlide(slideIndex);
+
+setTimeout(autoSlide, 5000);
 
 
 </script> 
+</html>
+        
  
 {% endblock %}
 
