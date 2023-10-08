@@ -4,10 +4,11 @@ from django.db import connection
 
 # Create your views here
 
-def default(request): 
+def default(request):  
+    results=Hotel.objects.all()
     cursor=connection.cursor()
     cursor.execute('call AutomaticCheckOut()')  
-    return render(request, 'default.html') 
+    return render(request, 'default.html', {"results":results})
 
 def login(request):
     return render(request, 'login.html')
