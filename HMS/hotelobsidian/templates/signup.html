@@ -131,7 +131,7 @@
     
             var isValid = true;
     
-            if (cnicInput === "") {
+            if (!regexCNIC.test(cnicInput)) {
                 document.getElementById("cnicError").style.display = "block";
                 isValid = false;
             } else {
