@@ -19,17 +19,31 @@
     <div class="box" style="margin-top: -50px; width: 800px; height: 100px; background-color: lightgray; border-radius: 4px; cursor: auto; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
         <div class="display-flex" id="loc" style="flex: 1; margin-right: 20px;">
             <label style="color: black; display: block; text-align: left; margin-left: 20px;"><b>Select Location</b></label>
-            <select class="form-control" id="DropDownList1" style="width: 150px;">
-                {% for results in Hotel %}
-                <option>{{results.location}}</option>   
-                {% endfor %} 
-            </select>
+            <form method="post">
+                {% csrf_token %}
+                <select class="form-control" id="DropDownList2" style="width: 150px;">
+                                        
+                            <option value="" disabled selected></option>
+                            {% for loc in loc %}
+                                <option value="{{ loc }}">{{ loc }}</option>
+                            {% endfor %}
+                                
+                </select>
+            </form>
         </div>
         <div class="display-flex" id="type" style="flex: 1; margin-right: 20px;">
             <label style="color: black; display: block; text-align: left; margin-left: 15px;"><b>Select RoomType</b></label>
-            <select class="form-control" id="DropDownList2" style="width: 150px;">
-                
-            </select>
+            <form method="post">
+                {% csrf_token %}
+                <select class="form-control" id="DropDownList2" style="width: 150px;">
+                                        
+                            <option value="" disabled selected></option>
+                            {% for room_type in room_types %}
+                                <option value="{{ room_type }}">{{ room_type }}</option>
+                            {% endfor %}
+                                
+                </select>
+            </form>
         </div>
         <div class="display-flex" id="bed" style="flex: 1; margin-right: 20px;">
             <label style="color: black; display: block; text-align: left;"><b>Enter Number of Beds</b></label>
