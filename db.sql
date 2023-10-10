@@ -62,20 +62,22 @@ CREATE TABLE Booking (
 -- Default Page Function (additional function) - MARYAM
 DELIMITER //
 
-CREATE FUNCTION CheckAvailability(loc TEXT, Type TEXT, noofbeds INT)
-RETURNS INT
+CREATE PROCEDURE CheckAvailability(loc TEXT, Type TEXT, noofbeds INT)
 BEGIN
-    DECLARE RoomType_ID INT;
-
-    SELECT Room.RoomType_ID INTO RoomType_ID
+     CREATE TEMPORARY TABLE temp_available AS
+    SELECT Room.RoomType_ID
     FROM RoomType
     JOIN Room ON Room.RoomType_ID = RoomType.RoomType_ID
     WHERE NumberOfBeds = noofbeds AND Type = Type
     AND Room.Branch_ID IN (SELECT Branch_ID FROM Hotel WHERE Location = loc)
-    AND isBooked = 'False'
-    LIMIT 1;
+    AND isBooked = 'False';
+    
+     -- Select the data from the temporary table
+    SELECT * FROM temp_available;
 
-    RETURN RoomType_ID;
+    -- Drop the temporary table
+    DROP TEMPORARY TABLE IF EXISTS temp_available;
+
 END//
 DELIMITER ;
 

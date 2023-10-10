@@ -3,22 +3,33 @@ from django.shortcuts import render, redirect
 from django.db import connection
 from .models import Room
 
-def default(request):
+def default(request): 
+    #populating drop downs
     room_types = Roomtype.objects.values_list('type', flat=True).distinct()
     loc = Hotel.objects.values_list('location', flat=True).distinct()
-    results = Hotel.objects.all()
     
     # If you want to execute the stored procedure, you can do it here
     cursor = connection.cursor()
-    cursor.execute('call AutomaticCheckOut()')
-    
+    cursor.execute('call AutomaticCheckOut()') 
+
     context = {
         'loc':loc,
         'room_types': room_types,
-        'results': results,
-    }
-    
-    return render(request, 'default.html', context)
+         }     
+    return render(request, 'default.html', context) 
+
+def checkavailabilty(request): 
+    if request.method == 'POST': 
+        cursor = connection.cursor()
+        cursor.execute('call CheckAvailability(%s, %s, %s)',request.GET.get('Location'),request.GET.get('Type'),request.GET.get('noofbeds'))
+        result=cursor.fetchone()
+
+    if result is None:
+         return(request,'signup.html') 
+    else:
+        return(request,'default.html',{ 'result':result} )  
+
+
 
 def login(request):
     return render(request, 'login.html')

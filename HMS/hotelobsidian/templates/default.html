@@ -17,13 +17,15 @@
 </div>
 <center>
     <div class="box" style="margin-top: -50px; width: 800px; height: 100px; background-color: lightgray; border-radius: 4px; cursor: auto; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+    <form method="post"  action="{% url 'checkavailabilty' %}"> 
+            {% csrf_token %}
         <div class="display-flex" id="loc" style="flex: 1; margin-right: 20px;">
             <label style="color: black; display: block; text-align: left; margin-left: 20px;"><b>Select Location</b></label>
             <form method="post">
                 {% csrf_token %}
-                <select class="form-control" id="DropDownList2" style="width: 150px;">
+                <select class="form-control" id="DropDownList2" name="Location" style="width: 150px;">
                                         
-                            <option value="" disabled selected></option>
+                            <option value="Location" disabled selected></option>
                             {% for loc in loc %}
                                 <option value="{{ loc }}">{{ loc }}</option>
                             {% endfor %}
@@ -35,9 +37,9 @@
             <label style="color: black; display: block; text-align: left; margin-left: 15px;"><b>Select RoomType</b></label>
             <form method="post">
                 {% csrf_token %}
-                <select class="form-control" id="DropDownList2" style="width: 150px;">
+                <select class="form-control" id="DropDownList2" name="Type" style="width: 150px;">
                                         
-                            <option value="" disabled selected></option>
+                            <option value="Room Type" disabled selected></option>
                             {% for room_type in room_types %}
                                 <option value="{{ room_type }}">{{ room_type }}</option>
                             {% endfor %}
@@ -47,11 +49,23 @@
         </div>
         <div class="display-flex" id="bed" style="flex: 1; margin-right: 20px;">
             <label style="color: black; display: block; text-align: left;"><b>Enter Number of Beds</b></label>
-            <input type="text" class="form-control" id="noofbeds" style="width: 170px;" />
+            <input type="text" class="form-control" name="noofbeds" style="width: 170px;" />
             <span style="color: Red; display: none;" id="RequiredFieldValidator3">Number of Beds are Required</span>
             <span style="color: Red; display: none;" id="RangeValidator1">Enter a Valid Number</span>
         </div>
-        <button class="btn btn-success btn-block btn-lg" id="Availability" style="width: auto; min-width: 170px; height: 80%; padding: 10px; background-color: #1E90FF; border-color: #1E90FF;">Check Availability</button>
+    
+        <h1>
+            {%if result%} 
+            Available 
+            {%else%} 
+            Not Available 
+            {%endif%}
+            
+        </h1>
+        <div class="form-group">
+        <button type="submit" class="btn btn-success btn-block btn-lg" id="Availability" style="width: auto; min-width: 170px; height: 80%; padding: 10px; background-color: #1E90FF; border-color: #1E90FF;">Check Availability</button>
+    </div>
+    </form>
     </div>
 </center>
 
