@@ -19,15 +19,17 @@ def default(request):
     return render(request, 'default.html', context) 
 
 def checkavailabilty(request): 
-    if request.method == 'POST': 
-        cursor = connection.cursor()
-        cursor.execute('call CheckAvailability(%s, %s, %s)',request.GET.get('Location'),request.GET.get('Type'),request.GET.get('noofbeds'))
-        result=cursor.fetchone()
-
-    if result is None:
-         return(request,'signup.html') 
-    else:
-        return(request,'default.html',{ 'result':result} )  
+    if request.method == 'GET': 
+        cursor = connection.cursor()  
+        data=(request.POST.get('Location'),request.POST.get('Type'),request.POST.get('noofbeds'))
+        cursor.execute('call CheckAvailability(%s, %s, %s)',data)
+        result=cursor.fetchall()
+        if result:
+            return render(request,'login.html' )   
+        else: 
+            return render(request,'signup.html') 
+    else: 
+        return render(request,'admin.html')  
 
 
 
