@@ -16,67 +16,61 @@
     </div>
 </div>
 <center>  
-    <div class="{% if temptohide %}check1{% endif %}">
-    <form method="post" action="{% url 'checkavailabilty' %}">
-    <div class="box" style="margin-top: -50px; width: 800px; height: 100px; background-color: lightgray; border-radius: 4px; cursor: auto; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
-       
-        <div class="display-flex" id="loc" style="flex: 1; margin-right: 20px;">
-            <label style="color: black; display: block; text-align: left; margin-left: 20px;"><b>Select Location</b></label>
-            <form method="post">
-                {% csrf_token %}
-                <select class="form-control" name="Location" style="width: 150px;">
-                                        
-                            <option value="Location" disabled selected></option>
-                            {% for loc in loc %}
-                                <option value="{{ loc }}">{{ loc }}</option>
-                            {% endfor %}
-                                
-                </select>
-            </form>
+    <form name="availabilityForm" method="post" action="{% url 'checkavailabilty' %}" onsubmit="return validateForm()">
+
+        {% csrf_token %}
+        <div class="{% if temptohide %}check1{% endif %}">
+            <div class="box" style="margin-top: -50px; width: 800px; height: 100px; background-color: lightgray; border-radius: 4px; cursor: auto; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                <div class="display-flex" id="loc" style="flex: 1; margin-right: 20px;">
+                    <label style="color: black; display: block; text-align: left; margin-left: 20px;"><b>Select Location</b></label>
+                    <select class="form-control" name="Location" style="width: 150px">
+                        <option value="Location" disabled selected></option>
+                        {% for loc in loc %}
+                            <option value="{{ loc }}">{{ loc }}</option>
+                        {% endfor %}
+                    </select>
+                    <span id="locationError" style="color: Red; display: none ;font-size: small;">Please select a Location</span>
+                </div>
+                <div class="display-flex" style="flex: 1; margin-right: 20px;">
+                    <label style="color: black; display: block; text-align: left; margin-left: 15px;"><b>Select RoomType</b></label>
+                    <select class="form-control" name="Type" style="width: 150px">
+                        <option value="Type" disabled selected></option>
+                        {% for room_type in room_types %}
+                            <option value="{{ room_type }}">{{ room_type }}</option>
+                        {% endfor %}
+                    </select>
+                    <span id="typeError" style="color: Red; display: none; font-size: small">Please select a Room Type</span>
+                </div>
+                <div class="display-flex" id="bed" style="flex: 1; margin-right: 20px;">
+                    <label style="color: black; display: block; text-align: left;"><b>Enter Number of Beds</b></label>
+                    <input type="text" class="form-control" name="noofbeds" style="width: 170px">
+                    <span id="bedError" style="color: Red; display: none;font-size: small;">Please enter valid input</span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-block btn-lg" id="Check" style="width: auto; min-width: 170px; height: 80%; padding: 10px; background-color: #1E90FF; border-color: #1E90FF;">Check Availability</button>
+                </div>
+            </div>
         </div>
-        <div class="display-flex" style="flex: 1; margin-right: 20px;">
-            <label style="color: black; display: block; text-align: left; margin-left: 15px;"><b>Select RoomType</b></label>
-            <form method="post">
-                {% csrf_token %}
-                <select class="form-control" name="Type" style="width: 150px;">
-                                        
-                            <option value="Type" disabled selected></option>
-                            {% for room_type in room_types %}
-                                <option value="{{ room_type }}">{{ room_type }}</option>
-                            {% endfor %}
-                                
-                </select>
-            </form>
-        </div>
-        <div class="display-flex" id="bed" style="flex: 1; margin-right: 20px;">
-            <label style="color: black; display: block; text-align: left;"><b>Enter Number of Beds</b></label>
-            <input type="text" class="form-control" name="noofbeds" style="width: 170px;" />
-            <span style="color: Red; display: none;" id="RequiredFieldValidator3">Number of Beds are Required</span>
-            <span style="color: Red; display: none;" id="RangeValidator1">Enter a Valid Number</span>
-        </div>
-        <div class="form-group">
-        <button type="submit" class="btn btn-success btn-block btn-lg" id="Check" style="width: auto; min-width: 170px; height: 80%; padding: 10px; background-color: #1E90FF; border-color: #1E90FF;">Check Availability</button>
-    </div> 
-    </div> 
-    </form> 
-    </div> 
-    <div class="{% if temptohide %}check2 {%else%} check3{% endif %}" />
-    <form method="get" action="{% url 'default' %}">
-        <div class="box" style="margin-top: -50px; width: 800px; height: 100px; background-color: lightgray; border-radius: 4px; cursor: auto; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
-       
-            <h1 id="status">
-                {%if result%} 
-                Available 
-                {%else%} 
-                Not Available  
-                {%endif%}  
-            </h1> 
-        <div class="form-group">
-            <button type="submit" class="btn btn-success btn-block btn-lg" id="Check" style="width: auto; min-width: 170px; height: 80%; padding: 10px; background-color: #1E90FF; border-color: #1E90FF;">Try Again</button>
-        </div> 
-        </div> 
     </form>
+    <div class="{% if temptohide %}check2{% else %}check3{% endif %}">
+        <form method="get" action="{% url 'default' %}">
+            <div class="box" style="margin-top: -50px; width: 800px; height: 100px; background-color: lightgray; border-radius: 4px; cursor: auto; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                <div style="display: flex; justify-content: center; align-items: center; height: 100vh;margin-left: 40vh;">
+                    <h1 id="status">
+                        {% if result %}
+                        Available
+                        {% else %}
+                        Not Available
+                        {% endif %}
+                    </h1>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-block btn-lg" id="Check" style="width: auto; min-width: 170px; height: 80%; padding: 10px; background-color: #1E90FF; border-color: #1E90FF;">Try Again</button>
+                </div>
+            </div>
+        </form>
     </div>
+    
 </center>
 </br>
 <div class="container" style="margin-top: 20px; margin-left:130;">
@@ -104,6 +98,41 @@
     </div>
 </div>
 </body>
+<script>
+    function validateForm() {
+        var location = document.forms["availabilityForm"]["Location"].value;
+        var type = document.forms["availabilityForm"]["Type"].value;
+        var noOfBeds = document.forms["availabilityForm"]["noofbeds"].value;
+
+        var isValid = true;
+
+        if (location === "Location") {
+            document.getElementById("locationError").style.display = "block";
+            isValid = false;
+        } else {
+            document.getElementById("locationError").style.display = "none";
+        }
+
+        if (type === "Type") {
+    document.getElementById("typeError").style.display = "block"; // Corrected line
+    isValid = false;
+} else {
+    document.getElementById("typeError").style.display = "none";
+}
+
+
+        if (!/^\d+$/.test(noOfBeds)) {
+            document.getElementById("bedError").style.display = "block";
+            isValid = false;
+        } else {
+            document.getElementById("bedError").style.display = "none";
+        }
+
+        return isValid;
+    }
+</script>
+
+
 <style>
     /* Add custom CSS styles here */
     body {
