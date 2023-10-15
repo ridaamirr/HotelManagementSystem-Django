@@ -86,7 +86,7 @@ CREATE PROCEDURE catalog(loc TEXT)
 BEGIN
     -- Create a temporary table to store the results
     CREATE TEMPORARY TABLE temp_catalog AS
-    SELECT DISTINCT Room.RoomType_ID, NumberOfBeds, Type, Price, Image
+    SELECT DISTINCT (Room.RoomType_ID), NumberOfBeds, Type, Price, Image
     FROM Room
     JOIN RoomType ON Room.RoomType_ID = RoomType.RoomType_ID
     WHERE Branch_ID IN (SELECT Hotel.Branch_ID FROM Hotel WHERE Location = loc)
