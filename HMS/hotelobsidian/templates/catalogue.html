@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <div class="card1" id="panel2" style="display: none;">
+        <div class="{%if result %}card1 {%endif%}" id="panel2" >
             <!-- Panel 2 (Initially hidden) -->
             <div class="card-body">
                 <div class="row">
@@ -56,23 +56,27 @@
                     </div>
                 </div>
                 <div class="row" style="margin-left:130px">
-                    <div class="col">
-                        <div class="myDataList"> 
-                            {% for i in result %}
-                            <li>
-                                <h3>{{ i.type }}</h3>
+                    <div class="col"> 
+                        <form method="get">
+                             <div class="myDataList" style="color: aliceblue;"> 
+                                <li>
+                                    {% for results in result %}
+                            
+                                        <p style="color: aliceblue;">type </p>
                                 
-                            </li>
-                            {% endfor %}
-                        </div>
+                                     {% endfor %} 
+                                </li>
+                            </div> 
+                        </form>
                         <div style="margin-left:160px">
                             <span id="lblError" style="color:red;"></span>
                         </div>
                         <br />
-                     </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div> 
+
 
         <div class="card1" id="panel3" style="display: none;">
             <!-- Panel 3 (Initially hidden) -->
