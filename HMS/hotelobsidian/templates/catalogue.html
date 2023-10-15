@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Your Page Title</title>
+    <title>Catalogue</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Add any other necessary CSS and JavaScript files -->
     <style>
@@ -68,7 +68,8 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <center>
+                        <center> 
+                            <form method="get" action="{% url 'cataloguelist' %}">
                             <div class="form-group">
                                 <label class="text-white" style="font-size: 1.5rem;">Select Location</label>
                                 <br />
@@ -84,7 +85,8 @@
                                 <br />
                                 <br />
                                 <br />      
-                            </div>
+                            </div> 
+                        </form>
                         </center>
                     </div>
                 </div>
@@ -105,15 +107,19 @@
                 </div>
                 <div class="row" style="margin-left:130px">
                     <div class="col">
-                        <div class="myDataList">
-                            <!-- Your Django code should populate this section dynamically -->
+                        <div class="myDataList"> 
+                            {% for i in result %}
+                            <li>
+                                <h3>{{ i.type }}</h3>
+                                
+                            </li>
+                            {% endfor %}
                         </div>
                         <div style="margin-left:160px">
                             <span id="lblError" style="color:red;"></span>
                         </div>
                         <br />
-                        <!-- SQL data source is not relevant in HTML, handle data retrieval in your Django views -->
-                    </div>
+                     </div>
                 </div>
             </div>
         </div>
