@@ -42,8 +42,10 @@ def login(request):
 
 def catalogue(request):
     loc = Hotel.objects.values_list('location', flat=True).distinct()
+    logintype = request.session.get('logintype', None)
     context = {
         'loc':loc,
+        'logintype':logintype
          }     
     return render(request, 'catalogue.html', context)  
 
@@ -52,10 +54,17 @@ def cataloguelist(request):
     data=request.GET.get('Location') 
     cursor.callproc('catalog',data)
     result = cursor.fetchall()
-    return render(request, 'catalogue.html',{'result':result,}) 
+    logintype = request.session.get('logintype', None)
+    context = {
+        'result':result,
+        'logintype':logintype
+         }  
+
+    return render(request, 'catalogue.html', context) 
 
 def admin(request):
-    return render(request, 'admin.html')
+    logintype = request.session.get('logintype', None)
+    return render(request, 'admin.html', {'logintype': logintype})
 
 def signup(request): 
     if request.method == 'POST': 

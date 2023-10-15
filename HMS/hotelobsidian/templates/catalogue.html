@@ -1,58 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %} 
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Catalogue</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Add any other necessary CSS and JavaScript files -->
-    <style>
-        body {
-            overflow-x: hidden;
-        }
-
-        .bg-image {
-            background-image: url('/static/3660.jpg');
-            background-size: cover;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: -1;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .card1 {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: black;
-            border-color: black;
-            border-radius: 20px;
-            width: 90%; /* Adjust width as needed */
-            max-width: 800px; /* Set a maximum width */
-            backdrop-filter: blur(2px);
-        }
-
-        .myDataList {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .myDataList > div {
-            width: 48%;
-            margin: 20px;
-        }
-
-        .myDataList .item {
-            margin-right: 20px;
-        }
-    </style>
-</head>
+<html lang="en">
 <body>
     <div class="bg-image"></div>
     <div class="container">
@@ -169,4 +119,53 @@
         });
     </script>
 </body>
+<style>
+    body {
+        overflow-x: hidden;
+    }
+
+    .bg-image {
+        background-image: url('/static/3660.jpg');
+        background-size: cover;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .card1 {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: black;
+        border-color: black;
+        border-radius: 20px;
+        width: 90%; /* Adjust width as needed */
+        max-width: 800px; /* Set a maximum width */
+        backdrop-filter: blur(2px);
+    }
+
+    .myDataList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .myDataList > div {
+        width: 48%;
+        margin: 20px;
+    }
+
+    .myDataList .item {
+        margin-right: 20px;
+    }
+</style>
 </html>
+{% endblock %}
