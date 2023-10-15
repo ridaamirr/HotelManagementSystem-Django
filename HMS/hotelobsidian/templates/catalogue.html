@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Your Page Title</title>
-    <link rel="stylesheet" href="/static/css/site.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Add any other necessary CSS and JavaScript files -->
     <style>
         body {
@@ -60,20 +60,17 @@
             <!-- Panel 1 -->
             <div class="card-body">
                 <div class="row2">
-                    <div class="col">
-                        <center>
-                            <br />
-                            <h3 style="color: aliceblue; font-family:'Arial Unicode MS'; font-weight:bold;font-size: xx-large;">Room Catalogue</h3>
-                            <br />
-                        </center>
+                    <div class="col text-center">
+                        <br />
+                        <h3 class="text-white" style="font-family:'Arial Unicode MS'; font-weight:bold; font-size: 2rem;">Room Catalogue</h3>
+                        <br />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <center>
                             <div class="form-group">
-                                <label style="color: aliceblue; font-size: large;">Select Location</label>
-                                <br />
+                                <label class="text-white" style="font-size: 1.5rem;">Select Location</label>
                                 <br />
                                 <select class="form-control" name="Location" style="width: 150px">
                                     <option value="Location" disabled selected></option>
@@ -83,7 +80,7 @@
                                 </select>
                                 <br />
                                 <br />
-                                <button class="btn btn-success btn-block btn-lg" id="BranchSelection1" style="background-color:#1E90FF; border-color:#1E90FF">Continue</button>
+                                <button class="btn btn-primary" id="BranchSelection1" style="width: 150px;">Continue</button>
                                 <br />
                                 <br />
                                 <br />      
@@ -151,6 +148,9 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         document.getElementById("BranchSelection1").addEventListener("click", function() {
             document.getElementById("panel1").style.display = "none";
