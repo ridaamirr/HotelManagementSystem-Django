@@ -24,16 +24,20 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto"> 
+                 
+                  {% if logintype %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'signup' %}" id="signupheader"><i class="fas fa-user"></i> Sign Up</a>
-                    </li>
+                        <a class="nav-link" href="{% url 'login' %}" id="logoutheader" ><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                    </li> 
+                    {%else %} 
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}" id="loginheader"><i class="fas fa-sign-in-alt"></i> Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="" id="logoutheader" style="display: none;"><i class="fas fa-sign-out-alt"></i> Log Out</a>
-                    </li>
+                      <a class="nav-link" href="{% url 'signup' %}" id="signupheader"><i class="fas fa-user"></i> Sign Up</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'login' %}" id="loginheader"><i class="fas fa-sign-in-alt"></i> Login</a>
+                  </li> 
+                    {% endif %}
                 </ul>
             </div>
         </div>

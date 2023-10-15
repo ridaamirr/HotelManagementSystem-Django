@@ -8,11 +8,18 @@
     {% load static %}
     <img src="{% static 'img1.jpg' %}" style="width: 110%;margin-left:-12px; height: auto; object-fit: cover;filter: brightness(60%);">
     
-    <div class="centered" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+    <div class="centered" style=" position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
         <h1>Hotel</h1>
         <h1>Obsidian</h1>
-        <p class="lead">Discover a new dimension of Luxury</p>
-        <p><a id="switch1" runat="server" class="btn btn-outline-primary btn-lg my-link custom-button" href="{% url 'login' %}" role="button">Book Now</a></p>
+        <p class="lead">Discover a new dimension of Luxury</p> 
+        {%if logintype == "user" %}
+        <p><a id="switch1" class="btn btn-outline-primary btn-lg my-link custom-button" href="{% url 'login' %}" role="button">Book Now</a></p>  
+        {%elif logintype == "admin"%}
+        <p><a id="switch2" class="btn btn-outline-primary btn-lg my-link custom-button" href="{% url 'admin' %}" role="button">Admin Dashboard</a></p> 
+        {% else %}
+        <p><a id="switch1" class="btn btn-outline-primary btn-lg my-link custom-button" href="{% url 'login' %}" role="button">Book Now</a></p>  
+        {%endif%}
+   
     </div>
 </div>
 <center>  

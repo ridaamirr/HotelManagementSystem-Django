@@ -9,67 +9,7 @@
     <title>Admin Page</title>
     <link rel="stylesheet" href="/static/your_stylesheet.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .bg-image {
-            background-image: url('/static/3660.jpg');
-            background-size: cover;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: -1;
-        }
-        body {
-            overflow-x: hidden;
-        }
-        body {
-            background-color: #1F1F1F;
-            color: #ffffff;
-        }
-        #container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50vh;
-            flex-wrap: wrap;
-        }
-        .box {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: aliceblue;
-            width: 230px;
-            height: 220px;
-            margin: 10px;
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid #000000;
-        }
-        h1 {
-            text-align: center;
-            font-size: 36px;
-            margin-top: 50px;
-        }
-        h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .box:hover {
-            transform: translateY(-10px);
-            box-shadow: 10px 10px 10px #7b9cb2;
-            z-index: 1;
-        }
-        .highlighted {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #ffffff;
-            transform: translateY(-10px);
-            box-shadow: 10px 10px 10px #7b9cb2;
-            z-index: 1;
-            backdrop-filter: blur(5px);
-        }
-    </style>
+    
 </head>
 <body>
     <div class="bg-image"></div>
@@ -106,5 +46,65 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
- 
+<style>
+    .bg-image {
+        background-image: url('/static/3660.jpg');
+        background-size: cover;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    body {
+        background-color: #1F1F1F;
+        color: #ffffff;
+    }
+    #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        flex-wrap: wrap;
+    }
+    .box {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: aliceblue;
+        width: 230px;
+        height: 220px;
+        margin: 10px;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 1px solid #000000;
+    }
+    h1 {
+        text-align: center;
+        font-size: 36px;
+        margin-top: 50px;
+    }
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .box:hover {
+        transform: translateY(-10px);
+        box-shadow: 10px 10px 10px #7b9cb2;
+        z-index: 1;
+    }
+    .highlighted {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #ffffff;
+        transform: translateY(-10px);
+        box-shadow: 10px 10px 10px #7b9cb2;
+        z-index: 1;
+        backdrop-filter: blur(5px);
+    }
+</style>
 {% endblock %}

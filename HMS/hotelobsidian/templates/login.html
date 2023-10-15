@@ -7,7 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Page Title</title>
     <link rel="stylesheet" href="/static/your_stylesheet.css"> 
-   
+    <script>
+        // Function to toggle the visibility of CNIC and admin username fields
+        function toggleFields() {
+            const userRadio = document.getElementById('userradio');
+            const adminRadio = document.getElementById('adminradio');
+            const cnicField = document.getElementById('cnic-field');
+            const adminUsernameField = document.getElementById('admin-username-field');
+
+            if (userRadio.checked) {
+                cnicField.style.display = 'block';
+                adminUsernameField.style.display = 'none';
+            } else if (adminRadio.checked) {
+                cnicField.style.display = 'none';
+                adminUsernameField.style.display = 'block';
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="bg-image"></div>

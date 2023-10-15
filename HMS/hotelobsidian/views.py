@@ -31,14 +31,9 @@ def checkavailabilty(request):
         cursor.callproc('CheckAvailability', data)
         result = cursor.fetchall()
         temptohide = 1
-        if result:
-            return render(request, 'default.html', {'result': result, 'temptohide': temptohide})
-        else:
-            return render(request, 'default.html', {'result': result, 'temptohide': temptohide})
+        return render(request, 'default.html', {'result': result, 'temptohide': temptohide})
     else:
         return render(request, 'default.html')
-
-
 
 
 def login(request):

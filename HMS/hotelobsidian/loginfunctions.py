@@ -28,7 +28,7 @@ def user_dashboard(request):
             except AdminLogin.DoesNotExist:
                 messages.error(request, "Invalid information entered")
                 return redirect('login')
-            return render(request, 'default.html')
+            return render(request, 'default.html',{'logintype':logintype,})
         else:
             messages.error(request, "Invalid information entered")
             return redirect('login')
