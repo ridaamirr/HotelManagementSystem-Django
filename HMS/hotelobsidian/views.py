@@ -44,6 +44,16 @@ def checkavailabilty(request):
 def login(request):
     return render(request, 'login.html')
 
+def catalogue(request):
+    loc = Hotel.objects.values_list('location', flat=True).distinct()
+    cursor = connection.cursor()
+    cursor.execute('call AutomaticCheckOut()') 
+
+    context = {
+        'loc':loc,
+         }     
+    return render(request, 'catalogue.html', context) 
+
 def admin(request):
     return render(request, 'admin.html')
 
