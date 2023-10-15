@@ -1,7 +1,8 @@
 from .models import *
 from django.shortcuts import render, redirect 
 from django.db import connection
-from .models import Room
+from django.contrib import messages
+from .forms import LoginForm
 
 def default(request): 
     #populating drop downs
