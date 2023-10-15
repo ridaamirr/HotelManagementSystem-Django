@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="/static/css/site.css">
+    <!-- Add any other necessary CSS and JavaScript files -->
+</head>
+<body>
+    <div class="bg-image"></div>
+    <div style="overflow-x:hidden;" class="container">
+        <div class="container">
+            <div class="row1">
+                <div class="col-md-6 mx-auto">
+                    <div class="card1" id="panel1" style="margin-left:100px;">
+                        <!-- Panel 1 -->
+                        <div class="card-body">
+                            <div class="row2">
+                                <div class="col">
+                                    <center>
+                                        <br />
+                                        <h3 style="color: aliceblue; font-family:'Arial Unicode MS'; font-weight:bold">Room Catalogue</h3>
+                                        <br />
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <center>
+                                        <div class="form-group">
+                                            <label style="color: aliceblue">Select Location</label>
+                                            <br />
+                                            <select class="form-control" id="DropDownList1" style="width:150px;">
+                                                <!-- Add options dynamically from your Django view -->
+                                            </select>
+                                            <br />
+                                            <button class="btn btn-success btn-block btn-lg" id="BranchSelection1" style="background-color:#1E90FF; border-color:#1E90FF">Continue</button>
+                                            <br />
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card1" id="panel2" style="display:none; width:123%; justify-content:center; margin-left:-40px;">
+                        <!-- Panel 2 (Initially hidden) -->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col" style="margin-left:250px;">
+                                    <br />
+                                    <h3 style="color: aliceblue; font-family:'Arial Unicode MS'; font-weight:bold">Room Catalogue</h3>
+                                    <br /><br />
+                                </div>
+                            </div>
+                            <div class="row" style="margin-left:130px">
+                                <div class="col">
+                                    <div class="myDataList">
+                                        <!-- Your Django code should populate this section dynamically -->
+                                    </div>
+                                    <div style="margin-left:160px">
+                                        <span id="lblError" style="color:red;"></span>
+                                    </div>
+                                    <br />
+                                    <!-- SQL data source is not relevant in HTML, handle data retrieval in your Django views -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card1" id="panel3" style="display:none; margin-left:100px;">
+                        <!-- Panel 3 (Initially hidden) -->
+                        <div class="card-body">
+                            <div class="row2">
+                                <div class="col">
+                                    <center>
+                                        <br />
+                                        <h3 style="color: aliceblue; font-family:'Arial Unicode MS'; font-weight:bold">Room Booking</h3>
+                                        <!-- Replace with Django template tags as needed -->
+                                        <input type="text" class="form-control" id="hiddenid1" style="display:dynamic; visibility:hidden;">
+                                        <br />
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <center>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="nodays" placeholder="Number of Days">
+                                            <span style="color:red;"></span>
+                                            <br /><br />
+                                            <button class="btn btn-success btn-block btn-lg" id="Booking" style="background-color:#1E90FF; border-color:#1E90FF">Continue</button>
+                                            <br />
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        .bg-image {
+            background-image: url('/static/3660.jpg');
+            background-size: cover;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+        }
+        .row1 {
+            width: 100%;
+            height: 100%;
+            margin-left: 280px;
+            margin-top: 50px;
+        }
+        .card1 {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: black;
+            border-color: black;
+            border-radius: 20px;
+            width: 65%;
+            height: 120%;
+            backdrop-filter: blur(2px);
+        }
+        .myDataList {
+            margin-left: -70px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .myDataList > div {
+            width: 48%;
+            margin-bottom: 20px;
+        }
+        .myDataList .item {
+            float: left;
+            margin-right: 80px;
+        }
+    </style>
+
+    <script>
+        document.getElementById("BranchSelection1").addEventListener("click", function() {
+            document.getElementById("panel1").style.display = "none";
+            document.getElementById("panel2").style.display = "block";
+        });
+
+        document.getElementById("Booking").addEventListener("click", function() {
+            document.getElementById("panel2").style.display = "none";
+            document.getElementById("panel3").style.display = "block";
+        });
+    </script>
+</body>
+</html>
