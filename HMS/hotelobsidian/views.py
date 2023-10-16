@@ -1,8 +1,7 @@
 from .models import *
 from django.shortcuts import render, redirect 
 from django.db import connection
-from django.contrib import messages
-from .forms import LoginForm
+from .models import Room
 
 def default(request): 
     #populating drop downs
@@ -42,16 +41,14 @@ def login(request):
 
 def catalogue(request):
     loc = Hotel.objects.values_list('location', flat=True).distinct()
-    logintype = request.session.get('logintype', None)
     context = {
         'loc':loc,
-        'logintype':logintype
          }     
     return render(request, 'catalogue.html', context)  
 
 def cataloguelist(request):
     cursor = connection.cursor() 
-    data=(request.GET.get('Location'),) 
+    data=request.GET.get('Location') 
     cursor.callproc('catalog',data)
     result = cursor.fetchall()
     for row in result:
@@ -64,8 +61,10 @@ def cataloguelist(request):
     return render(request, 'catalogue.html', context)
 
 def admin(request):
-    logintype = request.session.get('logintype', None)
-    return render(request, 'admin.html', {'logintype': logintype})
+    return render(request, 'admin.html')
+
+def branchinformation(request):
+    return render(request, 'branchinformation.html')
 
 def signup(request): 
     if request.method == 'POST': 
