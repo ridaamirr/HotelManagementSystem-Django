@@ -60,7 +60,8 @@ def cataloguelist(request):
     context = {
         'result':result,
         'logintype':logintype
-         }  
+         }   
+    return render(request, 'catalogue.html', context)
 
 def admin(request):
     logintype = request.session.get('logintype', None)

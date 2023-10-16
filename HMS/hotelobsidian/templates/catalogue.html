@@ -6,7 +6,7 @@
 <body>
     <div class="bg-image"></div>
     <div class="container">
-        <div class="card1" id="panel1">
+        <div class="card1" id="panel1" style="{%if result%} display: none;{% endif %}">
             <!-- Panel 1 -->
             <div class="card-body">
                 <div class="row2">
@@ -59,13 +59,20 @@
                     <div class="col"> 
                         <form method="get">
                              <div class="myDataList" style="color: aliceblue;"> 
-                                <li>
-                                    {% for results in result %}
-                            
-                                        <p style="color: aliceblue;">{{result.type}} </p>
+                                   {% for results in result %}  
+                                   <li> 
+                                    <img src="{{ results.4 }}" alt="Image" />
+                                    <p style="color: aliceblue;">Number of Beds: {{results.1}}</p>
+                                    <p style="color: aliceblue;">Price: {{results.3}}</p>
+                                    <p style="color: aliceblue;">Type: {{results.2}}</p>  
+                                    <button class="btn btn-primary" id="BranchSelection1" style="width: 100px;height: 40px;">Book Now</button>
+                                
+                                    <br/><br/> <br/>
+                                 </li> 
+                                 &nbsp;&nbsp; 
                                 
                                      {% endfor %} 
-                                </li>
+                               
                             </div> 
                         </form>
                         <div style="margin-left:160px">
