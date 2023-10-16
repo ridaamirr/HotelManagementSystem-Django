@@ -51,8 +51,6 @@ def cataloguelist(request):
     data=request.GET.get('Location') 
     cursor.callproc('catalog',data)
     result = cursor.fetchall()
-    for row in result:
-        print(row)
     logintype = request.session.get('logintype', None)
     context = {
         'result':result,
