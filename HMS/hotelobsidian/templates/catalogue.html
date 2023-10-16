@@ -6,7 +6,7 @@
 <body>
     <div class="bg-image"></div>
     <div class="container">
-        <div class="card1" id="panel1">
+        <div class="{%if result %}card2 {% else %} card1 {% endif%}" id="panel1">
             <!-- Panel 1 -->
             <div class="card-body">
                 <div class="row2">
@@ -57,15 +57,22 @@
                 </div>
                 <div class="row" style="margin-left:130px">
                     <div class="col"> 
-                        <form method="get">
+                        <form method="get" action="{% url 'booking' %}">
                              <div class="myDataList" style="color: aliceblue;"> 
-                                <li>
-                                    {% for results in result %}
-                            
-                                        <p style="color: aliceblue;">{{result.type}} </p>
+                                   {% for results in result %}  
+                                   <li> 
+                                    <img src="{{ results.4 }}" alt="Image" />
+                                    <p style="color: aliceblue;">Number of Beds: {{results.1}}</p>
+                                    <p style="color: aliceblue;">Price: {{results.3}}</p>
+                                    <p style="color: aliceblue;">Type: {{results.2}}</p>  
+                                    <button class="btn btn-primary" id="BranchSelection1" style="width: 100px;height: 40px;">Book Now</button>
+                                
+                                    <br/><br/> <br/>
+                                 </li> 
+                                 &nbsp;&nbsp; 
                                 
                                      {% endfor %} 
-                                </li>
+                               
                             </div> 
                         </form>
                         <div style="margin-left:160px">
@@ -154,6 +161,17 @@
         width: 90%; /* Adjust width as needed */
         max-width: 800px; /* Set a maximum width */
         backdrop-filter: blur(2px);
+    } 
+
+    .card2 {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: black;
+        border-color: black;
+        border-radius: 20px;
+        width: 90%; /* Adjust width as needed */
+        max-width: 800px; /* Set a maximum width */
+        backdrop-filter: blur(2px); 
+        display: none;
     }
 
     .myDataList {

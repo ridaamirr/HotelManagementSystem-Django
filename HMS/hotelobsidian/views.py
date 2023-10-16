@@ -48,10 +48,23 @@ def catalogue(request):
 
 def cataloguelist(request):
     cursor = connection.cursor() 
-    data=request.GET.get('Location') 
+    data=(request.GET.get('Location'),)
     cursor.callproc('catalog',data)
     result = cursor.fetchall()
-    return render(request, 'catalogue.html',{'result':result,}) 
+    logintype = request.session.get('logintype', None)
+    context = {
+        'result':result,
+        'logintype':logintype
+        }   
+    return render(request, 'catalogue.html', context)
+
+def booking(request): 
+     
+    logintype = request.session.get('logintype', None)
+    context = {
+        'logintype':logintype
+        }  
+    return render(request, 'catalogue.html', context)
 
 def admin(request):
     return render(request, 'admin.html')
