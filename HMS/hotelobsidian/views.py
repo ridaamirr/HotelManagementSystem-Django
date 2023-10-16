@@ -48,7 +48,7 @@ def catalogue(request):
 
 def cataloguelist(request):
     cursor = connection.cursor() 
-    data=request.GET.get('Location') 
+    data=(request.GET.get('Location'),)
     cursor.callproc('catalog',data)
     result = cursor.fetchall()
     logintype = request.session.get('logintype', None)

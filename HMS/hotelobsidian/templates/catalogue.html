@@ -6,7 +6,7 @@
 <body>
     <div class="bg-image"></div>
     <div class="container">
-        <div class="card1" id="panel1" style="{%if result%} display: none;{% endif %}">
+        <div class="{%if result %}card2 {% else %} card1 {% endif %}" id="panel1">
             <!-- Panel 1 -->
             <div class="card-body">
                 <div class="row2">
@@ -161,6 +161,17 @@
         width: 90%; /* Adjust width as needed */
         max-width: 800px; /* Set a maximum width */
         backdrop-filter: blur(2px);
+    } 
+
+    .card2 {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: black;
+        border-color: black;
+        border-radius: 20px;
+        width: 90%; /* Adjust width as needed */
+        max-width: 800px; /* Set a maximum width */
+        backdrop-filter: blur(2px); 
+        display: none;
     }
 
     .myDataList {
