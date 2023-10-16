@@ -6,7 +6,7 @@
 <body>
     <div class="bg-image"></div>
     <div class="container">
-        <div class="{%if result %}card2 {% else %} card1 {% endif %}" id="panel1">
+        <div class="{%if result %}card2 {% else %} card1 {% endif%}" id="panel1">
             <!-- Panel 1 -->
             <div class="card-body">
                 <div class="row2">
@@ -57,7 +57,7 @@
                 </div>
                 <div class="row" style="margin-left:130px">
                     <div class="col"> 
-                        <form method="get">
+                        <form method="get" action="{% url 'booking' %}">
                              <div class="myDataList" style="color: aliceblue;"> 
                                    {% for results in result %}  
                                    <li> 

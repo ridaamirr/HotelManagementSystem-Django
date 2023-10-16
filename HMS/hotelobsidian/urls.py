@@ -10,7 +10,8 @@ urlpatterns = [
     path('catalogue/', views.catalogue, name='catalogue'),
     path('cataloguelist/', views.cataloguelist, name='cataloguelist'),
     path('signup/', views.signup, name='signup'),
-    path('homepage/', loginfunctions.user_dashboard, name='homepage'), 
+    path('homepage/', loginfunctions.user_dashboard, name='homepage'),
+    path('booking/', views.booking, name='booking'),
     path('checkavailabilty/', views.checkavailabilty, name='checkavailabilty'),
     path('admin/branchinformation/', views.branchinformation, name='branchinformation')
 ]
