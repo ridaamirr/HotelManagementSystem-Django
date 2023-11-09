@@ -2,181 +2,184 @@
 
 {% block content %}
 <div class="bg-image"></div>
-<div style="overflow-x:hidden;" class="container">
-    <div class="container">
-        <div class="row1">
-            <div class="col-md-6 mx-auto">
+<div class="container-fluid d-flex justify-content-center align-items-center mt-5">
+    <div class="col-md-6">
 
-                <div class="card1" id="panel1" style="margin-left:100px" visible="true">
-                    <div class="card-body">
-                        <div class="row2">
-                            <div class="col">
-                                <center>
-                                    <br />
-                                    <h3 style="color: aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Room Catalogue</h3>
-                                    <br />
-                                </center>
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <center>
-                                    <form method="get" action="{% url 'cataloguelist' %}">
-                                        <div class="form-group">
-                                            <label class="text-white" style="font-size: 1.5rem;">Select Location</label>
-                                            <br />
-                                            <select class="form-control" name="Location" style="width: 150px">
-                                                <option value="Location" disabled selected></option>
-                                                {% for loc in loc %}
-                                                    <option value="{{ loc }}">{{ loc }}</option>
-                                                {% endfor %}
-                                            </select>
-                                            <br />
-                                            <br />
-                                            <button class="btn btn-primary" id="BranchSelection1" style="width: 150px;">Continue</button>
-                                            <br />
-                                            <br />
-                                            <br />      
-                                        </div> 
-                                    </form>
-                                   
-                                </center>
-
-                            </div>
-                        </div>
+        <div class="card1" id="panel1">
+            <div class="card-body">
+                <div class="row2">
+                    <div class="col text-center">
+                        <br />
+                        <h3 style="color: aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Room Catalogue</h3>
+                        <br />
                     </div>
                 </div>
-
-                <div class="card1" id="panel2" style="width:123%;justify-content:center; margin-left:-40px">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col" style="margin-left:250px">
-                                <br /><h3 style="color:aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Room Catalogue</h3> <br /><br />
-
-                            </div>
-                        </div>
-                        <div class="row" style="margin-left:130px">
-                            <div class="col"> 
-                               
-                                    <div class="myDataList" style="color: aliceblue;"> 
-                                          {% for results in result %}  
-                                          <ul>
-                                            {% load static %}
-                                           <img src="{% static results.4 %}" alt="Image: {{ results.4 }}" />
-                                           <p style="color: aliceblue;">Number of Beds: {{results.1}}</p>
-                                           <p style="color: aliceblue;">Price: {{results.3}}</p>
-                                           <p style="color: aliceblue;">Type: {{results.2}}</p>   
-                                           <a href="{% url 'booking' loc=location roomid=results.0 %}"class="btn btn-primary" style="width: 100px;height: 40px;">Book Now</a>
-                                       
-                                           <!--<button class="btn btn-primary" id="BranchSelection1" style="width: 100px;height: 40px;">Book Now</button>-->
-                                       
-                                           <br/><br/> <br/>
-                                        </ul>
-                                        &nbsp;&nbsp; 
-                                       
-                                            {% endfor %} 
-                                      
-                                   </div> 
-                             
-                                <div style="margin-left:160px">
-                                    <span id="lblError" style="color: red; visibility: hidden;"></span>
-                                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <form method="get" action="{% url 'cataloguelist' %}" id="catalogForm">
+                            <div class="form-group text-center">
+                                <label class="text-white" style="font-size: 1.5rem;">Select Location</label>
                                 <br />
+                                <select class="form-control mx-auto" name="Location" style="width: 150px" onchange="submitFormAndShowPanel('panel2')">
+                                    <option value="Location" disabled selected></option>
+                                    {% for loc in loc %}
+                                        <option value="{{ loc }}">{{ loc }}</option>
+                                    {% endfor %}
+                                </select>   
                             </div>
-                        </div>
-
+                        </form>
+                        <br>
+                        <br>
+                        <button class="btn btn-primary" id="BranchSelection1" style="width: 150px;" onclick="showPanel('panel2')">Continue</button>
+                        <br>
+                        <br>
+                        <br>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="card1" id="panel3" style="margin-left:100px" visible="false">
-                    <div class="card-body">
-                        <div class="row2">
-                            <div class="col">
-                                <center>
-                                    <br />
-                                    <h3 style="color: aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Room Booking</h3>
-
-                                    <input class="form-control" id="hiddenid1" type="hidden" name="hiddenid1" style="display:none;">
-                                    <br />
-                                </center>
-
-                            </div>
+        <div class="card1" id="panel2" style="display:none;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col text-center">
+                        <br /><h3 style="color:aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Room Catalogue</h3> <br /><br />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="myDataList" style="color: aliceblue; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+                            {% for results in result %}
+                                <div class="item" style="width: 300px; margin: 10px; text-align: center;">
+                                    <ul>
+                                        {% load static %}
+                                        <img src="{% static results.4 %}" alt="Image: {{ results.4 }}" style="width: 100%;" />
+                                        <p style="color: aliceblue;">Number of Beds: {{results.1}}</p>
+                                        <p style="color: aliceblue;">Price: {{results.3}}</p>
+                                        <p style="color: aliceblue;">Type: {{results.2}}</p>   
+                                        <a href="{% url 'booking' loc=location roomid=results.0 %}" class="btn btn-primary book-now"onclick="showPanel('panel3') style="width: 100px;height: 40px;">Book Now</a>
+                                        <br/><br/> <br/>
+                                    </ul>
+                                </div>
+                            {% endfor %}
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <center>
-                                    <form method="get" action="{% url 'booking_final' %}">
-                                    <div class="form-group">
-
-                                        <input class="form-control" id="nodays" name="nodays" placeholder="Number of Days">
-                                        <span style="color: red; display: none;" id="RequiredFieldValidator3">Number of Days are Required</span>
-                                        <span style="color: red; display: none;" id="RangeValidator1">Enter a Valid Number</span>
-                                        <br />
-                                        <br />
-
-                                        <button class="btn btn-primary" id="BranchSelection1" style="width: 150px;">Continue</button>
-                                        <br />
-                                    </div> 
-                                    </form>
-                                </center>
-
-                            </div>
+                        <div style="margin-left:160px">
+                            <span id="lblError" style="color: red; visibility: hidden;"></span>
                         </div>
                     </div>
                 </div>
             </div>
-             <style>
-                body {
-                    overflow-x: hidden;
-                }
+        </div>
 
-                .bg-image {
-                    background-image: url('/static/3660.jpg');
-                    background-size: cover;
-                    height: 100%;
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    z-index: -1;
-                }
-
-                .row1 {
-                    width: 100%;
-                    height: 100%;
-                    margin-left: 280px;
-                    margin-top: 50px;
-                }
-
-                .card1 {
-                    background-color: rgba(0, 0, 0, 0.7);
-                    color: black;
-                    border-color: black;
-                    border-radius: 20px;
-                    width: 65%;
-                    height: 120%;
-                    backdrop-filter: blur(2px);
-                }
-
-                .myDataList {
-                    margin-left: -70px;
-                    display: flex;
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                }
-
-                .myDataList>div {
-                    width: 48%;
-                    margin-bottom: 20px;
-                }
-
-                .myDataList .item {
-                    float: left;
-                    margin-right: 80px;
-                }
-            </style>
+        <div class="card1" id="panel3" style="display:none;">
+            <div class="card-body">
+                <div class="row2">
+                    <div class="col text-center">
+                        <br />
+                        <h3 style="color: aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Room Booking</h3>
+                        <input class="form-control" id="hiddenid1" type="hidden" name="hiddenid1" style="display:none;">
+                        <br />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <form method="get" action="{% url 'booking_final' %}">
+                            <div class="form-group">
+                                <input class="form-control" id="nodays" name="nodays" placeholder="Number of Days">
+                                <span style="color: red; display: none;" id="RequiredFieldValidator3">Number of Days are Required</span>
+                                <span style="color: red; display: none;" id="RangeValidator1">Enter a Valid Number</span>
+                                <br />
+                                <br />
+                                <button class="btn btn-primary" id="BranchSelection1" style="width: 150px;">Continue</button>
+                                <br />
+                            </div> 
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<script>
+function submitFormAndShowPanel(panelId) {
+    // Submit the form
+    document.getElementById('catalogForm').submit();
+
+    // Handle panel transition
+    var panels = ['panel1', 'panel2', 'panel3'];
+    for (var i = 0; i < panels.length; i++) {
+        var panel = document.getElementById(panels[i]);
+        if (panels[i] === panelId) {
+            panel.style.display = 'block';
+        } else {
+            panel.style.display = 'none';
+        }
+    }
+}
+
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('book-now')) {
+        showPanel('panel3');
+    }
+});
+
+function showPanel(panelId) {
+    // Handle panel transition
+    var panels = ['panel1', 'panel2', 'panel3'];
+    for (var i = 0; i < panels.length; i++) {
+        var panel = document.getElementById(panels[i]);
+        if (panels[i] === panelId) {
+            panel.style.display = 'block';
+        } else {
+            panel.style.display = 'none';
+        }
+    }
+}
+</script>
+
+<style>
+    body {
+        overflow-x: hidden;
+    }
+
+    .bg-image {
+        background-image: url('/static/3660.jpg');
+        background-size: cover;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .card1 {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: black;
+        border-color: black;
+        border-radius: 20px;
+        width: 100%;
+        height: auto;
+        backdrop-filter: blur(2px);
+        margin-bottom: 20px;
+    }
+
+    .myDataList {
+        margin-left: -70px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .myDataList>div {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+
+    .myDataList .item {
+        float: left;
+        margin-right: 80px;
+    }
+</style>
 {% endblock %}
