@@ -16,6 +16,7 @@ urlpatterns = [
     path('booking/<int:roomid>/<str:loc>/', views.booking, name='booking'), 
     path('booking_final/', views.booking_final, name='booking_final'),
     path('checkavailabilty/', views.checkavailabilty, name='checkavailabilty'),
+    path('generatebill/', views.generate_bill, name='generate_bill'),
     path('admin/branchinformation/', views.branchinformation, name='branchinformation')
 ]
 

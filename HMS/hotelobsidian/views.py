@@ -2,6 +2,10 @@ from .models import *
 from django.shortcuts import render, redirect 
 from django.db import connection
 
+def generate_bill(request):
+    return render(request, 'generatebill.html')
+
+
 def default(request): 
     #populating drop downs
     room_types = Roomtype.objects.values_list('type', flat=True).distinct()
