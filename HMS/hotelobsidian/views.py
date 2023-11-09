@@ -2,10 +2,6 @@ from .models import *
 from django.shortcuts import render, redirect 
 from django.db import connection
 
-def generate_bill(request):
-    return render(request, 'generatebill.html')
-
-
 def default(request): 
     #populating drop downs
     room_types = Roomtype.objects.values_list('type', flat=True).distinct()
@@ -59,7 +55,6 @@ def cataloguelist(request):
     cursor = connection.cursor() 
     data=(request.GET.get('Location'),) 
     location=request.GET.get('Location') 
-    print(location)
     cursor.callproc('catalog',data)
     result = cursor.fetchall()
     logintype = request.session.get('logintype', None)
@@ -94,12 +89,8 @@ def booking_final(request):
     data = (username,globalroomid, locat,days) 
     print(data)
     cursor.callproc('BookRoom', data)
-    context = {
-        'logintype':logintype
-        }  
     return redirect('catalogue')
     
-
 def login(request):
     return render(request, 'login.html')
 
@@ -132,3 +123,31 @@ def signup(request):
             saverecord.save()
             return render(request,'login.html')      
     return render(request,'signup.html')
+
+def generate_bill(request): 
+    #print total bill as well
+    cursor = connection.cursor()   
+    username = request.session.get('username', None) 
+    data=(username,) 
+    cursor.callproc('BookedRoom',data)
+    result = cursor.fetchall() 
+    logintype = request.session.get('logintype', None)
+    context = {
+        'items':result,
+        'logintype':logintype, 
+         }   
+    return render(request, 'generatebill.html',context)
+
+def checkout_Room(request,roomid):
+    cursor = connection.cursor()   
+    username = request.session.get('username', None) 
+    data=(roomid,username,)  
+    cursor.callproc('checkoutRoom',data)
+    return redirect('generate_bill') 
+
+def checkoutAll(request): 
+    cursor = connection.cursor()   
+    username = request.session.get('username', None) 
+    data=(username,)  
+    cursor.callproc('CheckOut',data)
+    return redirect('generate_bill')

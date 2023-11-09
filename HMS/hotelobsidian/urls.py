@@ -18,6 +18,8 @@ urlpatterns = [
     path('booking_final/', views.booking_final, name='booking_final'),
     path('checkavailabilty/', views.checkavailabilty, name='checkavailabilty'),
     path('generatebill/', views.generate_bill, name='generate_bill'),
+    path('checkout_Room/<int:roomid>/', views.checkout_Room, name='checkout_Room'), 
+     path('checkoutAll/', views.checkoutAll, name='checkoutAll'),
     path('admin/branchinformation/', views.branchinformation, name='branchinformation')
 ]
 

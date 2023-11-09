@@ -211,6 +211,7 @@ DELIMITER ;
 
 DELIMITER //
 
+--this has error will checkafter mids
 CREATE FUNCTION TotalBill(userid VARCHAR(255))
 RETURNS INT
 BEGIN
@@ -228,24 +229,41 @@ END //
 
 DELIMITER ;
 
-
--- Procedure: checkoutRoom
+DELIMITER //
 CREATE PROCEDURE checkoutRoom(roomid INT, userid VARCHAR(255))
-  UPDATE Room SET isBooked = 'False'
-  WHERE Room_ID = roomid;
+BEGIN
+    UPDATE Room
+    SET isBooked = 'False'
+    WHERE Room_ID = roomid;
+    
+    UPDATE Booking
+    SET isBooked = 'False'
+    WHERE Room_ID = roomid
+    AND Billing_ID IN (
+        SELECT Billing_ID
+        FROM Billing
+        WHERE User_ID = userid
+    );
+END//
+
+DELIMITER ;
 
 DELIMITER //
 -- Procedure: Checkout
 CREATE PROCEDURE Checkout(userid VARCHAR(255))
 BEGIN
-  DECLARE user_id_param VARCHAR(255);
-  SET user_id_param = userid;
-
   UPDATE Booking SET isBooked = 'False'
   WHERE Billing_ID IN (
     SELECT Billing_ID
     FROM Billing
-    WHERE User_ID = user_id_param
+    WHERE User_ID = user_id
+  ); 
+
+UPDATE Booking SET isBooked='False' 
+WHERE Billing_ID IN(
+  SELECT Billing_ID 
+  FROM Billing 
+  WHERE User_ID=userid
   );
 END //
 DELIMITER ;
