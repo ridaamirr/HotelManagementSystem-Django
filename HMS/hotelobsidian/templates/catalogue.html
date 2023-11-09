@@ -58,25 +58,27 @@
                         </div>
                         <div class="row" style="margin-left:130px">
                             <div class="col"> 
-                                <form method="get" action="{% url 'booking' %}">
+                               
                                     <div class="myDataList" style="color: aliceblue;"> 
                                           {% for results in result %}  
-                                          <li> 
+                                          <ul>
                                             {% load static %}
                                            <img src="{% static results.4 %}" alt="Image: {{ results.4 }}" />
                                            <p style="color: aliceblue;">Number of Beds: {{results.1}}</p>
                                            <p style="color: aliceblue;">Price: {{results.3}}</p>
-                                           <p style="color: aliceblue;">Type: {{results.2}}</p>  
-                                           <button class="btn btn-primary" id="BranchSelection1" style="width: 100px;height: 40px;">Book Now</button>
+                                           <p style="color: aliceblue;">Type: {{results.2}}</p>   
+                                           <a href="{% url 'booking' loc=location roomid=results.0 %}"class="btn btn-primary" style="width: 100px;height: 40px;">Book Now</a>
+                                       
+                                           <!--<button class="btn btn-primary" id="BranchSelection1" style="width: 100px;height: 40px;">Book Now</button>-->
                                        
                                            <br/><br/> <br/>
-                                        </li> 
+                                        </ul>
                                         &nbsp;&nbsp; 
                                        
                                             {% endfor %} 
                                       
                                    </div> 
-                               </form>
+                             
                                 <div style="margin-left:160px">
                                     <span id="lblError" style="color: red; visibility: hidden;"></span>
                                 </div>
@@ -104,7 +106,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-
+                                    <form method="get" action="{% url 'booking_final' %}">
                                     <div class="form-group">
 
                                         <input class="form-control" id="nodays" name="nodays" placeholder="Number of Days">
@@ -113,9 +115,10 @@
                                         <br />
                                         <br />
 
-                                        <button class="btn btn-success btn-block btn-lg" id="Booking" type="button">Continue</button>
+                                        <button class="btn btn-primary" id="BranchSelection1" style="width: 150px;">Continue</button>
                                         <br />
-                                    </div>
+                                    </div> 
+                                    </form>
                                 </center>
 
                             </div>

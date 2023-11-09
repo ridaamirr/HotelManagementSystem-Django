@@ -17,7 +17,8 @@ def user_dashboard(request):
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             adminusername = form.cleaned_data['adminusername']
-            request.session['logintype'] = logintype
+            request.session['logintype'] = logintype 
+            request.session['username']=username
             try:
                 if logintype=='user':
                     data_row = Customer.objects.get(pk=username, password=password)
