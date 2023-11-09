@@ -1,256 +1,178 @@
 {% extends "base.html" %}
 
-{% block content %} 
-<!DOCTYPE html>
-<html lang="en">
-<body>
-    <div class="bg-image"></div>
+{% block content %}
+<div class="bg-image"></div>
+<div style="overflow-x:hidden;" class="container">
     <div class="container">
-        <div class="{% if result %} card2 {% else %} card1 {% endif %} active-panel" id="panel1">
-            <!-- Panel 1 -->
-            <div class="card-body">
-                <div class="row2">
-                    <div class="col text-center">
-                        <br />
-                        <h3 class="text-white" style="font-family: 'Arial Unicode MS'; font-weight: bold; font-size: 2rem;">Room Catalogue</h3>
-                        <br />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <center>
-                            <form method="get" action="{% url 'cataloguelist' %}">
-                                <div class="form-group">
-                                    <label class="text-white" style="font-size: 1.5rem;">Select Location</label>
-                                    <br />
-                                    <select class="form-control" name="Location" style="width: 150px">
-                                        <option value="Location" disabled selected></option>
-                                        {% for loc in loc %}
-                                            <option value="{{ loc }}">{{ loc }}</option>
-                                        {% endfor %}
-                                    </select>
-                                    <br />
-                                    <br />
-                                    <!-- Button to show panel 2 -->
-                                    <button class="btn btn-primary" id="showPanel2" style="width: 150px;">Continue</button>
-                                    <br />
-                                    <br />
-                                    <br />
-                                </div>
-                            </form>
-                        </center>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="row1">
+            <div class="col-md-6 mx-auto">
 
-        <div class="{% if result %} card1 {% endif %} active-panel" id="panel2">
-            <!-- Panel 2 (Initially hidden) -->
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <center>
-                            <br />
-                            <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold">Room Catalogue</h3>
-                            <br /><br />
-                        </center>
-                    </div>
-                </div>
-                <div class="row" style="margin-left: 130px">
-                    <div class="col">
-                        <form method="get" action="{% url 'booking' %}">
-                            <div class="myDataList" style="color: aliceblue;">
-                                <!-- Loop through your results to display items -->
-                                {% for results in result %}
-                                    <li>
-                                        <img src="{{ results.4 }}" alt="Image" />
-                                        <p style="color: aliceblue;">Number of Beds: {{results.1}}</p>
-                                        <p style="color: aliceblue;">Price: {{results.3}}</p>
-                                        <p style="color: aliceblue;">Type: {{results.2}}</p>
-                                        <!-- Button to show panel 3 -->
-                                        <button class="btn btn-primary" id="showPanel3" style="width: 100px; height: 40px;">Book Now</button>
-                                        <br /><br /> <br/>
-                                    </li>
-                                    &nbsp;&nbsp;
-                                {% endfor %}
+                <div class="card1" id="panel1" style="margin-left:100px" visible="true">
+                    <div class="card-body">
+                        <div class="row2">
+                            <div class="col">
+                                <center>
+                                    <br />
+                                    <h3 style="color: aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Room Catalogue</h3>
+                                    <br />
+                                </center>
+
                             </div>
-                        </form>
-                        <div style="margin-left: 160px">
-                            <span id="lblError" style="color: red;"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <center>
+                                    <form method="get" action="{% url 'cataloguelist' %}">
+                                        <div class="form-group">
+                                            <label class="text-white" style="font-size: 1.5rem;">Select Location</label>
+                                            <br />
+                                            <select class="form-control" name="Location" style="width: 150px">
+                                                <option value="Location" disabled selected></option>
+                                                {% for loc in loc %}
+                                                    <option value="{{ loc }}">{{ loc }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <br />
+                                            <br />
+                                            <button class="btn btn-primary" id="BranchSelection1" style="width: 150px;">Continue</button>
+                                            <br />
+                                            <br />
+                                            <br />      
+                                        </div> 
+                                    </form>
+                                   
+                                </center>
+
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <center>
-                                <form method="get" action="{% url 'cataloguelist' %}">
+                </div>
+
+                <div class="card1" id="panel2" style="width:123%;justify-content:center; margin-left:-40px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col" style="margin-left:250px">
+                                <br /><h3 style="color:aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Room Catalogue</h3> <br /><br />
+
+                            </div>
+                        </div>
+                        <div class="row" style="margin-left:130px">
+                            <div class="col"> 
+                                <form method="get" action="{% url 'booking' %}">
+                                    <div class="myDataList" style="color: aliceblue;"> 
+                                          {% for results in result %}  
+                                          <li> 
+                                           <img src="{{ results.4 }}" alt="Image" />
+                                           <p style="color: aliceblue;">Number of Beds: {{results.1}}</p>
+                                           <p style="color: aliceblue;">Price: {{results.3}}</p>
+                                           <p style="color: aliceblue;">Type: {{results.2}}</p>  
+                                           <button class="btn btn-primary" id="BranchSelection1" style="width: 100px;height: 40px;">Book Now</button>
+                                       
+                                           <br/><br/> <br/>
+                                        </li> 
+                                        &nbsp;&nbsp; 
+                                       
+                                            {% endfor %} 
+                                      
+                                   </div> 
+                               </form>
+                                <div style="margin-left:160px">
+                                    <span id="lblError" style="color: red; visibility: hidden;"></span>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="card1" id="panel3" style="margin-left:100px" visible="false">
+                    <div class="card-body">
+                        <div class="row2">
+                            <div class="col">
+                                <center>
+                                    <br />
+                                    <h3 style="color: aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Room Booking</h3>
+
+                                    <input class="form-control" id="hiddenid1" type="hidden" name="hiddenid1" style="display:none;">
+                                    <br />
+                                </center>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <center>
+
                                     <div class="form-group">
-                                        <label class="text-white" style="font-size: 1.5rem;">Select Location</label>
-                                        <br />
-                                        <select class="form-control" name="Location" style="width: 150px">
-                                            <option value="Location" disabled selected></option>
-                                            {% for loc in loc %}
-                                            <option value="{{ loc }}">{{ loc }}</option>
-                                            {% endfor %}
-                                        </select>
+
+                                        <input class="form-control" id="nodays" name="nodays" placeholder="Number of Days">
+                                        <span style="color: red; display: none;" id="RequiredFieldValidator3">Number of Days are Required</span>
+                                        <span style="color: red; display: none;" id="RangeValidator1">Enter a Valid Number</span>
                                         <br />
                                         <br />
-                                        <button class="btn btn-primary BranchSelectionButton" style="width: 150px;">Continue</button>
-                                        <br />
-                                        <br />
+
+                                        <button class="btn btn-success btn-block btn-lg" id="Booking" type="button">Continue</button>
                                         <br />
                                     </div>
-                                </form>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                                </center>
 
-        <div class="card3" id="panel3">
-            <!-- Panel 3 (Initially hidden) -->
-            <div class="card-body">
-                <div class="row2">
-                    <div class="col">
-                        <center>
-                            <br />
-                            <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold">Room Booking</h3>
-                            <!-- Replace with Django template tags as needed -->
-                            <input type="text" class="form-control" id="hiddenid1" style="display: dynamic; visibility: hidden;">
-                            <br />
-                        </center>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <center>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="nodays" placeholder="Number of Days">
-                                <span style="color: red;"></span>
-                                <br /><br />
-                                <button class="btn btn-success btn-block btn-lg" id="Booking" style="background-color: #1E90FF; border-color: #1E90FF">Continue</button>
-                                <br />
-                                <h3 style="color: aliceblue; font-family:'Arial Unicode MS'; font-weight:bold">Room Booking</h3>
-                                <!-- Replace with Django template tags as needed -->
-                                <input type="text" class="form-control" id="hiddenid1" style="display: dynamic; visibility: hidden;">
-                                <br />
-                            </center>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <center>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="nodays" placeholder="Number of Days">
-                                    <span style="color: red;"></span>
-                                    <br /><br />
-                                    <button class="btn btn-success btn-block btn-lg" id="Booking" style="background-color: #1E90FF; border-color: #1E90FF">Continue</button>
-                                    <br />
-                                </div>
-                            </center>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+             <style>
+                body {
+                    overflow-x: hidden;
+                }
+
+                .bg-image {
+                    background-image: url('/static/3660.jpg');
+                    background-size: cover;
+                    height: 100%;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    z-index: -1;
+                }
+
+                .row1 {
+                    width: 100%;
+                    height: 100%;
+                    margin-left: 280px;
+                    margin-top: 50px;
+                }
+
+                .card1 {
+                    background-color: rgba(0, 0, 0, 0.7);
+                    color: black;
+                    border-color: black;
+                    border-radius: 20px;
+                    width: 65%;
+                    height: 120%;
+                    backdrop-filter: blur(2px);
+                }
+
+                .myDataList {
+                    margin-left: -70px;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+
+                .myDataList>div {
+                    width: 48%;
+                    margin-bottom: 20px;
+                }
+
+                .myDataList .item {
+                    float: left;
+                    margin-right: 80px;
+                }
+            </style>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        // Initial setup to hide panels 2 and 3
-        $('.card2').hide();
-        $('.card3').hide();
-
-        // When the button on panel 1 is clicked
-        $('#showPanel2').click(function() {
-            $('.card1').removeClass('active-panel'); 
-            $('#panel1').hide();
-            $('.card2').addClass('active-panel');
-            $('#panel2').show();
-        });
-
-        // When the button on panel 2 is clicked
-        $('#showPanel3').click(function() {
-            // Hide panel 1 and 2, and show panel 3
-            $('.card1').removeClass('active-panel');
-            $('.card2').removeClass('active-panel');
-            $('#panel1').hide();
-            $('#panel2').hide();
-            $('.card3').addClass('active-panel');
-            $('#panel3').show();
-            $('#panel3').css('display', 'block');
-        });
-    </script>
-</body>
-<style>
-    body {
-        overflow-x: hidden;
-    }
-
-    .bg-image {
-        background-image: url('/static/3660.jpg');
-        background-size: cover;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: -1;
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    .card1 {
-        background-color: rgba(0, 0, 0, 0.7);
-        color: black;
-        border-color: black;
-        border-radius: 20px;
-        width: 90%; /* Adjust width as needed */
-        max-width: 800px; /* Set a maximum width */
-        backdrop-filter: blur(2px);
-    } 
-
-    .card2 {
-        background-color: rgba(0, 0, 0, 0.7);
-        color: black;
-        border-color: black;
-        border-radius: 20px;
-        width: 90%; /* Adjust width as needed */
-        max-width: 800px; /* Set a maximum width */
-        backdrop-filter: blur(2px); 
-        display: none;
-    }
-    .card3 {
-        background-color: rgba(0, 0, 0, 0.7);
-        color: black;
-        border-color: black;
-        border-radius: 20px;
-        width: 90%; /* Adjust width as needed */
-        max-width: 800px; /* Set a maximum width */
-        backdrop-filter: blur(2px);
-        display: none;
-    } 
-
-    .myDataList {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .myDataList > div {
-        width: 48%;
-        margin: 20px;
-    }
-
-    .myDataList .item {
-        margin-right: 20px;
-    }
-</style>
-</html>
+</div>
 {% endblock %}

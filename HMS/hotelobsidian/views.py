@@ -11,10 +11,11 @@ def default(request):
     # If you want to execute the stored procedure, you can do it here
     cursor = connection.cursor()
     cursor.execute('call AutomaticCheckOut()') 
-
+    logintype = request.session.get('logintype', None)
     context = {
         'loc':loc,
-        'room_types': room_types,
+        'room_types': room_types, 
+        'logintype':logintype,
          }     
     return render(request, 'default.html', context) 
 
@@ -30,21 +31,20 @@ def checkavailabilty(request):
         data = (location, room_type, no_of_beds)
         cursor.callproc('CheckAvailability', data)
         result = cursor.fetchall()
-        temptohide = 1
-        return render(request, 'default.html', {'result': result, 'temptohide': temptohide})
+        temptohide = 1 
+        return render(request, 'default.html', {'result': result, 'temptohide': temptohide,})
     else:
         return render(request, 'default.html')
 
 
-def login(request):
-    return render(request, 'login.html')
-
-def catalogue(request):
-    loc = Hotel.objects.values_list('location', flat=True).distinct()
+def catalogue(request):  
+    loc = Hotel.objects.values_list('location', flat=True).distinct()      
+    logintype = request.session.get('logintype', None) 
     context = {
-        'loc':loc,
-         }     
-    return render(request, 'catalogue.html', context)  
+       'logintype':logintype, 
+       'loc':loc,
+        }
+    return render(request, 'catalogue.html',context) 
 
 def cataloguelist(request):
     cursor = connection.cursor() 
@@ -55,7 +55,7 @@ def cataloguelist(request):
     context = {
         'result':result,
         'logintype':logintype
-        }   
+         }   
     return render(request, 'catalogue.html', context)
 
 def booking(request): 
@@ -66,11 +66,22 @@ def booking(request):
         }  
     return render(request, 'catalogue.html', context)
 
-def admin(request):
-    return render(request, 'admin.html')
+def login(request):
+    return render(request, 'login.html')
 
-def branchinformation(request):
-    return render(request, 'branchinformation.html')
+def admin(request): 
+    logintype = request.session.get('logintype', None) 
+    context = {
+       'logintype':logintype,
+        }
+    return render(request, 'admin.html',context)
+
+def branchinformation(request): 
+    logintype = request.session.get('logintype', None) 
+    context = {
+       'logintype':logintype,
+        }
+    return render(request, 'branchinformation.html',context)
 
 def signup(request): 
     if request.method == 'POST': 
