@@ -24,6 +24,12 @@ def default(request):
 
 from django.http import JsonResponse
 
+def logout(request):
+    request.session['logintype'] = None
+    request.session['username'] = None 
+    return redirect('login')
+
+
 def checkavailabilty(request):
     if request.method == 'POST':
         location = request.POST.get('Location')
