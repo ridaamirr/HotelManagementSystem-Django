@@ -62,7 +62,8 @@
                                     <div class="myDataList" style="color: aliceblue;"> 
                                           {% for results in result %}  
                                           <li> 
-                                           <img src="{{ results.4 }}" alt="Image" />
+                                            {% load static %}
+                                           <img src="{% static results.4 %}" alt="Image: {{ results.4 }}" />
                                            <p style="color: aliceblue;">Number of Beds: {{results.1}}</p>
                                            <p style="color: aliceblue;">Price: {{results.3}}</p>
                                            <p style="color: aliceblue;">Type: {{results.2}}</p>  

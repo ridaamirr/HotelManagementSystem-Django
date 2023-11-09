@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 from . import loginfunctions
 from . import signupfunction
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.default, name='default'),
@@ -16,3 +18,5 @@ urlpatterns = [
     path('admin/branchinformation/', views.branchinformation, name='branchinformation')
 ]
 
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
