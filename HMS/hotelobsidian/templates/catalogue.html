@@ -78,7 +78,30 @@
                         <div style="margin-left: 160px">
                             <span id="lblError" style="color: red;"></span>
                         </div>
-                        <br />
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <center>
+                                <form method="get" action="{% url 'cataloguelist' %}">
+                                    <div class="form-group">
+                                        <label class="text-white" style="font-size: 1.5rem;">Select Location</label>
+                                        <br />
+                                        <select class="form-control" name="Location" style="width: 150px">
+                                            <option value="Location" disabled selected></option>
+                                            {% for loc in loc %}
+                                            <option value="{{ loc }}">{{ loc }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <br />
+                                        <br />
+                                        <button class="btn btn-primary BranchSelectionButton" style="width: 150px;">Continue</button>
+                                        <br />
+                                        <br />
+                                        <br />
+                                    </div>
+                                </form>
+                            </center>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,8 +130,25 @@
                                 <br /><br />
                                 <button class="btn btn-success btn-block btn-lg" id="Booking" style="background-color: #1E90FF; border-color: #1E90FF">Continue</button>
                                 <br />
-                            </div>
-                        </center>
+                                <h3 style="color: aliceblue; font-family:'Arial Unicode MS'; font-weight:bold">Room Booking</h3>
+                                <!-- Replace with Django template tags as needed -->
+                                <input type="text" class="form-control" id="hiddenid1" style="display: dynamic; visibility: hidden;">
+                                <br />
+                            </center>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <center>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="nodays" placeholder="Number of Days">
+                                    <span style="color: red;"></span>
+                                    <br /><br />
+                                    <button class="btn btn-success btn-block btn-lg" id="Booking" style="background-color: #1E90FF; border-color: #1E90FF">Continue</button>
+                                    <br />
+                                </div>
+                            </center>
+                        </div>
                     </div>
                 </div>
             </div>
