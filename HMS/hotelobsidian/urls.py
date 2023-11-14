@@ -29,6 +29,11 @@ urlpatterns = [
     path('admin/bookinginformation/',views.bookinginformation, name='bookinginformation'),
     path('admin/payments/',views.payments, name='payments'),
     #-----------------------------------------------------------------------------------
+
+    # Branch Information Links ---------------------------------------------------------
+    path('admin/branchinformation/update/', views.branchinformation, name='branch_update'),
+    path('admin/branchinformation/add/', views.branchinformation, name='branch_add')
+    #-----------------------------------------------------------------------------------
 ]
 
 if settings.DEBUG:
