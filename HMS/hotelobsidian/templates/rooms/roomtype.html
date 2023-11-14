@@ -1,0 +1,268 @@
+{% extends "base.html" %}
+
+{% block content %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <title></title>
+    <style>
+             body {
+            overflow-x: hidden;
+        }
+        
+        .bg-image {
+            background-image: url('/static/3660.jpg');
+            background-size: cover;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+        }
+        
+        .row1 {
+            width: 100%;
+            height: 100%;
+            place-content: center;
+            margin-left: 370px;
+            margin-top: 100px;
+        }
+        
+        .card1 {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: aliceblue;
+            border-radius: 20px;
+            width: 65%;
+            height: 120%;
+            backdrop-filter: blur(2px);
+        }
+        
+        .row2 {
+            font-family: 'Arial Unicode MS';
+            font-weight: bold;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+        
+        th {
+            background-color: #1E90FF;
+            color: aliceblue;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .edit-mode {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .edit-mode input {
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        
+        .error-container {
+            text-align: center;
+        }
+        
+        #lblError {
+            color: red;
+            margin-top: 10px;
+        }
+        
+        .arrow {
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: calc(1.4 * 14px);
+            background: transparent;
+            border-top: 1vmin solid white;
+            border-right: 1vmin solid white;
+            box-shadow: 0 0 0 lightgray;
+            transition: border-color 200ms ease;
+        }
+        
+        .arrow.left {
+            left: 0;
+            transform: translate3d(0, -50%, 0) rotate(-135deg);
+        }
+        
+        .arrow:hover {
+            border-color: #2196F3;
+        }
+        
+        .arrow:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-40%, -60%) rotate(45deg);
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-image"></div>
+    <div class="container">
+        <div class="container">
+            <div class="row1">
+                <div class="col-md-6 mx-auto">
+                    <div class="card1" id="panel1">
+                        <div class="card-body">
+                            <div class="row2">
+                                    <center>
+                                        <br />
+                                        <div>
+                                            <a style="margin-left: 40px; margin-top: -70px" href="{% url 'admin' %}" class="arrow left"></a>
+                                        </div>
+                                        <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold;">Room Type</h3>
+                                        <br />
+                                    </center>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <center>
+                                        <div class="form-group">
+                                            <input class="btn btn-success btn-block btn-lg" type="button" ID="AddNew" runat="server" value="Add" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="AddNew_Click" />
+                                            <br />
+                                            <input class="btn btn-success btn-block btn-lg" type="button" ID="UpdateorDelete" runat="server" value="Update/Delete" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="UpdateorDelete_Click" />
+                                            <br />
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="card1" id="panel2">
+                        <div class="card-body">
+                            <div class="row2">
+                                <div class="col">
+                                    <center>
+                                        <br />
+                                        <div style="position: absolute">
+                                            <a style="margin-left:40px;margin-top:30px" href="{% url 'roomtype' %}" class="arrow left"></a>
+                                        </div>
+                                        <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold" id="H1" runat="server">Add Room Type</h3>
+                                        <br />
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <center>
+                                        <div class="form-group">
+                                            <div style="margin-left: 50px; display:flex;">
+                                                <label style="color: aliceblue;">Room Type&nbsp;&nbsp;</label>
+                                                <select class="form-control" id="DropDownList2">
+                                                    <option>Deluxe</option>
+                                                    <option>Suite</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" id="BedNo" placeholder="Number of Beds">
+                                            <span class="error" id="RequiredFieldValidator1" style="color: red; display: none;">Number of Beds is Required</span>
+                                            <span class="error" id="RangeValidator2" style="color: red; display: none;">Enter a valid number (0-20)</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" id="Price" placeholder="Price">
+                                            <span class="error" id="RequiredFieldValidator3" style="color: red; display: none;">Price is Required</span>
+                                            <span class="error" id="RangeValidator1" style="color: red; display: none;">Price must be a positive value</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Image">Click here to upload image</label>
+                                            <input class="form-control" id="Image" type="file">
+                                            <span class="error" id="RequiredFieldValidator4" style="color: red; display: none;">Image is Required</span>
+                                        </div>
+                                        <input class="btn btn-success btn-block btn-lg" type="button" ID="Add" runat="server" value="Add" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="Add_Click" />
+                                        <br>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="card1" id="panel3" style="width: 170%; justify-content: center; margin-left: -280px;">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col" style="margin-left: 400px;">
+                                    <br>
+                                    <div style="position:absolute">
+                                        <a style="margin-left: -330px; margin-top: 30px" href="{% url 'roomtype' %}" class="arrow left"></a>
+                                    </div>
+                                    <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold;">Update/Delete</h3>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="r1" style="margin-left: 210px;">
+                                <div style="display:flex;">
+                                    <label style="color: aliceblue;">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                    <input class="form-control" id="SearchRoom" width="150px" placeholder="Room Type ID">
+                                    <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                    <input class="btn btn-success" type="button" ID="SearchButton" runat="server" value="Search" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="btnSearch_Click" />
+                                </div>
+                            </div>
+                            <div class="error-container">
+                                <center>
+                                    <br>
+                                    <label id="searcherror" style="color: red; display: none;"></label>
+                                    <label id="Label1" style="color: red; display: none;"></label>
+                                    <label id="lblError" style="color: red; display: none;"></label>
+                                </center>
+                            </div>
+                            <div class="radio" style="margin-left: 240px;">
+                                <input type="radio" id="idradio" name="searchtype" checked="true" onclick="idradio_CheckedChanged()">
+                                <label style="color: aliceblue;">Room Type ID</label>
+                                <label></label><label></label>
+                                <input type="radio" id="typeradio" name="searchtype" onclick="typeradio_CheckedChanged()">
+                                <label style="color: aliceblue;">Room Type</label>
+                                <label></label><label></label>
+                                <input type="radio" id="bedradio" name="searchtype" onclick="bedradio_CheckedChanged()">
+                                <label style="color: aliceblue;">Number of Beds</label>
+                                <label></label><label></label>
+                                <input type="radio" id="priceradio" name="searchtype" onclick="priceradio_CheckedChanged()">
+                                <label style="color: aliceblue;">Price</label>
+                                <label></label><label></label>
+                            </div>
+                            <div class="row" style="margin-left: 40px; width: 90%;">
+                                <div class="col">
+                                    <table class="table table-bordered" id="GridView1">
+                                        <tr>
+                                            <th>Room Type ID</th>
+                                            <th>Room Type</th>
+                                            <th>Number of Beds</th>
+                                            <th>Price</th>
+                                            <th>Image</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                        <!-- Rows will be dynamically generated -->
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endblock %}

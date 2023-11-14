@@ -110,13 +110,13 @@ def roominformation(request):
     context = {
        'logintype':logintype,
         }
-    return render(request, 'rooms/room_information.html',context)
+    return render(request, 'rooms/roominformation.html',context)
 def roomtype(request): 
     logintype = request.session.get('logintype', None) 
     context = {
        'logintype':logintype,
         }
-    return render(request, 'rooms/room_type.html',context)
+    return render(request, 'rooms/roomtype.html',context)
 def branchinformation(request): 
     logintype = request.session.get('logintype', None) 
     context = {
