@@ -122,6 +122,15 @@
         <div class="container">
             <div class="row1">
                 <div class="col-md-6 mx-auto">
+                    {% if messages %}
+                      <div class="messages">
+                        {% for message in messages %}
+                          <div class="{{ message.tags }}">
+                            {{ message }}
+                          </div>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
                     {% if request.path == '/hotelobsidian/admin/branchinformation/' %}
                     <div class="card1" id="panel1" runat="server" visible="true">
                         <div class="card-body">
@@ -141,13 +150,15 @@
                                 <div class="col">
                                     <center>
                                         <div class="form-group">
-                                            <form action="{% url 'add' %}" method="post">
+                                            <form action="{% url 'branch_add' %}" method="post">
                                                 {% csrf_token %}
                                                 <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Add</button>
                                             </form>
                                             <br/>
-                                            <input class="btn btn-success btn-block btn-lg" type="button" ID="UpdateorDelete" runat="server" value="Update/Delete" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="UpdateorDelete_Click" />
-                                            <br />
+                                            <form action="{% url 'branch_update' %}" method="post">
+                                                {% csrf_token %}
+                                                <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Update/Delete</button>
+                                            </form>
                                         </div>
                                     </center>
                                 </div>
@@ -172,26 +183,28 @@
                                 <div class="row">
                                     <div class="col">
                                         <center>
-                                            <div class="form-group">
-                                                <input class="form-control" type="text" ID="Location" runat="server" placeholder="Location" />
-                                                <span id="rfvloc" runat="server" style="color: red; display: dynamic;"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <input class="form-control" type="text" ID="Phone" runat="server" placeholder="Phone Number" />
-                                                <span id="RequiredFieldValidator1" runat="server" style="color: red; display: dynamic;"></span>
-                                                <span id="revPhone" runat="server" style="color: red; display: dynamic;"></span>
-                                            </div>
-                                            <span id="unique" runat="server" style="color: red; display: dynamic;"></span>
-                                            <br />
-                                            <br />
-                                            <input class="btn btn-success btn-block btn-lg" type="button" ID="Add" runat="server" value="Add" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="Add_Click" />
-                                            <br />
+                                            <form action="{% url 'add_new_branch' %}" method="post" onsubmit="return validateForm();">
+                                                {% csrf_token %}
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" id="Location" name="Location" placeholder="Location" />
+                                                    <span id="rfvloc" style="color: red; display: dynamic;"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" id="Phone" name="Phone" placeholder="Phone Number" />
+                                                    <span id="RequiredFieldValidator1" style="color: red; display: dynamic;"></span>
+                                                    <span id="revPhone" style="color: red; display: dynamic;"></span>
+                                                </div>
+                                                <span id="unique" style="color: red; display: dynamic;"></span>
+                                                <br />
+                                                <br />
+                                                <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Add</button>
+                                            </form>
                                         </center>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    {% elif request.path == '/hotelobsidian/admin/branchinformation/update' %}
+                    {% elif request.path == '/hotelobsidian/admin/branchinformation/update/' %}
                         <div class="card1" id="panel3" runat="server" style="width:130%;justify-content:center; margin-left:-140px" visible="false">
                             <div class="card-body">
                                 <div class="row">
@@ -293,6 +306,20 @@
     </div>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function validateForm() {
+            const location = document.getElementById('Location').value;
+            const phoneNumber = document.getElementById('Phone').value;
+    
+            if (!location || !phoneNumber) {
+                document.getElementById('rfvloc').textContent = 'Location is required.';
+                document.getElementById('revPhone').textContent = 'Phone Number is required.';
+                return false;
+            }
+    
+            return true;
+        }
+    </script>
 </body>
 </html>
 {% endblock %}

@@ -1,6 +1,8 @@
 from .models import *
 from django.shortcuts import render, redirect 
 from django.db import connection
+from .models import Hotel
+from django.contrib import messages
 
 def default(request): 
     #populating drop downs
@@ -139,6 +141,27 @@ def payments(request):
        'logintype':logintype,
         }
     return render(request, 'payments.html',context)
+#------------------------------------------------------------------------------------
+
+#Branch Information CRUD-------------------------------------------------------------
+def branchinformation_add(request):
+    print("Executing branchinformation_add function...")
+    if request.method == 'POST':
+        location = request.POST.get('Location')
+        phone_number = request.POST.get('Phone')
+        print("Location:", location)
+        print("Phone Number:", phone_number)
+
+        if not location or not phone_number:
+            return render(request, 'debug/error.html', {'error_message': 'Location and Phone Number are required.'})
+
+        new_hotel = Hotel(location=location, phonenumber=phone_number)
+        new_hotel.save()
+
+        messages.success(request, 'Hotel information added successfully!')
+        return redirect(request.META['HTTP_REFERER'])
+
+    return render(request, 'debug/error.html')
 #------------------------------------------------------------------------------------
 
 def signup(request): 

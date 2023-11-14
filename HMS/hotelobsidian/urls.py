@@ -32,7 +32,8 @@ urlpatterns = [
 
     # Branch Information Links ---------------------------------------------------------
     path('admin/branchinformation/update/', views.branchinformation, name='branch_update'),
-    path('admin/branchinformation/add/', views.branchinformation, name='branch_add')
+    path('admin/branchinformation/add/', views.branchinformation, name='branch_add'),
+    path('admin/branchinformation/add_new/', views.branchinformation_add, name='add_new_branch')
     #-----------------------------------------------------------------------------------
 ]
 
