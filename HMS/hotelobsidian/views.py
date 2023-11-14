@@ -168,20 +168,21 @@ def branchinformation_add(request):
 
 def branchinformation_update(request):
     if request.method == 'POST':
-        search_type = request.POST.get('searchtype')  # Assuming you have a form field named
-        search_value = request.POST.get('SearchBox')  # Assuming you have a form field named
+        search_type = request.POST.get('searchtype')
+        search_value = request.POST.get('SearchBox')
 
-        print(f'branchinformation_update called with search_type={search_type} and search_value={search_value}')
-
-        # Perform the search based on the selected search type
-        if search_type == 'idradio':
-            results = Hotel.objects.filter(branch_id=search_value)
-        elif search_type == 'locradio':
-            results = Hotel.objects.filter(location=search_value)
-        elif search_type == 'phoneradio':
-            results = Hotel.objects.filter(phonenumber=search_value)
+        if search_value:
+            if search_type == 'idradio':
+                results = Hotel.objects.filter(branch_id=search_value)
+            elif search_type == 'locradio':
+                results = Hotel.objects.filter(location=search_value)
+            elif search_type == 'phoneradio':
+                results = Hotel.objects.filter(phonenumber=search_value)
+            else:
+                results = None
         else:
-            results = None
+            # If the search box is empty, return the entire table
+            results = Hotel.objects.all()
 
         return render(request, 'branchinformation.html', {'results': results})
 
