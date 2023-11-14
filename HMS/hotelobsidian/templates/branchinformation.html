@@ -218,12 +218,13 @@
                                     </div>
                                 </div>
                                 <div class="r1" style="margin-left:210px">
-                                    <div style="display:flex">
-                                        <label style="color: aliceblue">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                        <input class="form-control" type="text" ID="SearchBox" runat="server" style="width: 150px;" placeholder="Branch ID" />
-                                        <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                        <input class="btn btn-success" type="button" ID="SearchButton" runat="server" value="Search" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="btnSearch_Click" />
-                                    </div>
+                                    <form action="{% url 'add_new_branch' %}" method="post" >
+                                        <div style="display:flex">
+                                            <label style="color: aliceblue">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                            <input class="form-control" type="text" ID="SearchBox" style="width: 150px;" placeholder="Branch ID" />
+                                            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                            <input class="btn btn-success" type="button" ID="SearchButton" value="Search" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="btnSearch_Click" />
+                                        </div>
                                 </div>
                                 <div class="error-container">
                                     <center>
