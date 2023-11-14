@@ -122,7 +122,6 @@
         <div class="container">
             <div class="row1">
                 <div class="col-md-6 mx-auto">
-                    {% if request.path == '/hotelobsidian/admin/branchinformation/' %}
                     <div class="card1" id="panel1" runat="server" visible="true">
                         <div class="card-body">
                             <div class="row2">
@@ -141,11 +140,8 @@
                                 <div class="col">
                                     <center>
                                         <div class="form-group">
-                                            <form action="{% url 'add' %}" method="post">
-                                                {% csrf_token %}
-                                                <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Add</button>
-                                            </form>
-                                            <br/>
+                                            <input class="btn btn-success btn-block btn-lg" type="button" ID="AddNew" runat="server" value="Add" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="AddNew_Click" />
+                                            <br />
                                             <input class="btn btn-success btn-block btn-lg" type="button" ID="UpdateorDelete" runat="server" value="Update/Delete" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="UpdateorDelete_Click" />
                                             <br />
                                         </div>
@@ -154,7 +150,6 @@
                             </div>
                         </div>
                     </div>
-                    {% elif request.path == '/hotelobsidian/admin/branchinformation/add/' %}
                         <div class="card1" id="panel2" runat="server" visible="false">
                             <div class="card-body">
                                 <div class="row2">
@@ -191,7 +186,6 @@
                                 </div>
                             </div>
                         </div>
-                    {% elif request.path == '/hotelobsidian/admin/branchinformation/update' %}
                         <div class="card1" id="panel3" runat="server" style="width:130%;justify-content:center; margin-left:-140px" visible="false">
                             <div class="card-body">
                                 <div class="row">
@@ -231,60 +225,38 @@
                                 </div>
                             </div>
                         </div>
-                    {% endif %}
                     <div class="row" style="margin-left:38px; width:90%">
                         <div class="col">
-                            {% comment %} {% block content_updateable %}
-                            <form method="post" action="{% url 'branch_update' %}">
-                              {% csrf_token %}
-                              <table>
-                                <thead>
-                                  <tr style="background-color: #2196F3; color: white; font-weight: bold;">
-                                    <th>Branch ID</th>
-                                    <th>Location</th>
-                                    <th>Phone Number</th>
-                                    <th>Action</th>
-                                    <th>Action</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  {% for item in items %}
-                                    <tr>
-                                      <td>{{ item.Branch_ID }}</td>
-                                      <td>
-                                        {% if item.is_editing %}
-                                          <input type="text" name="location" value="{{ item.Location }}">
-                                          <br>
-                                          <span class="error">{{ item.location_error }}</span>
-                                        {% else %}
-                                          {{ item.Location }}
-                                        {% endif %}
-                                      </td>
-                                      <td>
-                                        {% if item.is_editing %}
-                                          <input type="text" name="phone_number" value="{{ item.PhoneNumber }}">
-                                          <br>
-                                          <span class="error">{{ item.phone_number_error }}</span>
-                                        {% else %}
-                                          {{ item.PhoneNumber }}
-                                        {% endif %}
-                                      </td>
-                                      <td>
-                                        {% if not item.is_editing %}
-                                          <a href="{% url 'your_edit_view_name' item.id %}">Edit</a>
-                                        {% endif %}
-                                      </td>
-                                      <td>
-                                        {% if not item.is_editing %}
-                                          <a href="{% url 'your_delete_view_name' item.id %}">Delete</a>
-                                        {% endif %}
-                                      </td>
-                                    </tr>
-                                  {% endfor %}
-                                </tbody>
-                              </table>
-                            </form>
-                          {% endblock %} {% endcomment %}
+                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowDeleting="GridView1_RowDeleting">
+                                <Columns>
+                                    <asp:BoundField DataField="Branch_ID" HeaderText="Branch ID" ReadOnly="true" ItemStyle-ForeColor="Black" ItemStyle-Width="100px" />
+                                    <asp:TemplateField HeaderText="Location" ItemStyle-Width="130px">
+                                        <ItemTemplate>
+                                            <asp:Label ID="lblLocation" runat="server" Text='<%# Bind("Location") %>' ForeColor="black"></asp:Label>
+                                        </ItemTemplate>
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="txtLocation" runat="server" Text='<%# Bind("Location") %>' ForeColor="black" Width="120px"></asp:TextBox>
+                                            <br />
+                                            <asp:Label ID="lblLocationError" runat="server" Text=""></asp:Label>
+                                        </EditItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Phone Number" ItemStyle-Width="120px">
+                                        <ItemTemplate>
+                                            <asp:Label ID="lblPhoneNumber" runat="server" Text='<%# Bind("PhoneNumber") %>' ForeColor="black"></asp:Label>
+                                        </ItemTemplate>
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="txtPhoneNumber" runat="server" Text='<%# Bind("PhoneNumber") %>' ForeColor="black" Width="140px"></asp:TextBox>
+                                            <br />
+                                            <asp:Label ID="lblPhoneNumberError" runat="server" Text=""></asp:Label>
+                                        </EditItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:CommandField ShowEditButton="true" ControlStyle-BackColor="#1E90FF" ControlStyle-BorderColor="#1E90FF" ControlStyle-ForeColor="white" ButtonType="Button" ItemStyle-Width="170px" />
+                                    <asp:CommandField ShowDeleteButton="true" ControlStyle-BackColor="#1E90FF" ControlStyle-ForeColor="white" ControlStyle-BorderColor="#1E90FF" ButtonType="Button" ItemStyle-Width="120px" />
+                                </Columns>
+                                <HeaderStyle BackColor="#2196F3" Font-Bold="True" ForeColor="White" />
+                                <RowStyle BackColor="#F2F2F2" />
+                                <AlternatingRowStyle BackColor="White" />
+                            </asp:GridView>
                         </div>
                     </div>
                 </div>
