@@ -20,28 +20,27 @@
             <h2 id="infoheader"><br /><span class="glyphicon glyphicon-map-marker"></span> Branch Information</h2>
         </div>
 
-        <div class="box" onclick="location.href={% url 'roomtype' %};" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
+        <div class="box" onclick="window.location.href='{% url 'roomtype' %}';" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
             <h2 id="roomtypeheader"><br /><span class="glyphicon glyphicon-bed"></span> Room Type</h2>
-        </div>
+        </div>        
 
-        <div class="box" onclick="location.href='RoomInformation.aspx';" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
-            <h2 id="roomheader"><br /><span class="glyphicon glyphicon-lamp"></span> Room Information</h2>
-        </div>
+        <div class="box" onclick="window.location.href='{% url 'roominformation' %}';" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
+            <h2 id="roomtypeheader"><br /><span class="glyphicon glyphicon-bed"></span> Room Information</h2>
+        </div>  
     </div>
 
     <div id="container">
-        <div class="box" onclick="location.href='CustomerInformation.aspx';" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
-            <h2 id="customerheader"><br /><span class="glyphicon glyphicon-user"></span> Customer Information</h2>
-        </div>
+        <div class="box" onclick="window.location.href='{% url 'customerinformation' %}';" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
+            <h2 id="roomtypeheader"><br /><span class="glyphicon glyphicon-bed"></span> Customer Information</h2>
+        </div>  
 
-        <div class="box" onclick="location.href='BookingInfo.aspx';" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
-            <h2 id="bookingheader"><br /><span class="glyphicon glyphicon-info-sign"></span> Booking Information</h2>
-        </div>
+        <div class="box" onclick="window.location.href='{% url 'bookinginformation' %}';" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
+            <h2 id="roomtypeheader"><br /><span class="glyphicon glyphicon-bed"></span> Booking Information</h2>
+        </div> 
 
-        <div class="box" onclick="location.href='Payments.aspx';" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
-            <h2 id="paymentsheader"><br /><span class="glyphicon glyphicon-usd"></span> Payments</h2>
-        </div>
-    </div>
+        <div class="box" onclick="window.location.href='{% url 'payments' %}';" onmouseover="this.classList.add('highlighted');" onmouseout="this.classList.remove('highlighted');">
+            <h2 id="roomtypeheader"><br /><span class="glyphicon glyphicon-bed"></span> Payments</h2>
+        </div> 
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>

@@ -101,19 +101,45 @@ def admin(request):
         }
     return render(request, 'admin.html',context)
 
+
+# Admin dashboard tiles--------------------------------------------------------------
+def roominformation(request): 
+    logintype = request.session.get('logintype', None) 
+    context = {
+       'logintype':logintype,
+        }
+    return render(request, 'rooms/room_information.html',context)
 def roomtype(request): 
     logintype = request.session.get('logintype', None) 
     context = {
        'logintype':logintype,
         }
     return render(request, 'rooms/room_type.html',context)
-
 def branchinformation(request): 
     logintype = request.session.get('logintype', None) 
     context = {
        'logintype':logintype,
         }
     return render(request, 'branchinformation.html',context)
+def customerinformation(request): 
+    logintype = request.session.get('logintype', None) 
+    context = {
+       'logintype':logintype,
+        }
+    return render(request, 'user/information.html',context)
+def bookinginformation(request): 
+    logintype = request.session.get('logintype', None) 
+    context = {
+       'logintype':logintype,
+        }
+    return render(request, 'bookinginformation.html',context)
+def payments(request): 
+    logintype = request.session.get('logintype', None) 
+    context = {
+       'logintype':logintype,
+        }
+    return render(request, 'payments.html',context)
+#------------------------------------------------------------------------------------
 
 def signup(request): 
     if request.method == 'POST': 
