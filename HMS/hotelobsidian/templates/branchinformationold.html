@@ -225,46 +225,93 @@
                                 </div>
                             </div>
                         </div>
-                    <div class="row" style="margin-left:38px; width:90%">
-                        <div class="col">
-                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowDeleting="GridView1_RowDeleting">
-                                <Columns>
-                                    <asp:BoundField DataField="Branch_ID" HeaderText="Branch ID" ReadOnly="true" ItemStyle-ForeColor="Black" ItemStyle-Width="100px" />
-                                    <asp:TemplateField HeaderText="Location" ItemStyle-Width="130px">
-                                        <ItemTemplate>
-                                            <asp:Label ID="lblLocation" runat="server" Text='<%# Bind("Location") %>' ForeColor="black"></asp:Label>
-                                        </ItemTemplate>
-                                        <EditItemTemplate>
-                                            <asp:TextBox ID="txtLocation" runat="server" Text='<%# Bind("Location") %>' ForeColor="black" Width="120px"></asp:TextBox>
-                                            <br />
-                                            <asp:Label ID="lblLocationError" runat="server" Text=""></asp:Label>
-                                        </EditItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Phone Number" ItemStyle-Width="120px">
-                                        <ItemTemplate>
-                                            <asp:Label ID="lblPhoneNumber" runat="server" Text='<%# Bind("PhoneNumber") %>' ForeColor="black"></asp:Label>
-                                        </ItemTemplate>
-                                        <EditItemTemplate>
-                                            <asp:TextBox ID="txtPhoneNumber" runat="server" Text='<%# Bind("PhoneNumber") %>' ForeColor="black" Width="140px"></asp:TextBox>
-                                            <br />
-                                            <asp:Label ID="lblPhoneNumberError" runat="server" Text=""></asp:Label>
-                                        </EditItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:CommandField ShowEditButton="true" ControlStyle-BackColor="#1E90FF" ControlStyle-BorderColor="#1E90FF" ControlStyle-ForeColor="white" ButtonType="Button" ItemStyle-Width="170px" />
-                                    <asp:CommandField ShowDeleteButton="true" ControlStyle-BackColor="#1E90FF" ControlStyle-ForeColor="white" ControlStyle-BorderColor="#1E90FF" ButtonType="Button" ItemStyle-Width="120px" />
-                                </Columns>
-                                <HeaderStyle BackColor="#2196F3" Font-Bold="True" ForeColor="White" />
-                                <RowStyle BackColor="#F2F2F2" />
-                                <AlternatingRowStyle BackColor="White" />
-                            </asp:GridView>
-                        </div>
-                    </div>
+                        <div class="row" style="margin-left:38px; width:90%">
+                            <div class="col">
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Branch ID</th>
+                                            <th scope="col">Location</th>
+                                            <th scope="col">Phone Number</th>
+                                            <th scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for hotel in results %}
+                                            <tr>
+                                                <td>{{ hotel.id }}</td>
+                                                <td>
+                                                    {% if request.user.is_authenticated %}
+                                                        <span>{{ hotel.location }}</span>
+                                                    {% else %}
+                                                        <input type="text" value="{{ hotel.location }}" readonly>
+                                                    {% endif %}
+                                                </td>
+                                                <td>
+                                                    {% if request.user.is_authenticated %}
+                                                        <span>{{ hotel.phonenumber }}</span>
+                                                    {% else %}
+                                                        <input type="text" value="{{ hotel.phonenumber }}" readonly>
+                                                    {% endif %}
+                                                </td>
+                                                <td>
+                                                    {% if request.user.is_authenticated %}
+                                                        <a href="{% url 'edit_hotel' hotel.id %}">Edit</a> |
+                                                        <a href="{% url 'delete_hotel' hotel.id %}">Delete</a>
+                                                    {% endif %}
+                                                </td>
+                                            </tr>
+                                            {% if request.user.is_authenticated %}
+                                                <tr>
+                                                    <td>{{ hotel.id }}</td>
+                                                    <td>
+                                                        <span>{{ hotel.location }}</span>
+                                                        <input type="text" class="edit-field" value="{{ hotel.location }}" style="display: none;">
+                                                    </td>
+                                                    <td>
+                                                        <span>{{ hotel.phonenumber }}</span>
+                                                        <input type="text" class="edit-field" value="{{ hotel.phonenumber }}" style="display: none;">
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-primary edit-button">Edit</button>
+                                                        <button class="btn btn-danger delete-button">Delete</button>
+                                                    </td>
+                                                </tr>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>                        
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".edit-button").click(function () {
+                $(this).closest("tr").find(".edit-field").show();
+                $(this).closest("tr").find("span").hide();
+                $(this).hide();
+                $(this).siblings(".delete-button").hide();
+                $(this).siblings(".save-button").show();
+                $(this).siblings(".cancel-button").show();
+            });
+
+            $(".cancel-button").click(function () {
+                $(this).closest("tr").find(".edit-field").hide();
+                $(this).closest("tr").find("span").show();
+                $(this).hide();
+                $(this).siblings(".save-button").hide();
+                $(this).siblings(".edit-button").show();
+                $(this).siblings(".delete-button").show();
+            });
+        });
+    </script>
+
 </body>
 </html>
 {% endblock %}

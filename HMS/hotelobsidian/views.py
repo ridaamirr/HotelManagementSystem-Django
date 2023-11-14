@@ -3,6 +3,9 @@ from django.shortcuts import render, redirect
 from django.db import connection
 from .models import Hotel
 from django.contrib import messages
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
+from django.urls import reverse
 
 def default(request): 
     #populating drop downs
@@ -162,6 +165,33 @@ def branchinformation_add(request):
         return redirect(request.META['HTTP_REFERER'])
 
     return render(request, 'debug/error.html')
+
+def branchinformation_update(request):
+    if request.method == 'POST':
+        search_type = request.POST.get('searchtype')  # Assuming you have a form field named
+        search_value = request.POST.get('SearchBox')  # Assuming you have a form field named
+
+        print(f'branchinformation_update called with search_type={search_type} and search_value={search_value}')
+
+        # Perform the search based on the selected search type
+        if search_type == 'idradio':
+            results = Hotel.objects.filter(branch_id=search_value)
+        elif search_type == 'locradio':
+            results = Hotel.objects.filter(location=search_value)
+        elif search_type == 'phoneradio':
+            results = Hotel.objects.filter(phonenumber=search_value)
+        else:
+            results = None
+
+        return render(request, 'branchinformation.html', {'results': results})
+
+    return HttpResponse("Invalid request method")
+
+def branchinformation_update_delete(request, hotel_id):
+    hotel = get_object_or_404(Hotel, id=hotel_id)
+    Hotel.objects.filter(branch_id=hotel.id).delete()
+
+    return redirect(request.META.get('HTTP_REFERER', reverse('default_page')))
 #------------------------------------------------------------------------------------
 
 def signup(request): 

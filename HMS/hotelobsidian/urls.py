@@ -34,7 +34,8 @@ urlpatterns = [
     path('admin/branchinformation/update/', views.branchinformation, name='branch_update'),
     path('admin/branchinformation/add/', views.branchinformation, name='branch_add'),
     path('admin/branchinformation/add_new/', views.branchinformation_add, name='add_new_branch'),
-    #path('admin/branchinformation/new_update/', views.branchinformation_update, name='update_this_branch')
+    path('admin/branchinformation/new_update/', views.branchinformation_update, name='update_this_branch'),
+    path('admin/branchinformation/new_update/delete_hotel/<int:hotel_id>/', views.branchinformation_update_delete, name='delete_hotel')
     #-----------------------------------------------------------------------------------
 ]
 
