@@ -209,23 +209,23 @@ DELIMITER ;
 
 
 
-DELIMITER //
+-- DELIMITER //
 
---this has error will checkafter mids
-CREATE FUNCTION TotalBill(userid VARCHAR(255))
-RETURNS INT
-BEGIN
-  DECLARE total INT DEFAULT 0;
-  DECLARE history INT;
-  DECLARE offer_discount DECIMAL(10, 2);
+-- --this has error will checkafter mids
+-- CREATE FUNCTION TotalBill(userid VARCHAR(255))
+-- RETURNS INT
+-- BEGIN
+--   DECLARE total INT DEFAULT 0;
+--   DECLARE history INT;
+--   DECLARE offer_discount DECIMAL(10, 2);
 
-  SELECT SUM(NumberOfDays * Price)
-  INTO total
-  FROM BookedRoom
-  WHERE UserID = userid;
+--   SELECT SUM(NumberOfDays * Price)
+--   INTO total
+--   FROM BookedRoom
+--   WHERE UserID = userid;
 
-  RETURN total;
-END //
+--   RETURN total;
+-- END //
 
 DELIMITER ;
 
