@@ -7710,3 +7710,1311 @@ File D:\HotelManagementSystem-Django\HMS\hotelobsidian\migrations\0003_delete_au
 File D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\contrib\auth\migrations\0001_initial.py first seen with mtime 1696351832.9592142
 File D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\contrib\auth\migrations\0006_require_contenttypes_0002.py first seen with mtime 1696351832.962733
 File D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\contrib\auth\migrations\0011_update_proxy_permissions.py first seen with mtime 1696351832.9657233
+(0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` LIMIT 21; args=(); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0AE0180>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7EC0>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7EC0>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (2)>, <Hotel: Hotel object (3)>, <Hotel: Hotel object (4)>, <Hotel: Hotel object (5)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` LIMIT 21; args=(); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0AE0180>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7EC0>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7EC0>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (2)>, <Hotel: Hotel object (3)>, <Hotel: Hotel object (4)>, <Hotel: Hotel object (5)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel`; args=(); alias=default
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 21658
+File D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\contrib\sessions\serializers.py first seen with mtime 1696351834.16467
+File D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\contrib\auth\context_processors.py first seen with mtime 1696351832.7220056
+File D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\contrib\messages\storage\cookie.py first seen with mtime 1696351833.8683658
+File D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\contrib\messages\storage\session.py first seen with mtime 1696351833.8693614
+File D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\contrib\staticfiles\storage.py first seen with mtime 1696351834.4910166
+File D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\conf\locale\en\__init__.py first seen with mtime 1696351831.894456
+File D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\contrib\messages\context_processors.py first seen with mtime 1696351833.864361
+File D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\contrib\messages\storage\fallback.py first seen with mtime 1696351833.8683658
+File D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\conf\locale\en\formats.py first seen with mtime 1696351831.8954663
+File D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context_processors.py first seen with mtime 1696351834.765274
+Exception while resolving variable 'logintype' in template 'login.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB4C20>>, 'request': <WSGIRequest: GET '/hotelobsidian/login/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB79C0>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB79C0>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/hotelobsidian/login/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}]
+Exception while resolving variable 'logintype' in template 'login.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB4C20>>, 'request': <WSGIRequest: GET '/hotelobsidian/login/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB79C0>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB79C0>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/hotelobsidian/login/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}]
+"GET /hotelobsidian/login/ HTTP/1.1" 200 14821
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+Exception while resolving variable 'logintype' in template 'login.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB4C20>>, 'request': <WSGIRequest: GET '/hotelobsidian/login/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7E20>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7E20>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/hotelobsidian/login/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}]
+Exception while resolving variable 'logintype' in template 'login.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB4C20>>, 'request': <WSGIRequest: GET '/hotelobsidian/login/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7E20>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7E20>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/hotelobsidian/login/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}]
+"GET /hotelobsidian/login/ HTTP/1.1" 200 14821
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+(0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:41:43.856960' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:41:43.856960', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+(0.000) SELECT `admin_login`.`Username`, `admin_login`.`Password` FROM `admin_login` WHERE (`admin_login`.`Password` = 'admin' AND `admin_login`.`Username` = 'admin') LIMIT 21; args=('admin', 'admin'); alias=default
+Exception while resolving variable 'temptohide' in template 'default.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'temptohide'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'temptohide'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'temptohide'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [temptohide] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'pzwV0UOd3IDZBU4bRvmMnKoU7kNmFWxgALYyh8tcZhjpsixA4BisNheuPcc8niGX'>, 'request': <WSGIRequest: POST '/hotelobsidian/homepage/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6160>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6160>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/homepage/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'logintype': 'admin'}, {'block': <Block Node: content. Contents: [<TextNode: ' \n<!DOCTYPE html>  \n<html'>, <django.template.defaulttags.LoadNode object at 0x00000251B0F24850>, <TextNode: '\n    <img src="'>, StaticNode(varname=None, path=<FilterExpression "'img1.jpg'">), <TextNode: '" style="width: 110%;marg'>, <IfNode>, <TextNode: '\n   \n    </div>\n</div>\n<c'>, <URLNode view_name=''checkavailabilty'' args=[] kwargs={} as=None>, <TextNode: '" onsubmit="return valida'>, <django.template.defaulttags.CsrfTokenNode object at 0x00000251B0EC9D90>, <TextNode: '\n        <div class="'>, <IfNode>, <TextNode: '">\n            <div class'>, <ForNode: for loc in loc, tail_len: 5>, <TextNode: '\n                    </se'>, <ForNode: for room_type in room_types, tail_len: 5>, <TextNode: '\n                    </se'>, <IfNode>, <TextNode: '">\n        <form method="'>, <URLNode view_name=''default'' args=[] kwargs={} as=None>, <TextNode: '">\n            <div class'>, <IfNode>, <TextNode: '\n                    </h3'>, StaticNode(varname=None, path=<FilterExpression "'bed.png'">), <TextNode: '" width="80" height="80">'>, StaticNode(varname=None, path=<FilterExpression "'swimming-pool.png'">), <TextNode: '" width="80" height="80">'>, StaticNode(varname=None, path=<FilterExpression "'restaurant.png'">), <TextNode: '" width="80" height="80">'>]>}]
+Exception while resolving variable 'loc' in template 'default.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'loc'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'loc'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'loc'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [loc] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'pzwV0UOd3IDZBU4bRvmMnKoU7kNmFWxgALYyh8tcZhjpsixA4BisNheuPcc8niGX'>, 'request': <WSGIRequest: POST '/hotelobsidian/homepage/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6160>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6160>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/homepage/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'logintype': 'admin'}, {'block': <Block Node: content. Contents: [<TextNode: ' \n<!DOCTYPE html>  \n<html'>, <django.template.defaulttags.LoadNode object at 0x00000251B0F24850>, <TextNode: '\n    <img src="'>, StaticNode(varname=None, path=<FilterExpression "'img1.jpg'">), <TextNode: '" style="width: 110%;marg'>, <IfNode>, <TextNode: '\n   \n    </div>\n</div>\n<c'>, <URLNode view_name=''checkavailabilty'' args=[] kwargs={} as=None>, <TextNode: '" onsubmit="return valida'>, <django.template.defaulttags.CsrfTokenNode object at 0x00000251B0EC9D90>, <TextNode: '\n        <div class="'>, <IfNode>, <TextNode: '">\n            <div class'>, <ForNode: for loc in loc, tail_len: 5>, <TextNode: '\n                    </se'>, <ForNode: for room_type in room_types, tail_len: 5>, <TextNode: '\n                    </se'>, <IfNode>, <TextNode: '">\n        <form method="'>, <URLNode view_name=''default'' args=[] kwargs={} as=None>, <TextNode: '">\n            <div class'>, <IfNode>, <TextNode: '\n                    </h3'>, StaticNode(varname=None, path=<FilterExpression "'bed.png'">), <TextNode: '" width="80" height="80">'>, StaticNode(varname=None, path=<FilterExpression "'swimming-pool.png'">), <TextNode: '" width="80" height="80">'>, StaticNode(varname=None, path=<FilterExpression "'restaurant.png'">), <TextNode: '" width="80" height="80">'>]>}, {}]
+Exception while resolving variable 'room_types' in template 'default.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'room_types'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'room_types'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'room_types'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [room_types] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'pzwV0UOd3IDZBU4bRvmMnKoU7kNmFWxgALYyh8tcZhjpsixA4BisNheuPcc8niGX'>, 'request': <WSGIRequest: POST '/hotelobsidian/homepage/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6160>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6160>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/homepage/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'logintype': 'admin'}, {'block': <Block Node: content. Contents: [<TextNode: ' \n<!DOCTYPE html>  \n<html'>, <django.template.defaulttags.LoadNode object at 0x00000251B0F24850>, <TextNode: '\n    <img src="'>, StaticNode(varname=None, path=<FilterExpression "'img1.jpg'">), <TextNode: '" style="width: 110%;marg'>, <IfNode>, <TextNode: '\n   \n    </div>\n</div>\n<c'>, <URLNode view_name=''checkavailabilty'' args=[] kwargs={} as=None>, <TextNode: '" onsubmit="return valida'>, <django.template.defaulttags.CsrfTokenNode object at 0x00000251B0EC9D90>, <TextNode: '\n        <div class="'>, <IfNode>, <TextNode: '">\n            <div class'>, <ForNode: for loc in loc, tail_len: 5>, <TextNode: '\n                    </se'>, <ForNode: for room_type in room_types, tail_len: 5>, <TextNode: '\n                    </se'>, <IfNode>, <TextNode: '">\n        <form method="'>, <URLNode view_name=''default'' args=[] kwargs={} as=None>, <TextNode: '">\n            <div class'>, <IfNode>, <TextNode: '\n                    </h3'>, StaticNode(varname=None, path=<FilterExpression "'bed.png'">), <TextNode: '" width="80" height="80">'>, StaticNode(varname=None, path=<FilterExpression "'swimming-pool.png'">), <TextNode: '" width="80" height="80">'>, StaticNode(varname=None, path=<FilterExpression "'restaurant.png'">), <TextNode: '" width="80" height="80">'>]>}, {}]
+Exception while resolving variable 'temptohide' in template 'default.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'temptohide'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'temptohide'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'temptohide'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [temptohide] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'pzwV0UOd3IDZBU4bRvmMnKoU7kNmFWxgALYyh8tcZhjpsixA4BisNheuPcc8niGX'>, 'request': <WSGIRequest: POST '/hotelobsidian/homepage/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6160>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6160>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/homepage/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'logintype': 'admin'}, {'block': <Block Node: content. Contents: [<TextNode: ' \n<!DOCTYPE html>  \n<html'>, <django.template.defaulttags.LoadNode object at 0x00000251B0F24850>, <TextNode: '\n    <img src="'>, StaticNode(varname=None, path=<FilterExpression "'img1.jpg'">), <TextNode: '" style="width: 110%;marg'>, <IfNode>, <TextNode: '\n   \n    </div>\n</div>\n<c'>, <URLNode view_name=''checkavailabilty'' args=[] kwargs={} as=None>, <TextNode: '" onsubmit="return valida'>, <django.template.defaulttags.CsrfTokenNode object at 0x00000251B0EC9D90>, <TextNode: '\n        <div class="'>, <IfNode>, <TextNode: '">\n            <div class'>, <ForNode: for loc in loc, tail_len: 5>, <TextNode: '\n                    </se'>, <ForNode: for room_type in room_types, tail_len: 5>, <TextNode: '\n                    </se'>, <IfNode>, <TextNode: '">\n        <form method="'>, <URLNode view_name=''default'' args=[] kwargs={} as=None>, <TextNode: '">\n            <div class'>, <IfNode>, <TextNode: '\n                    </h3'>, StaticNode(varname=None, path=<FilterExpression "'bed.png'">), <TextNode: '" width="80" height="80">'>, StaticNode(varname=None, path=<FilterExpression "'swimming-pool.png'">), <TextNode: '" width="80" height="80">'>, StaticNode(varname=None, path=<FilterExpression "'restaurant.png'">), <TextNode: '" width="80" height="80">'>]>}]
+Exception while resolving variable 'result' in template 'default.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [result] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'pzwV0UOd3IDZBU4bRvmMnKoU7kNmFWxgALYyh8tcZhjpsixA4BisNheuPcc8niGX'>, 'request': <WSGIRequest: POST '/hotelobsidian/homepage/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6160>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6160>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/homepage/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'logintype': 'admin'}, {'block': <Block Node: content. Contents: [<TextNode: ' \n<!DOCTYPE html>  \n<html'>, <django.template.defaulttags.LoadNode object at 0x00000251B0F24850>, <TextNode: '\n    <img src="'>, StaticNode(varname=None, path=<FilterExpression "'img1.jpg'">), <TextNode: '" style="width: 110%;marg'>, <IfNode>, <TextNode: '\n   \n    </div>\n</div>\n<c'>, <URLNode view_name=''checkavailabilty'' args=[] kwargs={} as=None>, <TextNode: '" onsubmit="return valida'>, <django.template.defaulttags.CsrfTokenNode object at 0x00000251B0EC9D90>, <TextNode: '\n        <div class="'>, <IfNode>, <TextNode: '">\n            <div class'>, <ForNode: for loc in loc, tail_len: 5>, <TextNode: '\n                    </se'>, <ForNode: for room_type in room_types, tail_len: 5>, <TextNode: '\n                    </se'>, <IfNode>, <TextNode: '">\n        <form method="'>, <URLNode view_name=''default'' args=[] kwargs={} as=None>, <TextNode: '">\n            <div class'>, <IfNode>, <TextNode: '\n                    </h3'>, StaticNode(varname=None, path=<FilterExpression "'bed.png'">), <TextNode: '" width="80" height="80">'>, StaticNode(varname=None, path=<FilterExpression "'swimming-pool.png'">), <TextNode: '" width="80" height="80">'>, StaticNode(varname=None, path=<FilterExpression "'restaurant.png'">), <TextNode: '" width="80" height="80">'>]>}]
+(0.000) BEGIN; args=None; alias=default
+(0.000) UPDATE `django_session` SET `session_data` = 'eyJsb2dpbnR5cGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiIn0:1r3Kpb:5GS6dntqXSd9AMDylN0EKnETC0jGykdzk--ueea2FtA', `expire_date` = '2023-11-29 18:41:43.880732' WHERE `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'; args=('eyJsb2dpbnR5cGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiIn0:1r3Kpb:5GS6dntqXSd9AMDylN0EKnETC0jGykdzk--ueea2FtA', '2023-11-29 18:41:43.880732', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+(0.000) COMMIT; args=None; alias=default
+"POST /hotelobsidian/homepage/ HTTP/1.1" 200 17635
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:41:44.948360' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:41:44.948360', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12641
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+(0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:43:59.528072' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:43:59.528072', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 20021
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:44:06.166794' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:44:06.166794', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+"POST /hotelobsidian/admin/branchinformation/add/ HTTP/1.1" 200 20623
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.015) INSERT INTO `hotel` (`Location`, `PhoneNumber`) VALUES ('abc', '123456'); args=['abc', '123456']; alias=default
+"POST /hotelobsidian/admin/branchinformation/add_new/ HTTP/1.1" 302 0
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:44:12.822349' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:44:12.822349', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+"GET /hotelobsidian/admin/branchinformation/add/ HTTP/1.1" 200 21051
+File D:\HotelManagementSystem-Django\HMS\hotelobsidian\templates\branchinformation.html previous mtime: 1700073231.8095224, current mtime: 1700073908.9649246
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\templates\branchinformation.html notified as changed. Signal results: [(<function template_changed at 0x00000251AF753EC0>, True), (<function translation_file_changed at 0x00000251B082E8E0>, None)].
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.016) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:45:42.415321' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:45:42.415321', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 20000
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:45:43.818853' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:45:43.818853', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+"POST /hotelobsidian/admin/branchinformation/update/ HTTP/1.1" 200 21226
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Branch_ID` = 11 LIMIT 21; args=(11,); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB6C00>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0950C20>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0950C20>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet []>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Branch_ID` = 11 LIMIT 21; args=(11,); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB6C00>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0950C20>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0950C20>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet []>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Branch_ID` = 11; args=(11,); alias=default
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 18714
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Branch_ID` = 12 LIMIT 21; args=(12,); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB5080>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7B00>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7B00>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (12)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Branch_ID` = 12 LIMIT 21; args=(12,); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB5080>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7B00>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7B00>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (12)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Branch_ID` = 12; args=(12,); alias=default
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 19437
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` LIMIT 21; args=(); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB7740>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB5080>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB5080>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (2)>, <Hotel: Hotel object (3)>, <Hotel: Hotel object (4)>, <Hotel: Hotel object (5)>, <Hotel: Hotel object (12)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` LIMIT 21; args=(); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB7740>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB5080>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB5080>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (2)>, <Hotel: Hotel object (3)>, <Hotel: Hotel object (4)>, <Hotel: Hotel object (5)>, <Hotel: Hotel object (12)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel`; args=(); alias=default
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 22360
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Location` = 'abc' LIMIT 21; args=('abc',); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB7600>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7E20>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7E20>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (12)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Location` = 'abc' LIMIT 21; args=('abc',); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB7600>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7E20>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7E20>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (12)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Location` = 'abc'; args=('abc',); alias=default
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 19437
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`PhoneNumber` = '123456' LIMIT 21; args=('123456',); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB60C0>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6FC0>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6FC0>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (12)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`PhoneNumber` = '123456' LIMIT 21; args=('123456',); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB60C0>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6FC0>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6FC0>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (12)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`PhoneNumber` = '123456'; args=('123456',); alias=default
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 19437
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Location` = 'Lahore' LIMIT 21; args=('Lahore',); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB6020>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB60C0>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB60C0>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet []>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Location` = 'Lahore' LIMIT 21; args=('Lahore',); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB6020>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB60C0>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB60C0>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet []>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Location` = 'Lahore'; args=('Lahore',); alias=default
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 18714
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Location` = 'Quetta' LIMIT 21; args=('Quetta',); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB6700>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7920>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7920>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (5)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Location` = 'Quetta' LIMIT 21; args=('Quetta',); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB6700>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7920>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7920>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (5)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Location` = 'Quetta'; args=('Quetta',); alias=default
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 19441
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` LIMIT 21; args=(); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB7240>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6700>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6700>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (2)>, <Hotel: Hotel object (3)>, <Hotel: Hotel object (4)>, <Hotel: Hotel object (5)>, <Hotel: Hotel object (12)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` LIMIT 21; args=(); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB7240>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6700>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6700>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (2)>, <Hotel: Hotel object (3)>, <Hotel: Hotel object (4)>, <Hotel: Hotel object (5)>, <Hotel: Hotel object (12)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel`; args=(); alias=default
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 22360
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Branch_ID` = 12 LIMIT 21; args=(12,); alias=default
+(0.000) DELETE FROM `hotel` WHERE `hotel`.`Branch_ID` IN (12); args=(12,); alias=default
+"DELETE /hotelobsidian/delete_branch/12/ HTTP/1.1" 302 0
+"DELETE /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 22
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` LIMIT 21; args=(); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0979F80>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6D40>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6D40>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (2)>, <Hotel: Hotel object (3)>, <Hotel: Hotel object (4)>, <Hotel: Hotel object (5)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` LIMIT 21; args=(); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0979F80>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6D40>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6D40>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (2)>, <Hotel: Hotel object (3)>, <Hotel: Hotel object (4)>, <Hotel: Hotel object (5)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel`; args=(); alias=default
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 21761
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.015) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Branch_ID` = 4 LIMIT 21; args=(4,); alias=default
+(0.000) UPDATE `hotel` SET `Location` = 'Peshawar', `PhoneNumber` = 'gbbeuibrg' WHERE `hotel`.`Branch_ID` = 4; args=('Peshawar', 'gbbeuibrg', 4); alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Branch_ID` = 4 LIMIT 21; args=(4,); alias=default
+"POST /hotelobsidian/update_branch/4/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 22
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` LIMIT 21; args=(); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB7920>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6700>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6700>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (2)>, <Hotel: Hotel object (3)>, <Hotel: Hotel object (4)>, <Hotel: Hotel object (5)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` LIMIT 21; args=(); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB7920>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6700>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB6700>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (2)>, <Hotel: Hotel object (3)>, <Hotel: Hotel object (4)>, <Hotel: Hotel object (5)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel`; args=(); alias=default
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 21633
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Branch_ID` = 4 LIMIT 21; args=(4,); alias=default
+(0.000) UPDATE `hotel` SET `Location` = 'Peshawar', `PhoneNumber` = '523746587' WHERE `hotel`.`Branch_ID` = 4; args=('Peshawar', '523746587', 4); alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` WHERE `hotel`.`Branch_ID` = 4 LIMIT 21; args=(4,); alias=default
+"POST /hotelobsidian/update_branch/4/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 22
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` LIMIT 21; args=(); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB6FC0>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7CE0>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7CE0>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (2)>, <Hotel: Hotel object (3)>, <Hotel: Hotel object (4)>, <Hotel: Hotel object (5)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel` LIMIT 21; args=(); alias=default
+Exception while resolving variable 'logintype' in template 'branchinformation.html'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'logintype'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [logintype] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000251B0EB6FC0>>, 'request': <WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7CE0>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000251B0EB7CE0>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/hotelobsidian/admin/branchinformation/new_update/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'results': <QuerySet [<Hotel: Hotel object (2)>, <Hotel: Hotel object (3)>, <Hotel: Hotel object (4)>, <Hotel: Hotel object (5)>]>}]
+(0.000) SELECT `hotel`.`Branch_ID`, `hotel`.`Location`, `hotel`.`PhoneNumber` FROM `hotel`; args=(); alias=default
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 21633
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:49:31.240163' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:49:31.240163', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 20000
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:49:32.720664' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:49:32.720664', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12641
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+(0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:49:34.340288' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:49:34.340288', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21735
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:49:51.327283' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:49:51.327283', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 20000
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:50:28.997783' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:50:28.997783', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12641
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+(0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:50:29.926125' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:50:29.926125', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21735
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:50:32.068402' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:50:32.068402', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 19893
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern '' [name='default']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/' [name='admin']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'login/' [name='login']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'logout' [name='logout']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'catalogue/' [name='catalogue']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'cataloguelist/' [name='cataloguelist']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'signup/' [name='signup']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'homepage/' [name='homepage']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'booking/<int:roomid>/<str:loc>/' [name='booking']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'booking_final/' [name='booking_final']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'checkavailabilty/' [name='checkavailabilty']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'generatebill/' [name='generate_bill']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'checkout_Room/<int:roomid>/' [name='checkout_Room']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'checkoutAll/' [name='checkoutAll']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/branchinformation/' [name='branchinformation']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/roomtype/' [name='roomtype']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/roominformation/' [name='roominformation']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/customerinformation/' [name='customerinformation']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/bookinginformation/' [name='bookinginformation']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/payments/' [name='payments']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/branchinformation/update/' [name='branch_update']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/branchinformation/add/' [name='branch_add']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/branchinformation/add_new/' [name='add_new_branch']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/branchinformation/new_update/' [name='update_this_branch']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'delete_branch/<int:branch_id>/' [name='delete_branch']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'update_branch/<int:branch_id>/' [name='update_branch']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'sample/' [name='sample_view']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern '^static/(?P<path>.*)$'>], [<URLPattern ''>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'hotelobsidian/admin/roominformation/3660.jpg'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Not Found: /hotelobsidian/admin/roominformation/3660.jpg
+"GET /hotelobsidian/admin/roominformation/3660.jpg HTTP/1.1" 404 8042
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:50:37.200657' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:50:37.200657', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+"GET /hotelobsidian/admin/customerinformation/ HTTP/1.1" 200 10246
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern '' [name='default']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/' [name='admin']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'login/' [name='login']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'logout' [name='logout']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'catalogue/' [name='catalogue']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'cataloguelist/' [name='cataloguelist']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'signup/' [name='signup']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'homepage/' [name='homepage']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'booking/<int:roomid>/<str:loc>/' [name='booking']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'booking_final/' [name='booking_final']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'checkavailabilty/' [name='checkavailabilty']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'generatebill/' [name='generate_bill']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'checkout_Room/<int:roomid>/' [name='checkout_Room']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'checkoutAll/' [name='checkoutAll']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/branchinformation/' [name='branchinformation']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/roomtype/' [name='roomtype']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/roominformation/' [name='roominformation']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/customerinformation/' [name='customerinformation']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/bookinginformation/' [name='bookinginformation']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/payments/' [name='payments']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/branchinformation/update/' [name='branch_update']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/branchinformation/add/' [name='branch_add']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/branchinformation/add_new/' [name='add_new_branch']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'admin/branchinformation/new_update/' [name='update_this_branch']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'delete_branch/<int:branch_id>/' [name='delete_branch']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'update_branch/<int:branch_id>/' [name='update_branch']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern 'sample/' [name='sample_view']>], [<URLResolver <module 'hotelobsidian.urls' from 'D:\\HotelManagementSystem-Django\\HMS\\hotelobsidian\\urls.py'> (None:None) 'hotelobsidian/'>, <URLPattern '^static/(?P<path>.*)$'>], [<URLPattern ''>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': 'hotelobsidian/admin/customerinformation/3660.jpg'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Not Found: /hotelobsidian/admin/customerinformation/3660.jpg
+"GET /hotelobsidian/admin/customerinformation/3660.jpg HTTP/1.1" 404 8054
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2023-11-15 18:50:46.387170' AND `django_session`.`session_key` = 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48') LIMIT 21; args=('2023-11-15 18:50:46.387170', 'gmwleu7kzkjwpuu44lj3ao6mh1ntwa48'); alias=default
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21735

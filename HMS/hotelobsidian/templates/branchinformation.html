@@ -167,15 +167,6 @@
         <div class="container">
             <div class="row1">
                 <div class="col-md-6 mx-auto">
-                    {% if messages %}
-                      <div class="messages">
-                        {% for message in messages %}
-                          <div class="{{ message.tags }}">
-                            {{ message }}
-                          </div>
-                        {% endfor %}
-                      </div>
-                    {% endif %}
                     {% if request.path == '/hotelobsidian/admin/branchinformation/' %}
                     <div class="card1" id="panel1" runat="server" visible="true">
                         <div class="card-body">
