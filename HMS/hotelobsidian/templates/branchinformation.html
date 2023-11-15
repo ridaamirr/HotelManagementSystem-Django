@@ -4,7 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title></title>
     <style>
         body {
@@ -113,6 +117,40 @@
             transform: translate(-40%, -60%) rotate(45deg);
             width: 100%;
             height: 100%;
+        }
+        table#data {
+            background-color: rgba(192, 192, 192, 0.2); /* Greyish glassy little transparent background */
+            color: black; /* Black text */
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        table#data th, table#data td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            background-color: white; /* Set a consistent background color for all rows */
+        }
+    
+        table#data th {
+            background-color: #333;
+            color: white;
+        }
+    
+        .delBtn, .updateBtn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+    
+        .delBtn:hover, .updateBtn:hover {
+            color: #dc3545; /* Bootstrap red color for delete button */
+        }
+    
+        .updateBtn i, .delBtn i {
+            font-size: 18px;
         }
     </style>
 </head>
@@ -258,7 +296,7 @@
                         <!-- branchinformation.html -->                       
                         <div class="row" style="margin-left: 38px; width: 90%">
                             <div class="col">
-                                <table class="table">
+                                <table spellcheck="false" class="table table-bordered table-responsive" id="data">
                                     <thead class="thead-dark">
                                         <tr>
                                             <th scope="col">Branch ID</th>
@@ -272,9 +310,10 @@
                                             <tr>
                                                 <td>{{ hotel.branch_id }}</td>
                                                 <td>{{ hotel.location }}</td>
-                                                <td>{{ hotel.phonenumber }}</td>
+                                                <td onclick="updatebranch(this.parentElement,false)" contentEditable="true">{{ hotel.phonenumber }}</td>
                                                 <td>
-                                                    <a class="btn btn-danger">Delete</a>
+                                                    <button data-branch-id="{{ hotel.branch_id }}" class="delBtn"><i class="fas fa-trash"></i></button>
+                                                    <button onclick="updatebranch(this.parentElement.parentElement)" class="updateBtn"><i class="fas fa-edit"></i></button>
                                                 </td>
                                             </tr>
                                         {% endfor %}
@@ -288,9 +327,52 @@
             </div>
         </div>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
+        document.addEventListener('click', function(event) {
+            console.log('click event:', event);
+            
+            // Your existing logic here
+            var csrfToken = "{{ csrf_token }}"; // Use the Django template syntax to get the CSRF token
+            var deleteButton = event.target.closest('.delBtn');
+            
+            if (deleteButton) {
+                console.log('Delete button clicked');
+                event.preventDefault();  // Add this line to prevent the default action
+                console.log('Prevented default');
+                deleteBranch(deleteButton, csrfToken);
+            }
+        });             
+        function deleteBranch(button, csrfToken) {
+            console.log('deleteBranch function called');
+            var branchId = button.getAttribute("data-branch-id");
+            var confirmation = confirm("Are you sure you want to delete this branch?");
+            if (confirmation) {
+                console.log('Confirmation received');
+                fetch(`{% url 'delete_branch' branch_id=6 %}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken,
+                    },
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Branch deleted successfully');
+                        // Reload the page or update the UI as needed
+                        window.location.reload();
+                    } else {
+                        console.log('Error response received');
+                        return response.json();
+                    }
+                })
+                .then(data => {
+                    console.error('Error:', data);
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        }
         function validateForm() {
             const location = document.getElementById('Location').value;
             const phoneNumber = document.getElementById('Phone').value;
@@ -303,7 +385,7 @@
     
             return true;
         }
-    </script>
+    </script> 
 </body>
 </html>
 {% endblock %}

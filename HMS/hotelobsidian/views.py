@@ -188,11 +188,13 @@ def branchinformation_update(request):
 
     return HttpResponse("Invalid request method")
 
-def branchinformation_update_delete(request, hotel_id):
-    hotel = get_object_or_404(Hotel, id=hotel_id)
-    Hotel.objects.filter(branch_id=hotel.id).delete()
+def delete_branch(request, branch_id):
+    branch = get_object_or_404(Hotel, pk=branch_id)
+    branch.delete()
+    print(f"Deleted branch with ID {branch_id}")
+    # Redirect back to the referring page or a default page
+    return redirect(request.META.get('HTTP_REFERER', 'default_url'))
 
-    return redirect(request.META.get('HTTP_REFERER', reverse('default_page')))
 #------------------------------------------------------------------------------------
 
 def signup(request): 
