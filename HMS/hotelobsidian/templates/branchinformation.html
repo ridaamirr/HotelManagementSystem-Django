@@ -350,7 +350,7 @@
             var confirmation = confirm("Are you sure you want to delete this branch?");
             if (confirmation) {
                 console.log('Confirmation received');
-                fetch(`{% url 'delete_branch' branch_id=6 %}`, {
+                fetch(`{% url 'delete_branch' branch_id=0 %}`.replace('0', branchId), {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
