@@ -155,6 +155,13 @@
     </style>
 </head>
 <body>
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
     <div class="bg-image"></div>
     <div style="overflow-x: hidden" class="container">
         <div class="container">
@@ -310,10 +317,10 @@
                                             <tr>
                                                 <td>{{ hotel.branch_id }}</td>
                                                 <td>{{ hotel.location }}</td>
-                                                <td onclick="updatebranch(this.parentElement,false)" contentEditable="true">{{ hotel.phonenumber }}</td>
+                                                <td contentEditable="true">{{ hotel.phonenumber }}</td>
                                                 <td>
                                                     <button data-branch-id="{{ hotel.branch_id }}" class="delBtn"><i class="fas fa-trash"></i></button>
-                                                    <button onclick="updatebranch(this.parentElement.parentElement)" class="updateBtn"><i class="fas fa-edit"></i></button>
+                                                    <button data-branch-id="{{ hotel.branch_id }}" class="updateBtn"><i class="fas fa-edit"></i></button>
                                                 </td>
                                             </tr>
                                         {% endfor %}
@@ -332,18 +339,54 @@
     <script>
         document.addEventListener('click', function(event) {
             console.log('click event:', event);
-            
-            // Your existing logic here
-            var csrfToken = "{{ csrf_token }}"; // Use the Django template syntax to get the CSRF token
+            var csrfToken = "{{ csrf_token }}";
             var deleteButton = event.target.closest('.delBtn');
-            
+            var updateButton = event.target.closest('.updateBtn')        
             if (deleteButton) {
                 console.log('Delete button clicked');
-                event.preventDefault();  // Add this line to prevent the default action
+                event.preventDefault(); // Add this line to prevent the default action
                 console.log('Prevented default');
                 deleteBranch(deleteButton, csrfToken);
             }
-        });             
+            if (updateButton) {
+                console.log('Update button clicked');
+                event.preventDefault(); // Add this line to prevent the default action
+                console.log('Prevented default');
+                updateBranch(updateButton, csrfToken);
+            }
+        });
+        function updateBranch(updateButton, csrfToken) {
+            var branchId = updateButton.getAttribute('data-branch-id');
+            var updateUrl = updateButton.getAttribute('data-update-url');
+            var row = updateButton.closest('tr');
+            var updatedPhoneNumber = row.querySelector('td[contentEditable="true"]').innerText.trim();
+        
+            // Use the fetch API for the update request
+            fetch(`{% url 'update_branch' branch_id=0 %}`.replace('0', branchId), {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken,
+                },
+                body: JSON.stringify({
+                    new_phonenumber: updatedPhoneNumber,
+                }),
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Branch deleted successfully');
+                    // Reload the page or update the UI as needed
+                    window.location.reload();
+                } else {
+                    console.log('Error response received');
+                    return response.json();
+                }
+            })
+            .then(data => {
+                console.error('Error:', data);
+            })
+            .catch(error => console.error('Error:', error));
+        }                         
         function deleteBranch(button, csrfToken) {
             console.log('deleteBranch function called');
             var branchId = button.getAttribute("data-branch-id");
@@ -351,7 +394,7 @@
             if (confirmation) {
                 console.log('Confirmation received');
                 fetch(`{% url 'delete_branch' branch_id=0 %}`.replace('0', branchId), {
-                    method: 'GET',
+                    method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
                         'X-CSRFToken': csrfToken,
