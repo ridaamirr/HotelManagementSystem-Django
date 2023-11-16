@@ -4,7 +4,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title></title>
     <style>
              body {
@@ -117,11 +121,19 @@
     </style>
 </head>
 <body>
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
     <div class="bg-image"></div>
     <div class="container">
         <div class="container">
             <div class="row1">
                 <div class="col-md-6 mx-auto">
+                    {% if request.path == '/hotelobsidian/admin/roomtype/' %}
                     <div class="card1" id="panel1">
                         <div class="card-body">
                             <div class="row2">
@@ -148,7 +160,7 @@
                             </div>
                         </div>
                     </div>
-            
+                    {% elif request.path == '/hotelobsidian/admin/roomtype/add/' %}
                     <div class="card1" id="panel2">
                         <div class="card-body">
                             <div class="row2">
@@ -197,7 +209,7 @@
                             </div>
                         </div>
                     </div>
-            
+                    {% elif request.path == '/hotelobsidian/admin/branchinformation/update/' %}
                     <div class="card1" id="panel3" style="width: 170%; justify-content: center; margin-left: -280px;">
                         <div class="card-body">
                             <div class="row">
@@ -240,6 +252,7 @@
                                 <label style="color: aliceblue;">Price</label>
                                 <label></label><label></label>
                             </div>
+                            {% elif request.path == '/hotelobsidian/admin/roomtype/new_update/' %}
                             <div class="row" style="margin-left: 40px; width: 90%;">
                                 <div class="col">
                                     <table class="table table-bordered" id="GridView1">
@@ -258,6 +271,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

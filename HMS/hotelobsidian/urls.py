@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from . import views, branchviews
 from . import loginfunctions
 from . import signupfunction
 from django.conf import settings
@@ -33,10 +33,10 @@ urlpatterns = [
     # Branch Information Links ---------------------------------------------------------
     path('admin/branchinformation/update/', views.branchinformation, name='branch_update'),
     path('admin/branchinformation/add/', views.branchinformation, name='branch_add'),
-    path('admin/branchinformation/add_new/', views.branchinformation_add, name='add_new_branch'),
-    path('admin/branchinformation/new_update/', views.branchinformation_update, name='update_this_branch'),
-    path('delete_branch/<int:branch_id>/', views.delete_branch, name='delete_branch'),
-    path('update_branch/<int:branch_id>/', views.update_branch, name='update_branch'),
+    path('admin/branchinformation/add_new/', branchviews.branchinformation_add, name='add_new_branch'),
+    path('admin/branchinformation/new_update/', branchviews.branchinformation_update, name='update_this_branch'),
+    path('delete_branch/<int:branch_id>/', branchviews.delete_branch, name='delete_branch'),
+    path('update_branch/<int:branch_id>/', branchviews.update_branch, name='update_branch'),
     path('sample/', views.sample_view, name='sample_view'),
     #-----------------------------------------------------------------------------------
 ]
