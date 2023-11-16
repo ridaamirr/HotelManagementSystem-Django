@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title></title>
+    <style>
+                body { 
+            overflow-x: hidden;
+        }  
+        .bg-image {
+            background-image: url('/static/3660.jpg');
+            background-size:cover;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+        }
+        .row1{
+            width:100%;
+            height:100%;
+            place-content:center;
+            margin-left:370px;
+            margin-top:100px;
+        }  
+        .card1 {
+          background-color: rgba(0, 0, 0, 0.7); /* light color with opacity */
+          color: aliceblue;
+          border-radius: 20px;
+          width: 65%;
+          height: 120%;
+          backdrop-filter: blur(2px);
+        }
+        .card2 {
+          background-color: rgba(0, 0, 0, 0.7); /* light color with opacity */
+          color: aliceblue;
+          border-radius: 20px;
+          width: 105%;
+          height: 120%;
+          backdrop-filter: blur(2px);
+        }
+        .row2{
+            font-family:'Arial Unicode MS';
+            font-weight:bold;
+        }  
+
+          table {
+          border-collapse: collapse;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+                 .arrow {
+          position: absolute;
+          top: 50%;
+         width: 20px; /* adjust this value to resize the arrow */
+          height: calc(1.4 * 14px); /* maintain 7:5 height to width ratio */
+          background: transparent;
+          border-top: 1vmin solid white;
+          border-right: 1vmin solid white;
+          box-shadow: 0 0 0 lightgray;
+          transition: border-color 200ms ease;
+        }
+
+        .arrow.left {
+          left: 0;
+          transform: translate3d(0,-50%,0) rotate(-135deg);
+        }
+
+        .arrow:hover {
+          border-color:#2196F3 ;
+        }
+
+        .arrow:before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-40%,-60%) rotate(45deg);
+          width: 100%;
+          height: 100%;
+        }
+
+
+        th,
+        td {
+          text-align: left;
+          padding: 8px;
+        }
+
+        th {
+          background-color: #1E90FF;
+          color: aliceblue;
+          font-weight: bold; 
+        }
+
+        tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+
+        Update edit field styles 
+        .edit-mode {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+
+        .edit-mode input {
+          border: none;
+          padding: 5px;
+          border-radius: 5px;
+        }
+
+         Update error label styles 
+        .error-container {
+          text-align: center;
+        }
+
+        #lblError {
+          color: red;
+          margin-top: 10px;
+        }
+        table#data {
+            background-color: rgba(192, 192, 192, 0.2); /* Greyish glassy little transparent background */
+            color: black; /* Black text */
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        table#data th, table#data td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            background-color: white; /* Set a consistent background color for all rows */
+        }
+    
+        table#data th {
+            background-color: #333;
+            color: white;
+        }
+    
+    </style>
+</head>
+<body>
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <div class="bg-image"></div>
+    <div class="container">
+        <div class="container">
+            <div class="row1">
+                <div class="col-md-6 mx-auto">
+                    {% if request.path == '/hotelobsidian/admin/bookinginformation/' %}
+                    <div class="card2" id="panel1">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <br />
+                                    <center>
+                                        <div style="position:absolute">
+                                            <a style="margin-left:50px;margin-top:10px" href="{% url 'admin' %}" class="arrow left"></a>
+                                        </div>
+                                        <h3 style="color:aliceblue; font-family:'Arial Unicode MS'; font-weight:bold">Bookings</h3>
+                                        <br />
+                                        <div class="r1">
+                                            <div style="display:flex; margin-left:120px">
+                                                <label style="color:aliceblue">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                                <input class="form-control" id="SearchBox" style="width:150px;" placeholder="CNIC">
+                                                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                                <button class="btn btn-success" id="SearchButton" style="background-color:#1E90FF; border-color:#1E90FF;">Search</button>
+                                            </div>
+                                        </div>
+                                        <div class="error-container">
+                                            <center>
+                                                <label id="searcherror" style="color:red; display:none;"></label>
+                                                <label id="lblError" style="color:red; display:none;"></label>
+                                            </center>
+                                            <div class="radio" style="margin-left:65px">
+                                                <input type="radio" id="cnicradio" name="searchtype" checked="checked" onchange="cnicradio_CheckedChanged()">
+                                                <label style="color:aliceblue" for="cnicradio">CNIC</label>
+                                                <label></label>
+                                                <label></label>
+                                                <input type="radio" id="locradio" name="searchtype" onchange="locradio_CheckedChanged()">
+                                                <label style="color:aliceblue" for="locradio">Location</label>
+                                                <label></label>
+                                                <label></label>
+                                                <input type="radio" id="roomoradio" name="searchtype" onchange="roomnoradio_CheckedChanged()">
+                                                <label style="color:aliceblue" for="roomoradio">Room Number</label>
+                                                <label></label>
+                                                <label></label>
+                                            </div>
+                                            <br />
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-left:30px; width:68%">
+                                <div class="col">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Room_ID</th>
+                                                <th>CNIC</th>
+                                                <th>Location</th>
+                                                <th>Room Number</th>
+                                                <th>Number Of Days</th>
+                                                <th>Check In Date</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Use JavaScript to handle row editing and updating -->
+                                        </tbody>
+                                    </table>
+                                    <asp:SqlDataSource ID="CurrentBookings" runat="server" ConnectionString="<%$ ConnectionStrings:HotelManagementSystemConnectionString %>" SelectCommand="select* from CurrentBookings"></asp:SqlDataSource>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        // ... JavaScript code ...
+    </script>
+</body>
+</html>
+{% endblock %}
