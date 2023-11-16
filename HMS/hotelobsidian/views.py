@@ -121,7 +121,7 @@ def roominformation(request):
     context = {
        'logintype':logintype,
         }
-    return render(request, 'rooms/roominformation.html',context)
+    return render(request, 'admin/roominformation.html',context)
 def roomtype(request): 
     logintype = request.session.get('logintype', None) 
     context = {
