@@ -118,6 +118,40 @@
             width: 100%;
             height: 100%;
         }
+        table#data {
+            background-color: rgba(192, 192, 192, 0.2); /* Greyish glassy little transparent background */
+            color: black; /* Black text */
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        table#data th, table#data td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            background-color: white; /* Set a consistent background color for all rows */
+        }
+    
+        table#data th {
+            background-color: #333;
+            color: white;
+        }
+    
+        .delBtn, .updateBtn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+    
+        .delBtn:hover, .updateBtn:hover {
+            color: #dc3545; /* Bootstrap red color for delete button */
+        }
+    
+        .updateBtn i, .delBtn i {
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -215,7 +249,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     {% elif request.path == '/hotelobsidian/admin/roomtype/update/' %}
                     <div class="card1" id="panel3" style="width: 170%; justify-content: center; margin-left: -280px;">
                         <div class="card-body">
@@ -229,50 +262,71 @@
                                     <br>
                                 </div>
                             </div>
-                            <div class="r1" style="margin-left: 210px;">
-                                <div style="display:flex;">
-                                    <label style="color: aliceblue;">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                    <input class="form-control" id="SearchRoom" width="150px" placeholder="Room Type ID">
-                                    <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                    <input class="btn btn-success" type="button" ID="SearchButton"  value="Search" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="btnSearch_Click" />
+                            <form action="{% url 'update_this_room' %}" method="post">
+                                {% csrf_token %}
+                                <div class="r1" style="margin-left: 210px;">
+                                    <div style="display:flex;">
+                                        <label style="color: aliceblue;">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                        <input class="form-control" id="SearchRoom" name="SearchRoom" width="150px" placeholder="Room Type ID">
+                                        <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                        <button class="btn btn-success btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Search</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="error-container">
-                                <center>
-                                    <br>
-                                    <label id="searcherror" style="color: red; display: none;"></label>
-                                    <label id="Label1" style="color: red; display: none;"></label>
-                                    <label id="lblError" style="color: red; display: none;"></label>
-                                </center>
-                            </div>
-                            <div class="radio" style="margin-left: 240px;">
-                                <input type="radio" id="idradio" name="searchtype" checked="true" onclick="idradio_CheckedChanged()">
-                                <label style="color: aliceblue;">Room Type ID</label>
-                                <label></label><label></label>
-                                <input type="radio" id="typeradio" name="searchtype" onclick="typeradio_CheckedChanged()">
-                                <label style="color: aliceblue;">Room Type</label>
-                                <label></label><label></label>
-                                <input type="radio" id="bedradio" name="searchtype" onclick="bedradio_CheckedChanged()">
-                                <label style="color: aliceblue;">Number of Beds</label>
-                                <label></label><label></label>
-                                <input type="radio" id="priceradio" name="searchtype" onclick="priceradio_CheckedChanged()">
-                                <label style="color: aliceblue;">Price</label>
-                                <label></label><label></label>
-                            </div>
+                                <div class="error-container">
+                                    <center>
+                                        <br>
+                                        <label id="searcherror" style="color: red; display: none;"></label>
+                                        <label id="Label1" style="color: red; display: none;"></label>
+                                        <label id="lblError" style="color: red; display: none;"></label>
+                                    </center>
+                                </div>
+                                <div class="radio" style="margin-left: 240px;">
+                                    <input type="radio" id="idradio" name="searchtype" checked="true" value="ID_radio">
+                                    <label style="color: aliceblue;">Room Type ID</label>
+                                    <label></label><label></label>
+                                    <input type="radio" id="typeradio" name="searchtype" value="Type_radio">
+                                    <label style="color: aliceblue;">Room Type</label>
+                                    <label></label><label></label>
+                                    <input type="radio" id="bedradio" name="searchtype" value="No_of_beds_radio">
+                                    <label style="color: aliceblue;">Number of Beds</label>
+                                    <label></label><label></label>
+                                    <input type="radio" id="priceradio" name="searchtype" value="price_radio">
+                                    <label style="color: aliceblue;">Price</label>
+                                    <label></label><label></label>
+                                </div>
+                            </form>
                             {% elif request.path == '/hotelobsidian/admin/roomtype/new_update/' %}
                             <div class="row" style="margin-left: 40px; width: 90%;">
                                 <div class="col">
-                                    <table class="table table-bordered" id="GridView1">
-                                        <tr>
-                                            <th>Room Type ID</th>
-                                            <th>Room Type</th>
-                                            <th>Number of Beds</th>
-                                            <th>Price</th>
-                                            <th>Image</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
-                                        </tr>
-                                        <!-- Rows will be dynamically generated -->
+                                    <table spellcheck="false" class="table table-bordered table-responsive" id="data">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col">Room Type ID</th>
+                                                <th scope="col">Room Type</th>
+                                                <th scope="col">Number of Beds</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">Image</th>
+                                                <th scope="col">Edit</th>
+                                                <th scope="col">Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for roomtype in results %}
+                                                <tr>
+                                                    <td>{{ roomtype.roomtype_id }}</td>
+                                                    <td>{{ roomtype.type }}</td>
+                                                    <td contentEditable="true">{{ roomtype.numberofbeds }}</td>
+                                                    <td contentEditable="true">{{ roomtype.price }}</td>
+                                                    <td>{{ roomtype.image }}</td>
+                                                    <td>
+                                                        <button data-branch-id="{{ hotel.branch_id }}" class="updateBtn"><i class="fas fa-edit"></i></button>
+                                                    </td>
+                                                    <td>
+                                                        <button data-branch-id="{{ hotel.branch_id }}" class="delBtn"><i class="fas fa-trash"></i></button>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>

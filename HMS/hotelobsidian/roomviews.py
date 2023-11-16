@@ -31,21 +31,23 @@ def roomtype_add(request):
 def roomtype_update(request):
     if request.method == 'POST':
         search_type = request.POST.get('searchtype')
-        search_value = request.POST.get('SearchBox')
+        search_value = request.POST.get('SearchRoom')
 
         if search_value:
-            if search_type == 'idradio':
-                results = Hotel.objects.filter(branch_id=search_value)
-            elif search_type == 'locradio':
-                results = Hotel.objects.filter(location=search_value)
-            elif search_type == 'phoneradio':
-                results = Hotel.objects.filter(phonenumber=search_value)
+            if search_type == 'ID_radio':
+                results = Roomtype.objects.filter(roomtype_id=search_value)
+            elif search_type == 'Type_radio':
+                results = Roomtype.objects.filter(type=search_value)
+            elif search_type == 'No_of_beds_radio':
+                results = Roomtype.objects.filter(numberofbeds=search_value)
+            elif search_type == 'price_radio':
+                results = Roomtype.objects.filter(price=search_value)
             else:
                 results = None
         else:
-            results = Hotel.objects.all()
+            results = Roomtype.objects.all()
 
-        return render(request, 'admin/branchinformation.html', {'results': results})
+        return render(request, 'admin/roomtype.html', {'results': results})
 
     return HttpResponse("Invalid request method")
 
