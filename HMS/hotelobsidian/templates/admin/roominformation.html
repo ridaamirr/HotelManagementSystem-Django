@@ -1,269 +1,23 @@
+{% extends "base.html" %}
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <div class="bg-image"></div> 
-    <div style="overflow-x:hidden" class="container" > 
-        <div class="container" >
-            <div class="row1">
-                <div class="col-md-6 mx-auto">
-
-                    <div class="card1" id="panel1" runat="server" visible="true"> 
-                        <div class="card-body">
-                            <div class="row2">
-                                <div class="col">
-                                    <center>   
-                                        <br />
-
-                                        <a style="margin-left:30px;margin-top:-70px" href="Admin.aspx" class="arrow left"></a>
-                                        <h3 style=" color: aliceblue;  font-family:'Arial Unicode MS';font-weight:bold" id="RoomInfo" runat="server">Room Information</h3> 
-                                  <br />
-                                        </center> 
-                                                            
-                                </div>  
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <center> 
-
-                                         <div class="form-group">
-                                            <asp:Button class="btn btn-success btn-block btn-lg" ID="AddRoom" runat="server" Text="Add"  BackColor="#1E90FF" BorderColor="#1E90FF" OnClick="Add_Click"></asp:Button> 
-                                             <br />
-                                             <asp:Button class="btn btn-success btn-block btn-lg" ID="UpdateDeleteRoom" runat="server" Text="Update/Delete"  BackColor="#1E90FF" BorderColor="#1E90FF" OnClick="Update_Delete_Click"></asp:Button>
-                                        <br />
-                                         </div>
-                                    </center>
-
-                                </div>
-                            </div> 
-                        </div>
-                    </div> 
-
-                    <div class="card1" id="panel2" runat="server" visible="false">
-                        <div class="card-body">
-                            <div class="row2">
-                                <div class="col">
-                                    <center>   
-                                        <br />
-                                        <div style="position:absolute">
-                                        <a style="margin-left:40px;margin-top:30px" href="RoomInformation.aspx" class="arrow left"></a></div>
-                                        <h3 style=" color: aliceblue;  font-family:'Arial Unicode MS';font-weight:bold" id="H1" runat="server">Add New Room</h3> 
-                                  <br />
-                                        </center> 
-                                                            
-                                </div>  
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <center>
-                                       <div style="margin-left:50px">
-                                          <div style="display:flex">   
-                                              <label style="color:aliceblue">Room Number&nbsp;&nbsp;</label> 
-                                                  <div class="form-group"> 
-                                                       
-                                            <asp:TextBox CssClass="form-control" ID="RoomNo" Width="150" runat="server" placeholder="Room Number"></asp:TextBox> 
-                                                       <asp:RequiredFieldValidator ID="reqroom" runat="server" ControlToValidate="RoomNo"
-                                 ErrorMessage = "Room Number is Required"  ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator> 
-                                                      <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="RoomNo" 
-                                             Type="Double" MinimumValue="0" MaximumValue="2000" 
-                                             ErrorMessage="Enter a Valid Number" ForeColor="Red" Display="Dynamic"></asp:RangeValidator>
-                                       </div> 
-
-                                              </div> 
-                                        </div>
-                                          <div style="margin-left:50px">
-                                          <div style="display:flex">  
-                                              
-                                      <label style="color:aliceblue">Loction&nbsp;&nbsp;</label> 
-                                             
-                                      <div class="form-group"> 
-                                          <asp:DropDownList CssClass="form-control" ID="DropDownList1" runat="server" >                                        
-                                          </asp:DropDownList>
-                          
-                                                                                </div>  
-                                   
-                                 </div>
-                                                </div>
-                                               <div style="margin-left:50px">
-                                          <div style="display:flex">  
-                                              
-                                      <label style="color:aliceblue">Room Type ID&nbsp;&nbsp;</label>                                            
-                                      <div class="form-group"> 
-                                          <asp:DropDownList CssClass="form-control" ID="DropDownList2" runat="server" >                                        
-                                          </asp:DropDownList>
-                                         </div> 
-                                              &nbsp;&nbsp;&nbsp;&nbsp; <asp:Button  class="btn btn-success" ID="select" Height="35" runat="server" Text="Select"  BackColor="#1E90FF" BorderColor="#1E90FF" OnClick="Select_Click" ></asp:Button> 
-                                            
-                                 </div>
-                                                </div>   
-                                        
-                                          <div style="margin-left:50px">
-                                          <div style="display:flex">  
-                                              
-                                      <label style="color:aliceblue">Type&nbsp;&nbsp;</label>                                            
-                                      <asp:TextBox CssClass="form-control" ID="type" Width="150" runat="server" Enabled="false"></asp:TextBox> 
-                                            
-                                 </div>
-                                                </div>   
-
-                                        <br />
-                                       
-
-                                         <div style="margin-left:50px">
-                                          <div style="display:flex">  
-                                              
-                                      <label style="color:aliceblue">Number of Beds&nbsp;&nbsp;</label>                                            
-                                      <asp:TextBox CssClass="form-control" ID="noofbeds" Width="150" runat="server" Enabled="false"></asp:TextBox> 
-                                            
-                                 </div>
-                                                </div>   
-                                        <br />
-                                         <div style="margin-left:50px">
-                                          <div style="display:flex">  
-                                              
-                                      <label style="color:aliceblue">Price&nbsp;&nbsp;</label>                                            
-                                      <asp:TextBox CssClass="form-control" ID="price" Width="150" runat="server" Enabled="false"></asp:TextBox> 
-                                            
-                                 </div>
-                                                </div>  
-                                          
-                                   <asp:label ID="unique" runat="server" ForeColor="red" Display="Dynamic"></asp:label> 
-                                       
-                                        <br />
-                                        <br />
-                                            <asp:Button class="btn btn-success btn-block btn-lg" ID="AddNew" runat="server" Text="Add"  BackColor="#1E90FF" BorderColor="#1E90FF" OnClick="AddRoom_Click" ></asp:Button> 
-                                             <br />
-                                       </center>
-                                 </div>
-                            </div> 
-                        </div>
-                    </div>   
-
-                  
-                 <div class="card2" id="panel3" runat="server" style="width:150%;justify-content:center; margin-left:-220px" visible="false">
-                    <div class="card-body"> 
-                        <div class="row">
-                            <div class="col" style="margin-left:350px" >
-                                <div style="position:absolute">
-                                <a style="margin-left:-280px;margin-top:50px" href="RoomInformation.aspx" class="arrow left"></a></div>
-                                 <br /><h3 style="color:aliceblue;  font-family:'Arial Unicode MS';font-weight:bold">Update/Delete</h3>  <br />                                 
-                            </div>  
-                            <div class="r1"  style="margin-left:250px">
-                             <div style="display:flex"> 
-                                    
-                                    <label style="color:aliceblue">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
-                                    
-                           <asp:TextBox CssClass="form-control" ID="SearchRoom" runat="server" Width="150px" placeholder="Room ID"></asp:TextBox> 
-                                          <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                      <asp:Button class="btn btn-success " ID="SearchButton" runat="server" Text="Search"  BackColor="#1E90FF" BorderColor="#1E90FF" OnClick="Search_Click" ></asp:Button> 
-                         
-                        
-                                </div>
-                        </div>  
-
-                            <div class="error-container">
-                                     <center>
-            <asp:Label ID="searcherror" runat="server" Visible="false" ForeColor="Red"></asp:Label> 
-                                     <asp:Label ID="Label1" runat="server" Visible="false" ForeColor="Red"></asp:Label> 
-                                         </center> 
-                                     <br />
-        </div>           
-                            <center>
-                             <div class="radio" style="margin-left:90px">  
-                                        <asp:RadioButton ID="idradio" GroupName="searchtype" runat="server" Checked="true" AutoPostBack="True" OnCheckedChanged="idradio_CheckedChanged" /><label style="color:aliceblue">Room ID</label> <label></label><label></label>
-                                        <asp:RadioButton ID="roomradio" GroupName="searchtype" runat="server" AutoPostBack="True" OnCheckedChanged="roomradio_CheckedChanged"/><label style="color:aliceblue">Room Number</label> <label></label><label></label>
-                                 <asp:RadioButton ID="typeradio" GroupName="searchtype" runat="server" AutoPostBack="True" OnCheckedChanged="typeradio_CheckedChanged" /><label style="color:aliceblue">Room Type ID</label><label></label><label></label>
-                                 <asp:RadioButton ID="branchradio" GroupName="searchtype" runat="server" AutoPostBack="True" OnCheckedChanged="branchradio_CheckedChanged" /><label style="color:aliceblue">Location</label><label></label><label></label>
-                                          
-                                    </div>  
-                                </center>
-                            </div>
-
-                            
-             
-                        
-                        <div class="row" style="margin-left:40px; width:90%">
-                            <center>
-                            <div class="col">
-<asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowDeleting="GridView1_RowDeleting" OnRowDataBound="GridView1_RowDataBound">
-    <Columns>
-        <asp:BoundField DataField="Room_ID" HeaderText="Room ID" ReadOnly="true" ItemStyle-ForeColor="Black" />
-        <asp:TemplateField HeaderText="Room Number">
-            <ItemTemplate>
-                <asp:Label ID="lblRoomNo" runat="server" Text='<%# Bind("RoomNumber") %>' Width="100px" ForeColor="black"></asp:Label>
-            </ItemTemplate>
-            <EditItemTemplate>
-                <asp:TextBox ID="txtRoomNo" CssClass="form-control" runat="server" Text='<%# Bind("RoomNumber") %>'  Width="70px" ForeColor="black"></asp:TextBox>
-                <br />
-                <asp:Label ID="lblRoomNoError" runat="server" Text="" />
-            </EditItemTemplate>
-        </asp:TemplateField>
-         <asp:TemplateField HeaderText="Room Type ID">
-            <ItemTemplate>
-                <asp:Label ID="lblRoomType" runat="server" Text='<%# Bind("RoomType_ID") %>'  Width="70px" ForeColor="black"></asp:Label>
-            </ItemTemplate>
-            <EditItemTemplate>
-                <asp:DropDownList CssClass="form-control" ID="DropDownList5"  Width="70px" runat="server" >                                        
-                                          </asp:DropDownList>
-            </EditItemTemplate>
-        </asp:TemplateField>
-         <asp:TemplateField HeaderText="Type">
-            <ItemTemplate>
-                <asp:Label ID="lblType" runat="server" Text='<%# Bind("Type") %>'  Width="70px" ForeColor="black"></asp:Label>
-            </ItemTemplate>
-          </asp:TemplateField>   
-         <asp:TemplateField HeaderText="Number of Beds">
-            <ItemTemplate>
-                <asp:Label ID="lblbeds" runat="server" Text='<%# Bind("NumberOfBeds") %>'  Width="70px" ForeColor="black"></asp:Label>
-            </ItemTemplate>
-          </asp:TemplateField>
-
-         <asp:TemplateField HeaderText="Location">
-            <ItemTemplate>
-                <asp:Label ID="lblBranch" runat="server" Text='<%# Bind("Location") %>'  Width="90px" ForeColor="black"></asp:Label>
-            </ItemTemplate>
-            <EditItemTemplate>
-                <asp:DropDownList CssClass="form-control" ID="DropDownList4"  Width="110px" runat="server" >                                        
-                                          </asp:DropDownList>
-            </EditItemTemplate>
-        </asp:TemplateField>
-        <asp:CommandField ShowEditButton="true" ControlStyle-BackColor="#1E90FF" ControlStyle-BorderColor="#1E90FF" ControlStyle-ForeColor="white" ButtonType="Button"/>
-        <asp:CommandField ShowDeleteButton="true" ControlStyle-BackColor="#1E90FF" ControlStyle-BorderColor="#1E90FF" ControlStyle-ForeColor="white" ButtonType="Button"/>
-    </Columns>
-    <HeaderStyle BackColor="#2196F3" Font-Bold="True" ForeColor="White" />
-
-
-            <RowStyle BackColor="#F2F2F2" />
-            <AlternatingRowStyle BackColor="White" />
-        </asp:GridView> 
-                                 <div class="error-container">
-                                     <center>
-            <asp:Label ID="lblError" runat="server" Visible="false" ForeColor="Red"></asp:Label> 
-                                    
-                                         </center> 
-                                     <br />
-        </div> 
-                               
-                     
-                        </div>
-                                </center>
-                        </div>
-                    </div>
-                </div>
- 
-                    </div>
-                </div>
-
-            </div>
-       
-            </div>
-        
-
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title></title>
     <style>
-         body { 
+             body {
             overflow-x: hidden;
-        }  
+        }
+        
         .bg-image {
-            background-image: url('3660.jpg');
-            background-size:cover;
+            background-image: url('/static/3660.jpg');
+            background-size: cover;
             height: 100%;
             position: fixed;
             top: 0;
@@ -271,119 +25,344 @@
             width: 100%;
             z-index: -1;
         }
-        .row1{
-            width:100%;
-            height:100%;
-            place-content:center;
-            margin-left:370px;
-            margin-top:100px;
-        }  
+        
+        .row1 {
+            width: 100%;
+            height: 100%;
+            place-content: center;
+            margin-left: 370px;
+            margin-top: 100px;
+        }
+        
         .card1 {
-          background-color: rgba(0, 0, 0, 0.7); /* light color with opacity */
-          color: aliceblue;
-          border-radius: 20px;
-          width: 65%;
-          height: 120%;
-          backdrop-filter: blur(2px);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: aliceblue;
+            border-radius: 20px;
+            width: 65%;
+            height: 120%;
+            backdrop-filter: blur(2px);
         }
-        .card2 {
-          background-color: rgba(0, 0, 0, 0.7); /* light color with opacity */
-          color: aliceblue;
-          border-radius: 20px;
-          width: 135%;
-          height: 120%;
-          backdrop-filter: blur(2px);
+        
+        .row2 {
+            font-family: 'Arial Unicode MS';
+            font-weight: bold;
         }
-        .row2{
-            font-family:'Arial Unicode MS';
-            font-weight:bold;
-        }  
-        .parent {
-          position: relative;
-          margin:60px;
-          height:30%;
-          width:30%;
-          /* Set the parent element to a non-static position */
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
         }
-
-        .arrow {
-          position: absolute;
-          top: 50%;
-         width: 20px; /* adjust this value to resize the arrow */
-          height: calc(1.4 * 14px); /* maintain 7:5 height to width ratio */
-          background: transparent;
-          border-top: 1vmin solid white;
-          border-right: 1vmin solid white;
-          box-shadow: 0 0 0 lightgray;
-          transition: border-color 200ms ease;
+        
+        th, td {
+            text-align: left;
+            padding: 8px;
         }
-
-        .arrow.left {
-          left: 0;
-          transform: translate3d(0,-50%,0) rotate(-135deg);
-        }
-
-        .arrow:hover {
-          border-color:#2196F3 ;
-        }
-
-        .arrow:before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-40%,-60%) rotate(45deg);
-          width: 100%;
-          height: 100%;
-        }
-
-          table {
-          border-collapse: collapse;
-          width: 100%;
-          margin-bottom: 20px;
-        }
-
-        th,
-        td {
-          text-align: left;
-          padding: 8px;
-        }
-
+        
         th {
-          background-color:#1E90FF;
-          color: aliceblue;
-          font-weight: bold; 
+            background-color: #1E90FF;
+            color: aliceblue;
+            font-weight: bold;
         }
-
+        
         tr:nth-child(even) {
-          background-color: #f2f2f2;
+            background-color: #f2f2f2;
         }
-
-         Update edit field styles 
+        
         .edit-mode {
             background-color: rgba(255, 255, 255, 0.8);
         }
-
-
-        .edit-mode input {
-          border: none;
-          padding: 5px;
-          border-radius: 5px;
-        }
-
-         Update error label styles 
-        .error-container {
-          text-align: center;
-        }
-
-        #lblError {
-          color: red;
-          margin-top: 10px;
-        }
-
         
+        .edit-mode input {
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        
+        .error-container {
+            text-align: center;
+        }
+        
+        #lblError {
+            color: red;
+            margin-top: 10px;
+        }
+        
+        .arrow {
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: calc(1.4 * 14px);
+            background: transparent;
+            border-top: 1vmin solid white;
+            border-right: 1vmin solid white;
+            box-shadow: 0 0 0 lightgray;
+            transition: border-color 200ms ease;
+        }
+        
+        .arrow.left {
+            left: 0;
+            transform: translate3d(0, -50%, 0) rotate(-135deg);
+        }
+        
+        .arrow:hover {
+            border-color: #2196F3;
+        }
+        
+        .arrow:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-40%, -60%) rotate(45deg);
+            width: 100%;
+            height: 100%;
+        }
+        table#data {
+            background-color: rgba(192, 192, 192, 0.2); /* Greyish glassy little transparent background */
+            color: black; /* Black text */
+            border-collapse: collapse;
+            width: 100%;
+        }
     
+        table#data th, table#data td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            background-color: white; /* Set a consistent background color for all rows */
+        }
+    
+        table#data th {
+            background-color: #333;
+            color: white;
+        }
+    
+        .delBtn, .updateBtn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+    
+        .delBtn:hover, .updateBtn:hover {
+            color: #dc3545; /* Bootstrap red color for delete button */
+        }
+    
+        .updateBtn i, .delBtn i {
+            font-size: 18px;
+        }
     </style>
-    
-
-</asp:Content>
+</head>
+<body>
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <div class="bg-image"></div>
+    <div class="container">
+        <div class="container">
+            <div class="row1">
+                <div class="col-md-6 mx-auto">
+                    {% if request.path == '/hotelobsidian/admin/roominformation/' %}
+                    <div class="card1" id="panel1">
+                        <div class="card-body">
+                            <div class="row2">
+                                <div class="col">
+                                    <center>
+                                        <br />
+                                        <a style="margin-left:30px;margin-top:-70px" href="Admin.html" class="arrow left"></a>
+                                        <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold" id="RoomInfo">Room Information</h3>
+                                        <br />
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <center>
+                                        <div class="form-group">
+                                            <button class="btn btn-success btn-block btn-lg" id="AddRoom" onclick="Add_Click()" style="background-color: #1E90FF; border-color: #1E90FF;">Add</button>
+                                            <br />
+                                            <button class="btn btn-success btn-block btn-lg" id="UpdateDeleteRoom" onclick="Update_Delete_Click()" style="background-color: #1E90FF; border-color: #1E90FF;">Update/Delete</button>
+                                            <br />
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                    {% elif request.path == '/hotelobsidian/admin/roominformation/add/' %}
+                    <div class="card1" id="panel2">
+                        <div class="card-body">
+                            <div class="row2">
+                                <div class="col">
+                                    <center>
+                                        <br />
+                                        <div style="position:absolute">
+                                            <a style="margin-left:40px;margin-top:30px" href="RoomInformation.html" class="arrow left"></a>
+                                        </div>
+                                        <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold" id="H1">Add New Room</h3>
+                                        <br />
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <center>
+                                        <div style="margin-left:50px">
+                                            <div style="display:flex">
+                                                <label style="color:aliceblue">Room Number&nbsp;&nbsp;</label>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="RoomNo" width="150" placeholder="Room Number" />
+                                                    <span id="reqroom" style="color: red; display: none;">Room Number is Required</span>
+                                                    <span id="RangeValidator1" style="color: red; display: none;">Enter a Valid Number</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:50px">
+                                            <div style="display:flex">
+                                                <label style="color:aliceblue">Location&nbsp;&nbsp;</label>
+                                                <div class="form-group">
+                                                    <select class="form-control" id="DropDownList1"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:50px">
+                                            <div style="display:flex">
+                                                <label style="color:aliceblue">Room Type ID&nbsp;&nbsp;</label>
+                                                <div class="form-group">
+                                                    <select class="form-control" id="DropDownList2"></select>
+                                                </div>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                                <button class="btn btn-success" id="select" style="height: 35px; background-color: #1E90FF; border-color: #1E90FF;" onclick="Select_Click()">Select</button>
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:50px">
+                                            <div style="display:flex">
+                                                <label style="color:aliceblue">Type&nbsp;&nbsp;</label>
+                                                <input type="text" class="form-control" id="type" width="150" disabled />
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:50px">
+                                            <div style="display:flex">
+                                                <label style="color:aliceblue">Number of Beds&nbsp;&nbsp;</label>
+                                                <input type="text" class="form-control" id="noofbeds" width="150" disabled />
+                                            </div>
+                                        </div>
+                                        <div style="margin-left:50px">
+                                            <div style="display:flex">
+                                                <label style="color:aliceblue">Price&nbsp;&nbsp;</label>
+                                                <input type="text" class="form-control" id="price" width="150" disabled />
+                                            </div>
+                                        </div>
+                                        <span id="unique" style="color: red; display: none;"></span>
+                                        <br />
+                                        <br />
+                                        <button class="btn btn-success btn-block btn-lg" id="AddNew" style="background-color: #1E90FF; border-color: #1E90FF;" onclick="AddRoom_Click()">Add</button>
+                                        <br />
+                                    </center>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                    {% elif request.path == '/hotelobsidian/admin/roominformation/update/' %}
+                    <div class="card1" id="panel3" style="width: 170%; justify-content: center; margin-left: -280px;">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col" style="margin-left:350px">
+                                    <div style="position:absolute">
+                                        <a style="margin-left:-280px;margin-top:50px" href="RoomInformation.aspx" class="arrow left"></a>
+                                    </div>
+                                    <br />
+                                    <h3 style="color:aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Update/Delete</h3>
+                                    <br />
+                                </div>
+                                <div class="r1" style="margin-left:250px">
+                                    <div style="display:flex">
+                                        <label style="color:aliceblue">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                        <input class="form-control" id="SearchRoom" style="width:150px;" placeholder="Room ID">
+                                        <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                        <button class="btn btn-success" id="SearchButton" style="background-color:#1E90FF; border-color:#1E90FF;">Search</button>
+                                    </div>
+                                </div>
+                                <div class="error-container">
+                                    <center>
+                                        <label id="searcherror" style="color:red; display:none;"></label>
+                                        <label id="Label1" style="color:red; display:none;"></label>
+                                    </center>
+                                    <br />
+                                </div>
+                                <center>
+                                    <div class="radio" style="margin-left:90px">
+                                        <input type="radio" id="idradio" name="searchtype" checked="true" onclick="idradio_CheckedChanged()" />
+                                        <label style="color:aliceblue">Room ID</label>
+                                        <label></label>
+                                        <label></label>
+                                        <input type="radio" id="roomradio" name="searchtype" onclick="roomradio_CheckedChanged()" />
+                                        <label style="color:aliceblue">Room Number</label>
+                                        <label></label>
+                                        <label></label>
+                                        <input type="radio" id="typeradio" name="searchtype" onclick="typeradio_CheckedChanged()" />
+                                        <label style="color:aliceblue">Room Type ID</label>
+                                        <label></label>
+                                        <label></label>
+                                        <input type="radio" id="branchradio" name="searchtype" onclick="branchradio_CheckedChanged()" />
+                                        <label style="color:aliceblue">Location</label>
+                                    </div>
+                                </center>
+                            </div>
+                            <div class="row" style="margin-left:40px; width:90%">
+                                <center>
+                                    <div class="col">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Room ID</th>
+                                                    <th>Room Number</th>
+                                                    <th>Room Type ID</th>
+                                                    <th>Type</th>
+                                                    <th>Number of Beds</th>
+                                                    <th>Location</th>
+                                                    <th>Edit</th>
+                                                    <th>Delete</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Use JavaScript to handle row editing and updating -->
+                                            </tbody>
+                                        </table>
+                                        <div class="error-container">
+                                            <center>
+                                                <label id="lblError" style="color:red; display:none;"></label>
+                                            </center>
+                                            <br />
+                                        </div>
+                                    </div>
+                                </center>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    {% elif request.path == '/hotelobsidian/admin/roominformation/new_update/' %}
+                    <div class="row" style="margin-left: 40px; width: 90%;">
+                        <div class="col">
+                            <table spellcheck="false" class="table table-bordered table-responsive" id="data">
+                                <!-- ... Content ... -->
+                            </table>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        // ... JavaScript code ...
+    </script>
+</body>
+</html>
+{% endblock %}
