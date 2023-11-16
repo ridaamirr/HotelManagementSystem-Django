@@ -347,7 +347,6 @@
         });
         function updateBranch(updateButton, csrfToken) {
             var branchId = updateButton.getAttribute('data-branch-id');
-            var updateUrl = updateButton.getAttribute('data-update-url');
             var row = updateButton.closest('tr');
             var updatedPhoneNumber = row.querySelector('td[contentEditable="true"]').innerText.trim();
         
@@ -364,7 +363,7 @@
             })
             .then(response => {
                 if (response.ok) {
-                    console.log('Branch deleted successfully');
+                    console.log('Branch updated successfully');
                     // Reload the page or update the UI as needed
                     window.location.reload();
                 } else {

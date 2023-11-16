@@ -57,30 +57,32 @@ def delete_room(request, roomtype_id):
     messages.success(request, f"Deleted room type with ID {roomtype_id}")
     return redirect(request.META.get('HTTP_REFERER', 'default_url'))
 
-def update_room(request, room_id):
+def update_room(request, roomtype_id):
     print("update_branch function is being executed...")
 
     if request.method == 'POST':
         data = json.loads(request.body.decode('utf-8'))
 
-        new_phonenumber = data.get('new_phonenumber')
+        new_no_of_beds = data.get('new_no_of_beds')
+        new_price = data.get('new_price')
 
         try:
-            hotel = get_object_or_404(Hotel, pk=room_id)
-            before_update_message = f'Before Update - Branch ID: {room_id}, Phone Number: {hotel.phonenumber} new number: {new_phonenumber}'
+            roomtype = get_object_or_404(Roomtype, pk=roomtype_id)
+            before_update_message = f'Before Update - Room Type ID: {roomtype_id}, NumberofBeds: {roomtype.numberofbeds} price: {roomtype.price}'
             print(before_update_message)
 
-            hotel.phonenumber = new_phonenumber
-            hotel.save()
+            roomtype.numberofbeds = new_no_of_beds
+            roomtype.price = new_price
+            roomtype.save()
 
-            updated_hotel = get_object_or_404(Hotel, pk=room_id)
-            after_update_message = f'After Update - Branch ID: {room_id}, Phone Number: {updated_hotel.phonenumber}'
+            updated_roomtype = get_object_or_404(Roomtype, pk=roomtype_id)
+            after_update_message = f'After Update - Room Type ID: {roomtype_id}, NumberofBeds: {updated_roomtype.numberofbeds} price: {updated_roomtype.price}'
             print(after_update_message)
 
             #messages.success(request, f"{before_update_message}. {after_update_message}")
             return redirect(request.META.get('HTTP_REFERER', 'default_url'))
-        except Hotel.DoesNotExist:
-            messages.error(request, f"Branch with ID {room_id} does not exist.")
+        except Roomtype.DoesNotExist:
+            messages.error(request, f"Room type with ID {roomtype_id} does not exist.")
             return redirect(request.META.get('HTTP_REFERER', 'default_url'))
     else:
         return JsonResponse({'error': 'Invalid request method'}, status=400)

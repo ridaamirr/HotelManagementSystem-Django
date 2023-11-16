@@ -357,6 +357,39 @@
                 updateRoomType(updateButton, csrfToken);
             }
         });
+        function updateRoomType(updateButton, csrfToken) {
+            var roomTypeId = updateButton.getAttribute('data-roomtype-id');
+            var row = updateButton.closest('tr');
+            var updatedNumberOfBeds = row.querySelector('td:nth-child(3)').innerText.trim();
+            var updatedPrice = row.querySelector('td:nth-child(4)').innerText.trim();
+        
+            // Use the fetch API for the update request
+            fetch(`{% url 'update_room' roomtype_id=0 %}`.replace('0', roomTypeId), {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken,
+                },
+                body: JSON.stringify({
+                    new_no_of_beds: updatedNumberOfBeds,
+                    new_price: updatedPrice,
+                }),
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Room type updated successfully');
+                    // Reload the page or update the UI as needed
+                    window.location.reload();
+                } else {
+                    console.log('Error response received');
+                    return response.json();
+                }
+            })
+            .then(data => {
+                console.error('Error:', data);
+            })
+            .catch(error => console.error('Error:', error));
+        } 
         function deleteRoomType(button, csrfToken) {
             console.log('deleteRoomType function called');
             var roomTypeId = button.getAttribute("data-roomtype-id");
