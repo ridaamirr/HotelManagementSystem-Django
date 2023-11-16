@@ -319,10 +319,10 @@
                                                     <td contentEditable="true">{{ roomtype.price }}</td>
                                                     <td>{{ roomtype.image }}</td>
                                                     <td>
-                                                        <button data-branch-id="{{ hotel.branch_id }}" class="updateBtn"><i class="fas fa-edit"></i></button>
+                                                        <button data-roomtype-id="{{ roomtype.roomtype_id }}" class="updateBtn"><i class="fas fa-edit"></i></button>
                                                     </td>
                                                     <td>
-                                                        <button data-branch-id="{{ hotel.branch_id }}" class="delBtn"><i class="fas fa-trash"></i></button>
+                                                        <button data-roomtype-id="{{ roomtype.roomtype_id }}" class="delBtn"><i class="fas fa-trash"></i></button>
                                                     </td>
                                                 </tr>
                                             {% endfor %}
@@ -348,15 +348,45 @@
                 console.log('Delete button clicked');
                 event.preventDefault(); // Add this line to prevent the default action
                 console.log('Prevented default');
-                deleteBranch(deleteButton, csrfToken);
+                deleteRoomType(deleteButton, csrfToken);
             }
             if (updateButton) {
                 console.log('Update button clicked');
                 event.preventDefault(); // Add this line to prevent the default action
                 console.log('Prevented default');
-                updateBranch(updateButton, csrfToken);
+                updateRoomType(updateButton, csrfToken);
             }
         });
+        function deleteRoomType(button, csrfToken) {
+            console.log('deleteRoomType function called');
+            var roomTypeId = button.getAttribute("data-roomtype-id");
+            console.log('room type id: %',roomTypeId);
+            var confirmation = confirm("Are you sure you want to delete this room type?");
+            if (confirmation) {
+                console.log('Confirmation received');
+                fetch(`{% url 'delete_room' roomtype_id=0 %}`.replace('0', roomTypeId), {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken,
+                    },
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Room deleted successfully');
+                        // Reload the page or update the UI as needed
+                        window.location.reload();
+                    } else {
+                        console.log('Error response received');
+                        return response.json();
+                    }
+                })
+                .then(data => {
+                    console.error('Error:', data);
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        }
         function validateForm() {
             const NumberOfBeds = document.getElementById('BedNo').value;
             const Price = document.getElementById('Price').value;

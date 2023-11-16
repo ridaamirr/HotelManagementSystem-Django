@@ -44,8 +44,8 @@ urlpatterns = [
     path('admin/roomtype/add/', views.roomtype, name='room_add'),
     path('admin/roomtype/add_new/', roomviews.roomtype_add, name='add_new_room'),
     path('admin/roomtype/new_update/', roomviews.roomtype_update, name='update_this_room'),
-    path('delete_room/<int:room_id>/', roomviews.delete_room, name='delete_room'),
-    path('update_room/<int:room_id>/', roomviews.update_room, name='update_room'),
+    path('delete_room/<int:roomtype_id>/', roomviews.delete_room, name='delete_room'),
+    path('update_room/<int:roomtype_id>/', roomviews.update_room, name='update_room'),
     #-----------------------------------------------------------------------------------
 ]
 

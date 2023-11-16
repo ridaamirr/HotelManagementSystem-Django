@@ -51,10 +51,10 @@ def roomtype_update(request):
 
     return HttpResponse("Invalid request method")
 
-def delete_room(request, room_id):
-    branch = get_object_or_404(Hotel, pk=room_id)
-    branch.delete()
-    messages.success(request, f"Deleted branch with ID {room_id}")
+def delete_room(request, roomtype_id):
+    roomtype = get_object_or_404(Roomtype, pk=roomtype_id)
+    roomtype.delete()
+    messages.success(request, f"Deleted room type with ID {roomtype_id}")
     return redirect(request.META.get('HTTP_REFERER', 'default_url'))
 
 def update_room(request, room_id):
