@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views, branchviews
+from . import views, branchviews, roomviews
 from . import loginfunctions
 from . import signupfunction
 from django.conf import settings
@@ -37,7 +37,15 @@ urlpatterns = [
     path('admin/branchinformation/new_update/', branchviews.branchinformation_update, name='update_this_branch'),
     path('delete_branch/<int:branch_id>/', branchviews.delete_branch, name='delete_branch'),
     path('update_branch/<int:branch_id>/', branchviews.update_branch, name='update_branch'),
-    path('sample/', views.sample_view, name='sample_view'),
+    #-----------------------------------------------------------------------------------
+
+    # Room Information Links ---------------------------------------------------------
+    path('admin/roomtype/update/', views.roomtype, name='room_update'),
+    path('admin/roomtype/add/', views.roomtype, name='room_add'),
+    path('admin/roomtype/add_new/', roomviews.roomtype_add, name='add_new_room'),
+    path('admin/roomtype/new_update/', roomviews.roomtype_update, name='update_this_room'),
+    path('delete_room/<int:room_id>/', roomviews.delete_room, name='delete_room'),
+    path('update_room/<int:room_id>/', roomviews.update_room, name='update_room'),
     #-----------------------------------------------------------------------------------
 ]
 

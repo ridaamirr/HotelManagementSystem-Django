@@ -168,7 +168,7 @@
             <div class="row1">
                 <div class="col-md-6 mx-auto">
                     {% if request.path == '/hotelobsidian/admin/branchinformation/' %}
-                    <div class="card1" id="panel1" runat="server" visible="true">
+                    <div class="card1" id="panel1"  visible="true">
                         <div class="card-body">
                             <div class="row2">
                                 <div class="col">
@@ -177,7 +177,7 @@
                                         <div>
                                             <a style="margin-left:30px;margin-top:-70px" href="{% url 'admin' %}" class="arrow left"></a>
                                         </div>
-                                        <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold" id="LoginType" runat="server">Branch Information</h3>
+                                        <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold" id="LoginType" >Branch Information</h3>
                                         <br />
                                     </center>
                                 </div>
@@ -202,7 +202,7 @@
                         </div>
                     </div>
                     {% elif request.path == '/hotelobsidian/admin/branchinformation/add/' %}
-                        <div class="card1" id="panel2" runat="server" visible="false">
+                        <div class="card1" id="panel2"  visible="false">
                             <div class="card-body">
                                 <div class="row2">
                                     <div class="col">
@@ -211,7 +211,7 @@
                                             <div style="position: absolute">
                                                 <a style="margin-left:40px;margin-top:30px" href="{% url 'branchinformation' %}" class="arrow left"></a>
                                             </div>
-                                            <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold" id="H1" runat="server">Add New Branch</h3>
+                                            <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold" id="H1" >Add New Branch</h3>
                                             <br />
                                         </center>
                                     </div>
@@ -241,7 +241,7 @@
                             </div>
                         </div>
                     {% elif request.path == '/hotelobsidian/admin/branchinformation/update/' %}
-                    <div class="card1" id="panel3" runat="server" style="width: 130%; justify-content: center; margin-left: -140px" visible="false">
+                    <div class="card1" id="panel3"  style="width: 130%; justify-content: center; margin-left: -140px" visible="false">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col" style="margin-left: 290px">

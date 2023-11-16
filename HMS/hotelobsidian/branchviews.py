@@ -1,3 +1,4 @@
+from .models import *
 import json
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
@@ -12,7 +13,6 @@ logger = logging.getLogger(__name__)
 
 #Branch Information CRUD-------------------------------------------------------------
 def branchinformation_add(request):
-    print("Executing branchinformation_add function...")
     if request.method == 'POST':
         location = request.POST.get('Location')
         phone_number = request.POST.get('Phone')
@@ -43,6 +43,7 @@ def branchinformation_update(request):
             else:
                 results = None
         else:
+            # If the search box is empty, return the entire table
             results = Hotel.objects.all()
 
         return render(request, 'admin/branchinformation.html', {'results': results})

@@ -150,10 +150,15 @@
                                 <div class="col">
                                     <center>
                                         <div class="form-group">
-                                            <input class="btn btn-success btn-block btn-lg" type="button" ID="AddNew" runat="server" value="Add" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="AddNew_Click" />
-                                            <br />
-                                            <input class="btn btn-success btn-block btn-lg" type="button" ID="UpdateorDelete" runat="server" value="Update/Delete" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="UpdateorDelete_Click" />
-                                            <br />
+                                            <form action="{% url 'room_add' %}" method="post">
+                                                {% csrf_token %}
+                                                <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Add</button>
+                                            </form>
+                                            <br/>
+                                            <form action="{% url 'room_update' %}" method="post">
+                                                {% csrf_token %}
+                                                <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Update/Delete</button>
+                                            </form>
                                         </div>
                                     </center>
                                 </div>
@@ -170,7 +175,7 @@
                                         <div style="position: absolute">
                                             <a style="margin-left:40px;margin-top:30px" href="{% url 'roomtype' %}" class="arrow left"></a>
                                         </div>
-                                        <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold" id="H1" runat="server">Add Room Type</h3>
+                                        <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold" id="H1">Add Room Type</h3>
                                         <br />
                                     </center>
                                 </div>
@@ -178,38 +183,40 @@
                             <div class="row">
                                 <div class="col">
                                     <center>
-                                        <div class="form-group">
-                                            <div style="margin-left: 50px; display:flex;">
-                                                <label style="color: aliceblue;">Room Type&nbsp;&nbsp;</label>
-                                                <select class="form-control" id="DropDownList2">
-                                                    <option>Deluxe</option>
-                                                    <option>Suite</option>
-                                                </select>
+                                        <form action="{% url 'add_new_room' %}" method="post" onsubmit="return validateForm();" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <div style="margin-left: 50px; display:flex;">
+                                                    <label style="color: aliceblue;">Room Type&nbsp;&nbsp;</label>
+                                                    <select class="form-control" id="DropDownList2" name="DropDownList2">
+                                                        <option>Deluxe</option>
+                                                        <option>Suite</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" id="BedNo" placeholder="Number of Beds">
-                                            <span class="error" id="RequiredFieldValidator1" style="color: red; display: none;">Number of Beds is Required</span>
-                                            <span class="error" id="RangeValidator2" style="color: red; display: none;">Enter a valid number (0-20)</span>
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" id="Price" placeholder="Price">
-                                            <span class="error" id="RequiredFieldValidator3" style="color: red; display: none;">Price is Required</span>
-                                            <span class="error" id="RangeValidator1" style="color: red; display: none;">Price must be a positive value</span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="Image">Click here to upload image</label>
-                                            <input class="form-control" id="Image" type="file">
-                                            <span class="error" id="RequiredFieldValidator4" style="color: red; display: none;">Image is Required</span>
-                                        </div>
-                                        <input class="btn btn-success btn-block btn-lg" type="button" ID="Add" runat="server" value="Add" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="Add_Click" />
-                                        <br>
+                                            <div class="form-group">
+                                                <input class="form-control" id="BedNo" name="BedNo" placeholder="Number of Beds">
+                                                <span id="err_input_bed_no" style="color: red; display: none;"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" id="Price" name="Price" placeholder="Price">
+                                                <span id="err_input_price" style="color: red; display: none;"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Image">Click here to upload image</label>
+                                                <input class="form-control" id="Image" name="Image" type="file">
+                                                <span id="err_missing_image" style="color: red; display: none;"></span>
+                                            </div>
+                                            <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Add</button>
+                                            <br>
+                                        </form>
                                     </center>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {% elif request.path == '/hotelobsidian/admin/branchinformation/update/' %}
+                    
+                    {% elif request.path == '/hotelobsidian/admin/roomtype/update/' %}
                     <div class="card1" id="panel3" style="width: 170%; justify-content: center; margin-left: -280px;">
                         <div class="card-body">
                             <div class="row">
@@ -227,7 +234,7 @@
                                     <label style="color: aliceblue;">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                     <input class="form-control" id="SearchRoom" width="150px" placeholder="Room Type ID">
                                     <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                    <input class="btn btn-success" type="button" ID="SearchButton" runat="server" value="Search" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="btnSearch_Click" />
+                                    <input class="btn btn-success" type="button" ID="SearchButton"  value="Search" style="background-color: #1E90FF; border-color: #1E90FF;" OnClick="btnSearch_Click" />
                                 </div>
                             </div>
                             <div class="error-container">
@@ -277,6 +284,55 @@
         </div>
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('click', function(event) {
+            console.log('click event:', event);
+            var csrfToken = "{{ csrf_token }}";
+            var deleteButton = event.target.closest('.delBtn');
+            var updateButton = event.target.closest('.updateBtn')        
+            if (deleteButton) {
+                console.log('Delete button clicked');
+                event.preventDefault(); // Add this line to prevent the default action
+                console.log('Prevented default');
+                deleteBranch(deleteButton, csrfToken);
+            }
+            if (updateButton) {
+                console.log('Update button clicked');
+                event.preventDefault(); // Add this line to prevent the default action
+                console.log('Prevented default');
+                updateBranch(updateButton, csrfToken);
+            }
+        });
+        function validateForm() {
+            const NumberOfBeds = document.getElementById('BedNo').value;
+            const Price = document.getElementById('Price').value;
+            const Image = document.getElementById('Image').files;
+        
+            let valid = true;
+        
+            document.getElementById('err_input_bed_no').textContent = '';
+            document.getElementById('err_input_price').textContent = '';
+            document.getElementById('err_missing_image').textContent = '';
+        
+            if (!NumberOfBeds) {
+                document.getElementById('err_input_bed_no').textContent = 'Number of Beds is Required';
+                valid = false;
+            }
+            if (NumberOfBeds < 0 || NumberOfBeds > 20) {
+                document.getElementById('err_input_bed_no').textContent = 'Enter Valid Number of Beds (0-20)';
+                valid = false;
+            }
+            if (!Price) {
+                document.getElementById('err_input_price').textContent = 'Price is Required';
+                valid = false;
+            }
+            if (Image.length === 0) {
+                document.getElementById('err_missing_image').textContent = 'Image is Required';
+                valid = false;
+            }
+            return valid;
+        }        
+    </script>
 </body>
 </html>
 {% endblock %}
