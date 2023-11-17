@@ -10,16 +10,22 @@ urlpatterns = [
     path('admin/', views.admin, name='admin'),
     path('login/', views.login, name='login'),
     path('logout',views.logout,name='logout'),
+    path('signup/', views.signup, name='signup'),
+    path('homepage/', loginfunctions.user_dashboard, name='homepage'), 
+    path('checkavailabilty/', views.checkavailabilty, name='checkavailabilty'),
+
+    #Catalogue Links--------------------------------------------------------------------
     path('catalogue/', views.catalogue, name='catalogue'),
     path('cataloguelist/', views.cataloguelist, name='cataloguelist'),
-    path('signup/', views.signup, name='signup'),
-    path('homepage/', loginfunctions.user_dashboard, name='homepage'),
     path('booking/<int:roomid>/<str:loc>/', views.booking, name='booking'), 
     path('booking_final/', views.booking_final, name='booking_final'),
-    path('checkavailabilty/', views.checkavailabilty, name='checkavailabilty'),
+    #-----------------------------------------------------------------------------------
+    
+    #GenerateBill Links
     path('generatebill/', views.generate_bill, name='generate_bill'),
     path('checkout_Room/<int:roomid>/', views.checkout_Room, name='checkout_Room'), 
-    path('checkoutAll/', views.checkoutAll, name='checkoutAll'),
+    path('checkoutAll/', views.checkoutAll, name='checkoutAll'), 
+    #-----------------------------------------------------------------------------------
 
     #Admin Dashboard Links -------------------------------------------------------------
     path('admin/branchinformation/', views.branchinformation, name='branchinformation'),

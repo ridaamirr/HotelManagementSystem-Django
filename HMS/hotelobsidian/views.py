@@ -75,7 +75,7 @@ def cataloguelist(request):
         'result':result,
         'logintype':logintype, 
         'location':location
-         }   
+        }   
     return render(request, 'catalogue.html', context)
 
 #temp global variables cuz i was unable to pass values in function :')
