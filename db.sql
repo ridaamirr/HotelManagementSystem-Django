@@ -211,21 +211,32 @@ DELIMITER ;
 
  DELIMITER //
 
--- --this has error will checkafter mids
- CREATE FUNCTION TotalBill(userid VARCHAR(255))
- RETURNS INT
- BEGIN
-   DECLARE total INT DEFAULT 0;
+----this has error will checkafter mids
+ --CREATE FUNCTION TotalBill(userid VARCHAR(255))
+ --RETURNS INT
+ --BEGIN 
+ --   DECLARE total INT;
+  
+ --  SELECT SUM(Booking.NumberOfDays * RoomType.Price)
+ --   INTO total
+ --   FROM
+ --       Booking
+ --   JOIN
+ --       Room ON Booking.Room_ID = Room.Room_ID
+ --   JOIN
+ --       RoomType ON RoomType.RoomType_ID = Room.RoomType_ID
+ --   JOIN
+ --       Hotel ON Hotel.Branch_ID = Room.Branch_ID
+--    WHERE
+  --      Billing_ID IN (
+  --          SELECT Billing_ID
+  --          FROM Billing
+  --          WHERE User_ID = userid AND Status = 'Not Paid'
+   --     );
+--  RETURN total;
+--END //
 
-   SELECT SUM(NumberOfDays * Price)
-   INTO total
-   FROM BookedRoom
-   WHERE UserID = userid;
-
-  RETURN total;
-END //
-
-DELIMITER ;
+-- DELIMITER ;
 
 DELIMITER //
 CREATE PROCEDURE checkoutRoom(roomid INT, userid VARCHAR(255))

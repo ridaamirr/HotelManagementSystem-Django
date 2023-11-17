@@ -174,14 +174,17 @@ def generate_bill(request):
     #print total bill as well
     cursor = connection.cursor()   
     username = request.session.get('username', None) 
-    data=(username,) 
+    data=(username,)  
+    cursor.execute('call TotalBill()')
+    result=cursor.fetchall()
+    print(result)
     cursor.callproc('BookedRoom',data)
     result = cursor.fetchall() 
     logintype = request.session.get('logintype', None)
     context = {
         'items':result,
         'logintype':logintype, 
-         }   
+        }   
     return render(request, 'generatebill.html',context)
 
 def checkout_Room(request,roomid):
