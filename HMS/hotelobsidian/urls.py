@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views, branchviews, roomviews
+from . import views, branchviews, roomviews,generatebillviews,catalogueviews,bookinginfoviews
 from . import loginfunctions
 from . import signupfunction
 from django.conf import settings
@@ -15,16 +15,16 @@ urlpatterns = [
     path('checkavailabilty/', views.checkavailabilty, name='checkavailabilty'),
 
     #Catalogue Links--------------------------------------------------------------------
-    path('catalogue/', views.catalogue, name='catalogue'),
-    path('cataloguelist/', views.cataloguelist, name='cataloguelist'),
-    path('booking/<int:roomid>/<str:loc>/', views.booking, name='booking'), 
-    path('booking_final/', views.booking_final, name='booking_final'),
+    path('catalogue/', catalogueviews.catalogue, name='catalogue'),
+    path('cataloguelist/', catalogueviews.cataloguelist, name='cataloguelist'),
+    path('booking/<int:roomid>/<str:loc>/', catalogueviews.booking, name='booking'), 
+    path('booking_final/',catalogueviews.booking_final, name='booking_final'),
     #-----------------------------------------------------------------------------------
     
     #GenerateBill Links------------------------------------------------------------------
-    path('generatebill/', views.generate_bill, name='generate_bill'),
-    path('checkout_Room/<int:roomid>/', views.checkout_Room, name='checkout_Room'), 
-    path('checkoutAll/', views.checkoutAll, name='checkoutAll'), 
+    path('generatebill/', generatebillviews.generate_bill, name='generate_bill'),
+    path('checkout_Room/<int:roomid>/', generatebillviews.checkout_Room, name='checkout_Room'), 
+    path('checkoutAll/',generatebillviews.checkoutAll, name='checkoutAll'), 
     #-----------------------------------------------------------------------------------
 
     #Admin Dashboard Links -------------------------------------------------------------
@@ -54,8 +54,9 @@ urlpatterns = [
     path('update_room/<int:roomtype_id>/', roomviews.update_room, name='update_room'),
     #----------------------------------------------------------------------------------- 
 
-    # Room Information Links ---------------------------------------------------------
-    path('admin/bookinginformation/checkoutroom/<int:roomid>/', views.checkout_Room_byadmin, name='checkout_Room_byadmin'),
+    # Booking Information Links ---------------------------------------------------------
+    path('admin/bookinginformation/checkoutroom/<int:roomid>/', bookinginfoviews.checkout_Room_byadmin, name='checkout_Room_byadmin'),path('admin/bookinginformation/checkoutroom/<int:roomid>/', bookinginfoviews.checkout_Room_byadmin, name='checkout_Room_byadmin'),
+   path('admin/bookinginformation/bookings_search', bookinginfoviews.bookings_search, name='bookings_search'),
     #-----------------------------------------------------------------------------------
 ]
 
