@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views, branchviews, roomviews,generatebillviews,catalogueviews,bookinginfoviews
+from . import views, branchviews, roomviews,generatebillviews,catalogueviews,bookinginfoviews,customerviews
 from . import loginfunctions
 from . import signupfunction
 from django.conf import settings
@@ -56,8 +56,13 @@ urlpatterns = [
 
     # Booking Information Links ---------------------------------------------------------
     path('admin/bookinginformation/checkoutroom/<int:roomid>/', bookinginfoviews.checkout_Room_byadmin, name='checkout_Room_byadmin'),path('admin/bookinginformation/checkoutroom/<int:roomid>/', bookinginfoviews.checkout_Room_byadmin, name='checkout_Room_byadmin'),
-   path('admin/bookinginformation/bookings_search', bookinginfoviews.bookings_search, name='bookings_search'),
-    #-----------------------------------------------------------------------------------
+    path('admin/bookinginformation/bookings_search', bookinginfoviews.bookings_search, name='bookings_search'),
+    #----------------------------------------------------------------------------------- 
+
+     # Customer Information Links ---------------------------------------------------------  
+     path('admin/customerinformation/customer_search', customerviews.customer_search, name='customer_search'),
+     #-------------------------------------------------------------------------------------
+
 ]
 
 if settings.DEBUG:
