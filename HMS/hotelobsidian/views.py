@@ -142,12 +142,25 @@ def customerinformation(request):
         'items':results,
         }
     return render(request, 'user/information.html',context)
-def bookinginformation(request): 
+
+def bookinginformation(request):  
+    cursor = connection.cursor() 
+    cursor.execute("SELECT * FROM CurrentBookings")
+    data = cursor.fetchall() 
     logintype = request.session.get('logintype', None) 
     context = {
-       'logintype':logintype,
+       'logintype':logintype, 
+       'items':data
         }
     return render(request, 'bookinginformation.html',context)
+
+def checkout_Room_byadmin(request,roomid):
+    cursor = connection.cursor()   
+    username = request.session.get('username', None) 
+    data=(roomid,username,)  
+    cursor.callproc('checkoutRoom',data)
+    return redirect('bookinginformation') 
+
 def payments(request): 
     logintype = request.session.get('logintype', None) 
     context = {

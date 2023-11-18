@@ -102,7 +102,7 @@
         }
 
         tr:nth-child(even) {
-          background-color: #f2f2f2;
+          background-color: #1E90FF;
         }
 
         Update edit field styles 
@@ -219,7 +219,21 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <!-- Use JavaScript to handle row editing and updating -->
+                                            {% for item in items %}
+                                            <tr>
+                                                <td style="color: white;">{{ item.5 }}</td>
+                                                <td style="color: white;">{{ item.0 }}</td>
+                                                <td style="color: white;">{{ item.2 }}</td>
+                                                <td style="color: white;">{{ item.1 }}</td>
+                                                <td style="color: white;">{{ item.3 }}</td>
+                                                <td style="color: white;">{{ item.4 }}</td>
+                                                <td> 
+                                                    
+                                                    <a href="{% url 'checkout_Room_byadmin' roomid=item.5 %}" class="btn btn-primary" style="width: 100px; height: 40px;">CheckOut</a>
+                                                   
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
                                         </tbody>
                                     </table>
                                     <asp:SqlDataSource ID="CurrentBookings" runat="server" ConnectionString="<%$ ConnectionStrings:HotelManagementSystemConnectionString %>" SelectCommand="select* from CurrentBookings"></asp:SqlDataSource>

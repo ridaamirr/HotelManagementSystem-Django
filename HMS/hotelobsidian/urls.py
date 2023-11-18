@@ -52,6 +52,10 @@ urlpatterns = [
     path('admin/roomtype/new_update/', roomviews.roomtype_update, name='update_this_room'),
     path('delete_room/<int:roomtype_id>/', roomviews.delete_room, name='delete_room'),
     path('update_room/<int:roomtype_id>/', roomviews.update_room, name='update_room'),
+    #----------------------------------------------------------------------------------- 
+
+    # Room Information Links ---------------------------------------------------------
+    path('admin/bookinginformation/checkoutroom/<int:roomid>/', views.checkout_Room_byadmin, name='checkout_Room_byadmin'),
     #-----------------------------------------------------------------------------------
 ]
 
