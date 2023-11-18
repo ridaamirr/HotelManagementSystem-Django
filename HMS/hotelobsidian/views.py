@@ -135,9 +135,11 @@ def branchinformation(request):
         }
     return render(request, 'admin/branchinformation.html',context)
 def customerinformation(request): 
-    logintype = request.session.get('logintype', None) 
+    logintype = request.session.get('logintype', None)  
+    results = Customer.objects.all()
     context = {
-       'logintype':logintype,
+       'logintype':logintype, 
+        'items':results,
         }
     return render(request, 'user/information.html',context)
 def bookinginformation(request): 
@@ -199,4 +201,5 @@ def checkoutAll(request):
     username = request.session.get('username', None) 
     data=(username,)  
     cursor.callproc('CheckOut',data)
-    return redirect('generate_bill')
+    return redirect('generate_bill') 
+

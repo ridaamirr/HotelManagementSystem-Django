@@ -102,7 +102,7 @@
         }
 
         tr:nth-child(even) {
-          background-color: #f2f2f2;
+          background-color:#1E90FF;
         }
 
         Update edit field styles 
@@ -202,14 +202,23 @@
                                                 <th>Phone Number</th>
                                                 <th>Email</th>
                                                 <th>Date of Birth</th>
-                                                <th>Payment History</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <!-- Use JavaScript to handle row editing and updating -->
+                                            {% for item in items %}
+                                                <tr>
+                                                    <td style="color: white;">{{ item.cnic }}</td>
+                                                    <td style="color: white;">{{ item.firstname }}</td>
+                                                    <td style="color: white;">{{ item.lastname }}</td>
+                                                    <td style="color: white;">{{ item.address }}</td>
+                                                    <td style="color: white;">{{ item.phonenumber }}</td>
+                                                    <td style="color: white;">{{ item.email }}</td>
+                                                    <td style="color: white;">{{ item.dob }}</td>
+                                                </tr>
+                                            {% endfor %}
                                         </tbody>
                                     </table>
-                                    <asp:SqlDataSource ID="SQ1" runat="server" ConnectionString="<%$ ConnectionStrings:HotelManagementSystemConnectionString %>" SelectCommand="select * from CustomerInfo"></asp:SqlDataSource>
                                     <div style="margin-left:100px">
                                         <div class="error-container">
                                             <center>
