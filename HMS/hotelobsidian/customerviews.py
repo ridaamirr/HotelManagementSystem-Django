@@ -11,7 +11,6 @@ import logging
 
 def customer_search(request): 
     search_value = request.POST.get('SearchBox')  
-    print(search_value)
     cursor = connection.cursor() 
     if search_value:
        results = Customer.objects.filter(cnic=search_value)
