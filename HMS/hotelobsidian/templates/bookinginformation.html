@@ -102,7 +102,7 @@
         }
 
         tr:nth-child(even) {
-          background-color: #f2f2f2;
+          background-color: #1E90FF;
         }
 
         Update edit field styles 
@@ -160,7 +160,6 @@
         <div class="container">
             <div class="row1">
                 <div class="col-md-6 mx-auto">
-                    {% if request.path == '/hotelobsidian/admin/bookinginformation/' %}
                     <div class="card2" id="panel1">
                         <div class="card-body">
                             <div class="row">
@@ -171,36 +170,39 @@
                                             <a style="margin-left:50px;margin-top:10px" href="{% url 'admin' %}" class="arrow left"></a>
                                         </div>
                                         <h3 style="color:aliceblue; font-family:'Arial Unicode MS'; font-weight:bold">Bookings</h3>
-                                        <br />
-                                        <div class="r1">
+                                        <br /> 
+                                        <form action="{% url 'bookings_search' %}" method="post">
+                                            {% csrf_token %}
+                                            <div class="r1">
                                             <div style="display:flex; margin-left:120px">
                                                 <label style="color:aliceblue">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                                <input class="form-control" id="SearchBox" style="width:150px;" placeholder="CNIC">
+                                                <input class="form-control" name="SearchBox" style="width:150px;" placeholder="CNIC">
                                                 <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                                <button class="btn btn-success" id="SearchButton" style="background-color:#1E90FF; border-color:#1E90FF;">Search</button>
+                                                <button class="btn btn-success btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Search</button>
                                             </div>
-                                        </div>
-                                        <div class="error-container">
+                                            </div>
+                                            <div class="error-container">
                                             <center>
                                                 <label id="searcherror" style="color:red; display:none;"></label>
                                                 <label id="lblError" style="color:red; display:none;"></label>
                                             </center>
                                             <div class="radio" style="margin-left:65px">
-                                                <input type="radio" id="cnicradio" name="searchtype" checked="checked" onchange="cnicradio_CheckedChanged()">
+                                                <input type="radio" value="cnicradio" name="searchtype" checked="checked" onchange="cnicradio_CheckedChanged()">
                                                 <label style="color:aliceblue" for="cnicradio">CNIC</label>
                                                 <label></label>
                                                 <label></label>
-                                                <input type="radio" id="locradio" name="searchtype" onchange="locradio_CheckedChanged()">
+                                                <input type="radio" value="locradio" name="searchtype" >
                                                 <label style="color:aliceblue" for="locradio">Location</label>
                                                 <label></label>
                                                 <label></label>
-                                                <input type="radio" id="roomoradio" name="searchtype" onchange="roomnoradio_CheckedChanged()">
+                                                <input type="radio" value="roomoradio" name="searchtype">
                                                 <label style="color:aliceblue" for="roomoradio">Room Number</label>
                                                 <label></label>
                                                 <label></label>
                                             </div>
                                             <br />
-                                        </div>
+                                            </div> 
+                                        </form>
                                     </center>
                                 </div>
                             </div>
@@ -219,7 +221,21 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <!-- Use JavaScript to handle row editing and updating -->
+                                            {% for item in items %}
+                                            <tr>
+                                                <td style="color: white;">{{ item.5 }}</td>
+                                                <td style="color: white;">{{ item.0 }}</td>
+                                                <td style="color: white;">{{ item.2 }}</td>
+                                                <td style="color: white;">{{ item.1 }}</td>
+                                                <td style="color: white;">{{ item.3 }}</td>
+                                                <td style="color: white;">{{ item.4 }}</td>
+                                                <td> 
+                                                    
+                                                    <a href="{% url 'checkout_Room_byadmin' roomid=item.5 %}" class="btn btn-primary" style="width: 100px; height: 40px;">CheckOut</a>
+                                                   
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
                                         </tbody>
                                     </table>
                                     <asp:SqlDataSource ID="CurrentBookings" runat="server" ConnectionString="<%$ ConnectionStrings:HotelManagementSystemConnectionString %>" SelectCommand="select* from CurrentBookings"></asp:SqlDataSource>
@@ -229,7 +245,6 @@
                         </div>
                         
                     </div>
-                    {% endif %}
                 </div>
             </div>
         </div>

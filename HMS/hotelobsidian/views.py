@@ -54,55 +54,6 @@ def checkavailabilty(request):
     else:
         return render(request, 'default.html')
 
-
-def catalogue(request):  
-    loc = Hotel.objects.values_list('location', flat=True).distinct()      
-    logintype = request.session.get('logintype', None) 
-    context = {
-       'logintype':logintype, 
-       'loc':loc,
-        }
-    return render(request, 'catalogue.html',context) 
-
-def cataloguelist(request):
-    cursor = connection.cursor() 
-    data=(request.GET.get('Location'),) 
-    location=request.GET.get('Location') 
-    cursor.callproc('catalog',data)
-    result = cursor.fetchall()
-    logintype = request.session.get('logintype', None)
-    context = {
-        'result':result,
-        'logintype':logintype, 
-        'location':location
-         }   
-    return render(request, 'catalogue.html', context)
-
-#temp global variables cuz i was unable to pass values in function :')
-globalroomid=1 
-locat="abc" 
-def booking(request,loc,roomid):  
-    global locat  # Declare that locat refers to the global variable
-    logintype = request.session.get('logintype', None)   
-    print(loc) 
-    locat=loc
-    global globalroomid 
-    globalroomid=roomid 
-    context = {
-        'logintype':logintype, 
-        'roomid':roomid, 
-        }  
-    return render(request, 'catalogue.html', context)
-
-def booking_final(request):
-    username = request.session.get('username', None) 
-    logintype = request.session.get('logintype', None) 
-    days = request.GET.get('nodays')
-    cursor = connection.cursor()   
-    data = (username,globalroomid, locat,days) 
-    print(data)
-    cursor.callproc('BookRoom', data)
-    return redirect('catalogue')
     
 def login(request):
     return render(request, 'login.html')
@@ -135,17 +86,26 @@ def branchinformation(request):
         }
     return render(request, 'admin/branchinformation.html',context)
 def customerinformation(request): 
-    logintype = request.session.get('logintype', None) 
+    logintype = request.session.get('logintype', None)  
+    results = Customer.objects.all()
     context = {
-       'logintype':logintype,
+       'logintype':logintype, 
+        'items':results,
         }
     return render(request, 'user/information.html',context)
-def bookinginformation(request): 
+
+def bookinginformation(request):   
+    cursor = connection.cursor() 
+    cursor.execute("SELECT * FROM CurrentBookings")
+    data = cursor.fetchall() 
     logintype = request.session.get('logintype', None) 
     context = {
-       'logintype':logintype,
+       'logintype':logintype, 
+       'items':data
         }
     return render(request, 'bookinginformation.html',context)
+
+
 def payments(request): 
     logintype = request.session.get('logintype', None) 
     context = {
@@ -170,30 +130,4 @@ def signup(request):
             return render(request,'login.html')      
     return render(request,'signup.html')
 
-def generate_bill(request): 
-    #print total bill as well
-    cursor = connection.cursor()   
-    username = request.session.get('username', None) 
-    data=(username,) 
-    cursor.callproc('BookedRoom',data)
-    result = cursor.fetchall() 
-    logintype = request.session.get('logintype', None)
-    context = {
-        'items':result,
-        'logintype':logintype, 
-         }   
-    return render(request, 'generatebill.html',context)
 
-def checkout_Room(request,roomid):
-    cursor = connection.cursor()   
-    username = request.session.get('username', None) 
-    data=(roomid,username,)  
-    cursor.callproc('checkoutRoom',data)
-    return redirect('generate_bill') 
-
-def checkoutAll(request): 
-    cursor = connection.cursor()   
-    username = request.session.get('username', None) 
-    data=(username,)  
-    cursor.callproc('CheckOut',data)
-    return redirect('generate_bill')

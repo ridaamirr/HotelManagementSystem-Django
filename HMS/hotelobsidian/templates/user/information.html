@@ -102,7 +102,7 @@
         }
 
         tr:nth-child(even) {
-          background-color: #f2f2f2;
+          background-color:#1E90FF;
         }
 
         Update edit field styles 
@@ -160,7 +160,7 @@
         <div class="container">
             <div class="row1">
                 <div class="col-md-6 mx-auto">
-                    {% if request.path == '/hotelobsidian/admin/customerinformation/' %}
+                   
                     <div class="card2" id="panel1">
                         <div class="card-body">
                             <div class="row">
@@ -171,13 +171,15 @@
                                             <a style="margin-left:50px;margin-top:30px" href="{% url 'admin' %}" class="arrow left"></a>
                                         </div>
                                         <h3 style="color:aliceblue;  font-family:'Arial Unicode MS';font-weight:bold">Customer Information</h3>
-                                        <br />
+                                        <br /> 
+                                        <form action="{% url 'customer_search' %}" method="post">
+                                            {% csrf_token %}
                                         <div class="r1">
                                             <div style="display:flex; margin-left:120px">
                                                 <label style="color:aliceblue">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                                <input class="form-control" id="SearchBox" style="width:150px;" placeholder="CNIC">
+                                                <input class="form-control" name="SearchBox" style="width:150px;" placeholder="CNIC">
                                                 <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                                <button class="btn btn-success" id="SearchButton" style="background-color:#1E90FF; border-color:#1E90FF;">Search</button>
+                                                <button class="btn btn-success btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Search</button>
                                             </div>
                                         </div>
                                         <br />
@@ -185,7 +187,8 @@
                                             <center>
                                                 <label id="searcherror" style="color:red; display:none;"></label>
                                             </center>
-                                        </div>
+                                        </div> 
+                                        </form>
                                     </div>
                                 </center>
                             </div>
@@ -202,14 +205,23 @@
                                                 <th>Phone Number</th>
                                                 <th>Email</th>
                                                 <th>Date of Birth</th>
-                                                <th>Payment History</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <!-- Use JavaScript to handle row editing and updating -->
+                                            {% for item in items %}
+                                                <tr>
+                                                    <td style="color: white;">{{ item.cnic }}</td>
+                                                    <td style="color: white;">{{ item.firstname }}</td>
+                                                    <td style="color: white;">{{ item.lastname }}</td>
+                                                    <td style="color: white;">{{ item.address }}</td>
+                                                    <td style="color: white;">{{ item.phonenumber }}</td>
+                                                    <td style="color: white;">{{ item.email }}</td>
+                                                    <td style="color: white;">{{ item.dob }}</td>
+                                                </tr>
+                                            {% endfor %}
                                         </tbody>
                                     </table>
-                                    <asp:SqlDataSource ID="SQ1" runat="server" ConnectionString="<%$ ConnectionStrings:HotelManagementSystemConnectionString %>" SelectCommand="select * from CustomerInfo"></asp:SqlDataSource>
                                     <div style="margin-left:100px">
                                         <div class="error-container">
                                             <center>
@@ -222,7 +234,7 @@
                             </div>
                         </div>
                     </div>
-                    {% endif %}
+                  
                 </div>
             </div>
         </div>

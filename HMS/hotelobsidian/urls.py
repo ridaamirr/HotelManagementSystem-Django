@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views, branchviews, roomviews
+from . import views, branchviews, roomviews,generatebillviews,catalogueviews,bookinginfoviews,customerviews
 from . import loginfunctions
 from . import signupfunction
 from django.conf import settings
@@ -10,16 +10,22 @@ urlpatterns = [
     path('admin/', views.admin, name='admin'),
     path('login/', views.login, name='login'),
     path('logout',views.logout,name='logout'),
-    path('catalogue/', views.catalogue, name='catalogue'),
-    path('cataloguelist/', views.cataloguelist, name='cataloguelist'),
     path('signup/', views.signup, name='signup'),
-    path('homepage/', loginfunctions.user_dashboard, name='homepage'),
-    path('booking/<int:roomid>/<str:loc>/', views.booking, name='booking'), 
-    path('booking_final/', views.booking_final, name='booking_final'),
+    path('homepage/', loginfunctions.user_dashboard, name='homepage'), 
     path('checkavailabilty/', views.checkavailabilty, name='checkavailabilty'),
-    path('generatebill/', views.generate_bill, name='generate_bill'),
-    path('checkout_Room/<int:roomid>/', views.checkout_Room, name='checkout_Room'), 
-    path('checkoutAll/', views.checkoutAll, name='checkoutAll'),
+
+    #Catalogue Links--------------------------------------------------------------------
+    path('catalogue/', catalogueviews.catalogue, name='catalogue'),
+    path('cataloguelist/', catalogueviews.cataloguelist, name='cataloguelist'),
+    path('booking/<int:roomid>/<str:loc>/', catalogueviews.booking, name='booking'), 
+    path('booking_final/',catalogueviews.booking_final, name='booking_final'),
+    #-----------------------------------------------------------------------------------
+    
+    #GenerateBill Links------------------------------------------------------------------
+    path('generatebill/', generatebillviews.generate_bill, name='generate_bill'),
+    path('checkout_Room/<int:roomid>/', generatebillviews.checkout_Room, name='checkout_Room'), 
+    path('checkoutAll/',generatebillviews.checkoutAll, name='checkoutAll'), 
+    #-----------------------------------------------------------------------------------
 
     #Admin Dashboard Links -------------------------------------------------------------
     path('admin/branchinformation/', views.branchinformation, name='branchinformation'),
@@ -46,7 +52,17 @@ urlpatterns = [
     path('admin/roomtype/new_update/', roomviews.roomtype_update, name='update_this_room'),
     path('delete_room/<int:roomtype_id>/', roomviews.delete_room, name='delete_room'),
     path('update_room/<int:roomtype_id>/', roomviews.update_room, name='update_room'),
-    #-----------------------------------------------------------------------------------
+    #----------------------------------------------------------------------------------- 
+
+    # Booking Information Links ---------------------------------------------------------
+    path('admin/bookinginformation/checkoutroom/<int:roomid>/', bookinginfoviews.checkout_Room_byadmin, name='checkout_Room_byadmin'),path('admin/bookinginformation/checkoutroom/<int:roomid>/', bookinginfoviews.checkout_Room_byadmin, name='checkout_Room_byadmin'),
+    path('admin/bookinginformation/bookings_search', bookinginfoviews.bookings_search, name='bookings_search'),
+    #----------------------------------------------------------------------------------- 
+
+     # Customer Information Links ---------------------------------------------------------  
+     path('admin/customerinformation/customer_search', customerviews.customer_search, name='customer_search'),
+     #-------------------------------------------------------------------------------------
+
 ]
 
 if settings.DEBUG:
