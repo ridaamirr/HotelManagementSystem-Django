@@ -100,15 +100,7 @@ BEGIN
 END //
 DELIMITER ;
 
-
 DELIMITER //
-
-
-DELIMITER //
-
-
-DELIMITER //
-
 CREATE PROCEDURE BookRoom(
   IN userid VARCHAR(255),
   IN roomtypeid INT,
@@ -168,13 +160,9 @@ BEGIN
     VALUES (roomid, billingid, CURDATE(), days, 'True');
   END IF;
 END //
-
 DELIMITER ;
 
-
-
 DELIMITER //
-
 CREATE PROCEDURE BookedRoom(IN userid VARCHAR(255))
 BEGIN
     SELECT
@@ -200,43 +188,53 @@ BEGIN
             FROM Billing
             WHERE User_ID = userid AND Status = 'Not Paid'
         );
-END;
-//
-
+END//
 DELIMITER ;
 
 
+-- View: CurrentBookings
+CREATE VIEW CurrentBookings AS
+SELECT
+  User_ID AS CNIC,
+  RoomNumber,
+  Location,
+  NumberOfDays,
+  CurrentDate AS CheckInDate,
+  Room.Room_ID
+FROM
+  Booking
+JOIN Room ON Booking.Room_ID = Room.Room_ID
+JOIN Billing ON Billing.Billing_ID = Booking.Billing_ID
+JOIN Hotel ON Hotel.Branch_ID = Room.Branch_ID
+WHERE
+  Room.isBooked = 'True';
 
 
-
- DELIMITER //
-
-----this has error will checkafter mids
- --CREATE FUNCTION TotalBill(userid VARCHAR(255))
- --RETURNS INT
- --BEGIN 
- --   DECLARE total INT;
+DELIMITER //
+CREATE FUNCTION TotalBill(userid VARCHAR(255))
+RETURNS INT
+BEGIN 
+    DECLARE total INT;
   
- --  SELECT SUM(Booking.NumberOfDays * RoomType.Price)
- --   INTO total
- --   FROM
- --       Booking
- --   JOIN
- --       Room ON Booking.Room_ID = Room.Room_ID
- --   JOIN
- --       RoomType ON RoomType.RoomType_ID = Room.RoomType_ID
- --   JOIN
- --       Hotel ON Hotel.Branch_ID = Room.Branch_ID
---    WHERE
-  --      Billing_ID IN (
-  --          SELECT Billing_ID
-  --          FROM Billing
-  --          WHERE User_ID = userid AND Status = 'Not Paid'
-   --     );
---  RETURN total;
---END //
-
--- DELIMITER ;
+   SELECT SUM(Booking.NumberOfDays * RoomType.Price)
+    INTO total
+    FROM
+        Booking
+    JOIN
+        Room ON Booking.Room_ID = Room.Room_ID
+    JOIN
+        RoomType ON RoomType.RoomType_ID = Room.RoomType_ID
+    JOIN
+        Hotel ON Hotel.Branch_ID = Room.Branch_ID
+   WHERE
+        Billing_ID IN (
+            SELECT Billing_ID
+            FROM Billing
+            WHERE User_ID = userid AND Status = 'Not Paid'
+        );
+  RETURN total;
+END //
+DELIMITER ;
 
 DELIMITER //
 CREATE PROCEDURE checkoutRoom(roomid INT, userid VARCHAR(255))
@@ -254,7 +252,6 @@ BEGIN
         WHERE User_ID = userid
     );
 END//
-
 DELIMITER ;
 
 DELIMITER //
@@ -277,7 +274,6 @@ WHERE Billing_ID IN(
 END //
 DELIMITER ;
 
-
 -- View: ShowRooms
 CREATE VIEW ShowRooms AS
 SELECT
@@ -293,15 +289,13 @@ FROM
 JOIN RoomType ON RoomType.RoomType_ID = Room.RoomType_ID
 JOIN Hotel ON Hotel.Branch_ID = Room.Branch_ID;
 
--- View: Payments
+-- View: Payments 
 CREATE VIEW Payments AS
 SELECT *
 FROM Billing
 WHERE Status = 'Not Paid';
 
-
 DELIMITER //
-
 CREATE PROCEDURE Paid(IN Billing_id INT)
 BEGIN
   SET @id = (SELECT User_ID FROM Billing WHERE Billing_ID = Billing_id LIMIT 1);
@@ -319,44 +313,9 @@ BEGIN
   SET Status = 'Paid'
   WHERE Billing_ID = Billing_id;
 END//
-
 DELIMITER ;
 
-DELIMITER //
-
--- View: CurrentBookings
-CREATE VIEW CurrentBookings AS
-SELECT
-  User_ID AS CNIC,
-  RoomNumber,
-  Location,
-  NumberOfDays,
-  CurrentDate AS CheckInDate,
-  Room.Room_ID
-FROM
-  Booking
-JOIN Room ON Booking.Room_ID = Room.Room_ID
-JOIN Billing ON Billing.Billing_ID = Booking.Billing_ID
-JOIN Hotel ON Hotel.Branch_ID = Room.Branch_ID
-WHERE
-  Room.isBooked = 'True';
-
--- View: CustomerInfo
-CREATE VIEW CustomerInfo AS
-SELECT
-  CNIC,
-  FirstName,
-  LastName,
-  Address,
-  PhoneNumber,
-  Email,
-  DOB,
-FROM
-  Customer;
-
-DELIMITER ;
-
--- Create a procedure to retrieve booking information
+-- Create a procedure to retrieve booking information 
 DELIMITER //
 CREATE PROCEDURE ViewBooking(id INT)
 BEGIN
@@ -372,14 +331,10 @@ BEGIN
   JOIN RoomType ON RoomType.RoomType_ID = Room.RoomType_ID
   JOIN Hotel ON Hotel.Branch_ID = Room.Branch_ID
   WHERE Billing_ID = id;
-END;
-//
+END// 
 DELIMITER ;
 
-
-
 DELIMITER //
-
 CREATE FUNCTION TotalBillById(userid VARCHAR(255)) RETURNS INT
 BEGIN
   DECLARE total INT;
@@ -389,7 +344,6 @@ BEGIN
 
   RETURN total;
 END //
-
 DELIMITER ;
 
 
@@ -426,7 +380,6 @@ DELIMITER ;
 
 
 DELIMITER //
-
 CREATE TRIGGER BeforeDeleteRoomType
 BEFORE DELETE ON RoomType
 FOR EACH ROW

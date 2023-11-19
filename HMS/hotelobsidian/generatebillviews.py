@@ -13,11 +13,11 @@ def generate_bill(request):
     cursor = connection.cursor()   
     username = request.session.get('username', None) 
     data=(username,)  
-    cursor.execute('call TotalBill()')
-    result=cursor.fetchall()
-    print(result)
+    #cursor.execute('call TotalBill()')
+    #result=cursor.fetchall()
+    #print(result)
     cursor.callproc('BookedRoom',data)
-    result = cursor.fetchall() 
+    result=cursor.fetchall() 
     logintype = request.session.get('logintype', None)
     context = {
         'items':result,
