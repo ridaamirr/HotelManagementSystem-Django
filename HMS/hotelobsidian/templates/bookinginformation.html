@@ -40,12 +40,17 @@
           backdrop-filter: blur(2px);
         }
         .card2 {
-          background-color: rgba(0, 0, 0, 0.7); /* light color with opacity */
-          color: aliceblue;
-          border-radius: 20px;
-          width: 105%;
-          height: 120%;
-          backdrop-filter: blur(2px);
+        display: flex;
+        justify-content: center; /* Horizontal alignment */
+        align-items: center; /* Vertical alignment */
+        background-color: rgba(0, 0, 0, 0.7);
+        color: aliceblue;
+        border-radius: 20px;
+        width: max-content; /* Adjust width as needed */
+        height: auto; /* Adjust height as needed */
+        backdrop-filter: blur(2px);
+        overflow: hidden; /* Ensure content doesn't overflow the card */
+        margin-left: -47vh;
         }
         .row2{
             font-family:'Arial Unicode MS';
@@ -55,7 +60,7 @@
           table {
           border-collapse: collapse;
           width: 100%;
-          margin-bottom: 20px;
+          margin: 20px;
         }
                  .arrow {
           position: absolute;
@@ -144,7 +149,27 @@
             background-color: #333;
             color: white;
         }
-    
+        @media screen and (max-width: 768px) {
+  .row1 {
+    margin-left: 20px; /* Adjust margin for smaller screens */
+  }
+  .card1,
+  .card2 {
+    width: 90%; /* Adjust card width for smaller screens */
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .row1 {
+    margin-left: 10px; /* Adjust margin for smaller screens */
+    margin-top: 50px; /* Adjust margin for smaller screens */
+  }
+  .card1,
+  .card2 {
+    width: 95%; /* Adjust card width for smaller screens */
+  }
+}
     </style>
 </head>
 <body>
@@ -161,7 +186,7 @@
             <div class="row1">
                 <div class="col-md-6 mx-auto">
                     <div class="card2" id="panel1">
-                        <div class="card-body">
+                        <div class="card-body"style="text-align: center;width: 90%;">
                             <div class="row">
                                 <div class="col">
                                     <br />
@@ -174,9 +199,9 @@
                                         <form action="{% url 'bookings_search' %}" method="post">
                                             {% csrf_token %}
                                             <div class="r1">
-                                            <div style="display:flex; margin-left:120px">
+                                            <div style="display:flex; margin-left:270px">
                                                 <label style="color:aliceblue">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                                <input class="form-control" name="SearchBox" style="width:150px;" placeholder="CNIC">
+                                                <input class="form-control" name="SearchBox" id="searchInput" style="width:150px;" placeholder="CNIC">
                                                 <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                                 <button class="btn btn-success btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Search</button>
                                             </div>
@@ -187,15 +212,15 @@
                                                 <label id="lblError" style="color:red; display:none;"></label>
                                             </center>
                                             <div class="radio" style="margin-left:65px">
-                                                <input type="radio" value="cnicradio" name="searchtype" checked="checked" onchange="cnicradio_CheckedChanged()">
+                                                <input type="radio" value="cnicradio" name="searchtype" checked="checked" onchange="changePlaceholder(this)">
                                                 <label style="color:aliceblue" for="cnicradio">CNIC</label>
                                                 <label></label>
                                                 <label></label>
-                                                <input type="radio" value="locradio" name="searchtype" >
+                                                <input type="radio" value="locradio" name="searchtype" onchange="changePlaceholder(this)">
                                                 <label style="color:aliceblue" for="locradio">Location</label>
                                                 <label></label>
                                                 <label></label>
-                                                <input type="radio" value="roomoradio" name="searchtype">
+                                                <input type="radio" value="roomoradio" name="searchtype" onchange="changePlaceholder(this)">
                                                 <label style="color:aliceblue" for="roomoradio">Room Number</label>
                                                 <label></label>
                                                 <label></label>
@@ -206,7 +231,7 @@
                                     </center>
                                 </div>
                             </div>
-                            <div class="row" style="margin-left:30px; width:68%">
+                            <div class="row" style="margin-left:10px;margin-right:40px; width:auto">
                                 <div class="col">
                                     <table class="table">
                                         <thead>
@@ -251,7 +276,20 @@
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
-        // ... JavaScript code ...
+            function changePlaceholder(radio) {
+        if (radio.value === 'cnicradio') {
+            document.getElementById('searchInput').placeholder = 'CNIC';
+        } else if (radio.value === 'locradio') {
+            document.getElementById('searchInput').placeholder = 'Location';
+        } else if (radio.value === 'roomoradio') {
+            document.getElementById('searchInput').placeholder = 'Room Number';
+        }
+    }
+
+    // Initially set the placeholder to CNIC when the page loads
+    window.onload = function () {
+        document.getElementById('searchInput').placeholder = 'CNIC';
+    };
     </script>
 </body>
 </html>
