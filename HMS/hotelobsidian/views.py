@@ -111,7 +111,7 @@ def payments(request):
     context = {
        'logintype':logintype,
         }
-    return render(request, 'payments.html',context)
+    return render(request, 'admin/payments.html',context)
 #------------------------------------------------------------------------------------
 
 def signup(request): 

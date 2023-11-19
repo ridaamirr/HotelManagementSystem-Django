@@ -7,13 +7,6 @@ from django.contrib import messages
 from django.http import HttpResponse
 import logging 
 
-def checkout_byadmin(request,roomid):
-    cursor = connection.cursor()   
-    username = request.session.get('username', None) 
-    data=(roomid,username,)  
-    cursor.callproc('Checkout',data)
-    return redirect('payments')  
-
 def payments_search(request):  
     search_type = request.POST.get('searchtype')
     search_value = request.POST.get('SearchBox') 
@@ -28,9 +21,10 @@ def payments_search(request):
     else: 
         cursor.execute("SELECT * FROM billing")
     data = cursor.fetchall()   
+    print(data) 
     logintype = request.session.get('logintype', None) 
     context = {
        'logintype':logintype, 
        'items':data
         }
-    return render(request, 'payments.html',context)
+    return render(request, 'admin/payments.html',context)
