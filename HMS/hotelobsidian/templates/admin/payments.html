@@ -32,27 +32,27 @@
                                          <br /> 
                                          <form action="{% url 'payments_search' %}" method="post">
                                           {% csrf_token %}
-                                        <div class="r1">
-                                            <div style="display:flex; margin-left:100px">
+                                          <div class="r1">
+                                            <div style="display:flex; margin-left:270px">
                                                 <label style="color:aliceblue">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                                 <input class="form-control" name="SearchBox" id="searchInput" style="width:150px;" placeholder="CNIC">
                                                 <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                                 <button class="btn btn-success btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Search</button>
                                             </div>
-                                        </div>
-                                            <center>
+                                            </div>
+                                          <center>
                                                 <label id="searcherror" style="display:none; color:red"></label>
                                                 <br />
                                                 <label id="lblError" style="display:none; color:red"></label>
-                                            </center>
+                                          </center>
 
                                         <div class="radio" style="margin-left:50px">
-                                          <input type="radio" name="searchtype" checked="checked" onchange="document.getElementById('searchInput').placeholder = 'CNIC'">
+                                          <input type="radio" value="cnicradio" name="searchtype" checked="checked" onchange="document.getElementById('searchInput').placeholder = 'CNIC'">
                                           <label style="color:aliceblue" for="cnicradio">CNIC</label>
                                           <label></label>
                                           <label></label>
-                                          <input type="radio" name="searchtype" onchange="document.getElementById('searchInput').placeholder = 'ID'">
-                                          <label style="color:aliceblue">ID</label>
+                                          <input type="radio" value="idradio" name="searchtype" onchange="document.getElementById('searchInput').placeholder = 'ID'">
+                                          <label style="color:aliceblue" for="idradio">ID</label>
                                           <label></label>
                                           <label></label>                                          
                                         </div>
@@ -75,7 +75,21 @@
                                             </tr>
                                         </thead>
                                         <tbody id="GridView1">
-                                            <!-- Table content will be populated dynamically -->
+                                          {% for bill in results %}
+                                          <tr>
+                                              <td>{{ bill.0 }}</td>
+                                              <td>{{ bill.1 }}</td>
+                                              <td>{{ bill.2 }}</td>
+                                              <td>
+                                                <a href="" class="btn btn-primary" style="width: 100px; height: 40px;">Paid</a>
+                                                     
+                                              </td> 
+                                              <td>
+                                                <a href="" class="btn btn-primary" style="width: 100px; height: 40px;">View Details</a>
+                                                     
+                                              </td>
+                                          </tr>
+                                      {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>
@@ -199,7 +213,7 @@
             }
     
             tr:nth-child(even) {
-              background-color: #f2f2f2;
+              background-color: #1E90FF;
             }
     
             Update edit field styles 

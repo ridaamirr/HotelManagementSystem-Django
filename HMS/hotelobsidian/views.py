@@ -106,10 +106,15 @@ def bookinginformation(request):
     return render(request, 'bookinginformation.html',context)
 
 
-def payments(request): 
+def payments(request):  
+    cursor = connection.cursor() 
+    cursor.execute("SELECT * FROM Billing")
+    results = cursor.fetchall()  
+    print(results)
     logintype = request.session.get('logintype', None) 
     context = {
-       'logintype':logintype,
+       'logintype':logintype, 
+        'results':results,
         }
     return render(request, 'admin/payments.html',context)
 #------------------------------------------------------------------------------------

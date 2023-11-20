@@ -10,7 +10,9 @@ import logging
 def payments_search(request):  
     search_type = request.POST.get('searchtype')
     search_value = request.POST.get('SearchBox') 
-    cursor = connection.cursor() 
+    cursor = connection.cursor()  
+    print(search_type) 
+    print(search_value)
     if search_value:
         if search_type == 'cnicradio':
             cursor.execute("SELECT * FROM billing where User_ID=%s",[str(search_value)])
@@ -20,11 +22,11 @@ def payments_search(request):
             results = None
     else: 
         cursor.execute("SELECT * FROM billing")
-    data = cursor.fetchall()   
-    print(data) 
+    results = cursor.fetchall()   
+    print(results) 
     logintype = request.session.get('logintype', None) 
     context = {
        'logintype':logintype, 
-       'items':data
+       'results':results
         }
     return render(request, 'admin/payments.html',context)
