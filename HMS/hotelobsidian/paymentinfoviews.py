@@ -35,4 +35,12 @@ def paid(request,id):
     cursor = connection.cursor()   
     data = (id)
     cursor.callproc('Paid', data)
-    return redirect('payments')
+    return redirect('payments') 
+
+def billdetails(request): 
+    logintype = request.session.get('logintype', None) 
+    context = { 
+        
+       'logintype':logintype, 
+        }
+    return render(request, 'admin/billdetails.html',context) 
