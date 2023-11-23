@@ -9,19 +9,18 @@ import logging
 
 #Generate Bill Views-----------------------------------------------------------------------
 def generate_bill(request): 
-    #print total bill as well
     cursor = connection.cursor()   
     username = request.session.get('username', None) 
     data=(username,)  
-    #cursor.execute('call TotalBill()')
-    #result=cursor.fetchall()
-    #print(result)
+    cursor.execute('SELECT TotalBill(%s) AS TotalBill;',[str(username)])
+    totalbill=cursor.fetchall()[0][0]
     cursor.callproc('BookedRoom',data)
     result=cursor.fetchall() 
     logintype = request.session.get('logintype', None)
     context = {
         'items':result,
         'logintype':logintype, 
+        'totalbill':totalbill, 
         }   
     return render(request, 'generatebill.html',context)
 
