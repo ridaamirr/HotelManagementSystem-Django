@@ -80,9 +80,10 @@
                                               <td>{{ bill.0 }}</td>
                                               <td>{{ bill.1 }}</td>
                                               <td>{{ bill.2 }}</td>
-                                              <td>
-                                                <a href="" class="btn btn-primary" style="width: 100px; height: 40px;">Paid</a>
-                                                     
+                                              <td> 
+                                                {% if bill.2 == 'Not Paid' %}
+                                                <a href="{% url 'paid' id=bill.0 %}" class="btn btn-primary" style="width: 100px; height: 40px;">Paid</a>
+                                                {% endif %}     
                                               </td> 
                                               <td>
                                                 <a href="" class="btn btn-primary" style="width: 100px; height: 40px;">View Details</a>

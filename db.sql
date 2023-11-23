@@ -296,14 +296,9 @@ FROM Billing
 WHERE Status = 'Not Paid';
 
 DELIMITER //
-CREATE PROCEDURE Paid(IN Billing_id INT)
+CREATE PROCEDURE Paid(IN Billingid INT)
 BEGIN
-  SET @id = (SELECT User_ID FROM Billing WHERE Billing_ID = Billing_id LIMIT 1);
-
-  SET @totalAmount = 0;
-
-  -- Calculate the total amount using the TotalBill function
-  SET @totalAmount = TotalBill(@id);
+  SET @id = (SELECT User_ID FROM Billing WHERE Billing_ID = Billingid LIMIT 1);
 
   -- Call the Checkout procedure
   CALL Checkout(@id);
@@ -311,7 +306,7 @@ BEGIN
   -- Mark the Billing as Paid
   UPDATE Billing
   SET Status = 'Paid'
-  WHERE Billing_ID = Billing_id;
+  WHERE Billing_ID = Billingid;
 END//
 DELIMITER ;
 

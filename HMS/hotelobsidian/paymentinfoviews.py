@@ -29,4 +29,10 @@ def payments_search(request):
        'logintype':logintype, 
        'results':results
         }
-    return render(request, 'admin/payments.html',context)
+    return render(request, 'admin/payments.html',context) 
+
+def paid(request,id): 
+    cursor = connection.cursor()   
+    data = (id)
+    cursor.callproc('Paid', data)
+    return redirect('payments')

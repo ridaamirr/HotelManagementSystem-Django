@@ -65,7 +65,7 @@ urlpatterns = [
 
     #Payment Views------------------------------------------------------------------------  
     path('admin/payments/payments_search', paymentinfoviews.payments_search, name='payments_search'),
-
+    path('admin/payments/paid/<str:id>/', paymentinfoviews.paid, name='paid'),
 ]
 
 if settings.DEBUG:
