@@ -15,7 +15,7 @@
                                 <center>
                                     <br />
                                     <h3 class="card-title" style="color:aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Bill</h3>
-                                    <br /><h4 id="amount" runat="server"></h4><br />
+                                    <br /><h4 id="amount" runat="server">Total Bill: {{ totalbill }}</h4><br />
                                 </center>
                             </div>
                         </div>
@@ -36,12 +36,12 @@
                                         <tbody>
                                             {% for item in items1 %}
                                                 <tr>
-                                                    <td>{{ item.Location }}</td>
-                                                    <td>{{ item.RoomNumber }}</td>
-                                                    <td>{{ item.NumberOfBeds }}</td>
-                                                    <td>{{ item.Type }}</td>
-                                                    <td>{{ item.NumberOfDays }}</td>
-                                                    <td>{{ item.Price }}</td>
+                                                    <td style="color: white;">{{ item.0 }}</td>
+                                                    <td style="color: white;">{{ item.1 }}</td>
+                                                    <td style="color: white;">{{ item.2 }}</td>
+                                                    <td style="color: white;">{{ item.3 }}</td>
+                                                    <td style="color: white;">{{ item.4 }}</td>
+                                                    <td style="color: white;">{{ item.5 }}</td>
                                                 </tr>
                                             {% endfor %}
                                         </tbody>
@@ -122,7 +122,7 @@
     }
 
     th,
-    td {
+    td { 
         text-align: left;
         padding: 8px;
     }
@@ -134,7 +134,7 @@
     }
 
     tr:nth-child(even) {
-        background-color: #f2f2f2;
+        background-color: #1E90FF;
     }
 
     .table {
