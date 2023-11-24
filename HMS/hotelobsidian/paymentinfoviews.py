@@ -34,10 +34,18 @@ def paid(request,id):
     data = (id)
     cursor.callproc('Paid', data)   
     return redirect('payments') 
-def billdetails(request): 
-    logintype = request.session.get('logintype', None) 
+
+def billdetails(request,id): 
+    logintype = request.session.get('logintype', None)  
+    cursor=connection.cursor()
+    data = (id)
+    cursor.callproc('ViewBooking', data)    
+    result = cursor.fetchall()  
+    cursor.execute('SELECT TotalBillById(%s) AS TotalBill;',id)
+    totalbill=cursor.fetchall()[0][0] 
     context = { 
-        
+        'items1':result, 
+        'totalbill':totalbill,
        'logintype':logintype, 
         }
     return render(request, 'admin/billdetails.html',context) 

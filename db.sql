@@ -330,12 +330,18 @@ END//
 DELIMITER ;
 
 DELIMITER //
-CREATE FUNCTION TotalBillById(userid VARCHAR(255)) RETURNS INT
+CREATE FUNCTION TotalBillById(id INT) RETURNS INT
 BEGIN
   DECLARE total INT;
   SET total = 0;
 
-  SELECT SUM(NumberOfDays * Price) INTO total FROM ViewBooking WHERE UserID = userid;
+  SELECT SUM( Booking.NumberOfDays * RoomType.Price) 
+  INTO total 
+  FROM Booking
+  JOIN Room ON Booking.Room_ID = Room.Room_ID
+  JOIN RoomType ON RoomType.RoomType_ID = Room.RoomType_ID
+  JOIN Hotel ON Hotel.Branch_ID = Room.Branch_ID
+  WHERE Billing_ID = id; 
 
   RETURN total;
 END //
