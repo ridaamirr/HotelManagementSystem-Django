@@ -1,9 +1,13 @@
 {% extends "base.html" %}
-
 {% block content %}
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Payments</title>
    
 </head>
@@ -13,45 +17,46 @@
         <div class="container">
             <div class="row1">
                 <div class="col-md-6 mx-auto">
-
-                    <div class="card2" id="panel1" style="width:140%;justify-content:center;margin-left:-180px">
+                    <div class="card2" id="panel1" >
                         <div class="card-body">
                             <div class="row">
                                 <center>
                                     <div class="col">
                                         <br />
                                         <div style="position:absolute">
-                                            <a style="margin-left:58px;margin-top:30px" href="Admin.html" class="arrow left"></a>
+                                            <a style="margin-left:68px;margin-top:30px" href="{% url 'admin' %}" class="arrow left"></a>
                                         </div>
-                                        <h3 style="color:aliceblue;  font-family:'Arial Unicode MS';font-weight:bold">Payments</h3> <br />
-
-                                        <div class="r1">
-                                            <div style="display:flex; margin-left:250px">
+                                        <h3 style="color:aliceblue;  font-family:'Arial Unicode MS';font-weight:bold">Payments</h3>
+                                         <br /> 
+                                         <form action="{% url 'payments_search' %}" method="post">
+                                          {% csrf_token %}
+                                          <div class="r1">
+                                            <div style="display:flex; margin-left:270px">
                                                 <label style="color:aliceblue">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                                <input class="form-control" id="SearchBox" type="text" width="150px" placeholder="ID">
+                                                <input class="form-control" name="SearchBox" id="searchInput" style="width:150px;" placeholder="CNIC">
                                                 <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                                <button class="btn btn-success" id="SearchButton" style="background-color: #1E90FF; border-color: #1E90FF" onclick="btnSearch_Click()">Search</button>
+                                                <button class="btn btn-success btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Search</button>
                                             </div>
-                                        </div>
-
-                                        <div class="error-container">
-                                            <center>
+                                            </div>
+                                          <center>
                                                 <label id="searcherror" style="display:none; color:red"></label>
                                                 <br />
                                                 <label id="lblError" style="display:none; color:red"></label>
-                                            </center>
-                                        </div>
-
+                                          </center>
                                         <div class="radio" style="margin-left:50px">
-                                            <input type="radio" id="idradio" name="searchtype" checked="checked" onclick="idradio_CheckedChanged()"><label style="color:aliceblue">ID</label>
-                                            <input type="radio" id="cnicradio" name="searchtype" onclick="cnicradio_CheckedChanged()"><label style="color:aliceblue">CNIC</label>
+                                          <input type="radio" value="cnicradio" name="searchtype" checked="checked" onchange="document.getElementById('searchInput').placeholder = 'CNIC'">
+                                          <label style="color:aliceblue" for="cnicradio">CNIC</label>
+                                          <label></label>
+                                          <label></label>
+                                          <input type="radio" value="idradio" name="searchtype" onchange="document.getElementById('searchInput').placeholder = 'ID'">
+                                          <label style="color:aliceblue" for="idradio">ID</label>
+                                          <label></label>
+                                          <label></label>                                          
                                         </div>
-
+                                         </form>
                                     </div>
                                 </center>
                             </div>
-
-
                             <div class="row" style="margin-left:42px; width:88%">
                                 <div class="col">
                                     <table>
@@ -65,154 +70,190 @@
                                             </tr>
                                         </thead>
                                         <tbody id="GridView1">
-                                            <!-- Table content will be populated dynamically -->
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                          {% for bill in results %}
+                                          <tr>
+                                              <td>{{ bill.0 }}</td>
+                                              <td>{{ bill.1 }}</td>
+                                              <td>{{ bill.2 }}</td>
+<td> 
+    {% if bill.2 == 'Not Paid' %}
+    <a href="{% url 'paid' id=bill.0 %}" class="btn btn-primary" style="width: 100px; height: 40px;">Paid</a>
+    {% endif %}     
+  </td> 
+  <td>
+    <a href="" class="btn btn-primary" style="width: 100px; height: 40px;">View Details</a>
+         
+  </td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+function changePlaceholder(radio) {
+if (radio.value === 'cnicradio') {
+document.getElementById('searchInput').placeholder = 'CNIC';
+} else if (radio.value === 'idradio') {
+document.getElementById('searchInput').placeholder = 'ID';
+}
+}
+// Initially set the placeholder to CNIC when the page loads
+window.onload = function () {
+document.getElementById('searchInput').placeholder = 'CNIC';
+};
+</script>
+<style>
+body { 
+overflow-x: hidden;
+}  
+.bg-image {
+background-image: url('/static/3660.jpg');
+background-size:cover;
+height: 100%;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: -1;
+}
+.row1{
+width:100%;
+height:100%;
+place-content:center;
+margin-left:370px;
+margin-top:100px;
+}  
+.card1 {
+background-color: rgba(0, 0, 0, 0.7); /* light color with opacity */
+color: aliceblue;
+border-radius: 20px;
+width: 65%;
+height: 120%;
+backdrop-filter: blur(2px);
+}
+.card2 {
+display: flex;
+justify-content: center; /* Horizontal alignment */
+align-items: center; /* Vertical alignment */
+background-color: rgba(0, 0, 0, 0.7);
+color: aliceblue;
+border-radius: 20px;
+width: max-content; /* Adjust width as needed */
+height: auto; /* Adjust height as needed */
+backdrop-filter: blur(2px);
+overflow: hidden; /* Ensure content doesn't overflow the card */
+margin-left: -47vh;
+}
+.row2{
+font-family:'Arial Unicode MS';
+font-weight:bold;
+}  
 
-                </div>
-            </div>
-        </div>
-    </div>
+table {
+border-collapse: collapse;
+width: 100%;
+margin-bottom: 20px;
+}
+.arrow {
+position: absolute;
+top: 50%;
+width: 20px; /* adjust this value to resize the arrow */
+height: calc(1.4 * 14px); /* maintain 7:5 height to width ratio */
+background: transparent;
+border-top: 1vmin solid white;
+border-right: 1vmin solid white;
+box-shadow: 0 0 0 lightgray;
+transition: border-color 200ms ease;
+}
 
-    <script>
-        // JavaScript functions for handling button clicks and radio button changes
-        function btnSearch_Click() {
-            // Implement search functionality using JavaScript or make AJAX calls to the server
-        }
+.arrow.left {
+left: 0;
+transform: translate3d(0,-50%,0) rotate(-135deg);
+}
 
-        function idradio_CheckedChanged() {
-            // Handle ID radio button change using JavaScript
-        }
+.arrow:hover {
+border-color:#2196F3 ;
+}
 
-        function cnicradio_CheckedChanged() {
-            // Handle CNIC radio button change using JavaScript
-        }
-    </script>
-        <style>
-            body { 
-                overflow-x: hidden;
-            }  
-            .bg-image {
-                background-image: url('/static/3660.jpg');
-                background-size:cover;
-                height: 100%;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                z-index: -1;
-            }
-            .row1{
-                width:100%;
-                height:100%;
-                place-content:center;
-                margin-left:370px;
-                margin-top:100px;
-            }  
-            .card1 {
-              background-color: rgba(0, 0, 0, 0.7); /* light color with opacity */
-              color: aliceblue;
-              border-radius: 20px;
-              width: 65%;
-              height: 120%;
-              backdrop-filter: blur(2px);
-            }
-            .card2 {
-              background-color: rgba(0, 0, 0, 0.7); /* light color with opacity */
-              color: aliceblue;
-              border-radius: 20px;
-              width: 105%;
-              height: 120%;
-              backdrop-filter: blur(2px);
-            }
-            .row2{
-                font-family:'Arial Unicode MS';
-                font-weight:bold;
-            }  
-    
-              table {
-              border-collapse: collapse;
-              width: 100%;
-              margin-bottom: 20px;
-            }
-                     .arrow {
-              position: absolute;
-              top: 50%;
-             width: 20px; /* adjust this value to resize the arrow */
-              height: calc(1.4 * 14px); /* maintain 7:5 height to width ratio */
-              background: transparent;
-              border-top: 1vmin solid white;
-              border-right: 1vmin solid white;
-              box-shadow: 0 0 0 lightgray;
-              transition: border-color 200ms ease;
-            }
-    
-            .arrow.left {
-              left: 0;
-              transform: translate3d(0,-50%,0) rotate(-135deg);
-            }
-    
-            .arrow:hover {
-              border-color:#2196F3 ;
-            }
-    
-            .arrow:before {
-              content: '';
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-40%,-60%) rotate(45deg);
-              width: 100%;
-              height: 100%;
-            }
-    
-    
-            th,
-            td {
-              text-align: left;
-              padding: 8px;
-            }
-    
-            th {
-              background-color: #1E90FF;
-              color: aliceblue;
-              font-weight: bold; 
-            }
-    
-            tr:nth-child(even) {
-              background-color: #f2f2f2;
-            }
-    
-            Update edit field styles 
-            .edit-mode {
-                background-color: rgba(255, 255, 255, 0.8);
-            }
-    
-    
-            .edit-mode input {
-              border: none;
-              padding: 5px;
-              border-radius: 5px;
-            }
-    
-             Update error label styles 
-            .error-container {
-              text-align: center;
-            }
-    
-            #lblError {
-              color: red;
-              margin-top: 10px;
-            }
-    
-            
-        
-        </style>
+.arrow:before {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-40%,-60%) rotate(45deg);
+width: 100%;
+height: 100%;
+}
 
+
+th,
+td {
+text-align: left;
+padding: 8px;
+}
+
+th {
+background-color: #1E90FF;
+color: aliceblue;
+font-weight: bold; 
+}
+
+tr:nth-child(even) {
+background-color: #1E90FF;
+}
+
+Update edit field styles 
+.edit-mode {
+background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+.edit-mode input {
+border: none;
+padding: 5px;
+border-radius: 5px;
+}
+
+Update error label styles 
+.error-container {
+text-align: center;
+}
+
+#lblError {
+color: red;
+margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+.row1 {
+margin-left: 20px; /* Adjust margin for smaller screens */
+}
+.card1,
+.card2 {
+width: 90%; /* Adjust card width for smaller screens */
+}
+}
+/* Mobile */
+@media screen and (max-width: 480px) {
+.row1 {
+margin-left: 10px; /* Adjust margin for smaller screens */
+margin-top: 50px; /* Adjust margin for smaller screens */
+}
+.card1,
+.card2 {
+width: 95%; /* Adjust card width for smaller screens */
+}
+}
+
+</style>
 </body>
 </html>
 {% endblock %}

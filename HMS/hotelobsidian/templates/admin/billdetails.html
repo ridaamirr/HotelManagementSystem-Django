@@ -5,8 +5,8 @@
     <div style="overflow-x:hidden" class="container">
         <div class="container">
             <div class="row1">
-                <div class="col-md-6 mx-auto">
-                    <div class="card2" id="panel1" style="width:120%; position:relative; margin-left:-120px">
+                <div class="col-md-6 mx-auto" >
+                    <div class="card2" id="panel1" style="width:fit-content; position:relative;margin-left: -70vh; ">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col" style="position:absolute">
@@ -55,7 +55,7 @@
             </div>
         </div>
     </div>
-{% endblock %}
+
 
 <style>
     body {
@@ -85,7 +85,7 @@
         background-color: rgba(0, 0, 0, 0.7);
         color: aliceblue;
         border-radius: 20px;
-        width: 135%;
+        width: auto;
         height: 120%;
         backdrop-filter: blur(2px);
     }
@@ -142,4 +142,26 @@
         width: 100%;
         margin-bottom: 20px;
     }
+    @media screen and (max-width: 768px) {
+  .row1 {
+    margin-left: 20px; /* Adjust margin for smaller screens */
+  }
+  .card1,
+  .card2 {
+    width: 90%; /* Adjust card width for smaller screens */
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .row1 {
+    margin-left: 10px; /* Adjust margin for smaller screens */
+    margin-top: 50px; /* Adjust margin for smaller screens */
+  }
+  .card1,
+  .card2 {
+    width: 95%; /* Adjust card width for smaller screens */
+  }
+}
 </style>
+{% endblock %}
