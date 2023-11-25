@@ -91,14 +91,13 @@
                 </div>
                 <div class="row">
                     <div class="col text-center">
-                        <form method="get" action="{% url 'booking_final' %}">
+                        <form method="get" action="{% url 'booking_final' %}" onsubmit="return validateForm()">
                             <div class="form-group">
                                 <input class="form-control" id="nodays" name="nodays" placeholder="Number of Days">
                                 <span style="color: red; display: none;" id="RequiredFieldValidator3">Number of Days are Required</span>
                                 <span style="color: red; display: none;" id="RangeValidator1">Enter a Valid Number</span>
-                                <br />
-                                <br />
-                                <button class="btn btn-primary" id="BranchSelection1" href="{% url 'default' %}" style="width: 150px;">Continue</button>
+                                <br /><br />
+                                <button type="submit" class="btn btn-primary" id="BranchSelection1" style="width: 150px;">Continue</button>
                                 <br />
                             </div> 
                         </form>
@@ -112,6 +111,26 @@
 </div>
 
 <script>
+    function validateForm() {
+        var noOfDays = document.getElementById("nodays").value;
+        var isValid = true;
+
+        if (noOfDays === "") {
+            document.getElementById("RequiredFieldValidator3").style.display = "block";
+            isValid = false;
+        } else {
+            document.getElementById("RequiredFieldValidator3").style.display = "none";
+        }
+
+        if (!/^\d+$/.test(noOfDays)) {
+            document.getElementById("RangeValidator1").style.display = "block";
+            isValid = false;
+        } else {
+            document.getElementById("RangeValidator1").style.display = "none";
+        }
+
+        return isValid;
+    }
 function submitFormAndShowPanel(panelId) {
     // Submit the form
     document.getElementById('catalogForm').submit();
