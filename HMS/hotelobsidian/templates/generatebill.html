@@ -9,11 +9,12 @@
                 <div class="card-body">
                     <div class="text-center">
                         <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold;">Generate Bill</h3>
+                        <br/>
                         <h4 id="amount">Total Bill: {{ totalbill }}</h4>
                     </div>
-                    
+                    <br/>
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-striped table-bordered">
                             <thead>
                                 <tr>
                                     <th>Location</th>
@@ -45,9 +46,7 @@
                         </table>
                     </div>
                     
-                    <div class="text-center">
-                        <label id="history"></label>
-                    </div>
+                    
                     
                     <div class="form-group text-center"> 
                         <a href="{% url 'checkoutAll' %}" class="btn btn-primary" style="width: 150px; height: 40px;">CheckOut All</a>

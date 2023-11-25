@@ -22,13 +22,17 @@ def default(request):
     
     # If you want to execute the stored procedure, you can do it here
     cursor = connection.cursor()
-    cursor.execute('call AutomaticCheckOut()') 
-    logintype = request.session.get('logintype', None)
+    cursor.execute('call AutomaticCheckOut()')  
+    logintype = request.session.get('logintype', None) 
+    username = request.session.get('username', None) 
+    cursor.execute("SELECT * FROM billing where User_ID=%s and Status='Not Paid'",[str(username)]) 
+    results = cursor.fetchall()    
     context = {
         'loc':loc,
         'room_types': room_types, 
-        'logintype':logintype,
-         }     
+        'logintype':logintype, 
+        'results':results,
+        }     
     return render(request, 'default.html', context) 
 
 from django.http import JsonResponse

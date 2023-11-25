@@ -24,7 +24,12 @@
             <a class="navbar-brand" href="{% url 'default' %}">Hotel Obsidian</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> 
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                    <a href="{% url 'catalogue' %}" style="color: white;font-size: 18px; margin-right: 8px; margin-top: 4px;">Room Catalogue</a> 
+              </ul>
+          </div>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     {% if logintype == "admin" %}
@@ -32,7 +37,7 @@
                             <i class="fas fa-user-shield" style="font-size: 23px; margin-right: 8px; margin-top: 4px;"></i> Admin profile
                         </li>
                         <li class="nav-item" style="margin-left: 20px;">
-                          <a class="nav-link" href="{% url 'login' %}" id="logoutheader">
+                          <a class="nav-link" href="{% url 'logout' %}" id="logoutheader">
                               <i class="fas fa-sign-out-alt"></i> Log Out
                           </a>
                       </li>
