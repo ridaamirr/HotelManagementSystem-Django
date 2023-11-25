@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Customer, AdminLogin
+from .models import *
 from django.contrib import messages
 from .forms import LoginForm
 
@@ -30,7 +30,9 @@ def user_dashboard(request):
             except AdminLogin.DoesNotExist:
                 messages.error(request, "Invalid information entered")
                 return redirect('login')
-            return render(request, 'default.html',{'logintype':logintype,})
+            room_types = Roomtype.objects.values_list('type', flat=True).distinct()
+            loc = Hotel.objects.values_list('location', flat=True).distinct()
+            return render(request, 'default.html',{'logintype':logintype,'loc':loc,'room_types': room_types, })
         else:
             messages.error(request, "Invalid information entered")
             return redirect('login')
