@@ -5,12 +5,12 @@
 <div class="container-fluid d-flex justify-content-center align-items-center mt-5">
     <div class="col-md-6">
         {% if request.resolver_match.url_name == 'catalogue' %}
-        <div class="card1" id="panel1">
+        <div class="card1" id="panel1" style="width:inherit; margin-left: 180px;" >
             <div class="card-body">
                 <div class="row2">
                     <div class="col text-center">
                         <div>
-                            <a style="margin-left:30px;margin-top:-57px" href="{% url 'default' %}" class="arrow left"></a>
+                            <a style="margin-left:20px;margin-top:-67px" href="{% url 'default' %}" class="arrow left"></a>
                         </div>
                         <br />
                         <h3 style="color: aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Room Catalogue</h3>
@@ -40,12 +40,12 @@
         </div>
 
         {% elif request.path == '/hotelobsidian/cataloguelist/' %}
-        <div class="card1" id="panel2" >
+        <div class="card1" id="panel2">
             <div class="card-body">
                 <div class="row">
                     <div class="col text-center">
                         <div>
-                            <a style="margin-left:30px;margin-top:-180vh" href="{% url 'catalogue' %}" class="arrow left"></a>
+                            <a style="margin-left:30px;margin-top:-175vh" href="{% url 'catalogue' %}" class="arrow left"></a>
                         </div>
                         <br /><h3 style="color:aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Room Catalogue</h3> <br /><br />
                     </div>
@@ -57,14 +57,15 @@
                                 <div class="item" style="width: 300px; margin: 10px; text-align: center;">
                                     <ul>
                                         {% load static %}
-                                        <img src="{% static results.4 %}" alt="Image: {{ results.4 }}" style="width: 100%;" />
+                                        <img src="{% static results.4 %}" alt="Image: {{ results.4 }}" style="width:300px; height: 200px;" /> 
+                                        <br/><br/>
                                         <p style="color: aliceblue;">Number of Beds: {{results.1}}</p>
                                         <p style="color: aliceblue;">Price: {{results.3}}</p>
                                         <p style="color: aliceblue;">Type: {{results.2}}</p>  
                                         {%if logintype == "user" %}   
                                         <a href="{% url 'booking' loc=location roomid=results.0 %}" class="btn btn-primary book-now"onclick="showPanel('panel3') style="width: 100px;height: 40px;">Book Now</a>
                                         {% endif %}
-                                        <br/><br/> <br/>
+                                        <br/><br/> 
                                     </ul>
                                 </div>
                             {% endfor %}
@@ -78,7 +79,7 @@
         </div>
 
         {% elif request.resolver_match.url_name == 'booking' %}
-        <div class="card1" id="panel3" >
+        <div class="card1" id="panel3" style="width:inherit; margin-left: 180px;" >
             <div class="card-body">
                 <div class="row2">
                     <div class="col text-center">
@@ -94,13 +95,16 @@
                 <div class="row">
                     <div class="col text-center">
                         <form method="get" action="{% url 'booking_final' %}" onsubmit="return validateForm()">
-                            <div class="form-group">
-                                <input class="form-control" id="nodays" name="nodays" placeholder="Number of Days">
+                            <div class="form-group"> 
+                                <center>
+                                <input class="form-control" id="nodays" style="width: 180px;" name="nodays" placeholder="Number of Days">
                                 <span style="color: red; display: none;" id="RequiredFieldValidator3">Number of Days are Required</span>
                                 <span style="color: red; display: none;" id="RangeValidator1">Enter a Valid Number</span>
-                                <br /><br />
-                                <button type="submit" class="btn btn-primary" id="BranchSelection1" style="width: 150px;">Continue</button>
                                 <br />
+                                <button type="submit" class="btn btn-primary" id="BranchSelection1" style="width: 150px;">Continue</button>
+                                <br />  
+                                <br/>
+                            </center>
                             </div> 
                         </form>
                     </div>
@@ -149,24 +153,7 @@ function submitFormAndShowPanel(panelId) {
     }
 }
 
-/*document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('book-now')) {
-        showPanel('panel3');
-    }
-});
 
-function showPanel(panelId) {
-    // Handle panel transition
-    var panels = ['panel1', 'panel2', 'panel3'];
-    for (var i = 0; i < panels.length; i++) {
-        var panel = document.getElementById(panels[i]);
-        if (panels[i] === panelId) {
-            panel.style.display = 'block';
-        } else {
-            panel.style.display = 'none';
-        }
-    }
-}*/
 </script>
 
 <style>
@@ -190,7 +177,7 @@ function showPanel(panelId) {
         color: black;
         border-color: black;
         border-radius: 20px;
-        width: 120%;
+        width: auto;
         height: auto;
         backdrop-filter: blur(2px);
         margin-bottom: 20px;

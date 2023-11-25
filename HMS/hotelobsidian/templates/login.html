@@ -12,15 +12,23 @@
         function toggleFields() {
             const userRadio = document.getElementById('userradio');
             const adminRadio = document.getElementById('adminradio');
-            const cnicField = document.getElementById('cnic-field');
+            const cnicField = document.getElementById('cnic-field'); 
+            const heading= document.getElementById('LoginType'); 
+            const heading1= document.getElementById('LoginType1');
             const adminUsernameField = document.getElementById('admin-username-field');
 
             if (userRadio.checked) {
                 cnicField.style.display = 'block';
-                adminUsernameField.style.display = 'none';
+                adminUsernameField.style.display = 'none';   
+                heading.style.display='block';
+                heading1.style.display='none';
+                
             } else if (adminRadio.checked) {
                 cnicField.style.display = 'none';
-                adminUsernameField.style.display = 'block';
+                adminUsernameField.style.display = 'block';  
+                heading.style.display='none';
+                heading1.style.display='block';
+                
             }
         }
     </script>
@@ -40,6 +48,8 @@
                                         <center>
                                             <br />
                                             <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold" id="LoginType" runat="server">User Login</h3>
+                                            <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold; display:none;" id="LoginType1" runat="server">Admin Login</h3>
+                                        
                                         </center>
                                         <div class="radio">
                                             <center>
@@ -54,14 +64,10 @@
                                 <div class="row">
                                     <div class="col">
                                         <center>
+                                            <div class="form-group">
+                                                <input type="text" id="cnic-field" class="form-control" style="width: 250px" name="username" placeholder="CNIC">
                                             
-                                            <div class="form-group" id="cnic-field">
-                                                <input type="text" class="form-control" style="width: 250px" name="username" placeholder="CNIC">
-                                            </div>
-                                            <br/>
-                                          
-                                            <div class="form-group" id="admin-username-field" style="display: none;">
-                                                <input type="text" class="form-control" style="width: 250px" name="adminusername" placeholder="UserName">
+                                                <input type="text"  id="admin-username-field" class="form-control" style=" display:none; width: 250px" name="adminusername" placeholder="UserName">
                                             </div>
                                             <br/>
                                             
