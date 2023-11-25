@@ -9,6 +9,9 @@
             <div class="card-body">
                 <div class="row2">
                     <div class="col text-center">
+                        <div>
+                            <a style="margin-left:30px;margin-top:-57px" href="{% url 'default' %}" class="arrow left"></a>
+                        </div>
                         <br />
                         <h3 style="color: aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Room Catalogue</h3>
                         <br />
@@ -41,6 +44,9 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col text-center">
+                        <div>
+                            <a style="margin-left:30px;margin-top:-180vh" href="{% url 'catalogue' %}" class="arrow left"></a>
+                        </div>
                         <br /><h3 style="color:aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Room Catalogue</h3> <br /><br />
                     </div>
                 </div>
@@ -74,6 +80,9 @@
             <div class="card-body">
                 <div class="row2">
                     <div class="col text-center">
+                        <div>
+                            <a style="margin-left:30px;margin-top:-57px" href="{% url 'catalogue' %}" class="arrow left"></a>
+                        </div>
                         <br />
                         <h3 style="color: aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Room Booking</h3>
                         <input class="form-control" id="hiddenid1" type="hidden" name="hiddenid1" style="display:none;">
@@ -89,7 +98,7 @@
                                 <span style="color: red; display: none;" id="RangeValidator1">Enter a Valid Number</span>
                                 <br />
                                 <br />
-                                <button class="btn btn-primary" id="BranchSelection1" style="width: 150px;">Continue</button>
+                                <button class="btn btn-primary" id="BranchSelection1" href="{% url 'default' %}" style="width: 150px;">Continue</button>
                                 <br />
                             </div> 
                         </form>
@@ -160,10 +169,11 @@ function showPanel(panelId) {
         color: black;
         border-color: black;
         border-radius: 20px;
-        width: 100%;
+        width: 120%;
         height: auto;
         backdrop-filter: blur(2px);
         margin-bottom: 20px;
+        margin-left: -50px;
     }
 
     .myDataList {
@@ -182,5 +192,35 @@ function showPanel(panelId) {
         float: left;
         margin-right: 80px;
     }
+    .arrow {
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: calc(1.4 * 14px);
+            background: transparent;
+            border-top: 1vmin solid white;
+            border-right: 1vmin solid white;
+            box-shadow: 0 0 0 lightgray;
+            transition: border-color 200ms ease;
+        }
+        
+        .arrow.left {
+            left: 0;
+            transform: translate3d(0, -50%, 0) rotate(-135deg);
+        }
+        
+        .arrow:hover {
+            border-color: #2196F3;
+        }
+        
+        .arrow:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-40%, -60%) rotate(45deg);
+            width: 100%;
+            height: 100%;
+        }
 </style>
 {% endblock %}
