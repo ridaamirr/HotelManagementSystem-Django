@@ -51,14 +51,17 @@
                                           <label style="color:aliceblue" for="idradio">ID</label>
                                           <label></label>
                                           <label></label>                                          
-                                        </div>
+                                        </div> 
+                                    </br>
                                          </form>
                                     </div>
                                 </center>
                             </div>
                             <div class="row" style="margin-left:42px; width:88%">
                                 <div class="col">
-                                    <table>
+                                    {% if results %}
+                                <div>
+                                    <table class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
                                                 <th>Billing ID</th>
@@ -71,29 +74,39 @@
                                         <tbody id="GridView1">
                                           {% for bill in results %}
                                           <tr>
-                                              <td>{{ bill.0 }}</td>
-                                              <td>{{ bill.1 }}</td>
-                                              <td>{{ bill.2 }}</td>
-<td> 
-    {% if bill.2 == 'Not Paid' %}
-    <a href="{% url 'paid' id=bill.0 %}" class="btn btn-primary" style="width: 100px; height: 40px;">Paid</a>
-    {% endif %}     
-  </td> 
-  <td>
-    <a href="{% url 'billdetails' id=bill.0 %}" class="btn btn-primary" style="width: 100px; height: 40px;">View Details</a>
-         
-  </td>
-</tr>
-{% endfor %}
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+                                            <td style="color: white;">{{ bill.0 }}</td>
+                                            <td style="color: white;">{{ bill.1 }}</td>
+                                            <td style="color: white;">{{ bill.2 }}</td>
+                                            <td style="color: white;"> 
+                                            {% if bill.2 == 'Not Paid' %}
+                                                <a href="{% url 'paid' id=bill.0 %}" class="btn btn-primary" style="width: 100px; height: 40px;">Paid</a>
+                                             {% endif %}     
+                                            </td> 
+                                            <td style="color: white;">
+                                            <a href="{% url 'billdetails' id=bill.0 %}" class="btn btn-primary" style="width: 100px; height: 40px;">View Details</a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                    </table> 
+                                </div> 
+                                {% else %} 
+                                <div style="margin-left:100px">
+                                    <div class="error-container">
+                                        <center>
+                                            <label id="lblError" style="color:red;">No results found</label>
+                                        </center>
+                                        <br />
+                                    </div>
+                                </div> 
+                            {% endif %} 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>

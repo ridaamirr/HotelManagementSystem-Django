@@ -39,7 +39,7 @@
           backdrop-filter: blur(2px);
         }
         .card2 {
-        display: flex;
+        display: flex; 
         justify-content: center; /* Horizontal alignment */
         align-items: center; /* Vertical alignment */
         background-color: rgba(0, 0, 0, 0.7);
@@ -172,26 +172,21 @@
     </style>
 </head>
 <body>
-    {% if messages %}
-      <ul class="messages">
-        {% for message in messages %}
-          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+    
     <div class="bg-image"></div>
     <div class="container">
         <div class="container">
             <div class="row1" >
                 <div class="col-md-6 mx-auto">
                    
-                    <div class="card2" id="panel1">
-                        <div class="card-body" style="text-align: center;width: 90%;">
+                    <div class="card2" id="panel1" >  
+                      <center>
+                        <div class="card-body" style="text-align: center;width: 100%;">
                             <div class="row">
                                 <center>
                                     <div class="col">
                                         <br />
-                                        <div style="position:absolute">
+                                        <div style="position:absolute; text-align: center;">
                                             <a style="margin-left:50px;margin-top:30px" href="{% url 'admin' %}" class="arrow left"></a>
                                         </div>
                                         <h3 style="color:aliceblue;  font-family:'Arial Unicode MS';font-weight:bold">Customer Information</h3>
@@ -218,8 +213,10 @@
                             </div>
                             <br />
                             <div class="row" style="margin-left:20px;margin-right:20px; width:auto">
-                                <div class="col">
-                                    <table class="table">
+                                <div class="col"> 
+                                {% if items %}
+                                  <div>
+                                    <table class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
                                                 <th>CNIC</th>
@@ -245,18 +242,22 @@
                                                 </tr>
                                             {% endfor %}
                                         </tbody>
-                                    </table>
+                                    </table>  
+                                  </div>
+                                {% else %} 
                                     <div style="margin-left:100px">
                                         <div class="error-container">
                                             <center>
-                                                <label id="lblError" style="color:red; display:none;"></label>
+                                                <label id="lblError" style="color:red;">No results found</label>
                                             </center>
                                             <br />
                                         </div>
-                                    </div>
+                                    </div> 
+                                {% endif %} 
                                 </div>
                             </div>
-                        </div>
+                        </div> 
+                      </center>
                     </div>
                   
                 </div>
