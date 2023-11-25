@@ -60,8 +60,10 @@
                                         <img src="{% static results.4 %}" alt="Image: {{ results.4 }}" style="width: 100%;" />
                                         <p style="color: aliceblue;">Number of Beds: {{results.1}}</p>
                                         <p style="color: aliceblue;">Price: {{results.3}}</p>
-                                        <p style="color: aliceblue;">Type: {{results.2}}</p>   
+                                        <p style="color: aliceblue;">Type: {{results.2}}</p>  
+                                        {%if logintype == "user" %}   
                                         <a href="{% url 'booking' loc=location roomid=results.0 %}" class="btn btn-primary book-now"onclick="showPanel('panel3') style="width: 100px;height: 40px;">Book Now</a>
+                                        {% endif %}
                                         <br/><br/> <br/>
                                     </ul>
                                 </div>
