@@ -12,8 +12,10 @@
         <h1>Hotel</h1>
         <h1>Obsidian</h1>
         <p class="lead">Discover a new dimension of Luxury</p> 
-        {%if logintype == "user" %}
-        <p><a id="switch1" class="btn btn-outline-primary btn-lg my-link custom-button" href="{% url 'catalogue' %}" role="button">Book Now</a></p>  
+        {%if logintype == "user" and results %} 
+        <p><a id="switch1" class="btn btn-outline-primary btn-lg my-link custom-button" href="{% url 'generate_bill' %}" role="button">Generate Bill</a></p>  
+        {% elif logintype == "user" %}  
+       <p><a id="switch1" class="btn btn-outline-primary btn-lg my-link custom-button" href="{% url 'catalogue' %}" role="button">Book Now</a></p>  
         {%elif logintype == "admin"%}
         <p><a id="switch2" class="btn btn-outline-primary btn-lg my-link custom-button" href="{% url 'admin' %}" role="button">Admin Dashboard</a></p> 
         {% else %}
