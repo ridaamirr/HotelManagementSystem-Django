@@ -44,6 +44,7 @@
     margin: 0 auto;
     box-sizing: border-box;
     backdrop-filter: blur(2px);
+    margin-left: -50vh;
     /* Add other styles as needed */
 }
 
@@ -223,7 +224,7 @@
             <div class="row1">
                 <div class="col-md-6 mx-auto">
                     {% if request.path == '/hotelobsidian/admin/branchinformation/' %}
-                    <div class="card1" style="margin-left: -20vh;" id="panel1"  visible="true">
+                    <div class="card1" id="panel1"  visible="true">
                         <div class="card-body">
                             <div class="row2">
                                 <div class="col">
@@ -243,12 +244,12 @@
                                         <div class="form-group">
                                             <form action="{% url 'branch_add' %}" method="post">
                                                 {% csrf_token %}
-                                                <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF; width: 40vh;">Add</button>
+                                                <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Add</button>
                                             </form>
                                             <br/>
                                             <form action="{% url 'branch_update' %}" method="post">
                                                 {% csrf_token %}
-                                                <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF; width: 40vh;">Update/Delete</button>
+                                                <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Update/Delete</button>
                                             </form>
                                         </div>
                                     </center>
@@ -257,7 +258,7 @@
                         </div>
                     </div>
                     {% elif request.path == '/hotelobsidian/admin/branchinformation/add/' %}
-                        <div class="card1" style="margin-left: -20vh;" id="panel2"  visible="false">
+                        <div class="card1" id="panel2"  visible="false">
                             <div class="card-body">
                                 <div class="row2">
                                     <div class="col">
@@ -288,7 +289,7 @@
                                                 </div>
                                                 <span id="unique" style="color: red; display: dynamic;"></span>
                                                 <br />
-                                                <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF; width: 40vh;">Add</button>
+                                                <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Add</button>
                                                 <br/>
                                             </form>
                                         </center>
@@ -297,7 +298,7 @@
                             </div>
                         </div>
                     {% elif request.path == '/hotelobsidian/admin/branchinformation/update/' %}
-                    <div class="card1" id="panel3"  style="width: 130%; justify-content: center; margin-left: -140px" visible="false">
+                    <div class="card1" id="panel3"  style="width: 130%; justify-content: center;" visible="false">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col" style="margin-left: 170px">
@@ -324,25 +325,24 @@
                                     <span id="Label1" style="color: red; display: dynamic;"></span>
                                     <span id="lblError" style="color: red; display: dynamic;"></span>
                                 </div>
-                                <div class="radio" style="margin-left: 220px; margin-top: 10px;">
-                                    <div style="display: flex; align-items: center;">
+                                <div class="radio" margin-top: 10px;">
+                                    <center>
                                         <input type="radio" id="idradio" name="searchtype" value="idradio" checked="true" />
                                         <label style="color: aliceblue; margin-right: 15px;">ID</label>
-                                    </div>
-                                    <div style="display: flex; align-items: center;">
+                                        <label></label><label></label>
                                         <input type="radio" id="locradio" name="searchtype" value="locradio" />
                                         <label style="color: aliceblue; margin-right: 15px;">Location</label>
-                                    </div>
-                                    <div style="display: flex; align-items: center;">
+                                        <label></label><label></label>
                                         <input type="radio" id="phoneradio" name="searchtype" value="phoneradio" />
                                         <label style="color: aliceblue;">Phone Number</label>
-                                    </div>
+                                        <label></label><label></label>
+                                    </center>
                                 </div>
                             </form>
                         </div>
                     </div>
                     {% elif request.path == '/hotelobsidian/admin/branchinformation/new_update/' %}
-                    <div class="card1" id="panel3"  style="width: 160%; justify-content: center; margin-left: -140px" visible="false">
+                    <div class="card1" id="panel3"  style="width: 160%; justify-content: center;" visible="false">
                         {% comment %} {% if results %}
                             <p>Results: {{ results }}</p>
                         {% else %}
