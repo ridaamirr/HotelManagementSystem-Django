@@ -16,7 +16,7 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered">
                             <thead>
-                                <tr>
+                                <tr style="background-color: #1E90FF;">
                                     <th>Location</th>
                                     <th>Room Number</th>
                                     <th>Number of Beds</th>
@@ -37,7 +37,7 @@
                                     <td style="color: white;">{{ item.5 }}</td>
                                     <td> 
                                         {% if item.7 == 'True' %}
-                                        <a href="{% url 'checkout_Room' roomid=item.6 %}" class="btn btn-primary" style="width: 100px; height: 40px;">CheckOut</a>
+                                        <a href="{% url 'checkout_Room' roomid=item.6 %}" class="btn btn-primary" style="width: 100px; height: 40px;background-color: #1E90FF;">CheckOut</a>
                                         {% endif %}
                                     </td>
                                 </tr>
@@ -49,7 +49,7 @@
                     
                     
                     <div class="form-group text-center"> 
-                        <a href="{% url 'checkoutAll' %}" class="btn btn-primary" style="width: 150px; height: 40px;">CheckOut All</a>
+                        <a href="{% url 'checkoutAll' %}" class="btn btn-primary" style="width: 150px; height: 40px;background-color: #1E90FF;">CheckOut All</a>
                     </div>
                 </div>
             </div>
