@@ -181,30 +181,31 @@
         <div class="container">
           <br/>
           <br/>
-            <div class="row justify-content-center" >
+            <div class="row justify-content-center" style="position: relative;" >
                 <div class="col-md-6 text-center">
+                  <div class="d-flex justify-content-center"></div>
                   <div class="card2" id="panel1" >
-                      
-                        <div class="card-body" style="text-align: center;width: 100%;">
+                    
+                        <div class="card-body" style="text-align: center;width: max-content;">
                             <div class="row">
                                 <div class="col">
                                     <br />
                                     
-                                        <div style="position:absolute">
+                                        <div style="position:relative">
                                             <a style="margin-left:50px;margin-top:10px" href="{% url 'admin' %}" class="arrow left"></a>
                                         </div>
                                         <h3 style="color:aliceblue; font-family:'Arial Unicode MS'; font-weight:bold">Bookings</h3>
                                         <br /> 
                                         <form action="{% url 'bookings_search' %}" method="post">
                                             {% csrf_token %}
-                                            <div class="r1">
-                                            <div style="display:flex; margin-left:270px">
-                                                <label style="color:aliceblue">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                                <input class="form-control" name="SearchBox" id="searchInput" style="width:150px;" placeholder="CNIC">
-                                                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                                <button class="btn btn-success btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Search</button>
-                                            </div>
-                                            </div> 
+                                            <div class="row justify-content-center">
+                                              <div class="col-md-6">
+                                                  <div class="d-flex">
+                                                      <input class="form-control" name="SearchBox" id="searchInput" style="width:150px; margin-right: 25px;margin-left: auto;" placeholder="CNIC">
+                                                      <button class="btn btn-success btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;margin-right: auto;">Search</button>
+                                                  </div>
+                                              </div>
+                                          </div>
                                           </br>
                                             <div class="error-container">
                                             <center>
@@ -268,8 +269,8 @@
                                     <br />
                                   </div> 
                                 {% else %} 
-                                    <div style="margin-left:100px">
-                                        <div class="error-container">
+                                    <div>
+                                        <div class="error-container justify-content-center" >
                                             <center>
                                                 <label id="lblError" style="color:red;">No results found</label>
                                             </center>
@@ -283,6 +284,7 @@
                         </div>
                        
                     </div>
+                  </div>
                 </div>
             </div>
         </div>
