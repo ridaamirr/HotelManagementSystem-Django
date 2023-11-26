@@ -32,16 +32,22 @@
             margin-left: 370px;
             margin-top: 100px;
         }
-        
+
         .card1 {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: aliceblue;
-            border-radius: 20px;
-            width: 65%;
-            height: 120%;
-            backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: aliceblue;
+    border-radius: 20px;
+    width: 100%; /* Adjust the width as needed for responsiveness */
+    max-width: 100%;
+    height: auto;
+    padding: 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    backdrop-filter: blur(2px);
+    margin-left: -50vh;
+    /* Add other styles as needed */
         }
-        
+
         .row2 {
             font-family: 'Arial Unicode MS';
             font-weight: bold;
@@ -185,8 +191,10 @@
                                         <div class="form-group">
                                             <button class="btn btn-success btn-block btn-lg" id="AddRoom" onclick="Add_Click()" style="background-color: #1E90FF; border-color: #1E90FF;">Add</button>
                                             <br />
+                                            <br/>
                                             <button class="btn btn-success btn-block btn-lg" id="UpdateDeleteRoom" onclick="Update_Delete_Click()" style="background-color: #1E90FF; border-color: #1E90FF;">Update/Delete</button>
                                             <br />
+                                            <br/>
                                         </div>
                                     </center>
                                 </div>
