@@ -315,8 +315,11 @@
                                                     <td>{{ roomtype.roomtype_id }}</td>
                                                     <td>{{ roomtype.type }}</td>
                                                     <td contentEditable="true">{{ roomtype.numberofbeds }}</td>
-                                                    <td contentEditable="true">{{ roomtype.price }}</td>
-                                                    <td>{{ roomtype.image }}</td>
+                                                    <td contentEditable="true">{{ roomtype.price }}</td>  
+                                                    <td>
+                                                    {% load static %}
+                                                    <img src="{% static roomtype.image %}" alt="Image: {{ roomtype.image }}" style="width:110px; height: 70px;" /> 
+                                                </td>
                                                     <td>
                                                         <button data-roomtype-id="{{ roomtype.roomtype_id }}" class="updateBtn"><i class="fas fa-edit"></i></button>
                                                     </td>
