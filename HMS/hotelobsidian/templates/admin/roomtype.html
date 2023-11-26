@@ -34,12 +34,18 @@
         }
         
         .card1 {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: aliceblue;
-            border-radius: 20px;
-            width: 65%;
-            height: 120%;
-            backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: aliceblue;
+    border-radius: 20px;
+    width: 100%; /* Adjust the width as needed for responsiveness */
+    max-width: 100%;
+    height: auto;
+    padding: 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    backdrop-filter: blur(2px);
+    margin-left: -50vh;
+    /* Add other styles as needed */
         }
         
         .row2 {
@@ -218,8 +224,8 @@
                                     <center>
                                         <form action="{% url 'add_new_room' %}" method="post" onsubmit="return validateForm();" enctype="multipart/form-data">
                                             {% csrf_token %}
-                                            <div class="form-group">
-                                                <div style="margin-left: 50px; display:flex;">
+                                            <div class="form-group" style="width:40vh;">
+                                                <div style="display:flex;">
                                                     <label style="color: aliceblue;">Room Type&nbsp;&nbsp;</label>
                                                     <select class="form-control" id="DropDownList2" name="DropDownList2">
                                                         <option>Deluxe</option>
@@ -227,19 +233,23 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
+                                        </br>
+                                            <div class="form-group" style="width:40vh;">
                                                 <input class="form-control" id="BedNo" name="BedNo" placeholder="Number of Beds">
                                                 <span id="err_input_bed_no" style="color: red; display: none;"></span>
                                             </div>
-                                            <div class="form-group">
+                                        </br>
+                                            <div class="form-group" style="width:40vh;">
                                                 <input class="form-control" id="Price" name="Price" placeholder="Price">
                                                 <span id="err_input_price" style="color: red; display: none;"></span>
                                             </div>
-                                            <div class="form-group">
+                                        </br>
+                                            <div class="form-group" style="width:40vh;">
                                                 <label for="Image">Click here to upload image</label>
                                                 <input class="form-control" id="Image" name="Image" type="file">
                                                 <span id="err_missing_image" style="color: red; display: none;"></span>
                                             </div>
+                                        </br>
                                             <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Add</button>
                                             <br>
                                         </form>
@@ -249,13 +259,13 @@
                         </div>
                     </div>
                     {% elif request.path == '/hotelobsidian/admin/roomtype/update/' %}
-                    <div class="card1" id="panel3" style="width: 170%; justify-content: center; margin-left: -280px;">
+                    <div class="card1" id="panel3" style="width: 170%; justify-content: center;">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col" style="margin-left: 400px;">
+                                <div class="col" style="margin-left: 170px">
                                     <br>
                                     <div style="position:absolute">
-                                        <a style="margin-left: -330px; margin-top: 30px" href="{% url 'roomtype' %}" class="arrow left"></a>
+                                        <a style="margin-left: -140px; margin-top: 30px" href="{% url 'roomtype' %}" class="arrow left"></a>
                                     </div>
                                     <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold;">Update/Delete</h3>
                                     <br>
@@ -263,10 +273,10 @@
                             </div>
                             <form action="{% url 'update_this_room' %}" method="post">
                                 {% csrf_token %}
-                                <div class="r1" style="margin-left: 210px;">
-                                    <div style="display:flex;">
+                                <div class="r1" style="margin-left:100px;">
+                                    <div style="display:flex; align-items: center;">
                                         <label style="color: aliceblue;">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                        <input class="form-control" id="SearchRoom" name="SearchRoom" width="150px" placeholder="Room Type ID">
+                                        <input class="form-control" type="text" id="SearchRoom" name="SearchRoom" style="width: 150px;" placeholder="Room Type ID">
                                         <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                         <button class="btn btn-success btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Search</button>
                                     </div>
@@ -279,7 +289,8 @@
                                         <label id="lblError" style="color: red; display: none;"></label>
                                     </center>
                                 </div>
-                                <div class="radio" style="margin-left: 240px;">
+                                <div class="radio">
+                                    <center>
                                     <input type="radio" id="idradio" name="searchtype" checked="true" value="ID_radio">
                                     <label style="color: aliceblue;">Room Type ID</label>
                                     <label></label><label></label>
@@ -292,6 +303,7 @@
                                     <input type="radio" id="priceradio" name="searchtype" value="price_radio">
                                     <label style="color: aliceblue;">Price</label>
                                     <label></label><label></label>
+                                    </center>
                                 </div>
                             </form>
                             {% elif request.path == '/hotelobsidian/admin/roomtype/new_update/' %}
