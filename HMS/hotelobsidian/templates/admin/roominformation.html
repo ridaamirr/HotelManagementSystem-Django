@@ -189,11 +189,15 @@
                                 <div class="col">
                                     <center>
                                         <div class="form-group">
-                                            <button class="btn btn-success btn-block btn-lg" id="AddRoom" onclick="Add_Click()" style="background-color: #1E90FF; border-color: #1E90FF;">Add</button>
-                                            <br />
+                                            <form action="{% url 'roominformation_add' %}" method="post">
+                                                {% csrf_token %}
+                                                <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Add</button>
+                                            </form>
                                             <br/>
-                                            <button class="btn btn-success btn-block btn-lg" id="UpdateDeleteRoom" onclick="Update_Delete_Click()" style="background-color: #1E90FF; border-color: #1E90FF;">Update/Delete</button>
-                                            <br />
+                                            <form action="{% url 'roominformation_update' %}" method="post">
+                                                {% csrf_token %}
+                                                <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Update/Delete</button>
+                                            </form>
                                             <br/>
                                         </div>
                                     </center>
@@ -219,57 +223,56 @@
                             <div class="row">
                                 <div class="col">
                                     <center>
-                                        <div style="margin-left:50px">
-                                            <div style="display:flex">
-                                                <label style="color:aliceblue">Room Number&nbsp;&nbsp;</label>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" id="RoomNo" width="150" placeholder="Room Number" />
-                                                    <span id="reqroom" style="color: red; display: none;">Room Number is Required</span>
-                                                    <span id="RangeValidator1" style="color: red; display: none;">Enter a Valid Number</span>
+                                            <div style="margin-left:50px">
+                                                <div style="display:flex">
+                                                    <label style="color:aliceblue">Room Number&nbsp;&nbsp;</label>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id="RoomNo" name="RoomNo" width="150" placeholder="Room Number" />
+                                                        <span id="room_no_err_check" style="color: red; display: none;"></span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div style="margin-left:50px">
-                                            <div style="display:flex">
-                                                <label style="color:aliceblue">Location&nbsp;&nbsp;</label>
-                                                <div class="form-group">
-                                                    <select class="form-control" id="DropDownList1"></select>
+                                            <div style="margin-left:50px">
+                                                <div style="display:flex">
+                                                    <label style="color:aliceblue">Location&nbsp;&nbsp;</label>
+                                                    <div class="form-group">
+                                                        <select class="form-control" id="DropDownList1"></select>
+                                                    </div>
+                                                </div>
+                                             </div>                                             
+                                            <div style="margin-left:50px">
+                                                <div style="display:flex">
+                                                    <label style="color:aliceblue">Room Type ID&nbsp;&nbsp;</label>
+                                                    <div class="form-group">
+                                                        <select class="form-control" id="DropDownList2"></select>
+                                                    </div>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <button class="btn btn-success" id="select" style="height: 35px; background-color: #1E90FF; border-color: #1E90FF;">Select</button>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div style="margin-left:50px">
-                                            <div style="display:flex">
-                                                <label style="color:aliceblue">Room Type ID&nbsp;&nbsp;</label>
-                                                <div class="form-group">
-                                                    <select class="form-control" id="DropDownList2"></select>
+                                            <div style="margin-left:50px">
+                                                <div style="display:flex">
+                                                    <label style="color:aliceblue">Type&nbsp;&nbsp;</label>
+                                                    <input type="text" class="form-control" id="type" name="type" width="150" disabled />
                                                 </div>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                                <button class="btn btn-success" id="select" style="height: 35px; background-color: #1E90FF; border-color: #1E90FF;" onclick="Select_Click()">Select</button>
                                             </div>
-                                        </div>
-                                        <div style="margin-left:50px">
-                                            <div style="display:flex">
-                                                <label style="color:aliceblue">Type&nbsp;&nbsp;</label>
-                                                <input type="text" class="form-control" id="type" width="150" disabled />
+                                            <div style="margin-left:50px">
+                                                <div style="display:flex">
+                                                    <label style="color:aliceblue">Number of Beds&nbsp;&nbsp;</label>
+                                                    <input type="text" class="form-control" id="noofbeds" name="noofbeds" width="150" disabled />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div style="margin-left:50px">
-                                            <div style="display:flex">
-                                                <label style="color:aliceblue">Number of Beds&nbsp;&nbsp;</label>
-                                                <input type="text" class="form-control" id="noofbeds" width="150" disabled />
+                                            <div style="margin-left:50px">
+                                                <div style="display:flex">
+                                                    <label style="color:aliceblue">Price&nbsp;&nbsp;</label>
+                                                    <input type="text" class="form-control" id="price" name="price" width="150" disabled />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div style="margin-left:50px">
-                                            <div style="display:flex">
-                                                <label style="color:aliceblue">Price&nbsp;&nbsp;</label>
-                                                <input type="text" class="form-control" id="price" width="150" disabled />
-                                            </div>
-                                        </div>
-                                        <span id="unique" style="color: red; display: none;"></span>
-                                        <br />
-                                        <br />
-                                        <button class="btn btn-success btn-block btn-lg" id="AddNew" style="background-color: #1E90FF; border-color: #1E90FF;" onclick="AddRoom_Click()">Add</button>
-                                        <br />
+                                            <span id="unique" style="color: red; display: none;"></span>
+                                            <br />
+                                            <br />
+                                            <button class="btn btn-success btn-block btn-lg" id="AddNew" style="background-color: #1E90FF; border-color: #1E90FF;">Add</button>
+                                            <br />
                                     </center>
                                 </div>
                             </div>
@@ -367,9 +370,102 @@
         </div>
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script>
-        // ... JavaScript code ...
-    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', async function () {
+        const addNewButton = document.getElementById('AddNew');
+        addNewButton.disabled = true;
+
+        try {
+            // Fetch room types and locations from the backend
+            const response = await fetch('/hotelobsidian/admin/roominformation/add_new/');
+            const data = await response.json();
+
+            const dropdownLocation = document.getElementById('DropDownList1');
+            data.locations.forEach(location => {
+                const option = document.createElement('option');
+                option.value = location;
+                option.text = location;
+                dropdownLocation.appendChild(option);
+            });
+
+            const dropdownRoomType = document.getElementById('DropDownList2');
+            data.room_type_ids.forEach(roomTypeId => {
+                const option = document.createElement('option');
+                option.value = roomTypeId;
+                option.text = roomTypeId.toString();
+                dropdownRoomType.appendChild(option);
+            });
+
+            addNewButton.disabled = false;
+        } catch (error) {
+            console.error('Error fetching room types and locations:', error);
+        }
+        document.getElementById('select').addEventListener('click', async function (event) {
+            event.preventDefault(); // Prevent the default button behavior
+        
+            try {
+                const roomTypeId = document.getElementById('DropDownList2').value;
+                const actionUrl = '{% url "add_new_roominformation_form" room_type_id=0 %}'.replace('0', roomTypeId);
+        
+                const csrfToken = document.cookie.match(/csrftoken=([^\s;]+)/)[1];
+        
+                const response = await fetch(actionUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken,
+                    },
+                });
+        
+                if (response.ok) {
+                    const data = await response.json();
+                
+                    document.getElementById('type').value = data.type;
+                    document.getElementById('noofbeds').value = data.noofbeds;
+                    document.getElementById('price').value = data.price;
+                    document.getElementById('unique').style.display = 'none';
+                
+                    const resultContainer = document.getElementById('resultContainer');
+                    if (resultContainer) {
+                        resultContainer.innerHTML = 'Updated content';
+                    } else {
+                        console.log('Element with ID "resultContainer" not found. Skipping update.');
+                    }
+                } else {
+                    console.error('Error fetching room information');
+                }
+            } catch (error) {
+                console.error('Error during fetch:', error);
+            }
+        });      
+    });
+    document.getElementById('AddNew').addEventListener('click', async function (event) {
+        event.preventDefault();
+        try {
+            const location = document.getElementById('DropDownList1').value;
+            const roomTypeId = document.getElementById('DropDownList2').value;
+            const roomNumber = document.getElementById('RoomNo').value;
+            const queryString = `?room_type_id=${roomTypeId}&room_number=${roomNumber}&location=${location}`;
+            const actionUrl = `/hotelobsidian/admin/roominformation/enter_data/${queryString}`;
+            const response = await fetch(actionUrl, {
+                method: 'GET', // Change this to 'GET'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            if (response.ok) {
+                console.log('Room entry added successfully!');
+            } else {
+                console.error('Error adding room entry');
+            }
+        } catch (error) {
+            console.error('Error during fetch:', error);
+        }
+    });
+    
+</script>
+
+
 </body>
 </html>
 {% endblock %}

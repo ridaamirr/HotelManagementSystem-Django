@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views, branchviews, roomviews,generatebillviews,catalogueviews,bookinginfoviews,customerviews,paymentinfoviews
+from . import views, branchviews, roomviews,generatebillviews,catalogueviews,bookinginfoviews,customerviews,paymentinfoviews, roominformationviews
 from . import loginfunctions
 from . import signupfunction
 from django.conf import settings
@@ -45,14 +45,25 @@ urlpatterns = [
     path('update_branch/<int:branch_id>/', branchviews.update_branch, name='update_branch'),
     #-----------------------------------------------------------------------------------
 
-    # Room Information Links ---------------------------------------------------------
+    # Room Information Links -----------------------------------------------------------
+    path('admin/roominformation/update/', views.roominformation, name='roominformation_update'),
+    path('admin/roominformation/add/', views.roominformation, name='roominformation_add'),
+    path('admin/roominformation/add_new/', roominformationviews.roominformation_add, name='add_new_roominformation'),
+    path('admin/roominformation/add_new_information/<int:room_type_id>/', roominformationviews.roominformation_add_new, name='add_new_roominformation_form'),
+    path('admin/roominformation/enter_data/', roominformationviews.roominformation_enter_data, name='enter_data'),
+    # path('admin/roominformation/new_update/', roominformationviews.roominformation_update, name='update_this_roominformation'),
+    # path('delete_roominformation/<int:roominformation_id>/', roominformationviews.delete_roominformation, name='delete_roominformation'),
+    # path('update_roominformation/<int:roominformation_id>/', roominformationviews.update_roominformation, name='update_roominformation'),
+    #----------------------------------------------------------------------------------- 
+
+    # Room Type Links -----------------------------------------------------------------
     path('admin/roomtype/update/', views.roomtype, name='room_update'),
     path('admin/roomtype/add/', views.roomtype, name='room_add'),
     path('admin/roomtype/add_new/', roomviews.roomtype_add, name='add_new_room'),
     path('admin/roomtype/new_update/', roomviews.roomtype_update, name='update_this_room'),
     path('delete_room/<int:roomtype_id>/', roomviews.delete_room, name='delete_room'),
     path('update_room/<int:roomtype_id>/', roomviews.update_room, name='update_room'),
-    #----------------------------------------------------------------------------------- 
+    #-----------------------------------------------------------------------------------
 
     # Booking Information Links ---------------------------------------------------------
     path('admin/bookinginformation/checkoutroom/<int:roomid>/', bookinginfoviews.checkout_Room_byadmin, name='checkout_Room_byadmin'),path('admin/bookinginformation/checkoutroom/<int:roomid>/', bookinginfoviews.checkout_Room_byadmin, name='checkout_Room_byadmin'),
