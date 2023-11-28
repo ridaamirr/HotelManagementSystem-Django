@@ -276,7 +276,7 @@
                                 <div class="r1" style="margin-left:100px;">
                                     <div style="display:flex; align-items: center;">
                                         <label style="color: aliceblue;">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                        <input class="form-control" type="text" id="SearchRoom" name="SearchRoom" style="width: 150px;" placeholder="Room Type ID">
+                                        <input class="form-control" type="text" id="searchInput" name="SearchRoom" style="width: 150px;" placeholder="Room Type ID">
                                         <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                         <button class="btn btn-success btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Search</button>
                                     </div>
@@ -291,16 +291,16 @@
                                 </div>
                                 <div class="radio">
                                     <center>
-                                    <input type="radio" id="idradio" name="searchtype" checked="true" value="ID_radio">
+                                    <input type="radio" id="idradio" name="searchtype" checked="true" value="ID_radio" onchange="changePlaceholder(this)" >
                                     <label style="color: aliceblue;">Room Type ID</label>
                                     <label></label><label></label>
-                                    <input type="radio" id="typeradio" name="searchtype" value="Type_radio">
+                                    <input type="radio" id="typeradio" name="searchtype" value="Type_radio" onchange="changePlaceholder(this)" >
                                     <label style="color: aliceblue;">Room Type</label>
                                     <label></label><label></label>
-                                    <input type="radio" id="bedradio" name="searchtype" value="No_of_beds_radio">
+                                    <input type="radio" id="bedradio" name="searchtype" value="No_of_beds_radio" onchange="changePlaceholder(this)" >
                                     <label style="color: aliceblue;">Number of Beds</label>
                                     <label></label><label></label>
-                                    <input type="radio" id="priceradio" name="searchtype" value="price_radio">
+                                    <input type="radio" id="priceradio" name="searchtype" value="price_radio" onchange="changePlaceholder(this)" >
                                     <label style="color: aliceblue;">Price</label>
                                     <label></label><label></label>
                                     </center>
@@ -462,7 +462,25 @@
                 valid = false;
             }
             return valid;
-        }        
+        }    
+        function changePlaceholder(radio) {
+        if (radio.value === 'ID_Radio') {
+            document.getElementById('searchInput').placeholder = 'Room Type ID';
+        } else if (radio.value === 'Type_radio') {
+            document.getElementById('searchInput').placeholder = 'Room Type';
+        } else if (radio.value === 'No_of_beds_radio') {
+            document.getElementById('searchInput').placeholder = 'Number of Beds';
+        } else if (radio.value === 'price_radio') {
+            document.getElementById('searchInput').placeholder = 'Price';
+        }
+        
+    }
+
+    // Initially set the placeholder to CNIC when the page loads
+    window.onload = function () {
+        document.getElementById('searchInput').placeholder = 'Room ID';
+    };
+        
     </script>
 </body>
 </html>
