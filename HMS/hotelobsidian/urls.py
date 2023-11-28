@@ -51,7 +51,7 @@ urlpatterns = [
     path('admin/roominformation/add_new/', roominformationviews.roominformation_add, name='add_new_roominformation'),
     path('admin/roominformation/add_new_information/<int:room_type_id>/', roominformationviews.roominformation_add_new, name='add_new_roominformation_form'),
     path('admin/roominformation/enter_data/', roominformationviews.roominformation_enter_data, name='enter_data'),
-    # path('admin/roominformation/new_update/', roominformationviews.roominformation_update, name='update_this_roominformation'),
+    path('admin/roominformation/new_update/', roominformationviews.roominformation_update, name='update_this_roominformation'),
     # path('delete_roominformation/<int:roominformation_id>/', roominformationviews.delete_roominformation, name='delete_roominformation'),
     # path('update_roominformation/<int:roominformation_id>/', roominformationviews.update_roominformation, name='update_roominformation'),
     #----------------------------------------------------------------------------------- 

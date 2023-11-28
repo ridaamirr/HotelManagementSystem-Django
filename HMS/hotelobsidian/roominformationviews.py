@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from .models import Hotel, Roomtype, Room
 from django.urls import reverse
 from django.contrib import messages
+from django.http import HttpResponse
 
 def roominformation_add(request):
     unique_locations = Hotel.objects.values('location').distinct()
@@ -81,5 +82,32 @@ def roominformation_enter_data(request):
             return JsonResponse({'error': str(e)}, status=500)
 
     return JsonResponse({'error': 'Invalid method'}, status=400)
+
+def roominformation_update(request):
+    if request.method == 'POST':
+        search_type = request.POST.get('searchtype')
+        search_value = request.POST.get('SearchRoom')
+
+        if search_value:
+            if search_type == 'ID_Radio':
+                results = Room.objects.filter(room_id=search_value)
+            elif search_type == 'room_radio':
+                results = Room.objects.filter(roomnumber=search_value)
+            elif search_type == 'type_radio':
+                results = Room.objects.filter(roomtype=search_value)
+            elif search_type == 'branch_radio':
+                try:
+                    branch_id = Hotel.objects.values_list('branch_id', flat=True).get(location=search_value)
+                    results = Room.objects.filter(branch=branch_id)
+                except Hotel.DoesNotExist:
+                    results = []
+                else:
+                    results = None
+        else:
+            results = Room.objects.all()
+
+        return render(request, 'admin/roominformation.html', {'results': results})
+
+    return HttpResponse("Invalid request method")
 
 

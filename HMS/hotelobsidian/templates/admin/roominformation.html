@@ -278,7 +278,7 @@
                             </div>
                         </div>                        
                     </div>
-                    {% elif request.path == '/hotelobsidian/admin/roominformation/update/' %}
+                    {% elif request.path == '/hotelobsidian/admin/roominformation/update/' or  request.path == '/hotelobsidian/admin/roominformation/new_update/' %}
                     <div class="card1" id="panel3" style="width: 170%; justify-content: center; margin-left: -280px;">
                         <div class="card-body">
                             <div class="row">
@@ -290,12 +290,14 @@
                                     <h3 style="color:aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Update/Delete</h3>
                                     <br />
                                 </div>
+                                <form action="{% url 'update_this_roominformation' %}" method="post">
+                                    {% csrf_token %}
                                 <div class="r1" style="margin-left:250px">
                                     <div style="display:flex">
                                         <label style="color:aliceblue">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                        <input class="form-control" id="SearchRoom" style="width:150px;" placeholder="Room ID">
+                                        <input class="form-control" id="SearchRoom" name="SearchRoom" style="width:150px;" placeholder="Room ID">
                                         <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                        <button class="btn btn-success" id="SearchButton" style="background-color:#1E90FF; border-color:#1E90FF;">Search</button>
+                                        <button class="btn btn-success" id="SearchButton" name="SearchButton" style="background-color:#1E90FF; border-color:#1E90FF;">Search</button>
                                     </div>
                                 </div>
                                 <div class="error-container">
@@ -307,60 +309,58 @@
                                 </div>
                                 <center>
                                     <div class="radio" style="margin-left:90px">
-                                        <input type="radio" id="idradio" name="searchtype" checked="true" onclick="idradio_CheckedChanged()" />
+                                        <input type="radio" id="idradio" name="searchtype" checked="true" value="ID_Radio"/>
                                         <label style="color:aliceblue">Room ID</label>
                                         <label></label>
                                         <label></label>
-                                        <input type="radio" id="roomradio" name="searchtype" onclick="roomradio_CheckedChanged()" />
+                                        <input type="radio" id="roomradio" name="searchtype" value="room_radio"/>
                                         <label style="color:aliceblue">Room Number</label>
                                         <label></label>
                                         <label></label>
-                                        <input type="radio" id="typeradio" name="searchtype" onclick="typeradio_CheckedChanged()" />
+                                        <input type="radio" id="typeradio" name="searchtype" value="type_radio"/>
                                         <label style="color:aliceblue">Room Type ID</label>
                                         <label></label>
                                         <label></label>
-                                        <input type="radio" id="branchradio" name="searchtype" onclick="branchradio_CheckedChanged()" />
+                                        <input type="radio" id="branchradio" name="searchtype" value="branch_radio"/>
                                         <label style="color:aliceblue">Location</label>
                                     </div>
                                 </center>
                             </div>
-                            <div class="row" style="margin-left:40px; width:90%">
-                                <center>
-                                    <div class="col">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Room ID</th>
-                                                    <th>Room Number</th>
-                                                    <th>Room Type ID</th>
-                                                    <th>Type</th>
-                                                    <th>Number of Beds</th>
-                                                    <th>Location</th>
-                                                    <th>Edit</th>
-                                                    <th>Delete</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <!-- Use JavaScript to handle row editing and updating -->
-                                            </tbody>
-                                        </table>
-                                        <div class="error-container">
-                                            <center>
-                                                <label id="lblError" style="color:red; display:none;"></label>
-                                            </center>
-                                            <br />
-                                        </div>
-                                    </div>
-                                </center>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    {% elif request.path == '/hotelobsidian/admin/roominformation/new_update/' %}
+                            </form>
                     <div class="row" style="margin-left: 40px; width: 90%;">
                         <div class="col">
                             <table spellcheck="false" class="table table-bordered table-responsive" id="data">
-                                <!-- ... Content ... -->
+                                <table spellcheck="false" class="table table-bordered table-responsive" id="data">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Room ID</th>
+                                            <th scope="col">Room Number</th>
+                                            <th scope="col">Type</th>
+                                            <th scope="col">Number Of Beds</th>
+                                            <th scope="col">Location</th>
+                                            <th scope="col">Edit</th>
+                                            <th scope="col">Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for roominformation in results %}
+                                            <tr>
+                                                <td>{{ roominformation.room_id }}</td>
+                                                <td>{{ roominformation.roomnumber }}</td>
+                                                <td contentEditable="true">{{ roominformation.roomtype }}</td>
+                                                <td contentEditable="true">{{ roominformation.price }}</td>
+                                                <td>{{ roominformation.branch }}</td>
+
+                                                <td>
+                                                    <button data-roomtype-id="{{ roominformation.roomtype_id }}" class="updateBtn"><i class="fas fa-edit"></i></button>
+                                                </td>
+                                                <td>
+                                                    <button data-roomtype-id="{{ roominformation.roomtype_id }}" class="delBtn"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                    </table>
                             </table>
                         </div>
                     </div>
