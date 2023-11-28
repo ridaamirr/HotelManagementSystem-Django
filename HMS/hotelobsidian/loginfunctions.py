@@ -1,7 +1,17 @@
 from django.shortcuts import render, redirect
 from .models import *
 from django.contrib import messages
-from .forms import LoginForm
+from .forms import LoginForm 
+from .models import *
+import json
+from django.http import JsonResponse
+from django.shortcuts import render, redirect, get_object_or_404
+from django.db import connection
+from .models import Hotel
+from django.contrib import messages
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
+import logging
 
 def user_dashboard(request):
     if request.method == 'POST':
@@ -31,8 +41,11 @@ def user_dashboard(request):
                 messages.error(request, "Invalid information entered")
                 return redirect('login')
             room_types = Roomtype.objects.values_list('type', flat=True).distinct()
-            loc = Hotel.objects.values_list('location', flat=True).distinct()
-            return render(request, 'default.html',{'logintype':logintype,'loc':loc,'room_types': room_types, })
+            loc = Hotel.objects.values_list('location', flat=True).distinct()  
+            cursor = connection.cursor()
+            cursor.execute("SELECT * FROM billing where User_ID=%s and Status='Not Paid'",[str(username)]) 
+            results = cursor.fetchall()   
+            return render(request, 'default.html',{'logintype':logintype,'loc':loc,'room_types': room_types, 'results':results,})
         else:
             messages.error(request, "Invalid information entered")
             return redirect('login')

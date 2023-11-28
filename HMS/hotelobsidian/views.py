@@ -84,7 +84,7 @@ def roomtype(request):
         }
     return render(request, 'admin/roomtype.html',context)
 def branchinformation(request): 
-    logintype = request.session.get('logintype', None) 
+    logintype = request.session.get('logintype', None)  
     context = {
        'logintype':logintype,
         }
