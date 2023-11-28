@@ -315,7 +315,7 @@
                                 <div class="r1" style="margin-left: 100px">
                                     <div style="display: flex; align-items: center;">
                                         <label style="color: aliceblue;">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                        <input class="form-control" type="text" id="SearchBox" name="SearchBox" style="width: 150px;" placeholder="Branch ID" />
+                                        <input class="form-control" type="text" id="searchInput" name="SearchBox" style="width: 150px;" placeholder="Branch ID" />
                                         <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                         <button class="btn btn-success btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Search</button>
                                     </div>
@@ -327,13 +327,13 @@
                                 </div>
                                 <div class="radio">
                                     <center>
-                                        <input type="radio" id="idradio" name="searchtype" value="idradio" checked="true" />
+                                        <input type="radio" id="idradio" name="searchtype" value="idradio" checked="true" onchange="changePlaceholder(this)" />
                                         <label style="color: aliceblue; margin-right: 15px;">ID</label>
                                         <label></label><label></label>
-                                        <input type="radio" id="locradio" name="searchtype" value="locradio" />
+                                        <input type="radio" id="locradio" name="searchtype" value="locradio" onchange="changePlaceholder(this)"/>
                                         <label style="color: aliceblue; margin-right: 15px;">Location</label>
                                         <label></label><label></label>
-                                        <input type="radio" id="phoneradio" name="searchtype" value="phoneradio" />
+                                        <input type="radio" id="phoneradio" name="searchtype" value="phoneradio" onchange="changePlaceholder(this)"/>
                                         <label style="color: aliceblue;">Phone Number</label>
                                         <label></label><label></label>
                                     </center>
@@ -475,6 +475,20 @@
     
             return true;
         }
+        function changePlaceholder(radio) {
+        if (radio.value === 'idradio') {
+            document.getElementById('searchInput').placeholder = 'Branch ID';
+        } else if (radio.value === 'locradio') {
+            document.getElementById('searchInput').placeholder = 'Location';
+        } else if (radio.value === 'phoneradio') {
+            document.getElementById('searchInput').placeholder = 'Phone Number';
+        }
+    }
+
+    // Initially set the placeholder to CNIC when the page loads
+    window.onload = function () {
+        document.getElementById('searchInput').placeholder = 'Branch ID';
+    };
     </script> 
 </body>
 </html>
