@@ -295,7 +295,7 @@
                                 <div class="r1" style="margin-left:250px">
                                     <div style="display:flex">
                                         <label style="color:aliceblue">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                        <input class="form-control" id="SearchRoom" name="SearchRoom" style="width:150px;" placeholder="Room ID">
+                                        <input class="form-control" id="searchInput" name="SearchRoom" style="width:150px;" placeholder="Room ID">
                                         <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                         <button class="btn btn-success" id="SearchButton" name="SearchButton" style="background-color:#1E90FF; border-color:#1E90FF;">Search</button>
                                     </div>
@@ -309,19 +309,19 @@
                                 </div>
                                 <center>
                                     <div class="radio" style="margin-left:90px">
-                                        <input type="radio" id="idradio" name="searchtype" checked="true" value="ID_Radio"/>
+                                        <input type="radio" id="idradio" name="searchtype" checked="true" value="ID_Radio" onchange="changePlaceholder(this)" />
                                         <label style="color:aliceblue">Room ID</label>
                                         <label></label>
                                         <label></label>
-                                        <input type="radio" id="roomradio" name="searchtype" value="room_radio"/>
+                                        <input type="radio" id="roomradio" name="searchtype" value="room_radio" onchange="changePlaceholder(this)" />
                                         <label style="color:aliceblue">Room Number</label>
                                         <label></label>
                                         <label></label>
-                                        <input type="radio" id="typeradio" name="searchtype" value="type_radio"/>
+                                        <input type="radio" id="typeradio" name="searchtype" value="type_radio" onchange="changePlaceholder(this)" />
                                         <label style="color:aliceblue">Room Type ID</label>
                                         <label></label>
                                         <label></label>
-                                        <input type="radio" id="branchradio" name="searchtype" value="branch_radio"/>
+                                        <input type="radio" id="branchradio" name="searchtype" value="branch_radio" onchange="changePlaceholder(this)" />
                                         <label style="color:aliceblue">Location</label>
                                     </div>
                                 </center>
@@ -462,6 +462,23 @@
             console.error('Error during fetch:', error);
         }
     });
+    function changePlaceholder(radio) {
+        if (radio.value === 'ID_Radio') {
+            document.getElementById('searchInput').placeholder = 'Room ID';
+        } else if (radio.value === 'room_radio') {
+            document.getElementById('searchInput').placeholder = 'Room Number';
+        } else if (radio.value === 'type_radio') {
+            document.getElementById('searchInput').placeholder = 'Room Type ID';
+        } else if (radio.value === 'branch_radio') {
+            document.getElementById('searchInput').placeholder = 'Location';
+        }
+        
+    }
+
+    // Initially set the placeholder to CNIC when the page loads
+    window.onload = function () {
+        document.getElementById('searchInput').placeholder = 'Room ID';
+    };
     
 </script>
 
