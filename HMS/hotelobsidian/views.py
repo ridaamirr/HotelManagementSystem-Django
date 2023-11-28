@@ -137,5 +137,3 @@ def signup(request):
             saverecord.save()
             return render(request,'login.html')      
     return render(request,'signup.html')
-
-
