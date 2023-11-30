@@ -6,16 +6,22 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin 
+from django.db import connection
 
-class AdminLogin(models.Model):
+class Person(models.Model):  
+    password = models.TextField(db_column='Password')  # Field name made lowercase.
+
+    class Meta:
+        abstract = True 
+
+class AdminLogin(Person):
     username = models.CharField(db_column='Username', primary_key=True, max_length=15)  # Field name made lowercase.
     password = models.TextField(db_column='Password')  # Field name made lowercase.
 
     class Meta:
         managed = False
-        db_table = 'admin_login'
-
+        db_table = 'admin_login' 
 
 class Billing(models.Model):
     billing_id = models.AutoField(db_column='Billing_ID', primary_key=True)  # Field name made lowercase.
@@ -38,7 +44,7 @@ class Booking(models.Model):
         managed = False
         db_table = 'booking'
 
-class Customer(models.Model):
+class Customer(Person):
     cnic = models.CharField(db_column='CNIC', unique=True, primary_key=True, max_length=15)  # Field name made lowercase.
     firstname = models.CharField(db_column='FirstName', max_length=50, blank=True, null=True)  # Field name made lowercase.
     lastname = models.CharField(db_column='LastName', max_length=50, blank=True, null=True)  # Field name made lowercase.
@@ -46,8 +52,13 @@ class Customer(models.Model):
     email = models.TextField(db_column='Email', blank=True, null=True)  # Field name made lowercase.
     address = models.TextField(db_column='Address', blank=True, null=True)  # Field name made lowercase.
     dob = models.DateField(db_column='DOB', blank=True, null=True)  # Field name made lowercase.
-    password = models.TextField(db_column='Password')  # Field name made lowercase.
-    
+   
+    def calculateBill(self): 
+        cursor = connection.cursor()    
+        cursor.execute('SELECT TotalBill(%s) AS TotalBill;',[self.cnic])
+        totalbill=cursor.fetchall()[0][0] 
+        return totalbill
+
     class Meta:
         managed = False
         db_table = 'customer'
@@ -63,8 +74,13 @@ class DjangoMigrations(models.Model):
         managed = False
         db_table = 'django_migrations'
 
+class HotelObjects(models.Model): 
 
-class Hotel(models.Model):
+    class Meta:
+        abstract = True 
+
+
+class Hotel(HotelObjects):
     branch_id = models.AutoField(db_column='Branch_ID', primary_key=True)  # Field name made lowercase.
     location = models.TextField(db_column='Location', blank=True, null=True)  # Field name made lowercase.
     phonenumber = models.CharField(db_column='PhoneNumber', max_length=13, blank=True, null=True)  # Field name made lowercase.
@@ -74,7 +90,7 @@ class Hotel(models.Model):
         db_table = 'hotel'
 
 
-class Room(models.Model):
+class Room(HotelObjects):
     room_id = models.AutoField(db_column='Room_ID', primary_key=True)  # Field name made lowercase.
     roomtype = models.ForeignKey('Roomtype', models.DO_NOTHING, db_column='RoomType_ID')  # Field name made lowercase.
     roomnumber = models.IntegerField(db_column='RoomNumber')  # Field name made lowercase.
@@ -86,7 +102,7 @@ class Room(models.Model):
         db_table = 'room'
 
 
-class Roomtype(models.Model):
+class Roomtype(HotelObjects):
     roomtype_id = models.AutoField(db_column='RoomType_ID', primary_key=True)  # Field name made lowercase.
     numberofbeds = models.IntegerField(db_column='NumberOfBeds', blank=True, null=True)  # Field name made lowercase.
     type = models.TextField(db_column='Type', blank=True, null=True)  # Field name made lowercase.

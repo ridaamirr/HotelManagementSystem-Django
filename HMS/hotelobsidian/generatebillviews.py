@@ -2,18 +2,18 @@ import json
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db import connection
-from .models import Room, Roomtype
+from .models import *
 from django.contrib import messages
 from django.http import HttpResponse
 import logging
 
 #Generate Bill Views-----------------------------------------------------------------------
-def generate_bill(request): 
-    cursor = connection.cursor()   
+def generate_bill(request):  
     username = request.session.get('username', None) 
+    instance = Customer.objects.get(cnic=username)  
+    cursor = connection.cursor()   
     data=(username,)  
-    cursor.execute('SELECT TotalBill(%s) AS TotalBill;',[str(username)])
-    totalbill=cursor.fetchall()[0][0]
+    totalbill=instance.calculateBill 
     cursor.callproc('BookedRoom',data)
     result=cursor.fetchall() 
     logintype = request.session.get('logintype', None)
