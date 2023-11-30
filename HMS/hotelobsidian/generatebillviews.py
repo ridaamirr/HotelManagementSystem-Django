@@ -35,6 +35,6 @@ def checkoutAll(request):
     cursor = connection.cursor()   
     username = request.session.get('username', None) 
     data=(username,)  
-    cursor.callproc('CheckOut',data)
+    cursor.callproc('CheckoutAll',data)
     return redirect('generate_bill') 
 #----------------------------------------------------------------------------------------------------

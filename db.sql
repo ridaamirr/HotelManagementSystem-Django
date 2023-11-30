@@ -207,7 +207,7 @@ JOIN Room ON Booking.Room_ID = Room.Room_ID
 JOIN Billing ON Billing.Billing_ID = Booking.Billing_ID
 JOIN Hotel ON Hotel.Branch_ID = Room.Branch_ID
 WHERE
-  Room.isBooked = 'True';
+  Room.isBooked = 'True' and Booking.isBooked = 'True';
 
 
 DELIMITER //
@@ -256,7 +256,7 @@ DELIMITER ;
 
 DELIMITER //
 -- Procedure: Checkout
-CREATE PROCEDURE Checkout(userid VARCHAR(255))
+CREATE PROCEDURE CheckoutAll(userid VARCHAR(255))
 BEGIN
   UPDATE Booking SET isBooked = 'False'
   WHERE Billing_ID IN (
@@ -265,11 +265,15 @@ BEGIN
     WHERE User_ID = user_id
   ); 
 
-UPDATE Booking SET isBooked='False' 
-WHERE Billing_ID IN(
-  SELECT Billing_ID 
-  FROM Billing 
-  WHERE User_ID=userid
+UPDATE Room
+    SET isBooked = 'False'
+    WHERE Room_ID IN(
+  SELECT Room_ID 
+  FROM Booking
+  WHERE Billing_ID IN (
+    Select Billing_ID
+    from Billing 
+    where User_ID=userid )
   );
 END //
 DELIMITER ;
@@ -301,7 +305,7 @@ BEGIN
   SET @id = (SELECT User_ID FROM Billing WHERE Billing_ID = Billingid LIMIT 1);
 
   -- Call the Checkout procedure
-  CALL Checkout(@id);
+  CALL CheckoutAll(@id);
 
   -- Mark the Billing as Paid
   UPDATE Billing
