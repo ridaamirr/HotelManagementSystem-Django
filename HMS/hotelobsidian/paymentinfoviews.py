@@ -42,10 +42,13 @@ def billdetails(request,id):
     cursor.callproc('ViewBooking', data)    
     result = cursor.fetchall()  
     cursor.execute('SELECT TotalBillById(%s) AS TotalBill;',id)
-    totalbill=cursor.fetchall()[0][0] 
+    totalbill=cursor.fetchall()[0][0]  
+    cursor.execute('SELECT isBillPresent(%s) AS Bill;',id)
+    billpresence=cursor.fetchall()[0][0] 
     context = { 
         'items1':result, 
         'totalbill':totalbill,
        'logintype':logintype, 
+       'bill':billpresence, 
         }
     return render(request, 'admin/billdetails.html',context) 

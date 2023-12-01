@@ -17,3 +17,49 @@ D:\HotelManagementSystem-Django\HMS\hotelobsidian\bookinginfoviews.py changed, r
 Watching for file changes with StatReloader
 D:\HotelManagementSystem-Django\HMS\hotelobsidian\roomviews.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18547
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2448
+"GET /hotelobsidian/login/ HTTP/1.1" 200 15529
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"POST /hotelobsidian/homepage/ HTTP/1.1" 200 18531
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/customerinformation/ HTTP/1.1" 200 23135
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 22006
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21804
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24299
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 26292
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 59288
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24299
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 26292
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 59288
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24299
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 22006
+"POST /hotelobsidian/admin/branchinformation/update/ HTTP/1.1" 200 27298
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 22006
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21804
+"POST /hotelobsidian/admin/roomtype/update/ HTTP/1.1" 200 37559
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21804
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24299
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 26292
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 59288
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24299
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21654
+"GET /hotelobsidian/admin/billdetails/1/ HTTP/1.1" 200 12502

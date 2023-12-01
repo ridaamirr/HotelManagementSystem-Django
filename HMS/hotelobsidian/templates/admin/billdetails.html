@@ -6,14 +6,16 @@
         <div class="container">
             <div class="row1">
                 <div class="col-md-6 mx-auto" >
-                    <div class="card2" id="panel1" style="width:fit-content; position:relative;margin-left: -70vh; ">
+                    <div class="card2" id="panel1" style="width:fit-content; position:relative;margin-left: -60vh; "> 
+                        <br/>
+                        {% if bill == 0 %}
                         <div class="card-body">
                             <div class="row">
                                 <div class="col" style="position:absolute">
                                     <a style="margin-left:50px;margin-top:8vh" href="{% url 'payments' %}" class="arrow left"></a>
                                 </div>
                                 <center>
-                                    <br />
+                                    
                                     <h3 class="card-title" style="color:aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Bill</h3>
                                     <br /><h4 id="amount" runat="server">Total Bill: {{ totalbill }}</h4><br />
                                 </center>
@@ -48,7 +50,22 @@
                                     </table>
                                 </div>
                             </div>
-                        </center>
+                        </center> 
+
+                        {% else %}  
+                        <center>
+                        <div style="margin-left:100px;">
+                            <div class="error-container">
+                                <center> 
+                                    <br/>
+                                    <label id="lblError" style="color:red;">Cannot View this Bill as items in this Bill no longer exist&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                </center>
+                                <br />
+                            </div>
+                        </div>  
+                    </center>
+                    {% endif %} 
+
                         <br />
                     </div>
                 </div>

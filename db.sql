@@ -314,7 +314,7 @@ BEGIN
 END//
 DELIMITER ;
 
--- Create a procedure to retrieve booking information 
+-- For Bill Details
 DELIMITER //
 CREATE PROCEDURE ViewBooking(id INT)
 BEGIN
@@ -352,18 +352,17 @@ END //
 DELIMITER ;
 
 
--- Procedure isBillPresent
+-- Procedure isBillPresent,used in bill details if some item from it is deleted
 DELIMITER //
-CREATE PROCEDURE isBillPresent (
-  IN id INT,
-  OUT flag INT
-)
-BEGIN
+CREATE FUNCTION isBillPresent (id INT) RETURNS INT
+BEGIN 
+  DECLARE flag INT;
   IF EXISTS (SELECT * FROM Booking WHERE Billing_ID = id AND Room_ID IS NULL) THEN
     SET flag = 1;
   ELSE
     SET flag = 0;
-  END IF;
+  END IF; 
+  RETURN flag;
 END//
 DELIMITER ;
 
@@ -525,4 +524,4 @@ CALL BookRoom('35202-5555555-0', 7, 'Peshawar', 2);
 
 
 -- Payments
--- CALL Paid(2);
+CALL Paid(2);
