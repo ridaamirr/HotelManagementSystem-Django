@@ -63,3 +63,48 @@ Not Found: /favicon.ico
 "GET /static/your_stylesheet.css HTTP/1.1" 404 1917
 "GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21654
 "GET /hotelobsidian/admin/billdetails/1/ HTTP/1.1" 200 12502
+"GET /hotelobsidian/admin/billdetails/1/ HTTP/1.1" 200 12502
+"GET /hotelobsidian/catalogue/ HTTP/1.1" 200 14260
+"GET /hotelobsidian/cataloguelist/?Location=Quetta HTTP/1.1" 200 13311
+"GET /hotelobsidian/cataloguelist/?Location=Quetta HTTP/1.1" 200 13384
+"GET /hotelobsidian/cataloguelist/?Location=Quetta HTTP/1.1" 200 13383
+"GET /hotelobsidian/cataloguelist/?Location=Quetta HTTP/1.1" 200 13383
+"GET /hotelobsidian/cataloguelist/?Location=Quetta HTTP/1.1" 200 13383
+"GET /hotelobsidian/cataloguelist/?Location=Quetta HTTP/1.1" 200 13382
+"GET /hotelobsidian/catalogue/ HTTP/1.1" 200 14260
+"GET /hotelobsidian/cataloguelist/?Location=Quetta HTTP/1.1" 200 13382
+"GET /hotelobsidian/admin/billdetails/2/ HTTP/1.1" 200 12502
+"GET /hotelobsidian/admin/billdetails/3/ HTTP/1.1" 200 12502
+"GET /hotelobsidian/admin/billdetails/4/ HTTP/1.1" 200 12502
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 22006
+"POST /hotelobsidian/admin/branchinformation/update/ HTTP/1.1" 200 27298
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 22006
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21654
+"GET /hotelobsidian/admin/billdetails/3/ HTTP/1.1" 200 12502
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\paymentinfoviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\paymentinfoviews.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /hotelobsidian/admin/billdetails/3/ HTTP/1.1" 200 12502
+"GET /hotelobsidian/admin/billdetails/1/ HTTP/1.1" 200 15089
+"GET /hotelobsidian/admin/billdetails/2/ HTTP/1.1" 200 14409
+"GET /hotelobsidian/admin/billdetails/3/ HTTP/1.1" 200 12502
+"GET /hotelobsidian/admin/billdetails/4/ HTTP/1.1" 200 14407
+"GET /hotelobsidian/logout HTTP/1.1" 302 0
+"GET /hotelobsidian/login/ HTTP/1.1" 200 15529
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"POST /hotelobsidian/homepage/ HTTP/1.1" 200 18531
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21654
+"GET /hotelobsidian/admin/billdetails/1/ HTTP/1.1" 200 15089
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21654
+"GET /hotelobsidian/admin/billdetails/4/ HTTP/1.1" 200 14407
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21654
+"GET /hotelobsidian/admin/billdetails/3/ HTTP/1.1" 200 12502
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\paymentinfoviews.py changed, reloading.
+Watching for file changes with StatReloader

@@ -10,8 +10,6 @@ def payments_search(request):
     search_type = request.POST.get('searchtype')
     search_value = request.POST.get('SearchBox') 
     cursor = connection.cursor()  
-    print(search_type) 
-    print(search_value)
     if search_value:
         if search_type == 'cnicradio':
             cursor.execute("SELECT * FROM billing where User_ID=%s",[str(search_value)])
@@ -44,7 +42,7 @@ def billdetails(request,id):
     cursor.execute('SELECT TotalBillById(%s) AS TotalBill;',id)
     totalbill=cursor.fetchall()[0][0]  
     cursor.execute('SELECT isBillPresent(%s) AS Bill;',id)
-    billpresence=cursor.fetchall()[0][0] 
+    billpresence=cursor.fetchall()[0][0]  
     context = { 
         'items1':result, 
         'totalbill':totalbill,
