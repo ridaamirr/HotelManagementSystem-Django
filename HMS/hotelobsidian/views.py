@@ -78,8 +78,10 @@ def roominformation(request):
         }
     return render(request, 'admin/roominformation.html',context)
 def roomtype(request): 
-    logintype = request.session.get('logintype', None) 
-    context = {
+    logintype = request.session.get('logintype', None)  
+    results = Roomtype.objects.all()
+    context = { 
+        'results':results,
        'logintype':logintype,
         }
     return render(request, 'admin/roomtype.html',context)

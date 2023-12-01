@@ -258,7 +258,7 @@
                             </div>
                         </div>
                     </div>
-                    {% elif request.path == '/hotelobsidian/admin/roomtype/update/' %}
+                    {% elif request.path == '/hotelobsidian/admin/roomtype/update/' or request.path == '/hotelobsidian/admin/roomtype/new_update/' %}
                     <div class="card1" id="panel3" style="width: 170%; justify-content: center;">
                         <div class="card-body">
                             <div class="row">
@@ -304,11 +304,15 @@
                                     <label style="color: aliceblue;">Price</label>
                                     <label></label><label></label>
                                     </center>
-                                </div>
-                            </form>
-                            {% elif request.path == '/hotelobsidian/admin/roomtype/new_update/' %}
-                            <div class="row" style="margin-left: 40px; width: 90%;">
-                                <div class="col">
+                                </div> 
+                               
+
+                            </form> 
+                                
+                            <br/>
+                           
+                                {% if results %}
+                                <div>
                                     <table spellcheck="false" class="table table-bordered table-responsive" id="data">
                                         <thead class="thead-dark">
                                             <tr>
@@ -342,8 +346,21 @@
                                             {% endfor %}
                                         </tbody>
                                     </table>
-                                </div>
-                            </div>
+                                </div> 
+
+                                {% else %} 
+                                <div style="margin-left:100px">
+                                    <div class="error-container">
+                                        <center>
+                                            <label id="lblError" style="color:red;">No results found</label>
+                                        </center>
+                                        <br />
+                                    </div>
+                                </div> 
+                            {% endif %} 
+
+                            
+                            
                         </div>
                     </div>
                     {% endif %}
