@@ -51,7 +51,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col"> 
+                        {% if result %}
                         <div class="myDataList" style="color: aliceblue; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
                             {% for results in result %}
                                 <div class="item" style="width: 300px; margin: 10px; text-align: center;">
@@ -70,9 +71,17 @@
                                 </div>
                             {% endfor %}
                         </div>
-                        <div style="margin-left:160px">
-                            <span id="lblError" style="color: red; visibility: hidden;"></span>
-                        </div>
+
+                        {% else %} 
+                        <div style="margin-left:0px">
+                            <div class="error-container">
+                                <center>
+                                    <label id="lblError" style="color:red;">No rooms are currently available</label>
+                                </center>
+                                <br />
+                            </div>
+                        </div> 
+                    {% endif %} 
                     </div>
                 </div>
             </div>
