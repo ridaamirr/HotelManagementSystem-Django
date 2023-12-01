@@ -108,3 +108,253 @@ Watching for file changes with StatReloader
 "GET /hotelobsidian/admin/billdetails/3/ HTTP/1.1" 200 12502
 E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\paymentinfoviews.py changed, reloading.
 Watching for file changes with StatReloader
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21656
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21655
+"GET /hotelobsidian/admin/billdetails/1/ HTTP/1.1" 200 15089
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21655
+"POST /hotelobsidian/admin/payments/payments_search HTTP/1.1" 200 17017
+"GET /hotelobsidian/admin/payments/payments_search HTTP/1.1" 200 21655
+"POST /hotelobsidian/admin/payments/payments_search HTTP/1.1" 200 17017
+"POST /hotelobsidian/admin/payments/payments_search HTTP/1.1" 200 17017
+"POST /hotelobsidian/admin/payments/payments_search HTTP/1.1" 200 17017
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21655
+"POST /hotelobsidian/admin/payments/payments_search HTTP/1.1" 200 21655
+"POST /hotelobsidian/admin/payments/payments_search HTTP/1.1" 200 17017
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21655
+"POST /hotelobsidian/admin/payments/payments_search HTTP/1.1" 200 16992
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21655
+"POST /hotelobsidian/admin/payments/payments_search HTTP/1.1" 200 17017
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21655
+"POST /hotelobsidian/admin/payments/payments_search HTTP/1.1" 200 17017
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21655
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\paymentinfoviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\paymentinfoviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\paymentinfoviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\paymentinfoviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\paymentinfoviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\paymentinfoviews.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21655
+"POST /hotelobsidian/admin/payments/payments_search HTTP/1.1" 200 18565
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21655
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21655
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21655
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21654
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21630
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/bookinginformation/ HTTP/1.1" 200 19634
+"POST /hotelobsidian/admin/bookinginformation/bookings_search HTTP/1.1" 200 19634
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /hotelobsidian/admin/bookinginformation/bookings_search HTTP/1.1" 200 19634
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/bookinginformation/ HTTP/1.1" 200 19634
+Internal Server Error: /hotelobsidian/admin/bookinginformation/
+Traceback (most recent call last):
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\contrib\sessions\backends\base.py", line 187, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'hotelmanagementsystem.django_session' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py", line 112, in bookinginformation
+    logintype = request.session.get('logintype', None)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\contrib\sessions\backends\base.py", line 68, in get
+    return self._session.get(key, default)
+           ^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\contrib\sessions\backends\base.py", line 192, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\contrib\sessions\backends\db.py", line 42, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\contrib\sessions\backends\db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\db\models\query.py", line 633, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "E:\Semester 5\Software Design & Analysis\Project\env\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'hotelmanagementsystem.django_session' doesn't exist")
+"GET /hotelobsidian/admin/bookinginformation/ HTTP/1.1" 500 183564
+Watching for file changes with StatReloader
+"GET /hotelobsidian/admin/bookinginformation/ HTTP/1.1" 200 19656
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/bookinginformation/ HTTP/1.1" 200 21398
+Watching for file changes with StatReloader
+"GET /hotelobsidian/admin/bookinginformation/ HTTP/1.1" 200 19656
+Watching for file changes with StatReloader
+"GET /hotelobsidian/admin/bookinginformation/ HTTP/1.1" 200 24744
+"GET /hotelobsidian/admin/bookinginformation/ HTTP/1.1" 200 24744
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 22028
+"POST /hotelobsidian/admin/branchinformation/update/ HTTP/1.1" 200 28059
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 22028
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21826
+"POST /hotelobsidian/admin/roomtype/update/ HTTP/1.1" 200 37581
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21826
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24321
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 26314
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 73354
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 73354
+"GET /hotelobsidian/login/ HTTP/1.1" 200 15529
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"POST /hotelobsidian/homepage/ HTTP/1.1" 200 18625
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21804
+"POST /hotelobsidian/admin/roomtype/update/ HTTP/1.1" 200 37559
+"POST /hotelobsidian/admin/roomtype/new_update/ HTTP/1.1" 200 26140
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21804
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24299
+"POST /hotelobsidian/admin/roominformation/add/ HTTP/1.1" 200 27349
+"GET /hotelobsidian/admin/roominformation/add_new/ HTTP/1.1" 200 121
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24299
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 73332
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 28130
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24299
+"POST /hotelobsidian/admin/roominformation/add/ HTTP/1.1" 200 27349
+"GET /hotelobsidian/admin/roominformation/add_new/ HTTP/1.1" 200 121
+"POST /hotelobsidian/admin/roominformation/add_new_information/1/ HTTP/1.1" 200 109
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=1&room_number=4&location=Lahore HTTP/1.1" 200 17
+Bad Request: /hotelobsidian/admin/roominformation/enter_data/
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=1&room_number=4&location=Lahore HTTP/1.1" 400 68
+Bad Request: /hotelobsidian/admin/roominformation/enter_data/
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=1&room_number=4&location=Lahore HTTP/1.1" 400 68
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=1&room_number=7&location=Lahore HTTP/1.1" 200 17
+Bad Request: /hotelobsidian/admin/roominformation/enter_data/
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=1&room_number=7&location=Lahore HTTP/1.1" 400 68
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24795
+"POST /hotelobsidian/admin/roominformation/add/ HTTP/1.1" 200 27349
+"GET /hotelobsidian/admin/roominformation/add_new/ HTTP/1.1" 200 121
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24299
+"POST /hotelobsidian/admin/roominformation/add/ HTTP/1.1" 200 27349
+"GET /hotelobsidian/admin/roominformation/add_new/ HTTP/1.1" 200 121
+"POST /hotelobsidian/admin/roominformation/add_new_information/1/ HTTP/1.1" 200 109
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=1&room_number=112&location=Lahore HTTP/1.1" 200 17
+"POST /hotelobsidian/admin/roominformation/add_new_information/6/ HTTP/1.1" 200 108
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=6&room_number=112&location=Lahore HTTP/1.1" 200 17
+Bad Request: /hotelobsidian/admin/roominformation/enter_data/
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=6&room_number=112&location=Lahore HTTP/1.1" 400 68
+Bad Request: /hotelobsidian/admin/roominformation/enter_data/
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=6&room_number=112&location=Lahore HTTP/1.1" 400 68
+Bad Request: /hotelobsidian/admin/roominformation/enter_data/
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=6&room_number=112&location=Lahore HTTP/1.1" 400 68
+Bad Request: /hotelobsidian/admin/roominformation/enter_data/
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=6&room_number=112&location=Lahore HTTP/1.1" 400 68
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24893
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 77347
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24299
+"POST /hotelobsidian/admin/roominformation/add/ HTTP/1.1" 200 27349
+"GET /hotelobsidian/admin/roominformation/add_new/ HTTP/1.1" 200 121
+"POST /hotelobsidian/admin/roominformation/add_new_information/1/ HTTP/1.1" 200 109
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=1&room_number=5&location=Quetta HTTP/1.1" 200 17
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24427
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 78350
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24299

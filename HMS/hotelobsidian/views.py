@@ -73,12 +73,23 @@ def admin(request):
 # Admin dashboard tiles--------------------------------------------------------------
 def roominformation(request):  
     results = Room.objects.all()
-    logintype = request.session.get('logintype', None) 
+    logintype = request.session.get('logintype', None)  
+    table_data = []
+    for room in results:
+            row_data = [
+                room.room_id,
+                room.roomnumber,
+                room.roomtype.type,
+                room.roomtype.numberofbeds,
+                room.branch.location,
+            ]
+            table_data.append(row_data)
     context = {
-        'results':results,
+        'table_data': table_data,
        'logintype':logintype,
         }
     return render(request, 'admin/roominformation.html',context)
+
 def roomtype(request): 
     logintype = request.session.get('logintype', None)  
     results = Roomtype.objects.all()
@@ -107,7 +118,7 @@ def customerinformation(request):
 def bookinginformation(request):   
     cursor = connection.cursor() 
     cursor.execute("SELECT * FROM CurrentBookings")
-    data = cursor.fetchall() 
+    data = cursor.fetchall()  
     logintype = request.session.get('logintype', None) 
     context = {
        'logintype':logintype, 

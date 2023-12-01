@@ -262,7 +262,7 @@ BEGIN
   WHERE Billing_ID IN (
     SELECT Billing_ID
     FROM Billing
-    WHERE User_ID = user_id
+    WHERE User_ID = userid
   ); 
 
 UPDATE Room
@@ -302,10 +302,11 @@ WHERE Status = 'Not Paid';
 DELIMITER //
 CREATE PROCEDURE Paid(IN Billingid INT)
 BEGIN
-  SET @id = (SELECT User_ID FROM Billing WHERE Billing_ID = Billingid LIMIT 1);
+  Declare UserId VARCHAR(255);
+  SELECT User_ID INTO UserId FROM Billing WHERE Billing_ID = Billingid LIMIT 1;
 
   -- Call the Checkout procedure
-  CALL CheckoutAll(@id);
+  CALL CheckoutAll(UserId);
 
   -- Mark the Billing as Paid
   UPDATE Billing

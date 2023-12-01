@@ -94,8 +94,9 @@ def roominformation_update(request):
                 room.branch.location,
             ]
             table_data.append(row_data)
+        logintype = request.session.get('logintype', None)  
         
-        return render(request, 'admin/roominformation.html', {'table_data': table_data})
+        return render(request, 'admin/roominformation.html', {'table_data': table_data,'logintype':logintype,})
 
     return HttpResponse("Invalid request method")
 

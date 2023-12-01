@@ -1,11 +1,8 @@
-import json
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db import connection
-from .models import *
-from django.contrib import messages
 from django.http import HttpResponse
-import logging 
+
 def payments_search(request):  
     search_type = request.POST.get('searchtype')
     search_value = request.POST.get('SearchBox') 
@@ -20,7 +17,6 @@ def payments_search(request):
     else: 
         cursor.execute("SELECT * FROM billing")
     results = cursor.fetchall()   
-    print(results) 
     logintype = request.session.get('logintype', None) 
     context = {
        'logintype':logintype, 
