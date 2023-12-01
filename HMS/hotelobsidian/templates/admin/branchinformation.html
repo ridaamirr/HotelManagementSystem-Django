@@ -297,7 +297,7 @@
                                 </div>
                             </div>
                         </div>
-                    {% elif request.path == '/hotelobsidian/admin/branchinformation/update/' %}
+                    {% elif request.path == '/hotelobsidian/admin/branchinformation/update/' or request.path == '/hotelobsidian/admin/branchinformation/new_update/'%}
                     <div class="card1" id="panel3"  style="width: 130%; justify-content: center;" visible="false">
                         <div class="card-body">
                             <div class="row">
@@ -338,45 +338,47 @@
                                         <label></label><label></label>
                                     </center>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                    {% elif request.path == '/hotelobsidian/admin/branchinformation/new_update/' %}
-                    <div class="card1" id="panel3"  style="width: 160%; justify-content: center;" visible="false">
-                        {% comment %} {% if results %}
-                            <p>Results: {{ results }}</p>
-                        {% else %}
-                            <p>No results found.</p>
-                        {% endif %} {% endcomment %}
-                        <!-- branchinformation.html -->                       
-                        <div class="row" style="margin-left: 0px; width: 100%;height: 100%;">
-                            <div class="col">
-                                <table spellcheck="false" class="table table-bordered table-responsive" id="data">
-                                    <thead style="background-color: #1E90FF; color: white;">
+                            </form> 
+                            <div> 
+                            {% if results %}
+                            <table spellcheck="false" class="table table-bordered table-responsive" id="data">
+                                <thead style="background-color: #1E90FF; color: white;">
+                                    <tr>
+                                        <th style="background-color: #1E90FF;border-color: #1E90FF;" scope="col">Branch ID</th>
+                                        <th style="background-color: #1E90FF;border-color: #1E90FF;" scope="col">Location</th>
+                                        <th style="background-color: #1E90FF;border-color: #1E90FF;" scope="col">Phone Number</th>
+                                        <th style="background-color: #1E90FF;border-color: #1E90FF;" scope="col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for hotel in results %}
                                         <tr>
-                                            <th style="background-color: #1E90FF;border-color: #1E90FF;" scope="col">Branch ID</th>
-                                            <th style="background-color: #1E90FF;border-color: #1E90FF;" scope="col">Location</th>
-                                            <th style="background-color: #1E90FF;border-color: #1E90FF;" scope="col">Phone Number</th>
-                                            <th style="background-color: #1E90FF;border-color: #1E90FF;" scope="col">Actions</th>
+                                            <td>{{ hotel.branch_id }}</td>
+                                            <td>{{ hotel.location }}</td>
+                                            <td contentEditable="true">{{ hotel.phonenumber }}</td>
+                                            <td>
+                                                <button data-branch-id="{{ hotel.branch_id }}" class="delBtn" style="color: #1E90FF;"><i class="fas fa-trash"></i></button>
+                                                <button data-branch-id="{{ hotel.branch_id }}" class="updateBtn" style="color: #1E90FF;"><i class="fas fa-edit"></i></button>
+                                            </td>
                                         </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for hotel in results %}
-                                            <tr>
-                                                <td>{{ hotel.branch_id }}</td>
-                                                <td>{{ hotel.location }}</td>
-                                                <td contentEditable="true">{{ hotel.phonenumber }}</td>
-                                                <td>
-                                                    <button data-branch-id="{{ hotel.branch_id }}" class="delBtn" style="color: #1E90FF;"><i class="fas fa-trash"></i></button>
-                                                    <button data-branch-id="{{ hotel.branch_id }}" class="updateBtn" style="color: #1E90FF;"><i class="fas fa-edit"></i></button>
-                                                </td>
-                                            </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div> 
-                    </div>                   
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            </div> 
+
+                            {% else %} 
+                            <div style="margin-left:100px">
+                                <div class="error-container">
+                                    <center>
+                                        <label id="lblError" style="color:red;">No results found</label>
+                                    </center>
+                                    <br />
+                                </div>
+                            </div> 
+                        {% endif %} 
+
+                        </div>
+                    </div>               
                     {% endif %}
                 </div>
             </div>

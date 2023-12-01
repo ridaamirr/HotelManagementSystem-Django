@@ -84,8 +84,10 @@ def roomtype(request):
         }
     return render(request, 'admin/roomtype.html',context)
 def branchinformation(request): 
-    logintype = request.session.get('logintype', None)  
-    context = {
+    logintype = request.session.get('logintype', None)   
+    results = Hotel.objects.all()
+    context = { 
+        'results':results,
        'logintype':logintype,
         }
     return render(request, 'admin/branchinformation.html',context)
