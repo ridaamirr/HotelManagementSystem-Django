@@ -106,7 +106,26 @@ def roominformation_update(request):
         else:
             results = Room.objects.all()
 
-        return render(request, 'admin/roominformation.html', {'results': results})
+        table_data = []
+        for room in results:
+            row_data = [
+                room.room_id,
+                room.roomnumber,
+                room.roomtype.type,
+                room.roomtype.numberofbeds,
+                room.branch.location,
+            ]
+            table_data.append(row_data)
+            
+        # print("Results:")
+        # for room in results:
+        #     print(room.room_id, room.roomnumber, room.roomtype.type, room.roomtype.numberofbeds, room.branch.location)
+
+        # print("\nTable Data:")
+        # for row_data in table_data:
+        #     print(row_data)
+
+        return render(request, 'admin/roominformation.html', {'table_data': table_data})
 
     return HttpResponse("Invalid request method")
 

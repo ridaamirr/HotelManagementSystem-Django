@@ -326,54 +326,51 @@
                                 </center>
                             </div>
                             </form> 
-                    {% if results %}
-                    <div class="row" style="margin-left: 40px; width: 90%;">
-                        <div class="col">
-                            <table spellcheck="false" class="table table-bordered table-responsive" id="data">
-                                <table spellcheck="false" class="table table-bordered table-responsive" id="data">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th scope="col">Room ID</th>
-                                            <th scope="col">Room Number</th>
-                                            <th scope="col">Type</th>
-                                            <th scope="col">Number Of Beds</th>
-                                            <th scope="col">Location</th>
-                                            <th scope="col">Edit</th>
-                                            <th scope="col">Delete</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for roominformation in results %}
+                            {% if table_data %}
+                            <div class="row" style="margin-left: 40px; width: 90%;">
+                                <div class="col">
+                                    <table spellcheck="false" class="table table-bordered table-responsive" id="data">
+                                        <thead class="thead-dark">
                                             <tr>
-                                                <td>{{ roominformation.room_id }}</td>
-                                                <td>{{ roominformation.roomnumber }}</td>
-                                                <td contentEditable="true">{{ roominformation.roomtype }}</td>
-                                                <td contentEditable="true">{{ roominformation.price }}</td>
-                                                <td>{{ roominformation.branch }}</td>
-
-                                                <td>
-                                                    <button data-roomtype-id="{{ roominformation.roomtype_id }}" class="updateBtn"><i class="fas fa-edit"></i></button>
-                                                </td>
-                                                <td>
-                                                    <button data-roomtype-id="{{ roominformation.roomtype_id }}" class="delBtn"><i class="fas fa-trash"></i></button>
-                                                </td>
+                                                <th scope="col">Room ID</th>
+                                                <th scope="col">Room Number</th>
+                                                <th scope="col">Type</th>
+                                                <th scope="col">Number Of Beds</th>
+                                                <th scope="col">Location</th>
+                                                <th scope="col">Edit</th>
+                                                <th scope="col">Delete</th>
                                             </tr>
-                                        {% endfor %}
-                                    </tbody>
+                                        </thead>
+                                        <tbody>
+                                            {% for roominformation in table_data %}
+                                                <tr>
+                                                    <td>{{ roominformation.0 }}</td>
+                                                    <td>{{ roominformation.1 }}</td>
+                                                    <td contentEditable="true">{{ roominformation.2 }}</td>
+                                                    <td contentEditable="true">{{ roominformation.3 }}</td>
+                                                    <td>{{ roominformation.4 }}</td>
+                                                    <td>
+                                                        <!-- Add your edit button logic here -->
+                                                    </td>
+                                                    <td>
+                                                        <!-- Add your delete button logic here -->
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
                                     </table>
-                            </table>
-                        </div>
-                    </div> 
-                    {% else %} 
-                    <div style="margin-left:100px">
-                        <div class="error-container">
-                            <center>
-                                <label id="lblError" style="color:red;">No results found</label>
-                            </center>
-                            <br />
-                        </div>
-                    </div> 
-                {% endif %} 
+                                </div>
+                            </div>
+                        {% else %}
+                            <div style="margin-left:100px">
+                                <div class="error-container">
+                                    <center>
+                                        <label id="lblError" style="color:red;">No results found</label>
+                                    </center>
+                                    <br />
+                                </div>
+                            </div> 
+                        {% endif %}
                     {% endif %}
                 </div>
             </div>
