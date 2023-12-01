@@ -325,7 +325,8 @@
                                     </div>
                                 </center>
                             </div>
-                            </form>
+                            </form> 
+                    {% if results %}
                     <div class="row" style="margin-left: 40px; width: 90%;">
                         <div class="col">
                             <table spellcheck="false" class="table table-bordered table-responsive" id="data">
@@ -362,7 +363,17 @@
                                     </table>
                             </table>
                         </div>
-                    </div>
+                    </div> 
+                    {% else %} 
+                    <div style="margin-left:100px">
+                        <div class="error-container">
+                            <center>
+                                <label id="lblError" style="color:red;">No results found</label>
+                            </center>
+                            <br />
+                        </div>
+                    </div> 
+                {% endif %} 
                     {% endif %}
                 </div>
             </div>

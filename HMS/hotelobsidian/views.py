@@ -71,9 +71,11 @@ def admin(request):
 
 
 # Admin dashboard tiles--------------------------------------------------------------
-def roominformation(request): 
+def roominformation(request):  
+    results = Room.objects.all()
     logintype = request.session.get('logintype', None) 
     context = {
+        'results':results,
        'logintype':logintype,
         }
     return render(request, 'admin/roominformation.html',context)
