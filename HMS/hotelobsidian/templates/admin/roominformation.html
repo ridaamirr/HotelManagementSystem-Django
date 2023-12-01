@@ -346,7 +346,7 @@
                                                 <tr>
                                                     <td>{{ roominformation.0 }}</td>
                                                     <td>{{ roominformation.1 }}</td>
-                                                    <td contentEditable="true">{{ roominformation.2 }}</td>
+                                                    <td>{{ roominformation.2 }}</td>
                                                     <td contentEditable="true">{{ roominformation.3 }}</td>
                                                     <td>{{ roominformation.4 }}</td>
                                                     <td>
@@ -455,7 +455,7 @@
             const queryString = `?room_type_id=${roomTypeId}&room_number=${roomNumber}&location=${location}`;
             const actionUrl = `/hotelobsidian/admin/roominformation/enter_data/${queryString}`;
             const response = await fetch(actionUrl, {
-                method: 'GET', // Change this to 'GET'
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -475,14 +475,12 @@
         } else if (radio.value === 'room_radio') {
             document.getElementById('searchInput').placeholder = 'Room Number';
         } else if (radio.value === 'type_radio') {
-            document.getElementById('searchInput').placeholder = 'Room Type ID';
+            document.getElementById('searchInput').placeholder = 'Room Type';
         } else if (radio.value === 'branch_radio') {
             document.getElementById('searchInput').placeholder = 'Location';
         }
         
     }
-
-    // Initially set the placeholder to CNIC when the page loads
     window.onload = function () {
         document.getElementById('searchInput').placeholder = 'Room ID';
     };

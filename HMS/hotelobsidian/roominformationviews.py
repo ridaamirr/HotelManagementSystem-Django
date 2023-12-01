@@ -17,24 +17,6 @@ def roominformation_add(request):
 
     return JsonResponse(response_data, safe=False)
 
-
-def roominformation_add_new(request, room_type_id):
-    print("Add damit")
-    try:
-        print("here")
-        print("Request URL:", request.get_full_path())
-        room_type = Roomtype.objects.get(roomtype_id=room_type_id)
-        print(room_type)
-        data = {
-            'type': room_type.type,
-            'noofbeds': room_type.numberofbeds,
-            'price': room_type.price,
-            'request_path': request.path,
-        }
-        return JsonResponse(data)
-    except Roomtype.DoesNotExist:
-        return JsonResponse({'error': f'Room Type with id {room_type_id} not found'}, status=400)
-
 def roominformation_add_new(request, room_type_id):
     try:
         room_type = Roomtype.objects.get(roomtype_id=room_type_id)
@@ -72,7 +54,7 @@ def roominformation_enter_data(request):
                 roomtype_id=room_type_id,
                 roomnumber=room_number,
                 branch=hotel,
-                isbooked='No',
+                isbooked='False',
             )
 
             messages.success(request, 'Room entry added successfully')
@@ -94,15 +76,11 @@ def roominformation_update(request):
             elif search_type == 'room_radio':
                 results = Room.objects.filter(roomnumber=search_value)
             elif search_type == 'type_radio':
-                results = Room.objects.filter(roomtype=search_value)
+                roomtype_ids = Roomtype.objects.filter(type=search_value).values_list('roomtype_id', flat=True)
+                results = Room.objects.filter(roomtype__in=roomtype_ids)
             elif search_type == 'branch_radio':
-                try:
-                    branch_id = Hotel.objects.values_list('branch_id', flat=True).get(location=search_value)
-                    results = Room.objects.filter(branch=branch_id)
-                except Hotel.DoesNotExist:
-                    results = []
-                else:
-                    results = None
+                branch_ids = list(Hotel.objects.filter(location=search_value).values_list('branch_id', flat=True))
+                results = Room.objects.filter(branch__in=branch_ids)
         else:
             results = Room.objects.all()
 
@@ -116,15 +94,7 @@ def roominformation_update(request):
                 room.branch.location,
             ]
             table_data.append(row_data)
-            
-        # print("Results:")
-        # for room in results:
-        #     print(room.room_id, room.roomnumber, room.roomtype.type, room.roomtype.numberofbeds, room.branch.location)
-
-        # print("\nTable Data:")
-        # for row_data in table_data:
-        #     print(row_data)
-
+        
         return render(request, 'admin/roominformation.html', {'table_data': table_data})
 
     return HttpResponse("Invalid request method")
