@@ -7,9 +7,9 @@ from .models import Hotel
 from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
-import logging
+#import logging
 
-logger = logging.getLogger(__name__)
+#logger = logging.getLogger(__name__)
 
 #Branch Information CRUD-------------------------------------------------------------
 def branchinformation_add(request):
