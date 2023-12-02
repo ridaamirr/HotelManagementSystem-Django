@@ -1602,3 +1602,8 @@ Watching for file changes with StatReloader
 "GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25160
 "POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74220
 Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18641
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25160
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74220
