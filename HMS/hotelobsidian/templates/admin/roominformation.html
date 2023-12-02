@@ -157,16 +157,46 @@
         .updateBtn i, .delBtn i {
             font-size: 18px;
         }
+        .messages-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            max-width: 300px;
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+    
+        .messages li {
+            margin-bottom: 5px;
+            position: relative;
+        }
+    
+        .close-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+        }
+    
+        .close-button:hover {
+            color: #ff6666; /* Change color on hover */
+        }
+    
+        /* Add styling for different message tags if needed */
+        .messages .success {
+            color: #4CAF50;
+        }
+    
+        .messages .error {
+            color: #FF5733;
+        }
     </style>
 </head>
 <body>
-    {% if messages %}
-      <ul class="messages">
-        {% for message in messages %}
-          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
     <div class="bg-image"></div>
     <div class="container">
         <div class="container">
@@ -206,6 +236,18 @@
                         </div>                        
                     </div>
                     {% elif request.path == '/hotelobsidian/admin/roominformation/add/' %}
+                    {% if messages %}
+                    <div class="messages-container">
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                                    {{ message }}
+                                    <span class="close-button" onclick="this.parentElement.style.display='none';">&times;</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
                     <div class="card1" id="panel2">
                         <div class="card-body">
                             <div class="row2">
@@ -540,8 +582,10 @@
                 },
             });
             if (response.ok) {
+                window.location.reload();
                 console.log('Room entry added successfully!');
             } else {
+                window.location.reload();
                 console.error('Error adding room entry');
             }
         } catch (error) {
