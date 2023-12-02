@@ -1880,3 +1880,479 @@ Watching for file changes with StatReloader
 "GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 22028
 "GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21826
 "GET /hotelobsidian/admin/customerinformation/ HTTP/1.1" 200 23157
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"POST /hotelobsidian/update_roominformation/2/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"POST /hotelobsidian/update_roominformation/2/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21826
+"GET /static/obsidian.png HTTP/1.1" 304 0
+"GET /static/3660.jpg HTTP/1.1" 304 0
+"POST /hotelobsidian/admin/roomtype/update/ HTTP/1.1" 200 37581
+"GET /static/d1.jpeg HTTP/1.1" 304 0
+"GET /static/d2.jpeg HTTP/1.1" 304 0
+"GET /static/d3.jpeg HTTP/1.1" 304 0
+"GET /static/d21.jpeg HTTP/1.1" 304 0
+"GET /static/d4.jpeg HTTP/1.1" 304 0
+"GET /static/s4.jpeg HTTP/1.1" 304 0
+"GET /static/s3.jpeg HTTP/1.1" 304 0
+"GET /static/s1.jpeg HTTP/1.1" 304 0
+"GET /static/s2.jpeg HTTP/1.1" 304 0
+"GET /static/s21.jpeg HTTP/1.1" 304 0
+"POST /hotelobsidian/update_room/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roomtype/update/ HTTP/1.1" 200 37581
+"POST /hotelobsidian/admin/roomtype/update/ HTTP/1.1" 200 37581
+"POST /hotelobsidian/update_room/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roomtype/update/ HTTP/1.1" 200 37581
+"POST /hotelobsidian/admin/roomtype/update/ HTTP/1.1" 200 37581
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24987
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18641
+"GET /static/img1.jpg HTTP/1.1" 304 0
+"GET /static/bed.png HTTP/1.1" 304 0
+"GET /static/swimming-pool.png HTTP/1.1" 304 0
+"GET /static/restaurant.png HTTP/1.1" 304 0
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21653
+"POST /hotelobsidian/admin/roomtype/update/ HTTP/1.1" 200 37683
+"GET /hotelobsidian/admin/customerinformation/ HTTP/1.1" 200 23157
+"GET /hotelobsidian/admin/bookinginformation/ HTTP/1.1" 200 24744
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21652
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 22028
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 22028
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21653
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24987
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+Internal Server Error: /hotelobsidian/update_roominformation/1/
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'a'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py", line 155, in update_roominformation
+    room.save()
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 990, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1984, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\mysql\compiler.py", line 57, in as_sql
+    update_query, update_params = super().as_sql()
+                                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1947, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 954, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2060, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 947, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'roomnumber' expected a number but got 'a'.
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 500 139084
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24987
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74270
+Internal Server Error: /hotelobsidian/update_roominformation/1/
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'a'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py", line 155, in update_roominformation
+    room.save()
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 990, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1984, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\mysql\compiler.py", line 57, in as_sql
+    update_query, update_params = super().as_sql()
+                                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1947, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 954, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2060, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 947, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'roomnumber' expected a number but got 'a'.
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 500 139084
+Internal Server Error: /hotelobsidian/update_roominformation/1/
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'a'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py", line 155, in update_roominformation
+    room.save()
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 990, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1984, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\mysql\compiler.py", line 57, in as_sql
+    update_query, update_params = super().as_sql()
+                                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1947, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 954, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2060, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 947, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'roomnumber' expected a number but got 'a'.
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 500 139084
+Internal Server Error: /hotelobsidian/update_roominformation/1/
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'a'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py", line 155, in update_roominformation
+    room.save()
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 990, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1984, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\mysql\compiler.py", line 57, in as_sql
+    update_query, update_params = super().as_sql()
+                                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1947, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 954, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2060, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 947, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'roomnumber' expected a number but got 'a'.
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 500 139084
+Internal Server Error: /hotelobsidian/update_roominformation/1/
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'a'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py", line 155, in update_roominformation
+    room.save()
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 990, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1984, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\mysql\compiler.py", line 57, in as_sql
+    update_query, update_params = super().as_sql()
+                                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1947, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 954, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2060, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 947, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'roomnumber' expected a number but got 'a'.
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 500 139084
+Internal Server Error: /hotelobsidian/update_roominformation/1/
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'a'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py", line 155, in update_roominformation
+    room.save()
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 990, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1984, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\mysql\compiler.py", line 57, in as_sql
+    update_query, update_params = super().as_sql()
+                                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1947, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 954, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2060, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 947, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'roomnumber' expected a number but got 'a'.
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 500 139084
+Internal Server Error: /hotelobsidian/update_roominformation/1/
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'a'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py", line 155, in update_roominformation
+    room.save()
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 990, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1984, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\mysql\compiler.py", line 57, in as_sql
+    update_query, update_params = super().as_sql()
+                                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1947, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 954, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2060, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 947, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenovo\Documents\GitHub\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'roomnumber' expected a number but got 'a'.
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 500 139084
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74271
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74271
