@@ -995,3 +995,66 @@ Watching for file changes with StatReloader
 "POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 75175
 D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
 Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 75175
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25138
+"POST /hotelobsidian/admin/roominformation/add/ HTTP/1.1" 200 28209
+"GET /hotelobsidian/admin/roominformation/add_new/ HTTP/1.1" 200 121
+"POST /hotelobsidian/admin/roominformation/add_new_information/1/ HTTP/1.1" 200 109
+Internal Server Error: /hotelobsidian/admin/roominformation/enter_data/
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=1&room_number=1000&location=Lahore HTTP/1.1" 500 152
+"POST /hotelobsidian/admin/roominformation/add/ HTTP/1.1" 200 28855
+"GET /hotelobsidian/admin/roominformation/add_new/ HTTP/1.1" 200 121
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\models.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /hotelobsidian/admin/roominformation/add_new_information/1/ HTTP/1.1" 200 109
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=1&room_number=1&location=Lahore HTTP/1.1" 200 17
+"POST /hotelobsidian/admin/roominformation/add/ HTTP/1.1" 200 28730
+"GET /hotelobsidian/admin/roominformation/add_new/ HTTP/1.1" 200 121
+"POST /hotelobsidian/admin/roominformation/add_new_information/1/ HTTP/1.1" 200 109
+Bad Request: /hotelobsidian/admin/roominformation/enter_data/
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=1&room_number=1&location=Lahore HTTP/1.1" 400 85
+"POST /hotelobsidian/admin/roominformation/add/ HTTP/1.1" 200 28771
+"GET /hotelobsidian/admin/roominformation/add_new/ HTTP/1.1" 200 121
+"POST /hotelobsidian/admin/roominformation/add_new_information/1/ HTTP/1.1" 200 109
+Bad Request: /hotelobsidian/admin/roominformation/enter_data/
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=1&room_number=1&location=Karachi HTTP/1.1" 400 85
+"POST /hotelobsidian/admin/roominformation/add/ HTTP/1.1" 200 28771
+"GET /hotelobsidian/admin/roominformation/add_new/ HTTP/1.1" 200 121
+"POST /hotelobsidian/admin/roominformation/add_new_information/1/ HTTP/1.1" 200 109
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=1&room_number=1&location=Peshawar HTTP/1.1" 200 17
+"POST /hotelobsidian/admin/roominformation/add/ HTTP/1.1" 200 28730
+"GET /hotelobsidian/admin/roominformation/add_new/ HTTP/1.1" 200 121
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\models.py changed, reloading.
+Watching for file changes with StatReloader

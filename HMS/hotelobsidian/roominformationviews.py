@@ -42,14 +42,16 @@ def roominformation_enter_data(request):
         try:
             room_type_id = int(request.GET.get('room_type_id'))
             room_number = int(request.GET.get('room_number'))
-
-            existing_entry = Room.objects.filter(roomtype_id=room_type_id, roomnumber=room_number).exists()
-            if existing_entry:
-                messages.error(request, 'Entry with the same room number and type already exists')
-                return JsonResponse({'error': 'Entry with the same room number and type already exists'}, status=400)
-
             location = request.GET.get('location')
             hotel = get_object_or_404(Hotel.objects.filter(location=location)[:1])
+
+            print("room type: ",room_type_id," room number: ", room_number, "location id: ", hotel.branch_id)
+
+            existing_entry = Room.objects.filter(roomtype_id=room_type_id, roomnumber=room_number, branch=hotel.branch_id).exists()
+            if existing_entry:
+                messages.error(request, 'Entry with the same room number and type at this location already exists')
+                return JsonResponse({'error': 'Entry with the same room number and type at this location already exists'}, status=400)
+
 
             room = Room.objects.create(
                 roomtype_id=room_type_id,
