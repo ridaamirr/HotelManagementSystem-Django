@@ -322,6 +322,18 @@
                     {% elif request.path == '/hotelobsidian/admin/roominformation/update/' or  request.path == '/hotelobsidian/admin/roominformation/new_update/' %}
                     <div class="card1" id="panel3" style="width: 170%; justify-content: center; margin-left: -280px;">
                         <div class="card-body">
+                            {% if messages %}
+                            <div class="messages-container">
+                                <ul class="messages">
+                                    {% for message in messages %}
+                                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                                            {{ message }}
+                                            <span class="close-button" onclick="this.parentElement.style.display='none';">&times;</span>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
                             <div class="row">
                                 <div class="col" style="margin-left:350px">
                                     <div style="position:absolute">

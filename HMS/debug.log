@@ -1058,3 +1058,374 @@ Bad Request: /hotelobsidian/admin/roominformation/enter_data/
 "GET /hotelobsidian/admin/roominformation/add_new/ HTTP/1.1" 200 121
 D:\HotelManagementSystem-Django\HMS\hotelobsidian\models.py changed, reloading.
 Watching for file changes with StatReloader
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25138
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/payments HTTP/1.1" 301 0
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21630
+"GET /hotelobsidian/admin/billdetails/1/ HTTP/1.1" 200 15089
+"GET /hotelobsidian/admin/billdetails/2/ HTTP/1.1" 200 14409
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25138
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25138
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 77183
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"DELETE /hotelobsidian/delete_roominformation/53/ HTTP/1.1" 302 0
+"DELETE /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 76178
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 76178
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"DELETE /hotelobsidian/delete_roominformation/51/ HTTP/1.1" 302 0
+"DELETE /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 75173
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 75173
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 75173
+"DELETE /hotelobsidian/delete_roominformation/52/ HTTP/1.1" 302 0
+"DELETE /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74170
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74170
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74170
+Internal Server Error: /hotelobsidian/delete_roominformation/50/
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\utils.py", line 61, in callproc
+    return self.cursor.callproc(procname, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 315, in callproc
+    self._query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (2014, "Commands out of sync; you can't run this command now")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py", line 122, in delete_roominformation
+    cursor.callproc('ViewBooking', [billing.billing_id])
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\utils.py", line 57, in callproc
+    with self.db.wrap_database_errors:
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\utils.py", line 61, in callproc
+    return self.cursor.callproc(procname, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 315, in callproc
+    self._query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (2014, "Commands out of sync; you can't run this command now")
+"DELETE /hotelobsidian/delete_roominformation/50/ HTTP/1.1" 500 112860
+Internal Server Error: /hotelobsidian/delete_roominformation/50/
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\utils.py", line 61, in callproc
+    return self.cursor.callproc(procname, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 315, in callproc
+    self._query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (2014, "Commands out of sync; you can't run this command now")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py", line 122, in delete_roominformation
+    cursor.callproc('ViewBooking', [billing.billing_id])
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\utils.py", line 57, in callproc
+    with self.db.wrap_database_errors:
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\utils.py", line 61, in callproc
+    return self.cursor.callproc(procname, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 315, in callproc
+    self._query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (2014, "Commands out of sync; you can't run this command now")
+"DELETE /hotelobsidian/delete_roominformation/50/ HTTP/1.1" 500 112860
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74170
+Internal Server Error: /hotelobsidian/delete_roominformation/2/
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\utils.py", line 61, in callproc
+    return self.cursor.callproc(procname, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 315, in callproc
+    self._query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (2014, "Commands out of sync; you can't run this command now")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py", line 122, in delete_roominformation
+    cursor.callproc('ViewBooking', [billing.billing_id])
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\utils.py", line 57, in callproc
+    with self.db.wrap_database_errors:
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\utils.py", line 61, in callproc
+    return self.cursor.callproc(procname, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 315, in callproc
+    self._query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (2014, "Commands out of sync; you can't run this command now")
+"DELETE /hotelobsidian/delete_roominformation/2/ HTTP/1.1" 500 112848
+Internal Server Error: /hotelobsidian/delete_roominformation/2/
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\utils.py", line 61, in callproc
+    return self.cursor.callproc(procname, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 315, in callproc
+    self._query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (2014, "Commands out of sync; you can't run this command now")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py", line 122, in delete_roominformation
+    cursor.callproc('ViewBooking', [billing.billing_id])
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\utils.py", line 57, in callproc
+    with self.db.wrap_database_errors:
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\utils.py", line 61, in callproc
+    return self.cursor.callproc(procname, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 315, in callproc
+    self._query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (2014, "Commands out of sync; you can't run this command now")
+"DELETE /hotelobsidian/delete_roominformation/2/ HTTP/1.1" 500 112848
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74170
+Internal Server Error: /hotelobsidian/delete_roominformation/50/
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\utils.py", line 61, in callproc
+    return self.cursor.callproc(procname, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 315, in callproc
+    self._query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (2014, "Commands out of sync; you can't run this command now")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py", line 122, in delete_roominformation
+    cursor.callproc('ViewBooking', [billing.billing_id])
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\utils.py", line 57, in callproc
+    with self.db.wrap_database_errors:
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\db\backends\utils.py", line 61, in callproc
+    return self.cursor.callproc(procname, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 315, in callproc
+    self._query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (2014, "Commands out of sync; you can't run this command now")
+"DELETE /hotelobsidian/delete_roominformation/50/ HTTP/1.1" 500 112875
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74170
+Internal Server Error: /hotelobsidian/delete_roominformation/50/
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view hotelobsidian.roominformationviews.delete_roominformation didn't return an HttpResponse object. It returned None instead.
+"DELETE /hotelobsidian/delete_roominformation/50/ HTTP/1.1" 500 69161
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74170
+Internal Server Error: /hotelobsidian/delete_roominformation/50/
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view hotelobsidian.roominformationviews.delete_roominformation didn't return an HttpResponse object. It returned None instead.
+"DELETE /hotelobsidian/delete_roominformation/50/ HTTP/1.1" 500 69161
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74170
+Internal Server Error: /hotelobsidian/delete_roominformation/39/
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view hotelobsidian.roominformationviews.delete_roominformation didn't return an HttpResponse object. It returned None instead.
+"DELETE /hotelobsidian/delete_roominformation/39/ HTTP/1.1" 500 69161
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74170
+"DELETE /hotelobsidian/delete_roominformation/50/ HTTP/1.1" 302 0
+"DELETE /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 73164
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 73164
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74843
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 73193
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 42088
+"DELETE /hotelobsidian/delete_roominformation/33/ HTTP/1.1" 302 0
+"DELETE /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 22
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 41684
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 41081
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 41081
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 72186
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 28999
+Internal Server Error: /hotelobsidian/delete_roominformation/43/
+Traceback (most recent call last):
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "D:\HotelManagementSystem-Django\venv\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view hotelobsidian.roominformationviews.delete_roominformation didn't return an HttpResponse object. It returned None instead.
+"DELETE /hotelobsidian/delete_roominformation/43/ HTTP/1.1" 500 68890
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 28999
+"DELETE /hotelobsidian/delete_roominformation/43/ HTTP/1.1" 302 0
+"DELETE /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 22
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 29623

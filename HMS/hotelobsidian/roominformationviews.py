@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
-from .models import Hotel, Roomtype, Room
+from .models import Hotel, Roomtype, Room, Billing
 from django.urls import reverse
 from django.contrib import messages
 from django.http import HttpResponse
 import json
+from django.db import connection
 
 def roominformation_add(request):
     unique_locations = Hotel.objects.values('location').distinct()
@@ -112,10 +113,30 @@ def roominformation_update(request):
     return HttpResponse("Invalid request method")
 
 def delete_roominformation(request, room_id):
-    room = get_object_or_404(Room, pk=room_id)
-    room.delete()
-    messages.success(request, f"Deleted room with ID {room_id}")
-    return redirect(request.META.get('HTTP_REFERER', 'default_url'))
+    try:
+        print("here")
+        unpaid_bills = Billing.objects.filter(status='Not Paid')
+        result = []
+        with connection.cursor() as cursor:
+            for billing in unpaid_bills:
+                cursor.callproc('ViewBooking', [billing.billing_id])
+                result.extend(cursor.fetchall())
+                cursor.nextset()
+                
+        room = get_object_or_404(Room, pk=room_id)
+        
+        for row in result:
+            print(row)
+            if row[1] == room.roomnumber and row[0].lower() == room.branch.location.lower():
+                messages.warning(request, f"Room with ID {room_id} cannot be deleted right now.")
+                return redirect(request.META.get('HTTP_REFERER', 'default_url'))
+
+        room.delete()
+        messages.success(request, f"Deleted room with ID {room_id}")
+        return redirect(request.META.get('HTTP_REFERER', 'default_url'))
+
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
 
 def update_roominformation(request, room_id):
     print("update_room function is being executed...")
