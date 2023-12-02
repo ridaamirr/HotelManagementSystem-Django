@@ -126,7 +126,7 @@ def delete_roominformation(request, room_id):
         room = get_object_or_404(Room, pk=room_id)
         
         for row in result:
-            print(row)
+            #print(row)
             if row[1] == room.roomnumber and row[0].lower() == room.branch.location.lower():
                 messages.warning(request, f"Room with ID {room_id} cannot be deleted right now.")
                 return redirect(request.META.get('HTTP_REFERER', 'default_url'))

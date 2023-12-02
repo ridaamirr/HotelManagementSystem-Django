@@ -1,5 +1,11 @@
 from django.urls import path
-from . import views, branchviews, roomviews,generatebillviews,catalogueviews,bookinginfoviews,customerviews,paymentinfoviews, roominformationviews
+from . import views,roomviews,generatebillviews,catalogueviews,bookinginfoviews,customerviews,paymentinfoviews, roominformationviews
+from .branchviews import(
+    BranchInformationAddView,
+    BranchInformationUpdateView,
+    DeleteBranchView,
+    UpdateBranchView,
+)
 from . import loginfunctions
 from . import signupfunction
 from django.conf import settings
@@ -39,10 +45,10 @@ urlpatterns = [
     # Branch Information Links ---------------------------------------------------------
     path('admin/branchinformation/update/', views.branchinformation, name='branch_update'),
     path('admin/branchinformation/add/', views.branchinformation, name='branch_add'),
-    path('admin/branchinformation/add_new/', branchviews.branchinformation_add, name='add_new_branch'),
-    path('admin/branchinformation/new_update/', branchviews.branchinformation_update, name='update_this_branch'),
-    path('delete_branch/<int:branch_id>/', branchviews.delete_branch, name='delete_branch'),
-    path('update_branch/<int:branch_id>/', branchviews.update_branch, name='update_branch'),
+    path('admin/branchinformation/add_new/', BranchInformationAddView.as_view(), name='add_new_branch'),
+    path('admin/branchinformation/new_update/', BranchInformationUpdateView.as_view(), name='update_this_branch'),
+    path('delete_branch/<int:branch_id>/', DeleteBranchView.as_view(), name='delete_branch'),
+    path('update_branch/<int:branch_id>/', UpdateBranchView.as_view(), name='update_branch'),
     #-----------------------------------------------------------------------------------
 
     # Room Information Links -----------------------------------------------------------

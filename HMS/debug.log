@@ -1429,3 +1429,80 @@ Watching for file changes with StatReloader
 "DELETE /hotelobsidian/delete_roominformation/43/ HTTP/1.1" 302 0
 "DELETE /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 22
 "POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 29623
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\branchviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\branchviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\branchviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\models.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\branchviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\branchviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\branchviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\branchviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\branchviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\branchviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\branchviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\branchviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\branchviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\branchviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\branchviews.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18625
+"GET /hotelobsidian/logout HTTP/1.1" 302 0
+"GET /hotelobsidian/login/ HTTP/1.1" 200 15529
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"POST /hotelobsidian/homepage/ HTTP/1.1" 200 18625
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 22006
+"POST /hotelobsidian/admin/branchinformation/add/ HTTP/1.1" 200 22701
+"POST /hotelobsidian/admin/branchinformation/add_new/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/branchinformation/add/ HTTP/1.1" 200 22837
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 22006
+"POST /hotelobsidian/admin/branchinformation/update/ HTTP/1.1" 200 28762
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 28784
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 25101
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 25103
+"POST /hotelobsidian/admin/branchinformation/new_update/ HTTP/1.1" 200 25088
