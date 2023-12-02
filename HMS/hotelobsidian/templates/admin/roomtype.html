@@ -29,7 +29,7 @@
             width: 100%;
             height: 100%;
             place-content: center;
-            margin-left: 370px;
+            margin-left: 310px;
             margin-top: 100px;
         }
         
@@ -254,13 +254,13 @@
                         </div>
                     </div>
                     {% elif request.path == '/hotelobsidian/admin/roomtype/update/' or request.path == '/hotelobsidian/admin/roomtype/new_update/' %}
-                    <div class="card1" id="panel3" style="width: 170%; justify-content: center;">
+                    <div class="card1" id="panel3" style="width:max-content;max-width:max-content; justify-content: center;margin-left: -60vh;">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col" style="margin-left: 170px">
+                                <div class="col" style="margin-left: 250px">
                                     <br>
                                     <div style="position:absolute">
-                                        <a style="margin-left: -140px; margin-top: 30px" href="{% url 'roomtype' %}" class="arrow left"></a>
+                                        <a style="margin-left: -190px; margin-top: 20px" href="{% url 'roomtype' %}" class="arrow left"></a>
                                     </div>
                                     <h3 style="color: aliceblue; font-family: 'Arial Unicode MS'; font-weight: bold;">Update/Delete</h3>
                                     <br>
@@ -268,7 +268,7 @@
                             </div>
                             <form action="{% url 'update_this_room' %}" method="post">
                                 {% csrf_token %}
-                                <div class="r1" style="margin-left:100px;">
+                                <div class="r1" style="margin-left:180px;">
                                     <div style="display:flex; align-items: center;">
                                         <label style="color: aliceblue;">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                         <input class="form-control" type="text" id="searchInput" name="SearchRoom" style="width: 150px;" placeholder="Room Type ID">

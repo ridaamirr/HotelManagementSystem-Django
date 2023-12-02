@@ -315,9 +315,9 @@
                         </div>                        
                     </div>
                     {% elif request.path == '/hotelobsidian/admin/roominformation/update/' or  request.path == '/hotelobsidian/admin/roominformation/new_update/' %}
-                    <div class="card1" id="panel3" style="width: 170%; justify-content: center;">
+                    <div class="card1" id="panel3" style="width:fit-content;max-width:fit-content; justify-content: center;margin-left: -115vh;">
                         <div class="card-body">
-                            {% if messages %}
+                            {% if messages %}   
                             <div class="messages-container">
                                 <ul class="messages">
                                     {% for message in messages %}
@@ -330,9 +330,9 @@
                             </div>
                             {% endif %}
                             <div class="row">
-                                <div class="col" style="margin-left:170px">
+                                <div class="col" style="margin-left:80vh">
                                     <div style="position:absolute">
-                                        <a style="margin-left:-140px;margin-top:30px" href="{% url 'roominformation' %}" class="arrow left"></a>
+                                        <a style="margin-left:-40vh;margin-top:38px" href="{% url 'roominformation' %}" class="arrow left"></a>
                                     </div>
                                     <br />
                                     <h3 style="color:aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Update/Delete</h3>
@@ -340,7 +340,7 @@
                                 </div>
                                 <form action="{% url 'update_this_roominformation' %}" method="post">
                                     {% csrf_token %}
-                                <div class="r1" style="margin-left:100px">
+                                <div class="r1" style="margin-left:70vh">
                                     <div style="display:flex">
                                         <label style="color:aliceblue">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                         <input class="form-control" id="searchInput" name="SearchRoom" style="width:150px;" placeholder="Room ID">
