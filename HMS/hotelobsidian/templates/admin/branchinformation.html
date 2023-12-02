@@ -52,7 +52,6 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
-    border-radius: 10px; /* Adjust this value for more or less rounded edges */
     overflow: hidden; /* Ensures rounded corners are visible */
 }
 
@@ -104,11 +103,6 @@
             color: aliceblue;
             font-weight: bold;
         }
-        
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        
         .edit-mode {
             background-color: rgba(255, 255, 255, 0.8);
         }
@@ -159,8 +153,8 @@
             height: 100%;
         }
         table#data {
-            background-color: rgba(192, 192, 192, 0.2); /* Greyish glassy little transparent background */
-            color: black; /* Black text */
+            background-color: rgba(192, 192, 192, 0); /* Greyish glassy little transparent background */
+            color:white;
             border-collapse: collapse;
             width: 100%;
         }
@@ -169,12 +163,11 @@
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
-            background-color: white; /* Set a consistent background color for all rows */
         }
-    
-        table#data th {
-            background-color: #333;
-            color: white;
+
+        tbody tr td {
+        background-color: #333;
+        color: #ffffff; /* White text */
         }
     
         .delBtn, .updateBtn {
@@ -183,6 +176,7 @@
             cursor: pointer;
             font-size: 16px;
             transition: color 0.3s;
+            color: #ffffff;
         }
     
         .delBtn:hover, .updateBtn:hover {
@@ -344,10 +338,10 @@
                             <table spellcheck="false" class="table table-bordered table-responsive" id="data">
                                 <thead style="background-color: #1E90FF; color: white;">
                                     <tr>
-                                        <th style="background-color: #1E90FF;border-color: #1E90FF;" scope="col">Branch ID</th>
-                                        <th style="background-color: #1E90FF;border-color: #1E90FF;" scope="col">Location</th>
-                                        <th style="background-color: #1E90FF;border-color: #1E90FF;" scope="col">Phone Number</th>
-                                        <th style="background-color: #1E90FF;border-color: #1E90FF;" scope="col">Actions</th>
+                                        <th style="background-color: #1E90FF;" scope="col">Branch ID</th>
+                                        <th style="background-color: #1E90FF;" scope="col">Location</th>
+                                        <th style="background-color: #1E90FF;" scope="col">Phone Number</th>
+                                        <th style="background-color: #1E90FF;" scope="col">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -357,8 +351,8 @@
                                             <td>{{ hotel.location }}</td>
                                             <td contentEditable="true">{{ hotel.phonenumber }}</td>
                                             <td>
-                                                <button data-branch-id="{{ hotel.branch_id }}" class="delBtn" style="color: #1E90FF;"><i class="fas fa-trash"></i></button>
-                                                <button data-branch-id="{{ hotel.branch_id }}" class="updateBtn" style="color: #1E90FF;"><i class="fas fa-edit"></i></button>
+                                                <button data-branch-id="{{ hotel.branch_id }}" class="delBtn" ><i class="fas fa-trash"></i></button>
+                                                <button data-branch-id="{{ hotel.branch_id }}" class="updateBtn" ><i class="fas fa-edit"></i></button>
                                             </td>
                                         </tr>
                                     {% endfor %}
