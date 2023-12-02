@@ -5,9 +5,9 @@ from django.db import connection
 from .models import Room, Roomtype
 from django.contrib import messages
 from django.http import HttpResponse
-import logging
+# import logging
 
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
 
 #Room Type CRUD-------------------------------------------------------------
 def roomtype_add(request):

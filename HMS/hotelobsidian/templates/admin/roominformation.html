@@ -317,7 +317,7 @@
                                         <label></label>
                                         <label></label>
                                         <input type="radio" id="typeradio" name="searchtype" value="type_radio" onchange="changePlaceholder(this)" />
-                                        <label style="color:aliceblue">Room Type ID</label>
+                                        <label style="color:aliceblue">Room Type</label>
                                         <label></label>
                                         <label></label>
                                         <input type="radio" id="branchradio" name="searchtype" value="branch_radio" onchange="changePlaceholder(this)" />
@@ -345,9 +345,9 @@
                                             {% for roominformation in table_data %}
                                                 <tr>
                                                     <td>{{ roominformation.0 }}</td>
-                                                    <td>{{ roominformation.1 }}</td>
+                                                    <td contentEditable="true">{{ roominformation.1 }}</td>
                                                     <td>{{ roominformation.2 }}</td>
-                                                    <td contentEditable="true">{{ roominformation.3 }}</td>
+                                                    <td>{{ roominformation.3 }}</td>
                                                     <td>{{ roominformation.4 }}</td>
                                                     <td>
                                                         <button data-room-id="{{ roominformation.0 }}" class="updateBtn"><i class="fas fa-edit"></i></button>
@@ -378,6 +378,85 @@
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
+    document.addEventListener('click', function(event) {
+        console.log('click event:', event);
+        var csrfToken = "{{ csrf_token }}";
+        var deleteButton = event.target.closest('.delBtn');
+        var updateButton = event.target.closest('.updateBtn')        
+        if (deleteButton) {
+            console.log('Delete button clicked');
+            event.preventDefault();
+            console.log('Prevented default');
+            deleteRoom(deleteButton, csrfToken);
+        }
+        if (updateButton) {
+            console.log('Update button clicked');
+            event.preventDefault();
+            console.log('Prevented default');
+            updateRoom(updateButton, csrfToken);
+        }
+    });
+    function updateRoom(updateButton, csrfToken) {
+        var roomId = updateButton.getAttribute('data-room-id');
+        var row = updateButton.closest('tr');
+        var updatedRoomNumber = row.querySelector('td:nth-child(2)').innerText.trim();
+    
+        fetch(`{% url 'update_roominformation' room_id=0 %}`.replace('0', roomId), {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrfToken,
+            },
+            body: JSON.stringify({
+                new_room_number: updatedRoomNumber,
+            }),
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Room type updated successfully');
+                // window.location.reload();
+            } else {
+                console.log('Error response received');
+                if (response.headers.get('content-type') && response.headers.get('content-type').includes('application/json')) {
+                    return response.json().then(data => {
+                        console.error('Error:', data);
+                    });
+                } else {
+                    // If the response is not JSON, handle the error accordingly
+                    console.error('Non-JSON error response:', response.statusText);
+                }
+            }
+        })
+    }
+    function deleteRoom(button, csrfToken) {
+        console.log('deleteRoom function called');
+        var roomId = button.getAttribute("data-room-id");
+        console.log('room id: %',roomId);
+        var confirmation = confirm("Are you sure you want to delete this room?");
+        if (confirmation) {
+            console.log('Confirmation received');
+            fetch(`{% url 'delete_roominformation' room_id=0 %}`.replace('0', roomId), {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken,
+                },
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Room deleted successfully');
+                    window.location.reload();
+                } else {
+                    console.log('Error response received');
+                    return response.json();
+                }
+            })
+            .then(data => {
+                console.error('Error:', data);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    }
     document.addEventListener('DOMContentLoaded', async function () {
         const addNewButton = document.getElementById('AddNew');
         addNewButton.disabled = true;
@@ -484,90 +563,7 @@
     window.onload = function () {
         document.getElementById('searchInput').placeholder = 'Room ID';
     };
-    document.addEventListener('click', function(event) {
-        console.log('click event:', event);
-        var csrfToken = "{{ csrf_token }}";
-        var deleteButton = event.target.closest('.delBtn');
-        var updateButton = event.target.closest('.updateBtn')        
-        if (deleteButton) {
-            console.log('Delete button clicked');
-            event.preventDefault(); // Add this line to prevent the default action
-            console.log('Prevented default');
-            deleteRoomType(deleteButton, csrfToken);
-        }
-        if (updateButton) {
-            console.log('Update button clicked');
-            event.preventDefault(); // Add this line to prevent the default action
-            console.log('Prevented default');
-            updateRoomType(updateButton, csrfToken);
-        }
-    });
-    function updateRoomType(updateButton, csrfToken) {
-        var roomTypeId = updateButton.getAttribute('data-roomtype-id');
-        var row = updateButton.closest('tr');
-        var updatedNumberOfBeds = row.querySelector('td:nth-child(3)').innerText.trim();
-        var updatedPrice = row.querySelector('td:nth-child(4)').innerText.trim();
-    
-        // Use the fetch API for the update request
-        fetch(`{% url 'update_room' roomtype_id=0 %}`.replace('0', roomTypeId), {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': csrfToken,
-            },
-            body: JSON.stringify({
-                new_no_of_beds: updatedNumberOfBeds,
-                new_price: updatedPrice,
-            }),
-        })
-        .then(response => {
-            if (response.ok) {
-                console.log('Room type updated successfully');
-                // Reload the page or update the UI as needed
-                window.location.reload();
-            } else {
-                console.log('Error response received');
-                return response.json();
-            }
-        })
-        .then(data => {
-            console.error('Error:', data);
-        })
-        .catch(error => console.error('Error:', error));
-    } 
-    function deleteRoomType(button, csrfToken) {
-        console.log('deleteRoomType function called');
-        var roomTypeId = button.getAttribute("data-roomtype-id");
-        console.log('room type id: %',roomTypeId);
-        var confirmation = confirm("Are you sure you want to delete this room type?");
-        if (confirmation) {
-            console.log('Confirmation received');
-            fetch(`{% url 'delete_room' roomtype_id=0 %}`.replace('0', roomTypeId), {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRFToken': csrfToken,
-                },
-            })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Room deleted successfully');
-                    // Reload the page or update the UI as needed
-                    window.location.reload();
-                } else {
-                    console.log('Error response received');
-                    return response.json();
-                }
-            })
-            .then(data => {
-                console.error('Error:', data);
-            })
-            .catch(error => console.error('Error:', error));
-        }
-    }
 </script>
-
-
 </body>
 </html>
 {% endblock %}

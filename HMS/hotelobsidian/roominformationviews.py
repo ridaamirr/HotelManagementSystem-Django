@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
 from .models import Hotel, Roomtype, Room
 from django.urls import reverse
 from django.contrib import messages
 from django.http import HttpResponse
+import json
 
 def roominformation_add(request):
     unique_locations = Hotel.objects.values('location').distinct()
@@ -100,4 +101,36 @@ def roominformation_update(request):
 
     return HttpResponse("Invalid request method")
 
+def delete_roominformation(request, room_id):
+    room = get_object_or_404(Room, pk=room_id)
+    room.delete()
+    messages.success(request, f"Deleted room with ID {room_id}")
+    return redirect(request.META.get('HTTP_REFERER', 'default_url'))
 
+def update_roominformation(request, room_id):
+    print("update_room function is being executed...")
+
+    if request.method == 'POST':
+        data = json.loads(request.body.decode('utf-8'))
+        new_room_number = data.get('new_room_number')
+        print("new room number:", new_room_number)
+
+        try:
+            room = get_object_or_404(Room, pk=room_id)
+            before_update_message = f'Before Update - Room ID: {room_id}, Room No: {room.roomnumber}'
+            print(before_update_message)
+
+            room.roomnumber = new_room_number
+            room.save()
+
+            updated_room = get_object_or_404(Room, pk=room_id)
+            after_update_message = f'After Update - Room ID: {room_id}, Room No: {updated_room.roomnumber}'
+            print(after_update_message)
+
+            #messages.success(request, f"{before_update_message}. {after_update_message}")
+            return redirect(request.META.get('HTTP_REFERER', 'default_url'))
+        except Room.DoesNotExist:
+            messages.error(request, f"Room with ID {room_id} does not exist.")
+            return redirect(request.META.get('HTTP_REFERER', 'default_url'))
+    else:
+        return JsonResponse({'error': 'Invalid request method'}, status=400)

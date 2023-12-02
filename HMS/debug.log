@@ -358,3 +358,166 @@ Bad Request: /hotelobsidian/admin/roominformation/enter_data/
 "GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24427
 "POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 78350
 "GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24299
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18641
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2448
+"GET /hotelobsidian/login/ HTTP/1.1" 200 15529
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"POST /hotelobsidian/homepage/ HTTP/1.1" 200 18625
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24299
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 73332
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24299
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/branchinformation HTTP/1.1" 301 0
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 22006
+"POST /hotelobsidian/admin/branchinformation/update/ HTTP/1.1" 200 28037
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 22006
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12774
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24299
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 73332
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 73234
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roomviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roomviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 72960
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 72960
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 72960
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 72960
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 72960
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 72960
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 72960
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 72960
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2448
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 72960
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 72960
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2448
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 72962
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 72962
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roominformationviews.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 73174
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 72962
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 73261
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 73261
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 73261
+"POST /hotelobsidian/update_roominformation/1/ HTTP/1.1" 302 0
+"GET /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 73264
+"DELETE /hotelobsidian/delete_roominformation/46/ HTTP/1.1" 302 0
+"DELETE /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 72381
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 72259
+"DELETE /hotelobsidian/delete_roominformation/45/ HTTP/1.1" 302 0
+"DELETE /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 71311
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 71189
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 71189
+"DELETE /hotelobsidian/delete_roominformation/44/ HTTP/1.1" 302 0
+"DELETE /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 70307
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 70183
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 41020
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 41020
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 41020
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 41017
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 52097
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24162
+"POST /hotelobsidian/admin/roominformation/add/ HTTP/1.1" 200 27212
+"GET /hotelobsidian/admin/roominformation/add_new/ HTTP/1.1" 200 121
+"POST /hotelobsidian/admin/roominformation/add_new_information/7/ HTTP/1.1" 200 108
+"GET /hotelobsidian/admin/roominformation/enter_data/?room_type_id=7&room_number=23&location=Karachi HTTP/1.1" 200 17
