@@ -1607,3 +1607,117 @@ Watching for file changes with StatReloader
 "GET /static/your_stylesheet.css HTTP/1.1" 404 1917
 "GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25160
 "POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74220
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18641
+"GET /static/obsidian.png HTTP/1.1" 304 0
+"GET /static/img1.jpg HTTP/1.1" 304 0
+"GET /static/swimming-pool.png HTTP/1.1" 304 0
+"GET /static/bed.png HTTP/1.1" 304 0
+"GET /static/restaurant.png HTTP/1.1" 304 0
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /static/3660.jpg HTTP/1.1" 304 0
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25160
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74220
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18641
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25160
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74219
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18641
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25160
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74219
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21826
+"POST /hotelobsidian/admin/roomtype/update/ HTTP/1.1" 200 37581
+"GET /static/d1.jpeg HTTP/1.1" 304 0
+"GET /static/d2.jpeg HTTP/1.1" 304 0
+"GET /static/d21.jpeg HTTP/1.1" 304 0
+"GET /static/d3.jpeg HTTP/1.1" 304 0
+"GET /static/d4.jpeg HTTP/1.1" 304 0
+"GET /static/s1.jpeg HTTP/1.1" 304 0
+"GET /static/s2.jpeg HTTP/1.1" 304 0
+"GET /static/s4.jpeg HTTP/1.1" 304 0
+"GET /static/s3.jpeg HTTP/1.1" 304 0
+"GET /static/s21.jpeg HTTP/1.1" 304 0
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18641
+"GET /static/img1.jpg HTTP/1.1" 304 0
+"GET /static/obsidian.png HTTP/1.1" 304 0
+"GET /static/swimming-pool.png HTTP/1.1" 304 0
+"GET /static/bed.png HTTP/1.1" 304 0
+"GET /static/restaurant.png HTTP/1.1" 304 0
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /static/3660.jpg HTTP/1.1" 304 0
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25160
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74197
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18641
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25160
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74198
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18641
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25160
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74198
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18641
+"GET /static/obsidian.png HTTP/1.1" 304 0
+"GET /static/img1.jpg HTTP/1.1" 304 0
+"GET /static/swimming-pool.png HTTP/1.1" 304 0
+"GET /static/bed.png HTTP/1.1" 304 0
+"GET /static/restaurant.png HTTP/1.1" 304 0
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /static/3660.jpg HTTP/1.1" 304 0
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25160
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74198
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18641
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25160
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74198
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18641
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21826
+"POST /hotelobsidian/admin/roomtype/update/ HTTP/1.1" 200 37581
+"GET /static/d1.jpeg HTTP/1.1" 304 0
+"GET /static/d2.jpeg HTTP/1.1" 304 0
+"GET /static/d21.jpeg HTTP/1.1" 304 0
+"GET /static/d3.jpeg HTTP/1.1" 304 0
+"GET /static/d4.jpeg HTTP/1.1" 304 0
+"GET /static/s1.jpeg HTTP/1.1" 304 0
+"GET /static/s3.jpeg HTTP/1.1" 304 0
+"GET /static/s4.jpeg HTTP/1.1" 304 0
+"GET /static/s2.jpeg HTTP/1.1" 304 0
+"GET /static/s21.jpeg HTTP/1.1" 304 0
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25160
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74173
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18641
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25160
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74207
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18641
+"GET /static/obsidian.png HTTP/1.1" 304 0
+"GET /static/img1.jpg HTTP/1.1" 304 0
+"GET /static/bed.png HTTP/1.1" 304 0
+"GET /static/swimming-pool.png HTTP/1.1" 304 0
+"GET /static/restaurant.png HTTP/1.1" 304 0
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /static/3660.jpg HTTP/1.1" 304 0
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25160
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 74168
