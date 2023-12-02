@@ -35,7 +35,11 @@ def branchinformation_update(request):
 
         if search_value:
             if search_type == 'idradio':
-                results = Hotel.objects.filter(branch_id=search_value)
+                try:
+                    search_value = int(search_value)
+                    results = Hotel.objects.filter(branch_id=search_value)
+                except ValueError:
+                    results = None
             elif search_type == 'locradio':
                 results = Hotel.objects.filter(location=search_value)
             elif search_type == 'phoneradio':

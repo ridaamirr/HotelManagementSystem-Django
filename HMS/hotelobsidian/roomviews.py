@@ -35,13 +35,25 @@ def roomtype_update(request):
 
         if search_value:
             if search_type == 'ID_radio':
-                results = Roomtype.objects.filter(roomtype_id=search_value)
+                try:
+                    search_value = int(search_value)
+                    results = Roomtype.objects.filter(roomtype_id=search_value)
+                except ValueError:
+                    results = None
             elif search_type == 'Type_radio':
                 results = Roomtype.objects.filter(type=search_value)
             elif search_type == 'No_of_beds_radio':
-                results = Roomtype.objects.filter(numberofbeds=search_value)
+                try:
+                    search_value = int(search_value)
+                    results = Roomtype.objects.filter(numberofbeds=search_value)
+                except ValueError:
+                    results = None
             elif search_type == 'price_radio':
-                results = Roomtype.objects.filter(price=search_value)
+                try:
+                    search_value = int(search_value)
+                    results = Roomtype.objects.filter(price=search_value)
+                except ValueError:
+                    results = None
             else:
                 results = None
         else:
