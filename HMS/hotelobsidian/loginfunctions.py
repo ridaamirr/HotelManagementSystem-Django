@@ -1,17 +1,12 @@
 from django.shortcuts import render, redirect
-from .models import *
 from django.contrib import messages
 from .forms import LoginForm 
-from .models import *
-import json
-from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db import connection
-from .models import Hotel
+from .models import Hotel,Customer,AdminLogin,Roomtype
 from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
-import logging
 
 def user_dashboard(request):
     if request.method == 'POST':

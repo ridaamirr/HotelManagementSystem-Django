@@ -2,10 +2,9 @@ import json
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db import connection
-from .models import *
+from .models import Customer
 from django.contrib import messages
 from django.http import HttpResponse
-import logging
 
 #Generate Bill Views-----------------------------------------------------------------------
 def generate_bill(request):  

@@ -2,10 +2,8 @@ import json
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db import connection
-from .models import *
 from django.contrib import messages
 from django.http import HttpResponse
-import logging 
 
 def checkout_Room_byadmin(request,roomid):
     cursor = connection.cursor()   

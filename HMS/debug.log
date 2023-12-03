@@ -2631,3 +2631,71 @@ Not Found: /favicon.ico
 "POST /hotelobsidian/admin/customerinformation/customer_search HTTP/1.1" 200 17587
 "GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
 "GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+Watching for file changes with StatReloader
+"GET /hotelobsidian/ HTTP/1.1" 200 18739
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2448
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\loginfunctions.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\loginfunctions.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\loginfunctions.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\loginfunctions.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\loginfunctions.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\loginfunctions.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\bookinginfoviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\bookinginfoviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\catalogueviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\catalogueviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\customerviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\customerviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\generatebillviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\generatebillviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\loginfunctions.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\loginfunctions.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\loginfunctions.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\loginfunctions.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\loginfunctions.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\loginfunctions.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\loginfunctions.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\loginfunctions.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\loginfunctions.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\paymentinfoviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\paymentinfoviews.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\paymentinfoviews.py changed, reloading.
+Watching for file changes with StatReloader

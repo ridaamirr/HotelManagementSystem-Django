@@ -1,7 +1,5 @@
-from django.http import JsonResponse
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.db import connection
-from django.http import HttpResponse
 
 def payments_search(request):  
     search_type = request.POST.get('searchtype')

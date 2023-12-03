@@ -1,5 +1,4 @@
 from .models import *
-import json
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db import connection
@@ -9,7 +8,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 import logging
 
-logger = logging.getLogger(__name__)
+#logger = logging.getLogger(__name__)
 
 def sample_view(request):
     print("This is a sample view statement.")

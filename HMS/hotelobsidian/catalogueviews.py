@@ -2,10 +2,9 @@ import json
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db import connection
-from .models import *
+from .models import Hotel
 from django.contrib import messages
 from django.http import HttpResponse 
-import logging 
 
 def catalogue(request):  
     loc = Hotel.objects.values_list('location', flat=True).distinct()      
