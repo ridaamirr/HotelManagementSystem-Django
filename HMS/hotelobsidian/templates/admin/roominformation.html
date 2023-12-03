@@ -315,7 +315,7 @@
                         </div>                        
                     </div>
                     {% elif request.path == '/hotelobsidian/admin/roominformation/update/' or  request.path == '/hotelobsidian/admin/roominformation/new_update/' %}
-                    <div class="card1" id="panel3" style="width:fit-content;max-width:fit-content; justify-content: center;margin-left: -115vh;">
+                    <div class="card1" id="panel3" style="width:130vh;max-width:fit-content; justify-content: center;margin-left: -85vh;">
                         <div class="card-body">
                             {% if messages %}   
                             <div class="messages-container">
@@ -330,9 +330,9 @@
                             </div>
                             {% endif %}
                             <div class="row">
-                                <div class="col" style="margin-left:80vh">
+                                <div class="col" style="margin-left:45vh">
                                     <div style="position:absolute">
-                                        <a style="margin-left:-40vh;margin-top:38px" href="{% url 'roominformation' %}" class="arrow left"></a>
+                                        <a style="margin-left:-30vh;margin-top:38px" href="{% url 'roominformation' %}" class="arrow left"></a>
                                     </div>
                                     <br />
                                     <h3 style="color:aliceblue; font-family:'Arial Unicode MS';font-weight:bold">Update/Delete</h3>
@@ -340,7 +340,7 @@
                                 </div>
                                 <form action="{% url 'update_this_roominformation' %}" method="post">
                                     {% csrf_token %}
-                                <div class="r1" style="margin-left:70vh">
+                                <div class="r1" style="margin-left:28vh">
                                     <div style="display:flex">
                                         <label style="color:aliceblue">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                         <input class="form-control" id="searchInput" name="SearchRoom" style="width:150px;" placeholder="Room ID">
@@ -356,7 +356,7 @@
                                     <br />
                                 </div>
                                 <center>
-                                    <div class="radio">
+                                    <div class="radio" style="margin-left: -10vh;">
                                         <input type="radio" id="idradio" name="searchtype" checked="true" value="ID_Radio" onchange="changePlaceholder(this)" />
                                         <label style="color:aliceblue">Room ID</label>
                                         <label></label>
@@ -379,7 +379,7 @@
                             {% if table_data %}
                             <div class="row">
                                 <div class="col">
-                                    <table spellcheck="false" class="table table-bordered table-responsive" id="data">
+                                    <table spellcheck="false" class="table table-bordered table-responsive" id="data" style="max-width: fit-content;margin-left: 8vh;">
                                         <thead style="background-color: #1E90FF; color: white;">
                                             <tr>
                                                 <th style="background-color: #1E90FF;" scope="col">Room ID</th>
@@ -420,10 +420,10 @@
                                     <br />
                                 </div>
                             </div> 
-                        {% endif %}
-                    {% endif %}
+                        {% endif %}  
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
