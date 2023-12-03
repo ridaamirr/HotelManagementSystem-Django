@@ -18,11 +18,15 @@ class RoomtypeAddView(View):
         return super().dispatch(*args, **kwargs)
 
     def post(self, request):
-        number_of_beds = request.POST.get('BedNo')
-        price = request.POST.get('Price')
+        try:
+            number_of_beds = request.POST.get('BedNo')
+            number_of_beds = int(number_of_beds)
+            price = request.POST.get('Price')
+            price = int(price)
+        except ValueError as e:
+            return render(request, 'debug/error.html', {'error_message': str(e), 'additional_info': 'Additional information here'})
         room_type = request.POST.get('DropDownList2')
         image = request.FILES.get('Image')
-
         try:
             new_roomtype = RoomtypeService.add_roomtype(number_of_beds, price, room_type, image)
             messages.success(request, 'Room type added successfully!')
