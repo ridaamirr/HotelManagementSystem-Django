@@ -7,6 +7,7 @@ from .branchviews import(
     UpdateBranchView,
 )
 from .roomviews import RoomtypeAddView, RoomtypeUpdateView, DeleteRoomtypeView, UpdateRoomtypeView
+from .customerviews import customer_search
 from . import loginfunctions
 from django.conf import settings
 from django.conf.urls.static import static
@@ -77,7 +78,7 @@ urlpatterns = [
     #----------------------------------------------------------------------------------- 
 
     # Customer Information Links ---------------------------------------------------------  
-    path('admin/customerinformation/customer_search', customerviews.customer_search, name='customer_search'),
+    path('admin/customerinformation/customer_search/', customer_search, name='customer_search'),
     #------------------------------------------------------------------------------------- 
 
     #Payment Views------------------------------------------------------------------------  
