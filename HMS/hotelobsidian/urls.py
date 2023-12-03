@@ -1,11 +1,12 @@
 from django.urls import path
-from . import views,roomviews,generatebillviews,catalogueviews,bookinginfoviews,customerviews,paymentinfoviews, roominformationviews
+from . import views ,generatebillviews,catalogueviews,bookinginfoviews,customerviews,paymentinfoviews, roominformationviews
 from .branchviews import(
     BranchInformationAddView,
     BranchInformationUpdateView,
     DeleteBranchView,
     UpdateBranchView,
 )
+from .roomviews import RoomtypeAddView, RoomtypeUpdateView, DeleteRoomtypeView, UpdateRoomtypeView
 from . import loginfunctions
 from django.conf import settings
 from django.conf.urls.static import static
@@ -64,10 +65,10 @@ urlpatterns = [
     # Room Type Links -----------------------------------------------------------------
     path('admin/roomtype/update/', views.roomtype, name='room_update'),
     path('admin/roomtype/add/', views.roomtype, name='room_add'),
-    path('admin/roomtype/add_new/', roomviews.roomtype_add, name='add_new_room'),
-    path('admin/roomtype/new_update/', roomviews.roomtype_update, name='update_this_room'),
-    path('delete_room/<int:roomtype_id>/', roomviews.delete_room, name='delete_room'),
-    path('update_room/<int:roomtype_id>/', roomviews.update_room, name='update_room'),
+    path('admin/roomtype/add_new/', RoomtypeAddView.as_view(), name='add_new_room'),
+    path('admin/roomtype/new_update/', RoomtypeUpdateView.as_view(), name='update_this_room'),
+    path('delete_roomtype/<int:roomtype_id>/', DeleteRoomtypeView.as_view(), name='delete_room'),
+    path('update_roomtype/<int:roomtype_id>/', UpdateRoomtypeView.as_view(), name='update_room'),
     #-----------------------------------------------------------------------------------
 
     # Booking Information Links ---------------------------------------------------------

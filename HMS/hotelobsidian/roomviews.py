@@ -1,102 +1,78 @@
-import json
-from django.http import JsonResponse
-from django.shortcuts import render, redirect, get_object_or_404
-from django.db import connection
-from .models import Room, Roomtype
-from django.contrib import messages
+# views.py
+from django.views import View
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-# import logging
+from django.contrib import messages
+from django.http import JsonResponse
+import json
+from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+from .models import Roomtype
+from .roomtypeservice import RoomtypeService
 
-# logger = logging.getLogger(__name__)
+class RoomtypeAddView(View):
+    template_name = 'debug/error.html'
 
-#Room Type CRUD-------------------------------------------------------------
-def roomtype_add(request):
-    if request.method == 'POST':
-        Type = request.POST.get('DropDownList2')
-        Number_of_beds = request.POST.get('BedNo')
-        Price = request.POST.get('Price')
-        Image = request.FILES.get('Image')
+    @method_decorator(csrf_exempt)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
-        if not Number_of_beds or not Price or not Image or not Type:
-            return render(request, 'debug/error.html', {'error_message': 'Bad Request.'})
+    def post(self, request):
+        number_of_beds = request.POST.get('BedNo')
+        price = request.POST.get('Price')
+        room_type = request.POST.get('DropDownList2')
+        image = request.FILES.get('Image')
 
-        new_roomtype = Roomtype(numberofbeds=Number_of_beds, price=Price, type=Type, image=Image)
-        new_roomtype.save()
+        try:
+            new_roomtype = RoomtypeService.add_roomtype(number_of_beds, price, room_type, image)
+            messages.success(request, 'Room type added successfully!')
+            return redirect(request.META['HTTP_REFERER'])
+        except ValueError as e:
+            return render(request, self.template_name, {'error_message': str(e)})
 
-        messages.success(request, 'Room type added successfully!')
-        return redirect(request.META['HTTP_REFERER'])
+    def get(self, request):
+        return render(request, self.template_name)
 
-    return render(request, 'debug/error.html')
 
-def roomtype_update(request):
-    if request.method == 'POST':
+class RoomtypeUpdateView(View):
+    template_name = 'admin/roomtype.html'
+
+    @method_decorator(csrf_exempt)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+    def post(self, request):
         search_type = request.POST.get('searchtype')
         search_value = request.POST.get('SearchRoom')
 
-        if search_value:
-            if search_type == 'ID_radio':
-                try:
-                    search_value = int(search_value)
-                    results = Roomtype.objects.filter(roomtype_id=search_value)
-                except ValueError:
-                    results = None
-            elif search_type == 'Type_radio':
-                results = Roomtype.objects.filter(type=search_value)
-            elif search_type == 'No_of_beds_radio':
-                try:
-                    search_value = int(search_value)
-                    results = Roomtype.objects.filter(numberofbeds=search_value)
-                except ValueError:
-                    results = None
-            elif search_type == 'price_radio':
-                try:
-                    search_value = int(search_value)
-                    results = Roomtype.objects.filter(price=search_value)
-                except ValueError:
-                    results = None
-            else:
-                results = None
-        else:
-            results = Roomtype.objects.all()
+        results = RoomtypeService.get_roomtypes_by_criteria(search_type, search_value)
 
-        return render(request, 'admin/roomtype.html', {'results': results})
+        return render(request, self.template_name, {'results': results})
 
-    return HttpResponse("Invalid request method")
+    def get(self, request):
+        return HttpResponse("Invalid request method")
 
-def delete_room(request, roomtype_id):
-    roomtype = get_object_or_404(Roomtype, pk=roomtype_id)
-    roomtype.delete()
-    messages.success(request, f"Deleted room type with ID {roomtype_id}")
-    return redirect(request.META.get('HTTP_REFERER', 'default_url'))
 
-def update_room(request, roomtype_id):
-    print("update_branch function is being executed...")
+class DeleteRoomtypeView(View):
+    def delete(self, request, roomtype_id):
+        message = RoomtypeService.delete_roomtype(roomtype_id)
+        return JsonResponse({'message': message})
 
-    if request.method == 'POST':
+class UpdateRoomtypeView(View):
+    @method_decorator(csrf_exempt)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+    def post(self, request, roomtype_id):
         data = json.loads(request.body.decode('utf-8'))
-
-        new_no_of_beds = data.get('new_no_of_beds')
-        new_price = data.get('new_price')
-
         try:
-            roomtype = get_object_or_404(Roomtype, pk=roomtype_id)
-            before_update_message = f'Before Update - Room Type ID: {roomtype_id}, NumberofBeds: {roomtype.numberofbeds} price: {roomtype.price}'
+            before_update_message, after_update_message = RoomtypeService.update_roomtype(roomtype_id, data.get('new_no_of_beds'), data.get('new_price'))
             print(before_update_message)
-
-            roomtype.numberofbeds = new_no_of_beds
-            roomtype.price = new_price
-            roomtype.save()
-
-            updated_roomtype = get_object_or_404(Roomtype, pk=roomtype_id)
-            after_update_message = f'After Update - Room Type ID: {roomtype_id}, NumberofBeds: {updated_roomtype.numberofbeds} price: {updated_roomtype.price}'
             print(after_update_message)
-
-            #messages.success(request, f"{before_update_message}. {after_update_message}")
             return redirect(request.META.get('HTTP_REFERER', 'default_url'))
         except Roomtype.DoesNotExist:
             messages.error(request, f"Room type with ID {roomtype_id} does not exist.")
             return redirect(request.META.get('HTTP_REFERER', 'default_url'))
-    else:
-        return JsonResponse({'error': 'Invalid request method'}, status=400)
-
-#------------------------------------------------------------------------------------
+        except ValueError as e:
+            return JsonResponse({'error': str(e)}, status=400)
