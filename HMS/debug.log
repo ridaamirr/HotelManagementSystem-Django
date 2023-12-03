@@ -3537,3 +3537,5 @@ Watching for file changes with StatReloader
 "DELETE /hotelobsidian/delete_roomtype/11/ HTTP/1.1" 200 43
 "POST /hotelobsidian/admin/roomtype/new_update/ HTTP/1.1" 200 38990
 "GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21608
+D:\HotelManagementSystem-Django\HMS\hotelobsidian\roomviews.py changed, reloading.
+Watching for file changes with StatReloader
