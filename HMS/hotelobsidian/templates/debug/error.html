@@ -1,7 +1,19 @@
-<!-- error.html -->
+<!-- error.html --> 
 {% extends "base.html" %}
 
-{% block content %}
+{% block content %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/static/your_stylesheet.css">
+   
+</head>
+<body>
+
+    <div class="bg-image"></div>
   <div class="container">
     <div class="row">
       <div class="col-md-6 mx-auto">
@@ -14,4 +26,22 @@
       </div>
     </div>
   </div>
-{% endblock %}
+
+   
+</body>
+</html>
+
+
+<style>
+   .bg-image {
+    background-image: url('/static/3660.jpg');
+        background-size: cover;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        }  
+</style> 
+{% endblock %} 
