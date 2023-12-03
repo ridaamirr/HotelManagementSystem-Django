@@ -238,7 +238,7 @@
                                         <div class="form-group">
                                             <form action="{% url 'branch_add' %}" method="post">
                                                 {% csrf_token %}
-                                                <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF;">Add</button>
+                                                <button class="btn btn-success btn-block btn-lg" type="submit" style="background-color: #1E90FF; border-color: #1E90FF; width: 150px;">Add</button>
                                             </form>
                                             <br/>
                                             <form action="{% url 'branch_update' %}" method="post">
@@ -341,7 +341,8 @@
                                         <th style="background-color: #1E90FF;" scope="col">Branch ID</th>
                                         <th style="background-color: #1E90FF;" scope="col">Location</th>
                                         <th style="background-color: #1E90FF;" scope="col">Phone Number</th>
-                                        <th style="background-color: #1E90FF;" scope="col">Actions</th>
+                                        <th style="background-color: #1E90FF;" scope="col">Edit</th> 
+                                        <th style="background-color: #1E90FF;" scope="col">Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -349,11 +350,14 @@
                                         <tr>
                                             <td>{{ hotel.branch_id }}</td>
                                             <td>{{ hotel.location }}</td>
-                                            <td contentEditable="true">{{ hotel.phonenumber }}</td>
-                                            <td>
-                                                <button data-branch-id="{{ hotel.branch_id }}" class="delBtn" ><i class="fas fa-trash"></i></button>
+                                            <td contentEditable="true">{{ hotel.phonenumber }}</td> 
+                                            <td>   
                                                 <button data-branch-id="{{ hotel.branch_id }}" class="updateBtn" ><i class="fas fa-edit"></i></button>
                                             </td>
+                                            <td>
+                                                <button data-branch-id="{{ hotel.branch_id }}" class="delBtn" ><i class="fas fa-trash"></i></button>
+                                            </td>
+                                            
                                         </tr>
                                     {% endfor %}
                                 </tbody>

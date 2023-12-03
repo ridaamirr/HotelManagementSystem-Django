@@ -7,7 +7,6 @@ from .branchviews import(
     UpdateBranchView,
 )
 from . import loginfunctions
-from . import signupfunction
 from django.conf import settings
 from django.conf.urls.static import static
 

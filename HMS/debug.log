@@ -2699,3 +2699,200 @@ E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HM
 Watching for file changes with StatReloader
 E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\paymentinfoviews.py changed, reloading.
 Watching for file changes with StatReloader
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24987
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 80336
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24987
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21775
+"POST /hotelobsidian/admin/branchinformation/update/ HTTP/1.1" 200 28180
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21775
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21653
+"POST /hotelobsidian/admin/roomtype/update/ HTTP/1.1" 200 37730
+"GET /static/d3.jpeg HTTP/1.1" 200 7253
+"GET /static/d2.jpeg HTTP/1.1" 200 5703
+"GET /static/s2.jpeg HTTP/1.1" 200 9370
+"GET /static/d21.jpeg HTTP/1.1" 200 7787
+"GET /static/s1.jpeg HTTP/1.1" 200 8051
+"GET /static/d1.jpeg HTTP/1.1" 200 6949
+"GET /static/s3.jpeg HTTP/1.1" 200 8234
+"GET /static/s21.jpeg HTTP/1.1" 200 7057
+"GET /static/s4.jpeg HTTP/1.1" 200 7126
+"POST /hotelobsidian/admin/roomtype/new_update/ HTTP/1.1" 200 24085
+"POST /hotelobsidian/admin/roomtype/new_update/ HTTP/1.1" 200 24085
+"POST /hotelobsidian/admin/roomtype/new_update/ HTTP/1.1" 200 24085
+"POST /hotelobsidian/admin/roomtype/new_update/ HTTP/1.1" 200 24085
+"POST /hotelobsidian/admin/roomtype/new_update/ HTTP/1.1" 200 37752
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21653
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21775
+"POST /hotelobsidian/admin/branchinformation/update/ HTTP/1.1" 200 28893
+"GET /hotelobsidian/admin/branchinformation/update/ HTTP/1.1" 200 29169
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21775
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21653
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24987
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/customerinformation/ HTTP/1.1" 200 23157
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21652
+"GET /hotelobsidian/admin/billdetails/1/ HTTP/1.1" 200 15111
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21652
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24987
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 80336
+"DELETE /hotelobsidian/delete_roominformation/33/ HTTP/1.1" 302 0
+"DELETE /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 80963
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 80336
+"DELETE /hotelobsidian/delete_roominformation/40/ HTTP/1.1" 302 0
+"DELETE /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 80963
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 80336
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24987
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21652
+"GET /hotelobsidian/admin/billdetails/1/ HTTP/1.1" 200 15111
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21652
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24987
+"POST /hotelobsidian/admin/roominformation/update/ HTTP/1.1" 200 80336
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 31126
+"DELETE /hotelobsidian/delete_roominformation/40/ HTTP/1.1" 302 0
+"DELETE /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 22
+"POST /hotelobsidian/admin/roominformation/new_update/ HTTP/1.1" 200 31753
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 24987
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21775
+"POST /hotelobsidian/admin/branchinformation/update/ HTTP/1.1" 200 29169
+Method Not Allowed (DELETE): /hotelobsidian/delete_branch/3/
+Method Not Allowed: /hotelobsidian/delete_branch/3/
+"DELETE /hotelobsidian/delete_branch/3/ HTTP/1.1" 405 0
+Method Not Allowed (DELETE): /hotelobsidian/delete_branch/3/
+Method Not Allowed: /hotelobsidian/delete_branch/3/
+"DELETE /hotelobsidian/delete_branch/3/ HTTP/1.1" 405 0
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21775
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21653
+"POST /hotelobsidian/admin/roomtype/update/ HTTP/1.1" 200 37730
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21653
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/ HTTP/1.1" 200 18739
+"GET /hotelobsidian/catalogue/ HTTP/1.1" 200 14516
+"GET /hotelobsidian/cataloguelist/?Location=Lahore HTTP/1.1" 200 21552
+"GET /hotelobsidian/cataloguelist/?Location=Lahore HTTP/1.1" 200 21552
+"GET /hotelobsidian/cataloguelist/?Location=Lahore HTTP/1.1" 200 21552
+"GET /hotelobsidian/cataloguelist/?Location=Lahore HTTP/1.1" 200 21552
+"GET /hotelobsidian/cataloguelist/?Location=Lahore HTTP/1.1" 200 21552
+"GET /hotelobsidian/cataloguelist/?Location=Lahore HTTP/1.1" 200 21552
+"GET /hotelobsidian/cataloguelist/?Location=Lahore HTTP/1.1" 200 21552
+"GET /hotelobsidian/cataloguelist/?Location=Lahore HTTP/1.1" 200 21552
+"GET /hotelobsidian/cataloguelist/?Location=Lahore HTTP/1.1" 200 21552
+"GET /hotelobsidian/cataloguelist/?Location=Lahore HTTP/1.1" 200 21552
+"GET /hotelobsidian/cataloguelist/?Location=Lahore HTTP/1.1" 200 21552
+"GET /hotelobsidian/cataloguelist/?Location=Lahore HTTP/1.1" 200 21552
+"GET /hotelobsidian/catalogue/ HTTP/1.1" 200 14516
+"GET /hotelobsidian/ HTTP/1.1" 200 18739
+"GET /hotelobsidian/logout HTTP/1.1" 302 0
+"GET /hotelobsidian/login/ HTTP/1.1" 200 15551
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"POST /hotelobsidian/homepage/ HTTP/1.1" 200 18739
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21775
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21799
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21799
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21788
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21788
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21789
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21789
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21790
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21790
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21790
+"GET /hotelobsidian/admin/branchinformation/ HTTP/1.1" 200 21790
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roominformation/ HTTP/1.1" 200 25000
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/roomtype/ HTTP/1.1" 200 21666
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/customerinformation/ HTTP/1.1" 200 23157
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/bookinginformation/ HTTP/1.1" 200 23629
+"GET /hotelobsidian/logout HTTP/1.1" 302 0
+"GET /hotelobsidian/login/ HTTP/1.1" 200 15551
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"POST /hotelobsidian/homepage/ HTTP/1.1" 200 18737
+"GET /hotelobsidian/generatebill/ HTTP/1.1" 200 13661
+"GET /hotelobsidian/checkout_Room/33/ HTTP/1.1" 302 0
+"GET /hotelobsidian/generatebill/ HTTP/1.1" 200 13438
+"GET /hotelobsidian/checkoutAll/ HTTP/1.1" 302 0
+"GET /hotelobsidian/generatebill/ HTTP/1.1" 200 13215
+"GET /hotelobsidian/logout HTTP/1.1" 302 0
+"GET /hotelobsidian/login/ HTTP/1.1" 200 15551
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"POST /hotelobsidian/homepage/ HTTP/1.1" 200 18739
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/bookinginformation/ HTTP/1.1" 200 21395
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/ HTTP/1.1" 200 18739
+"POST /hotelobsidian/checkavailabilty/ HTTP/1.1" 200 18015
+"GET /hotelobsidian/? HTTP/1.1" 200 18739
+"POST /hotelobsidian/checkavailabilty/ HTTP/1.1" 200 18015
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\urls.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+E:\Semester 5\Software Design & Analysis\Project\HotelManagementSystem-Django\HMS\hotelobsidian\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /hotelobsidian/? HTTP/1.1" 200 18739
+"POST /hotelobsidian/checkavailabilty/ HTTP/1.1" 200 17999
+"GET /hotelobsidian/? HTTP/1.1" 200 18739
+"GET /hotelobsidian/ HTTP/1.1" 200 18739
+"GET /hotelobsidian/ HTTP/1.1" 200 18739
+"GET /hotelobsidian/logout HTTP/1.1" 302 0
+"GET /hotelobsidian/login/ HTTP/1.1" 200 15551
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"POST /hotelobsidian/homepage/ HTTP/1.1" 200 18737
+"GET /hotelobsidian/catalogue/ HTTP/1.1" 200 14507
+"GET /hotelobsidian/cataloguelist/?Location=Islamabad HTTP/1.1" 200 23934
+"GET /hotelobsidian/logout HTTP/1.1" 302 0
+"GET /hotelobsidian/login/ HTTP/1.1" 200 15551
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"POST /hotelobsidian/homepage/ HTTP/1.1" 200 18739
+"GET /hotelobsidian/admin/ HTTP/1.1" 200 12796
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/admin/payments/ HTTP/1.1" 200 21652
+"GET /hotelobsidian/logout HTTP/1.1" 302 0
+"GET /hotelobsidian/login/ HTTP/1.1" 200 15551
+"GET /static/your_stylesheet.css HTTP/1.1" 404 1917
+"GET /hotelobsidian/ HTTP/1.1" 200 18755

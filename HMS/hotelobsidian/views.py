@@ -6,7 +6,6 @@ from .models import Hotel
 from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
-import logging
 
 #logger = logging.getLogger(__name__)
 
@@ -47,13 +46,13 @@ def checkavailabilty(request):
         location = request.POST.get('Location')
         room_type = request.POST.get('Type')
         no_of_beds = request.POST.get('noofbeds')
-
+        logintype = request.session.get('logintype', None) 
         cursor = connection.cursor()
         data = (location, room_type, no_of_beds)
         cursor.callproc('CheckAvailability', data)
         result = cursor.fetchall()
         temptohide = 1 
-        return render(request, 'default.html', {'result': result, 'temptohide': temptohide,})
+        return render(request, 'default.html', {'result': result, 'temptohide': temptohide,'logintype':logintype,})
     else:
         return render(request, 'default.html')
 
