@@ -289,21 +289,21 @@
                                                     <label style="color:aliceblue">Type&nbsp;&nbsp;</label>
                                                     <input type="text" class="form-control" id="type" name="type" disabled />
                                                 </div>
-                                                </div>
+                                        </div>
                                         </br>
                                         <div class="form-group" style="width:50vh;">
                                                 <div style="display:flex">
                                                     <label style="color:aliceblue">Number of Beds&nbsp;&nbsp;</label>
                                                     <input type="text" class="form-control" id="noofbeds" name="noofbeds" disabled />
                                                 </div>
-                                                </div>
+                                         </div>
                                         </br>
                                         <div class="form-group" style="width:50vh;">
                                                 <div style="display:flex">
                                                     <label style="color:aliceblue">Price&nbsp;&nbsp;</label>
                                                     <input type="text" class="form-control" id="price" name="price" disabled />
                                                 </div>
-                                                </div>
+                                        </div>
                                             <span id="unique" style="color: red; display: none;"></span>
                                             <br />
                                             <br />
@@ -372,9 +372,10 @@
                                         <input type="radio" id="branchradio" name="searchtype" value="branch_radio" onchange="changePlaceholder(this)" />
                                         <label style="color:aliceblue">Location</label>
                                     </div>
-                                </center>
-                            </div>
+                                </center> 
                             </form> 
+                            </div>
+                            
                             <br/>
                             {% if table_data %}
                             <div class="row">
@@ -421,9 +422,9 @@
                                 </div>
                             </div> 
                         {% endif %}  
-                </div>
-            </div>
-            {% endif %}
+                        </div>
+                    </div>
+                     {% endif %}
         </div>
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -616,6 +617,7 @@
         document.getElementById('searchInput').placeholder = 'Room ID';
     };
 </script>
+        </div>
 </body>
 </html>
 {% endblock %}
